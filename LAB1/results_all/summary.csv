@@ -1,0 +1,5 @@
+﻿method,cases,feasible,feasible_pct,mean_cost_valid,mean_gap_pct_valid,max_gap_pct_valid,optimal_cases,mean_messages
+independent,30,10,33.333,9.8,0.0,0.0,10,0.0
+greedy,30,30,100.0,27.833,42.372,425.0,13,
+contract_net,30,30,100.0,29.567,45.935,425.0,13,42.5
+exact,30,30,100.0,22.133,0.0,0.0,30,

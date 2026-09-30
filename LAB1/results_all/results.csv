@@ -1,0 +1,121 @@
+﻿case_id,family,n,method,feasible,cost,proposal_cost,conflicts,coverage,optimal_cost,gap_pct,messages,assignment,elapsed_ms,task_order
+demo_17_vs_5,handcrafted,3,independent,False,,4,1,0.6666666666666666,5,,0,"[0, 0, 2]",0.0102,
+demo_17_vs_5,handcrafted,3,greedy,True,17,17,0,1.0,5,240.0,,"[0, 1, 2]",0.028,
+demo_17_vs_5,handcrafted,3,contract_net,True,17,17,0,1.0,5,240.0,21,"[0, 2, 1]",0.0452,"[0, 1, 2]"
+demo_17_vs_5,handcrafted,3,exact,True,5,5,0,1.0,5,0.0,,"[1, 0, 2]",0.0108,
+easy_diagonal_3,handcrafted,3,independent,True,3,3,0,1.0,3,0.0,0,"[0, 1, 2]",0.0062,
+easy_diagonal_3,handcrafted,3,greedy,True,3,3,0,1.0,3,0.0,,"[0, 1, 2]",0.0093,
+easy_diagonal_3,handcrafted,3,contract_net,True,3,3,0,1.0,3,0.0,21,"[0, 1, 2]",0.0212,"[0, 1, 2]"
+easy_diagonal_3,handcrafted,3,exact,True,3,3,0,1.0,3,0.0,,"[0, 1, 2]",0.0078,
+ties_3,handcrafted,3,independent,False,,6,2,0.3333333333333333,6,,0,"[0, 0, 0]",0.0051,
+ties_3,handcrafted,3,greedy,True,6,6,0,1.0,6,0.0,,"[0, 1, 2]",0.0074,
+ties_3,handcrafted,3,contract_net,True,6,6,0,1.0,6,0.0,21,"[0, 1, 2]",0.019,"[0, 1, 2]"
+ties_3,handcrafted,3,exact,True,6,6,0,1.0,6,0.0,,"[0, 1, 2]",0.0078,
+shared_favorite_4,handcrafted,4,independent,False,,4,3,0.25,8,,0,"[0, 0, 0, 0]",0.0065,
+shared_favorite_4,handcrafted,4,greedy,True,9,9,0,1.0,8,12.5,,"[0, 2, 3, 1]",0.0098,
+shared_favorite_4,handcrafted,4,contract_net,True,9,9,0,1.0,8,12.5,34,"[0, 2, 3, 1]",0.0486,"[0, 1, 2, 3]"
+shared_favorite_4,handcrafted,4,exact,True,8,8,0,1.0,8,0.0,,"[1, 2, 3, 0]",0.0192,
+block_trap_4,handcrafted,4,independent,False,,6,2,0.5,8,,0,"[0, 0, 2, 2]",0.0067,
+block_trap_4,handcrafted,4,greedy,True,32,32,0,1.0,8,300.0,,"[0, 1, 2, 3]",0.0153,
+block_trap_4,handcrafted,4,contract_net,True,32,32,0,1.0,8,300.0,34,"[0, 1, 2, 3]",0.0335,"[0, 1, 2, 3]"
+block_trap_4,handcrafted,4,exact,True,8,8,0,1.0,8,0.0,,"[1, 0, 3, 2]",0.0207,
+cnp_order_trap_4,handcrafted,4,independent,False,,6,2,0.5,8,,0,"[0, 0, 2, 2]",0.008,
+cnp_order_trap_4,handcrafted,4,greedy,True,42,42,0,1.0,8,425.0,,"[0, 1, 2, 3]",0.0101,
+cnp_order_trap_4,handcrafted,4,contract_net,True,42,42,0,1.0,8,425.0,34,"[0, 1, 2, 3]",0.0251,"[0, 1, 2, 3]"
+cnp_order_trap_4,handcrafted,4,exact,True,8,8,0,1.0,8,0.0,,"[1, 0, 3, 2]",0.0184,
+random_01_n3,random,3,independent,False,,19,1,0.6666666666666666,24,,0,"[1, 0, 1]",0.0055,
+random_01_n3,random,3,greedy,True,30,30,0,1.0,24,25.0,,"[1, 0, 2]",0.0081,
+random_01_n3,random,3,contract_net,True,30,30,0,1.0,24,25.0,21,"[1, 0, 2]",0.0168,"[0, 1, 2]"
+random_01_n3,random,3,exact,True,24,24,0,1.0,24,0.0,,"[2, 0, 1]",0.0072,
+random_02_n4,random,4,independent,True,27,27,0,1.0,27,0.0,0,"[2, 0, 1, 3]",0.0065,
+random_02_n4,random,4,greedy,True,27,27,0,1.0,27,0.0,,"[2, 0, 1, 3]",0.0093,
+random_02_n4,random,4,contract_net,True,27,27,0,1.0,27,0.0,34,"[2, 0, 1, 3]",0.0292,"[0, 1, 2, 3]"
+random_02_n4,random,4,exact,True,27,27,0,1.0,27,0.0,,"[2, 0, 1, 3]",0.0201,
+random_03_n5,random,5,independent,False,,44,2,0.6,49,,0,"[1, 2, 0, 1, 0]",0.0268,
+random_03_n5,random,5,greedy,True,51,51,0,1.0,49,4.081632653061225,,"[1, 2, 0, 3, 4]",0.0361,
+random_03_n5,random,5,contract_net,True,51,51,0,1.0,49,4.081632653061225,50,"[1, 2, 0, 3, 4]",0.0791,"[0, 1, 2, 3, 4]"
+random_03_n5,random,5,exact,True,49,49,0,1.0,49,0.0,,"[1, 2, 4, 3, 0]",0.2721,
+random_04_n6,random,6,independent,False,,39,3,0.5,51,,0,"[0, 1, 5, 1, 1, 0]",0.0143,
+random_04_n6,random,6,greedy,True,70,70,0,1.0,51,37.254901960784316,,"[0, 1, 5, 4, 2, 3]",0.0192,
+random_04_n6,random,6,contract_net,True,89,89,0,1.0,51,74.50980392156863,69,"[0, 1, 3, 2, 4, 5]",0.0535,"[0, 1, 2, 3, 4, 5]"
+random_04_n6,random,6,exact,True,51,51,0,1.0,51,0.0,,"[5, 2, 4, 1, 3, 0]",0.6992,
+random_05_n7,random,7,independent,False,,42,2,0.7142857142857143,48,,0,"[3, 4, 1, 1, 6, 0, 0]",0.0279,
+random_05_n7,random,7,greedy,True,54,54,0,1.0,48,12.5,,"[3, 2, 5, 1, 6, 4, 0]",0.0393,
+random_05_n7,random,7,contract_net,True,61,61,0,1.0,48,27.083333333333332,91,"[2, 6, 5, 1, 3, 4, 0]",0.1219,"[0, 1, 2, 3, 4, 5, 6]"
+random_05_n7,random,7,exact,True,48,48,0,1.0,48,0.0,,"[3, 4, 5, 1, 2, 6, 0]",6.459699,
+random_06_n3,random,3,independent,False,,42,1,0.6666666666666666,42,,0,"[0, 1, 1]",0.0128,
+random_06_n3,random,3,greedy,True,51,51,0,1.0,42,21.428571428571427,,"[0, 2, 1]",0.0171,
+random_06_n3,random,3,contract_net,True,51,51,0,1.0,42,21.428571428571427,21,"[0, 2, 1]",0.0351,"[0, 1, 2]"
+random_06_n3,random,3,exact,True,42,42,0,1.0,42,0.0,,"[0, 1, 2]",0.0176,
+random_07_n4,random,4,independent,False,,37,1,0.75,41,,0,"[2, 0, 1, 1]",0.0105,
+random_07_n4,random,4,greedy,True,49,49,0,1.0,41,19.51219512195122,,"[2, 0, 3, 1]",0.015,
+random_07_n4,random,4,contract_net,True,66,66,0,1.0,41,60.97560975609756,34,"[1, 2, 3, 0]",0.0494,"[0, 1, 2, 3]"
+random_07_n4,random,4,exact,True,41,41,0,1.0,41,0.0,,"[2, 3, 1, 0]",0.0321,
+random_08_n5,random,5,independent,False,,27,2,0.6,39,,0,"[0, 0, 1, 3, 1]",0.0155,
+random_08_n5,random,5,greedy,True,42,42,0,1.0,39,7.6923076923076925,,"[0, 4, 1, 3, 2]",0.0233,
+random_08_n5,random,5,contract_net,True,54,54,0,1.0,39,38.46153846153846,50,"[0, 4, 1, 2, 3]",0.0829,"[0, 1, 2, 3, 4]"
+random_08_n5,random,5,exact,True,39,39,0,1.0,39,0.0,,"[4, 0, 1, 3, 2]",0.1227,
+diagonal_01_n3,diagonal,3,independent,True,5,5,0,1.0,5,0.0,0,"[0, 1, 2]",0.0088,
+diagonal_01_n3,diagonal,3,greedy,True,5,5,0,1.0,5,0.0,,"[0, 1, 2]",0.0133,
+diagonal_01_n3,diagonal,3,contract_net,True,5,5,0,1.0,5,0.0,21,"[0, 1, 2]",0.0283,"[0, 1, 2]"
+diagonal_01_n3,diagonal,3,exact,True,5,5,0,1.0,5,0.0,,"[0, 1, 2]",0.014,
+diagonal_02_n4,diagonal,4,independent,True,7,7,0,1.0,7,0.0,0,"[0, 1, 2, 3]",0.0106,
+diagonal_02_n4,diagonal,4,greedy,True,7,7,0,1.0,7,0.0,,"[0, 1, 2, 3]",0.0166,
+diagonal_02_n4,diagonal,4,contract_net,True,7,7,0,1.0,7,0.0,34,"[0, 1, 2, 3]",0.0429,"[0, 1, 2, 3]"
+diagonal_02_n4,diagonal,4,exact,True,7,7,0,1.0,7,0.0,,"[0, 1, 2, 3]",0.0548,
+diagonal_03_n5,diagonal,5,independent,True,9,9,0,1.0,9,0.0,0,"[0, 1, 2, 3, 4]",0.0173,
+diagonal_03_n5,diagonal,5,greedy,True,9,9,0,1.0,9,0.0,,"[0, 1, 2, 3, 4]",0.027,
+diagonal_03_n5,diagonal,5,contract_net,True,9,9,0,1.0,9,0.0,50,"[0, 1, 2, 3, 4]",0.0663,"[0, 1, 2, 3, 4]"
+diagonal_03_n5,diagonal,5,exact,True,9,9,0,1.0,9,0.0,,"[0, 1, 2, 3, 4]",0.1528,
+diagonal_04_n6,diagonal,6,independent,True,11,11,0,1.0,11,0.0,0,"[0, 1, 2, 3, 4, 5]",0.0238,
+diagonal_04_n6,diagonal,6,greedy,True,11,11,0,1.0,11,0.0,,"[0, 1, 2, 3, 4, 5]",0.0332,
+diagonal_04_n6,diagonal,6,contract_net,True,11,11,0,1.0,11,0.0,69,"[0, 1, 2, 3, 4, 5]",0.0773,"[0, 1, 2, 3, 4, 5]"
+diagonal_04_n6,diagonal,6,exact,True,11,11,0,1.0,11,0.0,,"[0, 1, 2, 3, 4, 5]",0.891999,
+diagonal_05_n7,diagonal,7,independent,True,15,15,0,1.0,15,0.0,0,"[0, 1, 2, 3, 4, 5, 6]",0.0491,
+diagonal_05_n7,diagonal,7,greedy,True,15,15,0,1.0,15,0.0,,"[0, 1, 2, 3, 4, 5, 6]",0.1578,
+diagonal_05_n7,diagonal,7,contract_net,True,15,15,0,1.0,15,0.0,91,"[0, 1, 2, 3, 4, 5, 6]",0.1433,"[0, 1, 2, 3, 4, 5, 6]"
+diagonal_05_n7,diagonal,7,exact,True,15,15,0,1.0,15,0.0,,"[0, 1, 2, 3, 4, 5, 6]",7.584998,
+diagonal_06_n3,diagonal,3,independent,True,5,5,0,1.0,5,0.0,0,"[0, 1, 2]",0.0139,
+diagonal_06_n3,diagonal,3,greedy,True,5,5,0,1.0,5,0.0,,"[0, 1, 2]",0.02,
+diagonal_06_n3,diagonal,3,contract_net,True,5,5,0,1.0,5,0.0,21,"[0, 1, 2]",0.054,"[0, 1, 2]"
+diagonal_06_n3,diagonal,3,exact,True,5,5,0,1.0,5,0.0,,"[0, 1, 2]",0.0139,
+diagonal_07_n4,diagonal,4,independent,True,7,7,0,1.0,7,0.0,0,"[0, 1, 2, 3]",0.012,
+diagonal_07_n4,diagonal,4,greedy,True,7,7,0,1.0,7,0.0,,"[0, 1, 2, 3]",0.017,
+diagonal_07_n4,diagonal,4,contract_net,True,7,7,0,1.0,7,0.0,34,"[0, 1, 2, 3]",0.0491,"[0, 1, 2, 3]"
+diagonal_07_n4,diagonal,4,exact,True,7,7,0,1.0,7,0.0,,"[0, 1, 2, 3]",0.0372,
+diagonal_08_n5,diagonal,5,independent,True,9,9,0,1.0,9,0.0,0,"[0, 1, 2, 3, 4]",0.0162,
+diagonal_08_n5,diagonal,5,greedy,True,9,9,0,1.0,9,0.0,,"[0, 1, 2, 3, 4]",0.0224,
+diagonal_08_n5,diagonal,5,contract_net,True,9,9,0,1.0,9,0.0,50,"[0, 1, 2, 3, 4]",0.0572,"[0, 1, 2, 3, 4]"
+diagonal_08_n5,diagonal,5,exact,True,9,9,0,1.0,9,0.0,,"[0, 1, 2, 3, 4]",0.1436,
+shared_favorite_01_n3,shared_favorite,3,independent,False,,3,2,0.3333333333333333,20,,0,"[0, 0, 0]",0.0096,
+shared_favorite_01_n3,shared_favorite,3,greedy,True,20,20,0,1.0,20,0.0,,"[0, 2, 1]",0.0139,
+shared_favorite_01_n3,shared_favorite,3,contract_net,True,20,20,0,1.0,20,0.0,21,"[0, 2, 1]",0.0364,"[0, 1, 2]"
+shared_favorite_01_n3,shared_favorite,3,exact,True,20,20,0,1.0,20,0.0,,"[0, 2, 1]",0.0173,
+shared_favorite_02_n4,shared_favorite,4,independent,False,,4,3,0.25,42,,0,"[0, 0, 0, 0]",0.0116,
+shared_favorite_02_n4,shared_favorite,4,greedy,True,45,45,0,1.0,42,7.142857142857143,,"[0, 3, 1, 2]",0.0161,
+shared_favorite_02_n4,shared_favorite,4,contract_net,True,45,45,0,1.0,42,7.142857142857143,34,"[0, 3, 1, 2]",0.0438,"[0, 1, 2, 3]"
+shared_favorite_02_n4,shared_favorite,4,exact,True,42,42,0,1.0,42,0.0,,"[0, 2, 1, 3]",0.034,
+shared_favorite_03_n5,shared_favorite,5,independent,False,,5,4,0.2,27,,0,"[0, 0, 0, 0, 0]",0.0158,
+shared_favorite_03_n5,shared_favorite,5,greedy,True,33,33,0,1.0,27,22.22222222222222,,"[0, 3, 4, 1, 2]",0.0223,
+shared_favorite_03_n5,shared_favorite,5,contract_net,True,33,33,0,1.0,27,22.22222222222222,50,"[0, 3, 4, 1, 2]",0.06,"[0, 1, 2, 3, 4]"
+shared_favorite_03_n5,shared_favorite,5,exact,True,27,27,0,1.0,27,0.0,,"[1, 0, 4, 3, 2]",0.1373,
+shared_favorite_04_n6,shared_favorite,6,independent,False,,6,5,0.16666666666666666,30,,0,"[0, 0, 0, 0, 0, 0]",0.0397,
+shared_favorite_04_n6,shared_favorite,6,greedy,True,33,33,0,1.0,30,10.0,,"[0, 1, 3, 2, 4, 5]",0.0427,
+shared_favorite_04_n6,shared_favorite,6,contract_net,True,33,33,0,1.0,30,10.0,69,"[0, 1, 3, 2, 4, 5]",0.1455,"[0, 1, 2, 3, 4, 5]"
+shared_favorite_04_n6,shared_favorite,6,exact,True,30,30,0,1.0,30,0.0,,"[1, 0, 3, 2, 4, 5]",1.2202,
+shared_favorite_05_n7,shared_favorite,7,independent,False,,7,6,0.14285714285714285,55,,0,"[0, 0, 0, 0, 0, 0, 0]",0.0432,
+shared_favorite_05_n7,shared_favorite,7,greedy,True,62,62,0,1.0,55,12.727272727272727,,"[0, 3, 2, 6, 4, 5, 1]",0.052,
+shared_favorite_05_n7,shared_favorite,7,contract_net,True,64,64,0,1.0,55,16.363636363636363,91,"[0, 5, 4, 6, 3, 2, 1]",0.1621,"[0, 1, 2, 3, 4, 5, 6]"
+shared_favorite_05_n7,shared_favorite,7,exact,True,55,55,0,1.0,55,0.0,,"[4, 0, 2, 6, 3, 5, 1]",9.152798,
+shared_favorite_06_n3,shared_favorite,3,independent,False,,3,2,0.3333333333333333,26,,0,"[0, 0, 0]",0.0223,
+shared_favorite_06_n3,shared_favorite,3,greedy,True,34,34,0,1.0,26,30.76923076923077,,"[0, 1, 2]",0.0227,
+shared_favorite_06_n3,shared_favorite,3,contract_net,True,34,34,0,1.0,26,30.76923076923077,21,"[0, 1, 2]",0.0428,"[0, 1, 2]"
+shared_favorite_06_n3,shared_favorite,3,exact,True,26,26,0,1.0,26,0.0,,"[1, 2, 0]",0.0269,
+shared_favorite_07_n4,shared_favorite,4,independent,False,,4,3,0.25,13,,0,"[0, 0, 0, 0]",0.0141,
+shared_favorite_07_n4,shared_favorite,4,greedy,True,13,13,0,1.0,13,0.0,,"[0, 3, 1, 2]",0.0243,
+shared_favorite_07_n4,shared_favorite,4,contract_net,True,13,13,0,1.0,13,0.0,34,"[0, 3, 1, 2]",0.0483,"[0, 1, 2, 3]"
+shared_favorite_07_n4,shared_favorite,4,exact,True,13,13,0,1.0,13,0.0,,"[0, 3, 1, 2]",0.041,
+shared_favorite_08_n5,shared_favorite,5,independent,False,,5,4,0.2,24,,0,"[0, 0, 0, 0, 0]",0.0175,
+shared_favorite_08_n5,shared_favorite,5,greedy,True,44,44,0,1.0,24,83.33333333333333,,"[0, 2, 4, 3, 1]",0.0857,
+shared_favorite_08_n5,shared_favorite,5,contract_net,True,39,39,0,1.0,24,62.5,50,"[0, 2, 3, 1, 4]",0.0894,"[0, 1, 2, 3, 4]"
+shared_favorite_08_n5,shared_favorite,5,exact,True,24,24,0,1.0,24,0.0,,"[1, 2, 4, 3, 0]",0.1246,

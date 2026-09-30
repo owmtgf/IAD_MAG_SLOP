@@ -1,0 +1,2 @@
+﻿case_id,family,n,method,feasible,cost,proposal_cost,conflicts,coverage,optimal_cost,gap_pct,messages,assignment,elapsed_ms,task_order
+demo_17_vs_5,handcrafted,3,contract_net,True,17,17,0,1.0,5,240.0,21,"[0, 1, 2]",0.0568,"[2, 0, 1]"

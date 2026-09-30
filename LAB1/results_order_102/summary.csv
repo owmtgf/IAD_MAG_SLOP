@@ -1,0 +1,2 @@
+﻿method,cases,feasible,feasible_pct,mean_cost_valid,mean_gap_pct_valid,max_gap_pct_valid,optimal_cases,mean_messages
+contract_net,1,1,100.0,5.0,0.0,0.0,1,21.0

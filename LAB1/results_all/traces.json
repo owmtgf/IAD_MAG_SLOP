@@ -1,0 +1,8183 @@
+{
+  "demo_17_vs_5:independent": [],
+  "demo_17_vs_5:greedy": [],
+  "demo_17_vs_5:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 9
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 15
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 14
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2
+    }
+  ],
+  "demo_17_vs_5:exact": [],
+  "easy_diagonal_3:independent": [],
+  "easy_diagonal_3:greedy": [],
+  "easy_diagonal_3:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 9
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 9
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 9
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2
+    }
+  ],
+  "easy_diagonal_3:exact": [],
+  "ties_3:independent": [],
+  "ties_3:greedy": [],
+  "ties_3:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2
+    }
+  ],
+  "ties_3:exact": [],
+  "shared_favorite_4:independent": [],
+  "shared_favorite_4:greedy": [],
+  "shared_favorite_4:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 8
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 7
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 4
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 8
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 3
+    }
+  ],
+  "shared_favorite_4:exact": [],
+  "block_trap_4:independent": [],
+  "block_trap_4:greedy": [],
+  "block_trap_4:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 30
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 30
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 15
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 30
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 30
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 15
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3
+    }
+  ],
+  "block_trap_4:exact": [],
+  "cnp_order_trap_4:independent": [],
+  "cnp_order_trap_4:greedy": [],
+  "cnp_order_trap_4:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 30
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 30
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 20
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 30
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 30
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 20
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3
+    }
+  ],
+  "cnp_order_trap_4:exact": [],
+  "random_01_n3:independent": [],
+  "random_01_n3:greedy": [],
+  "random_01_n3:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 29
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 22
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 12
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 23
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2
+    }
+  ],
+  "random_01_n3:exact": [],
+  "random_02_n4:independent": [],
+  "random_02_n4:greedy": [],
+  "random_02_n4:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 12
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 23
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 21
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 19
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 5
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 26
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 9
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 18
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 12
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3
+    }
+  ],
+  "random_02_n4:exact": [],
+  "random_03_n5:independent": [],
+  "random_03_n5:greedy": [],
+  "random_03_n5:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 17
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 9
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 26
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 16
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 19
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 16
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 20
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 5
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 22
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 17
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 18
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 19
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 21
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "INFORM",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4
+    }
+  ],
+  "random_03_n5:exact": [],
+  "random_04_n6:independent": [],
+  "random_04_n6:greedy": [],
+  "random_04_n6:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 6
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 11
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 27
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 15
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 17
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 8
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 9
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 16
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 29
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 28
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 17
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 18
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 18
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 14
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 22
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 29
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 25
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 27
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 4
+    },
+    {
+      "type": "INFORM",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 5
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 5,
+      "bid": 26
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 5
+    },
+    {
+      "type": "INFORM",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 5
+    }
+  ],
+  "random_04_n6:exact": [],
+  "random_05_n7:independent": [],
+  "random_05_n7:greedy": [],
+  "random_05_n7:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 17
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 25
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 18
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 29
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 17
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 5
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A6",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 0
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A6",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 22
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 25
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 8
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 8
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 24
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 9
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 25
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 25
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 11
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 26
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 20
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 27
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 10
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 23
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 17
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 30
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 9
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 4
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 4
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 4
+    },
+    {
+      "type": "INFORM",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 5
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 5
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 5,
+      "bid": 30
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 5,
+      "bid": 8
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 5
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 5
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 5
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 6
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 6,
+      "bid": 19
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 6
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 6
+    }
+  ],
+  "random_05_n7:exact": [],
+  "random_06_n3:independent": [],
+  "random_06_n3:greedy": [],
+  "random_06_n3:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 16
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 27
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 29
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 15
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 11
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 24
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2
+    }
+  ],
+  "random_06_n3:exact": [],
+  "random_07_n4:independent": [],
+  "random_07_n4:greedy": [],
+  "random_07_n4:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 6
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 17
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 24
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 4
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 16
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 30
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 17
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 17
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 27
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 29
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 3
+    }
+  ],
+  "random_07_n4:exact": [],
+  "random_08_n5:independent": [],
+  "random_08_n5:greedy": [],
+  "random_08_n5:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 8
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 7
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 19
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 8
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 11
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 20
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 5
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 29
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 12
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 12
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 24
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 20
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 3
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 16
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 4
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 4
+    }
+  ],
+  "random_08_n5:exact": [],
+  "diagonal_01_n3:independent": [],
+  "diagonal_01_n3:greedy": [],
+  "diagonal_01_n3:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 11
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 23
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 11
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2
+    }
+  ],
+  "diagonal_01_n3:exact": [],
+  "diagonal_02_n4:independent": [],
+  "diagonal_02_n4:greedy": [],
+  "diagonal_02_n4:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 19
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 17
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 14
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 20
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 15
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 27
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3
+    }
+  ],
+  "diagonal_02_n4:exact": [],
+  "diagonal_03_n5:independent": [],
+  "diagonal_03_n5:greedy": [],
+  "diagonal_03_n5:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 14
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 27
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 28
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 15
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 21
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 20
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 27
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 29
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 28
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 28
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "INFORM",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4
+    }
+  ],
+  "diagonal_03_n5:exact": [],
+  "diagonal_04_n6:independent": [],
+  "diagonal_04_n6:greedy": [],
+  "diagonal_04_n6:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 22
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 18
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 10
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 13
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 12
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 15
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 11
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 22
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 11
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 29
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 23
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 20
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 22
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 17
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 21
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 4
+    },
+    {
+      "type": "INFORM",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 5
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 5,
+      "bid": 3
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 5
+    },
+    {
+      "type": "INFORM",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 5
+    }
+  ],
+  "diagonal_04_n6:exact": [],
+  "diagonal_05_n7:independent": [],
+  "diagonal_05_n7:greedy": [],
+  "diagonal_05_n7:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 16
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 26
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 10
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 18
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 18
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A6",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 11
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 18
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 12
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 29
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 24
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A6",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 25
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 25
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 12
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 20
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A6",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 23
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 30
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 29
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A6",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 11
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 22
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A6",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 21
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 4
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 4
+    },
+    {
+      "type": "INFORM",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 5
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 5
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 5,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A6",
+      "receiver": "manager",
+      "task": 5,
+      "bid": 24
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 5
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 5
+    },
+    {
+      "type": "INFORM",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 5
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 6
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A6",
+      "receiver": "manager",
+      "task": 6,
+      "bid": 3
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 6
+    },
+    {
+      "type": "INFORM",
+      "sender": "A6",
+      "receiver": "manager",
+      "task": 6
+    }
+  ],
+  "diagonal_05_n7:exact": [],
+  "diagonal_06_n3:independent": [],
+  "diagonal_06_n3:greedy": [],
+  "diagonal_06_n3:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 24
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 26
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 14
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2
+    }
+  ],
+  "diagonal_06_n3:exact": [],
+  "diagonal_07_n4:independent": [],
+  "diagonal_07_n4:greedy": [],
+  "diagonal_07_n4:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 27
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 30
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 15
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 10
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 24
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 30
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 3
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3
+    }
+  ],
+  "diagonal_07_n4:exact": [],
+  "diagonal_08_n5:independent": [],
+  "diagonal_08_n5:greedy": [],
+  "diagonal_08_n5:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 24
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 14
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 11
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 25
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 24
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 19
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 25
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 12
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 23
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 29
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "INFORM",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4
+    }
+  ],
+  "diagonal_08_n5:exact": [],
+  "shared_favorite_01_n3:independent": [],
+  "shared_favorite_01_n3:greedy": [],
+  "shared_favorite_01_n3:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 29
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 15
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 4
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2
+    }
+  ],
+  "shared_favorite_01_n3:exact": [],
+  "shared_favorite_02_n4:independent": [],
+  "shared_favorite_02_n4:greedy": [],
+  "shared_favorite_02_n4:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 29
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 11
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 17
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 15
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 14
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 19
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 3
+    }
+  ],
+  "shared_favorite_02_n4:exact": [],
+  "shared_favorite_03_n5:independent": [],
+  "shared_favorite_03_n5:greedy": [],
+  "shared_favorite_03_n5:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 12
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 28
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 5
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 22
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 16
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 30
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 15
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 9
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 20
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 3
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 4
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 4
+    }
+  ],
+  "shared_favorite_03_n5:exact": [],
+  "shared_favorite_04_n6:independent": [],
+  "shared_favorite_04_n6:greedy": [],
+  "shared_favorite_04_n6:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 20
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 24
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 21
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 20
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 27
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 24
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 19
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 30
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 18
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 18
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 23
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 4
+    },
+    {
+      "type": "INFORM",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 5
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 5,
+      "bid": 3
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 5
+    },
+    {
+      "type": "INFORM",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 5
+    }
+  ],
+  "shared_favorite_04_n6:exact": [],
+  "shared_favorite_05_n7:independent": [],
+  "shared_favorite_05_n7:greedy": [],
+  "shared_favorite_05_n7:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A6",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 30
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 25
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 24
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 26
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 29
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A6",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 10
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A6",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A6",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 24
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 17
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 16
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 14
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 13
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A5",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A5",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 14
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 20
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 11
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 3
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 25
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 14
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 19
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 4
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 4
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 4
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 4
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 5
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 5
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 5,
+      "bid": 15
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 5,
+      "bid": 20
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 5
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 5
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 5
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 6
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 6,
+      "bid": 8
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 6
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 6
+    }
+  ],
+  "shared_favorite_05_n7:exact": [],
+  "shared_favorite_06_n3:independent": [],
+  "shared_favorite_06_n3:greedy": [],
+  "shared_favorite_06_n3:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 8
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 20
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 25
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2
+    }
+  ],
+  "shared_favorite_06_n3:exact": [],
+  "shared_favorite_07_n4:independent": [],
+  "shared_favorite_07_n4:greedy": [],
+  "shared_favorite_07_n4:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 11
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 8
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 16
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 13
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 3
+    }
+  ],
+  "shared_favorite_07_n4:exact": [],
+  "shared_favorite_08_n5:independent": [],
+  "shared_favorite_08_n5:greedy": [],
+  "shared_favorite_08_n5:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 24
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 18
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 13
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 24
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A3",
+      "task": 1
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A3",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 9
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 27
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 22
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 2
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 10
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 3,
+      "bid": 17
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 3
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 3
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 3
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4,
+      "bid": 6
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A4",
+      "task": 4
+    },
+    {
+      "type": "INFORM",
+      "sender": "A4",
+      "receiver": "manager",
+      "task": 4
+    }
+  ],
+  "shared_favorite_08_n5:exact": []
+}

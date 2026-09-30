@@ -1,0 +1,136 @@
+{
+  "demo_17_vs_5:contract_net": [
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 0,
+      "bid": 9
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A0",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 0
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 0
+    },
+    {
+      "type": "INFORM",
+      "sender": "A0",
+      "receiver": "manager",
+      "task": 0
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 15
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1,
+      "bid": 14
+    },
+    {
+      "type": "REJECT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 1
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A2",
+      "task": 1
+    },
+    {
+      "type": "INFORM",
+      "sender": "A2",
+      "receiver": "manager",
+      "task": 1
+    },
+    {
+      "type": "CFP",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "PROPOSE",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2,
+      "bid": 2
+    },
+    {
+      "type": "ACCEPT",
+      "sender": "manager",
+      "receiver": "A1",
+      "task": 2
+    },
+    {
+      "type": "INFORM",
+      "sender": "A1",
+      "receiver": "manager",
+      "task": 2
+    }
+  ]
+}

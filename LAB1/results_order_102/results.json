@@ -1,0 +1,27 @@
+[
+  {
+    "case_id": "demo_17_vs_5",
+    "family": "handcrafted",
+    "n": 3,
+    "method": "contract_net",
+    "feasible": true,
+    "cost": 5,
+    "proposal_cost": 5,
+    "conflicts": 0,
+    "coverage": 1.0,
+    "optimal_cost": 5,
+    "gap_pct": 0.0,
+    "messages": 21,
+    "assignment": [
+      1,
+      0,
+      2
+    ],
+    "elapsed_ms": 0.0533,
+    "task_order": [
+      1,
+      0,
+      2
+    ]
+  }
+]

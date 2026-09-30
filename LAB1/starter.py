@@ -24,7 +24,23 @@ def greedy(costs: Matrix) -> Outcome:
     Не путайте этот алгоритм с последовательным аукционом по задачам.
     """
     validate_costs(costs)
-    raise NotImplementedError("Реализуйте greedy в starter.py")
+    n = len(costs)
+    pairs = sorted(
+        (costs[agent_id][task_id], agent_id, task_id)
+        for agent_id in range(n)
+        for task_id in range(n)
+    )
+
+    assignment = [-1] * n
+    free_agents = set(range(n))
+    free_tasks = set(range(n))
+    for _, agent_id, task_id in pairs:
+        if agent_id in free_agents and task_id in free_tasks:
+            assignment[agent_id] = task_id
+            free_agents.remove(agent_id)
+            free_tasks.remove(task_id)
+
+    return Outcome(assignment, communication_modelled=False)
 
 
 def contract_net(agents: list[Contractor], task_order: list[int]) -> Outcome:
@@ -52,4 +68,43 @@ def contract_net(agents: list[Contractor], task_order: list[int]) -> Outcome:
     а не полная реализация стандарта FIPA или исходного CNET.
     """
     validate_order(task_order, len(agents))
-    raise NotImplementedError("Реализуйте contract_net в starter.py")
+    agents_by_id = {agent.agent_id: agent for agent in agents}
+    free_agent_ids = sorted(agents_by_id)
+    assignment = [-1] * len(agents)
+    messages = []
+
+    for task_id in task_order:
+        bids = []
+        for agent_id in free_agent_ids:
+            messages.append({
+                "type": "CFP", "sender": "manager",
+                "receiver": f"A{agent_id}", "task": task_id,
+            })
+
+        for agent_id in free_agent_ids:
+            bid = agents_by_id[agent_id].propose(task_id)
+            if bid is None:
+                raise ValueError("Свободный исполнитель не должен быть занят.")
+            bids.append((bid, agent_id))
+            messages.append({
+                "type": "PROPOSE", "sender": f"A{agent_id}",
+                "receiver": "manager", "task": task_id, "bid": bid,
+            })
+
+        _, winner_id = min(bids)
+        for agent_id in free_agent_ids:
+            message_type = "ACCEPT" if agent_id == winner_id else "REJECT"
+            messages.append({
+                "type": message_type, "sender": "manager",
+                "receiver": f"A{agent_id}", "task": task_id,
+            })
+
+        agents_by_id[winner_id].accept(task_id)
+        assignment[winner_id] = task_id
+        messages.append({
+            "type": "INFORM", "sender": f"A{winner_id}",
+            "receiver": "manager", "task": task_id,
+        })
+        free_agent_ids.remove(winner_id)
+
+    return Outcome(assignment, messages)
