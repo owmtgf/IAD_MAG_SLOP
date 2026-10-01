@@ -1,0 +1,11 @@
+mode,category,episodes,successes,success_rate,mean_model_calls,mean_tool_calls,mean_prompt_tokens,mean_completion_tokens,mean_elapsed_ms
+agent,missing_skill,8,8,1.0,4.0,3.0,2212.0,72.75,3935.703
+agent,no_resource,8,8,1.0,4.625,3.625,2879.125,69.0,3665.772125
+agent,normal,8,8,1.0,6.25,5.0,4265.25,96.25,5687.7205
+agent,stale,8,7,0.875,7.75,6.625,6048.5,123.5,6190.15625
+agent,transient,8,8,1.0,7.125,6.0,5041.5,109.625,5490.5377499999995
+fixed,missing_skill,8,8,1.0,1.0,3.0,740.0,27.75,1425.72575
+fixed,no_resource,8,8,1.0,1.0,3.0,742.0,14.0,985.5857500000001
+fixed,normal,8,7,0.875,1.875,4.75,1554.75,30.5,1961.5315
+fixed,stale,8,0,0.0,1.0,4.0,741.0,20.0,1234.22675
+fixed,transient,8,0,0.0,0.0,3.0,0.0,0.0,0.129375

@@ -1,0 +1,117 @@
+{
+  "status": "needs_input",
+  "question": "Какой навык нужен для заявки?",
+  "steps": 3,
+  "history": [
+    {
+      "step": 1,
+      "raw": "{\"type\": \"tool\", \"name\": \"read_ticket\", \"args\": {}}",
+      "action": {
+        "type": "tool",
+        "name": "read_ticket",
+        "args": {}
+      },
+      "observation": {
+        "ok": true,
+        "ticket": {
+          "id": "T-dev-02",
+          "skill": null,
+          "budget": 100
+        }
+      }
+    },
+    {
+      "step": 2,
+      "raw": "{\"type\": \"tool\", \"name\": \"search_policy\", \"args\": {}}",
+      "action": {
+        "type": "tool",
+        "name": "search_policy",
+        "args": {}
+      },
+      "observation": {
+        "ok": true,
+        "policy": {
+          "id": "P1",
+          "rules": [
+            "Нужный навык должен быть известен и входить в skills ресурса.",
+            "Ресурс должен быть доступен. cost <= budget.",
+            "Любой допустимый ресурс подходит; оптимальность не требуется.",
+            "При skill=null нужно спросить, какой навык нужен.",
+            "Если навык известен, но допустимых ресурсов нет: no_solution.",
+            "После предложения требуется validate_assignment."
+          ]
+        }
+      }
+    },
+    {
+      "step": 3,
+      "raw": "{\"type\": \"finish\", \"status\": \"needs_input\", \"question\": \"Какой навык нужен для заявки?\"}",
+      "action": {
+        "type": "finish",
+        "status": "needs_input",
+        "question": "Какой навык нужен для заявки?"
+      },
+      "observation": {
+        "ok": true,
+        "final_status": "needs_input"
+      }
+    }
+  ],
+  "state": {
+    "ticket": {
+      "id": "T-dev-02",
+      "skill": null,
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "python"
+        ],
+        "cost": 30,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "python"
+        ],
+        "cost": 50,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "proposal": null,
+    "validation": null,
+    "version": 0
+  },
+  "metrics": {
+    "case_id": "dev_02",
+    "category": "missing_skill",
+    "mode": "agent",
+    "policy": "scripted",
+    "repeat": 0,
+    "success": 1,
+    "status": "needs_input",
+    "steps": 3,
+    "tool_calls": 2,
+    "blocked_actions": 0,
+    "errors": 0,
+    "elapsed_ms": 0.105,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "model_calls": 0
+  },
+  "model": null,
+  "temperature": null,
+  "requests": [],
+  "max_steps": 12
+}

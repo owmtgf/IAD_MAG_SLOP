@@ -1,0 +1,9 @@
+{
+  "impl": "student",
+  "policy": "scripted",
+  "split": "dev",
+  "mode": "all",
+  "repeats": 1,
+  "max_steps": 12,
+  "out": "results_scripted_dev"
+}

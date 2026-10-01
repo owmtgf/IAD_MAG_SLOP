@@ -1,0 +1,3 @@
+mode,policy,episodes,success_rate,mean_steps,p50_ms,p95_ms
+fixed,llm,40,0.575,4.15,1173.36,2061.849
+agent,llm,40,0.975,5.95,4431.486,8439.515

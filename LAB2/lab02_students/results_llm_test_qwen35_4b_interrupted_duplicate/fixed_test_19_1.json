@@ -1,0 +1,115 @@
+{
+  "status": "tool_error",
+  "question": "",
+  "steps": 3,
+  "history": [
+    {
+      "step": 1,
+      "action": {
+        "type": "tool",
+        "name": "read_ticket",
+        "args": {}
+      },
+      "observation": {
+        "ok": true,
+        "ticket": {
+          "id": "T-test-19",
+          "skill": "linux",
+          "budget": 100
+        }
+      }
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "tool",
+        "name": "search_policy",
+        "args": {}
+      },
+      "observation": {
+        "ok": true,
+        "policy": {
+          "id": "P1",
+          "rules": [
+            "Нужный навык должен быть известен и входить в skills ресурса.",
+            "Ресурс должен быть доступен. cost <= budget.",
+            "Любой допустимый ресурс подходит; оптимальность не требуется.",
+            "При skill=null нужно спросить, какой навык нужен.",
+            "Если навык известен, но допустимых ресурсов нет: no_solution.",
+            "После предложения требуется validate_assignment."
+          ]
+        }
+      }
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "tool",
+        "name": "list_resources",
+        "args": {}
+      },
+      "observation": {
+        "ok": false,
+        "error": "temporary_unavailable",
+        "retryable": true
+      }
+    }
+  ],
+  "state": {
+    "ticket": {
+      "id": "T-test-19",
+      "skill": "linux",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "linux"
+        ],
+        "cost": 38,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "linux"
+        ],
+        "cost": 58,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "proposal": null,
+    "validation": null,
+    "version": 0
+  },
+  "metrics": {
+    "case_id": "test_19",
+    "category": "transient",
+    "mode": "fixed",
+    "policy": "llm",
+    "repeat": 1,
+    "success": 0,
+    "status": "tool_error",
+    "steps": 3,
+    "tool_calls": 3,
+    "blocked_actions": 0,
+    "errors": 1,
+    "elapsed_ms": 0.129,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "model_calls": 0
+  },
+  "model": "/home/maria/Projects/IAD_MAG_neuroslop/lab02_students/Qwen3.5-4B",
+  "temperature": 0.2,
+  "requests": [],
+  "max_steps": 12
+}

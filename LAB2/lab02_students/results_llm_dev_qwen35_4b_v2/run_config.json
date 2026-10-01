@@ -1,0 +1,9 @@
+{
+  "impl": "student",
+  "policy": "llm",
+  "split": "dev",
+  "mode": "all",
+  "repeats": 1,
+  "max_steps": 12,
+  "out": "results_llm_dev_qwen35_4b_v2"
+}

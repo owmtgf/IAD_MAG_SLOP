@@ -1,0 +1,722 @@
+[
+  {
+    "id": "test_01",
+    "category": "normal",
+    "ticket": {
+      "id": "T-test-01",
+      "skill": "linux",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "linux"
+        ],
+        "cost": 35,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "linux"
+        ],
+        "cost": 55,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "test_02",
+    "category": "missing_skill",
+    "ticket": {
+      "id": "T-test-02",
+      "skill": null,
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "linux"
+        ],
+        "cost": 35,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "linux"
+        ],
+        "cost": 55,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "test_03",
+    "category": "no_resource",
+    "ticket": {
+      "id": "T-test-03",
+      "skill": "linux",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "linux"
+        ],
+        "cost": 140,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "linux"
+        ],
+        "cost": 55,
+        "available": false
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "test_04",
+    "category": "transient",
+    "ticket": {
+      "id": "T-test-04",
+      "skill": "linux",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "linux"
+        ],
+        "cost": 35,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "linux"
+        ],
+        "cost": 55,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "transient"
+  },
+  {
+    "id": "test_05",
+    "category": "stale",
+    "ticket": {
+      "id": "T-test-05",
+      "skill": "linux",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "linux"
+        ],
+        "cost": 35,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "linux"
+        ],
+        "cost": 55,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "stale"
+  },
+  {
+    "id": "test_06",
+    "category": "normal",
+    "ticket": {
+      "id": "T-test-06",
+      "skill": "python",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "python"
+        ],
+        "cost": 36,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "python"
+        ],
+        "cost": 56,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "test_07",
+    "category": "missing_skill",
+    "ticket": {
+      "id": "T-test-07",
+      "skill": null,
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "python"
+        ],
+        "cost": 36,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "python"
+        ],
+        "cost": 56,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "test_08",
+    "category": "no_resource",
+    "ticket": {
+      "id": "T-test-08",
+      "skill": "python",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "python"
+        ],
+        "cost": 140,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "python"
+        ],
+        "cost": 56,
+        "available": false
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "test_09",
+    "category": "transient",
+    "ticket": {
+      "id": "T-test-09",
+      "skill": "python",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "python"
+        ],
+        "cost": 36,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "python"
+        ],
+        "cost": 56,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "transient"
+  },
+  {
+    "id": "test_10",
+    "category": "stale",
+    "ticket": {
+      "id": "T-test-10",
+      "skill": "python",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "python"
+        ],
+        "cost": 36,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "python"
+        ],
+        "cost": 56,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "stale"
+  },
+  {
+    "id": "test_11",
+    "category": "normal",
+    "ticket": {
+      "id": "T-test-11",
+      "skill": "sql",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "sql"
+        ],
+        "cost": 37,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "sql"
+        ],
+        "cost": 57,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "test_12",
+    "category": "missing_skill",
+    "ticket": {
+      "id": "T-test-12",
+      "skill": null,
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "sql"
+        ],
+        "cost": 37,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "sql"
+        ],
+        "cost": 57,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "test_13",
+    "category": "no_resource",
+    "ticket": {
+      "id": "T-test-13",
+      "skill": "sql",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "sql"
+        ],
+        "cost": 140,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "sql"
+        ],
+        "cost": 57,
+        "available": false
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "test_14",
+    "category": "transient",
+    "ticket": {
+      "id": "T-test-14",
+      "skill": "sql",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "sql"
+        ],
+        "cost": 37,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "sql"
+        ],
+        "cost": 57,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "transient"
+  },
+  {
+    "id": "test_15",
+    "category": "stale",
+    "ticket": {
+      "id": "T-test-15",
+      "skill": "sql",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "sql"
+        ],
+        "cost": 37,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "sql"
+        ],
+        "cost": 57,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "stale"
+  },
+  {
+    "id": "test_16",
+    "category": "normal",
+    "ticket": {
+      "id": "T-test-16",
+      "skill": "linux",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "linux"
+        ],
+        "cost": 38,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "linux"
+        ],
+        "cost": 58,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "test_17",
+    "category": "missing_skill",
+    "ticket": {
+      "id": "T-test-17",
+      "skill": null,
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "linux"
+        ],
+        "cost": 38,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "linux"
+        ],
+        "cost": 58,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "test_18",
+    "category": "no_resource",
+    "ticket": {
+      "id": "T-test-18",
+      "skill": "linux",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "linux"
+        ],
+        "cost": 140,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "linux"
+        ],
+        "cost": 58,
+        "available": false
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "test_19",
+    "category": "transient",
+    "ticket": {
+      "id": "T-test-19",
+      "skill": "linux",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "linux"
+        ],
+        "cost": 38,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "linux"
+        ],
+        "cost": 58,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "transient"
+  },
+  {
+    "id": "test_20",
+    "category": "stale",
+    "ticket": {
+      "id": "T-test-20",
+      "skill": "linux",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "linux"
+        ],
+        "cost": 38,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "linux"
+        ],
+        "cost": 58,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "stale"
+  }
+]

@@ -1,0 +1,362 @@
+[
+  {
+    "id": "dev_01",
+    "category": "normal",
+    "ticket": {
+      "id": "T-dev-01",
+      "skill": "python",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "python"
+        ],
+        "cost": 30,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "python"
+        ],
+        "cost": 50,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "dev_02",
+    "category": "missing_skill",
+    "ticket": {
+      "id": "T-dev-02",
+      "skill": null,
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "python"
+        ],
+        "cost": 30,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "python"
+        ],
+        "cost": 50,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "dev_03",
+    "category": "no_resource",
+    "ticket": {
+      "id": "T-dev-03",
+      "skill": "python",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "python"
+        ],
+        "cost": 140,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "python"
+        ],
+        "cost": 50,
+        "available": false
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "dev_04",
+    "category": "transient",
+    "ticket": {
+      "id": "T-dev-04",
+      "skill": "python",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "python"
+        ],
+        "cost": 30,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "python"
+        ],
+        "cost": 50,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "transient"
+  },
+  {
+    "id": "dev_05",
+    "category": "stale",
+    "ticket": {
+      "id": "T-dev-05",
+      "skill": "python",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "python"
+        ],
+        "cost": 30,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "python"
+        ],
+        "cost": 50,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "stale"
+  },
+  {
+    "id": "dev_06",
+    "category": "normal",
+    "ticket": {
+      "id": "T-dev-06",
+      "skill": "sql",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "sql"
+        ],
+        "cost": 31,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "sql"
+        ],
+        "cost": 51,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "dev_07",
+    "category": "missing_skill",
+    "ticket": {
+      "id": "T-dev-07",
+      "skill": null,
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "sql"
+        ],
+        "cost": 31,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "sql"
+        ],
+        "cost": 51,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "dev_08",
+    "category": "no_resource",
+    "ticket": {
+      "id": "T-dev-08",
+      "skill": "sql",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "sql"
+        ],
+        "cost": 140,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "sql"
+        ],
+        "cost": 51,
+        "available": false
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "none"
+  },
+  {
+    "id": "dev_09",
+    "category": "transient",
+    "ticket": {
+      "id": "T-dev-09",
+      "skill": "sql",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "sql"
+        ],
+        "cost": 31,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "sql"
+        ],
+        "cost": 51,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "transient"
+  },
+  {
+    "id": "dev_10",
+    "category": "stale",
+    "ticket": {
+      "id": "T-dev-10",
+      "skill": "sql",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "sql"
+        ],
+        "cost": 31,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "sql"
+        ],
+        "cost": 51,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "fault": "stale"
+  }
+]

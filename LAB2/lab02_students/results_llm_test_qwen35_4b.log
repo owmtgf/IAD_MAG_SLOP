@@ -1,0 +1,20 @@
+[
+  {
+    "mode": "fixed",
+    "policy": "llm",
+    "episodes": 40,
+    "success_rate": 0.575,
+    "mean_steps": 4.15,
+    "p50_ms": 1173.36,
+    "p95_ms": 2061.849
+  },
+  {
+    "mode": "agent",
+    "policy": "llm",
+    "episodes": 40,
+    "success_rate": 0.975,
+    "mean_steps": 5.95,
+    "p50_ms": 4431.486,
+    "p95_ms": 8439.515
+  }
+]

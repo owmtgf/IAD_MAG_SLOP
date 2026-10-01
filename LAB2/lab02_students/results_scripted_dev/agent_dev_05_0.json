@@ -1,0 +1,266 @@
+{
+  "status": "done",
+  "question": "",
+  "steps": 8,
+  "history": [
+    {
+      "step": 1,
+      "raw": "{\"type\": \"tool\", \"name\": \"read_ticket\", \"args\": {}}",
+      "action": {
+        "type": "tool",
+        "name": "read_ticket",
+        "args": {}
+      },
+      "observation": {
+        "ok": true,
+        "ticket": {
+          "id": "T-dev-05",
+          "skill": "python",
+          "budget": 100
+        }
+      }
+    },
+    {
+      "step": 2,
+      "raw": "{\"type\": \"tool\", \"name\": \"search_policy\", \"args\": {}}",
+      "action": {
+        "type": "tool",
+        "name": "search_policy",
+        "args": {}
+      },
+      "observation": {
+        "ok": true,
+        "policy": {
+          "id": "P1",
+          "rules": [
+            "Нужный навык должен быть известен и входить в skills ресурса.",
+            "Ресурс должен быть доступен. cost <= budget.",
+            "Любой допустимый ресурс подходит; оптимальность не требуется.",
+            "При skill=null нужно спросить, какой навык нужен.",
+            "Если навык известен, но допустимых ресурсов нет: no_solution.",
+            "После предложения требуется validate_assignment."
+          ]
+        }
+      }
+    },
+    {
+      "step": 3,
+      "raw": "{\"type\": \"tool\", \"name\": \"list_resources\", \"args\": {}}",
+      "action": {
+        "type": "tool",
+        "name": "list_resources",
+        "args": {}
+      },
+      "observation": {
+        "ok": true,
+        "resources": [
+          {
+            "id": "R0",
+            "skills": [
+              "python"
+            ],
+            "cost": 30,
+            "available": true
+          },
+          {
+            "id": "R1",
+            "skills": [
+              "python"
+            ],
+            "cost": 50,
+            "available": true
+          },
+          {
+            "id": "R2",
+            "skills": [
+              "design"
+            ],
+            "cost": 10,
+            "available": true
+          }
+        ],
+        "version": 0
+      }
+    },
+    {
+      "step": 4,
+      "raw": "{\"type\": \"tool\", \"name\": \"propose_assignment\", \"args\": {\"resource_id\": \"R0\"}}",
+      "action": {
+        "type": "tool",
+        "name": "propose_assignment",
+        "args": {
+          "resource_id": "R0"
+        }
+      },
+      "observation": {
+        "ok": false,
+        "error": "assignment_blocked",
+        "retryable": false,
+        "hint": "Проверьте навык, бюджет и актуальную доступность."
+      }
+    },
+    {
+      "step": 5,
+      "raw": "{\"type\": \"tool\", \"name\": \"list_resources\", \"args\": {}}",
+      "action": {
+        "type": "tool",
+        "name": "list_resources",
+        "args": {}
+      },
+      "observation": {
+        "ok": true,
+        "resources": [
+          {
+            "id": "R0",
+            "skills": [
+              "python"
+            ],
+            "cost": 30,
+            "available": false
+          },
+          {
+            "id": "R1",
+            "skills": [
+              "python"
+            ],
+            "cost": 50,
+            "available": true
+          },
+          {
+            "id": "R2",
+            "skills": [
+              "design"
+            ],
+            "cost": 10,
+            "available": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "step": 6,
+      "raw": "{\"type\": \"tool\", \"name\": \"propose_assignment\", \"args\": {\"resource_id\": \"R1\"}}",
+      "action": {
+        "type": "tool",
+        "name": "propose_assignment",
+        "args": {
+          "resource_id": "R1"
+        }
+      },
+      "observation": {
+        "ok": true,
+        "proposal": {
+          "resource_id": "R1",
+          "cost": 50,
+          "ticket_id": "T-dev-05",
+          "policy_id": "P1"
+        }
+      }
+    },
+    {
+      "step": 7,
+      "raw": "{\"type\": \"tool\", \"name\": \"validate_assignment\", \"args\": {}}",
+      "action": {
+        "type": "tool",
+        "name": "validate_assignment",
+        "args": {}
+      },
+      "observation": {
+        "ok": true,
+        "valid": true,
+        "version": 1,
+        "proposal": {
+          "resource_id": "R1",
+          "cost": 50,
+          "ticket_id": "T-dev-05",
+          "policy_id": "P1"
+        }
+      }
+    },
+    {
+      "step": 8,
+      "raw": "{\"type\": \"finish\", \"status\": \"done\", \"question\": \"\"}",
+      "action": {
+        "type": "finish",
+        "status": "done",
+        "question": ""
+      },
+      "observation": {
+        "ok": true,
+        "final_status": "done"
+      }
+    }
+  ],
+  "state": {
+    "ticket": {
+      "id": "T-dev-05",
+      "skill": "python",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "python"
+        ],
+        "cost": 30,
+        "available": false
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "python"
+        ],
+        "cost": 50,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "proposal": {
+      "resource_id": "R1",
+      "cost": 50,
+      "ticket_id": "T-dev-05",
+      "policy_id": "P1"
+    },
+    "validation": {
+      "valid": true,
+      "version": 1,
+      "proposal": {
+        "resource_id": "R1",
+        "cost": 50,
+        "ticket_id": "T-dev-05",
+        "policy_id": "P1"
+      }
+    },
+    "version": 1
+  },
+  "metrics": {
+    "case_id": "dev_05",
+    "category": "stale",
+    "mode": "agent",
+    "policy": "scripted",
+    "repeat": 0,
+    "success": 1,
+    "status": "done",
+    "steps": 8,
+    "tool_calls": 7,
+    "blocked_actions": 1,
+    "errors": 1,
+    "elapsed_ms": 0.318,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "model_calls": 0
+  },
+  "model": null,
+  "temperature": null,
+  "requests": [],
+  "max_steps": 12
+}

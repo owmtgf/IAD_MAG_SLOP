@@ -1,0 +1,3 @@
+mode,policy,episodes,success_rate,mean_steps,p50_ms,p95_ms
+fixed,scripted,10,0.6,4.2,0.122,0.266
+agent,scripted,10,1.0,5.6,0.248,0.314
