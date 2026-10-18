@@ -1,0 +1,109 @@
+[
+  {
+    "id": "C01",
+    "input": {},
+    "expected": false
+  },
+  {
+    "id": "C02",
+    "input": {
+      "a": []
+    },
+    "expected": false
+  },
+  {
+    "id": "C03",
+    "input": {
+      "a": [
+        "a"
+      ]
+    },
+    "expected": true
+  },
+  {
+    "id": "C04",
+    "input": {
+      "a": [
+        "b"
+      ],
+      "b": [
+        "a"
+      ]
+    },
+    "expected": true
+  },
+  {
+    "id": "C05",
+    "input": {
+      "a": [],
+      "b": [
+        "a"
+      ],
+      "c": [
+        "b"
+      ]
+    },
+    "expected": false
+  },
+  {
+    "id": "C06",
+    "input": {
+      "a": [],
+      "b": [
+        "a"
+      ],
+      "c": [
+        "a"
+      ],
+      "d": [
+        "b",
+        "c"
+      ]
+    },
+    "expected": false
+  },
+  {
+    "id": "C07",
+    "input": {
+      "a": [],
+      "b": [
+        "b"
+      ]
+    },
+    "expected": true
+  },
+  {
+    "id": "C08",
+    "input": {
+      "a": [],
+      "b": [
+        "a",
+        "a"
+      ]
+    },
+    "expected": false
+  },
+  {
+    "id": "C09",
+    "input": {
+      "a": [
+        "b"
+      ],
+      "b": [
+        "c"
+      ],
+      "c": [
+        "a"
+      ]
+    },
+    "expected": true
+  },
+  {
+    "id": "C10",
+    "input": {
+      "a": [],
+      "b": []
+    },
+    "expected": false
+  }
+]

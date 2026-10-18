@@ -1,0 +1,424 @@
+[
+  {
+    "id": "V01_arrival_order_and_replacement",
+    "input": {
+      "events": [
+        {
+          "eid": "p3",
+          "doc": "d",
+          "version": 3,
+          "op": "put",
+          "fields": {
+            "b": 3
+          }
+        },
+        {
+          "eid": "p1",
+          "doc": "d",
+          "version": 1,
+          "op": "put",
+          "fields": {
+            "a": 1
+          }
+        },
+        {
+          "eid": "x2",
+          "doc": "d",
+          "version": 2,
+          "op": "patch",
+          "set": {
+            "a": 2
+          },
+          "unset": []
+        }
+      ]
+    },
+    "expected": {
+      "documents": [
+        {
+          "doc": "d",
+          "version": 3,
+          "deleted": false,
+          "fields": {
+            "b": 3
+          },
+          "history": [
+            {
+              "eid": "p1",
+              "version": 1,
+              "effect": "put"
+            },
+            {
+              "eid": "x2",
+              "version": 2,
+              "effect": "patched"
+            },
+            {
+              "eid": "p3",
+              "version": 3,
+              "effect": "put"
+            }
+          ]
+        }
+      ],
+      "losers": [],
+      "duplicates": 0
+    }
+  },
+  {
+    "id": "V02_winner_priority",
+    "input": {
+      "events": [
+        {
+          "eid": "a",
+          "doc": "d",
+          "version": 1,
+          "op": "patch",
+          "set": {
+            "x": 1
+          },
+          "unset": []
+        },
+        {
+          "eid": "z",
+          "doc": "d",
+          "version": 1,
+          "op": "put",
+          "fields": {
+            "x": 2
+          }
+        },
+        {
+          "eid": "m",
+          "doc": "d",
+          "version": 1,
+          "op": "delete"
+        }
+      ]
+    },
+    "expected": {
+      "documents": [
+        {
+          "doc": "d",
+          "version": 1,
+          "deleted": true,
+          "fields": {},
+          "history": [
+            {
+              "eid": "m",
+              "version": 1,
+              "effect": "deleted"
+            }
+          ]
+        }
+      ],
+      "losers": [
+        "a",
+        "z"
+      ],
+      "duplicates": 0
+    }
+  },
+  {
+    "id": "V03_tie_id_and_zero_version",
+    "input": {
+      "events": [
+        {
+          "eid": "a",
+          "doc": "d",
+          "version": 0,
+          "op": "put",
+          "fields": {
+            "x": 1
+          }
+        },
+        {
+          "eid": "z",
+          "doc": "d",
+          "version": 0,
+          "op": "put",
+          "fields": {
+            "x": 2
+          }
+        }
+      ]
+    },
+    "expected": {
+      "documents": [
+        {
+          "doc": "d",
+          "version": 0,
+          "deleted": false,
+          "fields": {
+            "x": 2
+          },
+          "history": [
+            {
+              "eid": "z",
+              "version": 0,
+              "effect": "put"
+            }
+          ]
+        }
+      ],
+      "losers": [
+        "a"
+      ],
+      "duplicates": 0
+    }
+  },
+  {
+    "id": "V04_tombstone_patch",
+    "input": {
+      "events": [
+        {
+          "eid": "a",
+          "doc": "d",
+          "version": 1,
+          "op": "put",
+          "fields": {
+            "x": 1
+          }
+        },
+        {
+          "eid": "b",
+          "doc": "d",
+          "version": 2,
+          "op": "delete"
+        },
+        {
+          "eid": "c",
+          "doc": "d",
+          "version": 3,
+          "op": "patch",
+          "set": {
+            "y": 2
+          },
+          "unset": []
+        }
+      ]
+    },
+    "expected": {
+      "documents": [
+        {
+          "doc": "d",
+          "version": 3,
+          "deleted": true,
+          "fields": {},
+          "history": [
+            {
+              "eid": "a",
+              "version": 1,
+              "effect": "put"
+            },
+            {
+              "eid": "b",
+              "version": 2,
+              "effect": "deleted"
+            },
+            {
+              "eid": "c",
+              "version": 3,
+              "effect": "ignored"
+            }
+          ]
+        }
+      ],
+      "losers": [],
+      "duplicates": 0
+    }
+  },
+  {
+    "id": "V05_unset_wins",
+    "input": {
+      "events": [
+        {
+          "eid": "a",
+          "doc": "d",
+          "version": 1,
+          "op": "put",
+          "fields": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "eid": "b",
+          "doc": "d",
+          "version": 2,
+          "op": "patch",
+          "set": {
+            "x": 3,
+            "z": null
+          },
+          "unset": [
+            "x",
+            "missing"
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "documents": [
+        {
+          "doc": "d",
+          "version": 2,
+          "deleted": false,
+          "fields": {
+            "y": 2,
+            "z": null
+          },
+          "history": [
+            {
+              "eid": "a",
+              "version": 1,
+              "effect": "put"
+            },
+            {
+              "eid": "b",
+              "version": 2,
+              "effect": "patched"
+            }
+          ]
+        }
+      ],
+      "losers": [],
+      "duplicates": 0
+    }
+  },
+  {
+    "id": "V06_combined",
+    "input": {
+      "events": [
+        {
+          "eid": "q",
+          "doc": "z",
+          "version": 4,
+          "op": "patch",
+          "set": {
+            "x": 7
+          },
+          "unset": []
+        },
+        {
+          "eid": "c",
+          "doc": "a",
+          "version": 2,
+          "op": "delete"
+        },
+        {
+          "eid": "b",
+          "doc": "a",
+          "version": 1,
+          "op": "put",
+          "fields": {
+            "x": 1
+          }
+        },
+        {
+          "eid": "b",
+          "doc": "a",
+          "version": 1,
+          "op": "put",
+          "fields": {
+            "x": 1
+          }
+        },
+        {
+          "eid": "a",
+          "doc": "a",
+          "version": 2,
+          "op": "put",
+          "fields": {
+            "x": 8
+          }
+        },
+        {
+          "eid": "d",
+          "doc": "a",
+          "version": 3,
+          "op": "patch",
+          "set": {
+            "x": 9
+          },
+          "unset": []
+        },
+        {
+          "eid": "e",
+          "doc": "a",
+          "version": 4,
+          "op": "put",
+          "fields": {
+            "y": 2
+          }
+        },
+        {
+          "eid": "f",
+          "doc": "a",
+          "version": 5,
+          "op": "patch",
+          "set": {
+            "y": 3
+          },
+          "unset": [
+            "y"
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "documents": [
+        {
+          "doc": "a",
+          "version": 5,
+          "deleted": false,
+          "fields": {},
+          "history": [
+            {
+              "eid": "b",
+              "version": 1,
+              "effect": "put"
+            },
+            {
+              "eid": "c",
+              "version": 2,
+              "effect": "deleted"
+            },
+            {
+              "eid": "d",
+              "version": 3,
+              "effect": "ignored"
+            },
+            {
+              "eid": "e",
+              "version": 4,
+              "effect": "put"
+            },
+            {
+              "eid": "f",
+              "version": 5,
+              "effect": "patched"
+            }
+          ]
+        },
+        {
+          "doc": "z",
+          "version": 4,
+          "deleted": true,
+          "fields": {},
+          "history": [
+            {
+              "eid": "q",
+              "version": 4,
+              "effect": "ignored"
+            }
+          ]
+        }
+      ],
+      "losers": [
+        "a"
+      ],
+      "duplicates": 1
+    }
+  }
+]

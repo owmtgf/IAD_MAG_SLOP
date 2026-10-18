@@ -1,0 +1,214 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "deps": {},
+      "queries": []
+    },
+    "expected": []
+  },
+  {
+    "id": "C02",
+    "input": {
+      "deps": {},
+      "queries": [
+        [
+          "a",
+          "a"
+        ]
+      ]
+    },
+    "expected": [
+      false
+    ]
+  },
+  {
+    "id": "C03",
+    "input": {
+      "deps": {
+        "a": []
+      },
+      "queries": [
+        [
+          "a",
+          "a"
+        ]
+      ]
+    },
+    "expected": [
+      true
+    ]
+  },
+  {
+    "id": "C04",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ]
+      },
+      "queries": [
+        [
+          "b",
+          "a"
+        ],
+        [
+          "a",
+          "b"
+        ]
+      ]
+    },
+    "expected": [
+      true,
+      false
+    ]
+  },
+  {
+    "id": "C05",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ],
+        "c": [
+          "b"
+        ]
+      },
+      "queries": [
+        [
+          "c",
+          "a"
+        ]
+      ]
+    },
+    "expected": [
+      true
+    ]
+  },
+  {
+    "id": "C06",
+    "input": {
+      "deps": {
+        "a": [
+          "b"
+        ],
+        "b": [
+          "a"
+        ]
+      },
+      "queries": [
+        [
+          "a",
+          "b"
+        ],
+        [
+          "b",
+          "a"
+        ]
+      ]
+    },
+    "expected": [
+      true,
+      true
+    ]
+  },
+  {
+    "id": "C07",
+    "input": {
+      "deps": {
+        "a": []
+      },
+      "queries": [
+        [
+          "a",
+          "x"
+        ],
+        [
+          "x",
+          "a"
+        ]
+      ]
+    },
+    "expected": [
+      false,
+      false
+    ]
+  },
+  {
+    "id": "C08",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": []
+      },
+      "queries": [
+        [
+          "a",
+          "b"
+        ]
+      ]
+    },
+    "expected": [
+      false
+    ]
+  },
+  {
+    "id": "C09",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a",
+          "a"
+        ]
+      },
+      "queries": [
+        [
+          "b",
+          "a"
+        ],
+        [
+          "b",
+          "b"
+        ]
+      ]
+    },
+    "expected": [
+      true,
+      true
+    ]
+  },
+  {
+    "id": "C10",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ],
+        "c": []
+      },
+      "queries": [
+        [
+          "b",
+          "a"
+        ],
+        [
+          "c",
+          "a"
+        ],
+        [
+          "a",
+          "a"
+        ]
+      ]
+    },
+    "expected": [
+      true,
+      false,
+      true
+    ]
+  }
+]

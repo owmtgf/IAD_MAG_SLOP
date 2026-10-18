@@ -1,0 +1,192 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "base": {},
+      "events": []
+    },
+    "expected": {}
+  },
+  {
+    "id": "C02",
+    "input": {
+      "base": {},
+      "events": [
+        {
+          "seq": 1,
+          "op": "set",
+          "key": "a",
+          "value": 1
+        }
+      ]
+    },
+    "expected": {
+      "a": 1
+    }
+  },
+  {
+    "id": "C03",
+    "input": {
+      "base": {
+        "a": 1
+      },
+      "events": [
+        {
+          "seq": 1,
+          "op": "delete",
+          "key": "a",
+          "value": 0
+        }
+      ]
+    },
+    "expected": {}
+  },
+  {
+    "id": "C04",
+    "input": {
+      "base": {},
+      "events": [
+        {
+          "seq": 1,
+          "op": "delete",
+          "key": "a",
+          "value": 0
+        }
+      ]
+    },
+    "expected": {}
+  },
+  {
+    "id": "C05",
+    "input": {
+      "base": {},
+      "events": [
+        {
+          "seq": 2,
+          "op": "set",
+          "key": "a",
+          "value": 2
+        },
+        {
+          "seq": 1,
+          "op": "set",
+          "key": "a",
+          "value": 1
+        }
+      ]
+    },
+    "expected": {
+      "a": 2
+    }
+  },
+  {
+    "id": "C06",
+    "input": {
+      "base": {
+        "a": 1
+      },
+      "events": [
+        {
+          "seq": 2,
+          "op": "delete",
+          "key": "a",
+          "value": 0
+        },
+        {
+          "seq": 3,
+          "op": "set",
+          "key": "a",
+          "value": 3
+        }
+      ]
+    },
+    "expected": {
+      "a": 3
+    }
+  },
+  {
+    "id": "C07",
+    "input": {
+      "base": {
+        "a": 1
+      },
+      "events": [
+        {
+          "seq": 1,
+          "op": "set",
+          "key": "a",
+          "value": 0
+        }
+      ]
+    },
+    "expected": {
+      "a": 0
+    }
+  },
+  {
+    "id": "C08",
+    "input": {
+      "base": {
+        "a": 1
+      },
+      "events": [
+        {
+          "seq": 1,
+          "op": "set",
+          "key": "b",
+          "value": 2
+        }
+      ]
+    },
+    "expected": {
+      "a": 1,
+      "b": 2
+    }
+  },
+  {
+    "id": "C09",
+    "input": {
+      "base": {},
+      "events": [
+        {
+          "seq": 0,
+          "op": "set",
+          "key": "",
+          "value": -1
+        }
+      ]
+    },
+    "expected": {
+      "": -1
+    }
+  },
+  {
+    "id": "C10",
+    "input": {
+      "base": {},
+      "events": [
+        {
+          "seq": 5,
+          "op": "set",
+          "key": "b",
+          "value": 2
+        },
+        {
+          "seq": 1,
+          "op": "set",
+          "key": "a",
+          "value": 1
+        },
+        {
+          "seq": 6,
+          "op": "delete",
+          "key": "a",
+          "value": 0
+        }
+      ]
+    },
+    "expected": {
+      "b": 2
+    }
+  }
+]

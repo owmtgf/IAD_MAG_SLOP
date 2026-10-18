@@ -1,0 +1,161 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "capacity": 0,
+      "bookings": []
+    },
+    "expected": true
+  },
+  {
+    "id": "C02",
+    "input": {
+      "capacity": 2,
+      "bookings": [
+        [
+          0,
+          3,
+          2
+        ]
+      ]
+    },
+    "expected": true
+  },
+  {
+    "id": "C03",
+    "input": {
+      "capacity": 2,
+      "bookings": [
+        [
+          0,
+          3,
+          3
+        ]
+      ]
+    },
+    "expected": false
+  },
+  {
+    "id": "C04",
+    "input": {
+      "capacity": 3,
+      "bookings": [
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          2,
+          4,
+          2
+        ]
+      ]
+    },
+    "expected": false
+  },
+  {
+    "id": "C05",
+    "input": {
+      "capacity": 3,
+      "bookings": [
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ]
+    },
+    "expected": true
+  },
+  {
+    "id": "C06",
+    "input": {
+      "capacity": 0,
+      "bookings": [
+        [
+          1,
+          1,
+          7
+        ]
+      ]
+    },
+    "expected": true
+  },
+  {
+    "id": "C07",
+    "input": {
+      "capacity": 0,
+      "bookings": [
+        [
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    "expected": true
+  },
+  {
+    "id": "C08",
+    "input": {
+      "capacity": 5,
+      "bookings": [
+        [
+          0,
+          10,
+          1
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ]
+    },
+    "expected": true
+  },
+  {
+    "id": "C09",
+    "input": {
+      "capacity": 4,
+      "bookings": [
+        [
+          0,
+          10,
+          1
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ]
+    },
+    "expected": false
+  },
+  {
+    "id": "C10",
+    "input": {
+      "capacity": 2,
+      "bookings": [
+        [
+          0,
+          5,
+          1
+        ],
+        [
+          0,
+          5,
+          1
+        ]
+      ]
+    },
+    "expected": true
+  }
+]

@@ -1,0 +1,334 @@
+[
+  {
+    "id": "v01",
+    "input": {
+      "policies": [
+        {
+          "id": "deep",
+          "subject": "a",
+          "effect": "allow",
+          "resource": "/reports",
+          "action": "*",
+          "start": 0,
+          "end": null,
+          "delegable": false
+        },
+        {
+          "id": "root",
+          "subject": "a",
+          "effect": "deny",
+          "resource": "/",
+          "action": "read",
+          "start": 0,
+          "end": null,
+          "delegable": false
+        }
+      ],
+      "delegations": [],
+      "requests": [
+        {
+          "actor": "a",
+          "resource": "/reports/x",
+          "action": "read",
+          "time": 5
+        }
+      ]
+    },
+    "expected": [
+      {
+        "decision": "allow",
+        "sources": [
+          "deep"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v02",
+    "input": {
+      "policies": [
+        {
+          "id": "p",
+          "subject": "a",
+          "effect": "allow",
+          "resource": "/reports",
+          "action": "*",
+          "start": 0,
+          "end": 10,
+          "delegable": false
+        }
+      ],
+      "delegations": [],
+      "requests": [
+        {
+          "actor": "a",
+          "resource": "/reports2",
+          "action": "read",
+          "time": 5
+        },
+        {
+          "actor": "a",
+          "resource": "/reports",
+          "action": "read",
+          "time": 10
+        },
+        {
+          "actor": "a",
+          "resource": "/reports",
+          "action": "read",
+          "time": 0
+        }
+      ]
+    },
+    "expected": [
+      {
+        "decision": "deny",
+        "sources": []
+      },
+      {
+        "decision": "deny",
+        "sources": []
+      },
+      {
+        "decision": "allow",
+        "sources": [
+          "p"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v03",
+    "input": {
+      "policies": [
+        {
+          "id": "z",
+          "subject": "a",
+          "effect": "allow",
+          "resource": "/a",
+          "action": "read",
+          "start": 0,
+          "end": null,
+          "delegable": false
+        },
+        {
+          "id": "a",
+          "subject": "a",
+          "effect": "deny",
+          "resource": "/a",
+          "action": "read",
+          "start": 0,
+          "end": null,
+          "delegable": false
+        }
+      ],
+      "delegations": [],
+      "requests": [
+        {
+          "actor": "a",
+          "resource": "/a/b",
+          "action": "read",
+          "time": 5
+        }
+      ]
+    },
+    "expected": [
+      {
+        "decision": "deny",
+        "sources": [
+          "a",
+          "z"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v04",
+    "input": {
+      "policies": [
+        {
+          "id": "source",
+          "subject": "a",
+          "effect": "allow",
+          "resource": "/",
+          "action": "*",
+          "start": 0,
+          "end": null,
+          "delegable": true
+        },
+        {
+          "id": "local",
+          "subject": "c",
+          "effect": "deny",
+          "resource": "/reports",
+          "action": "*",
+          "start": 0,
+          "end": null,
+          "delegable": false
+        }
+      ],
+      "delegations": [
+        {
+          "from": "a",
+          "to": "b",
+          "resource": "/reports/x",
+          "action": "*",
+          "start": 0,
+          "end": null
+        },
+        {
+          "from": "b",
+          "to": "c",
+          "resource": "/reports/x",
+          "action": "*",
+          "start": 0,
+          "end": null
+        }
+      ],
+      "requests": [
+        {
+          "actor": "c",
+          "resource": "/reports/x",
+          "action": "read",
+          "time": 5
+        }
+      ]
+    },
+    "expected": [
+      {
+        "decision": "deny",
+        "sources": [
+          "local"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v05",
+    "input": {
+      "policies": [
+        {
+          "id": "grant",
+          "subject": "a",
+          "effect": "allow",
+          "resource": "/docs",
+          "action": "read",
+          "start": 0,
+          "end": null,
+          "delegable": true
+        },
+        {
+          "id": "stop",
+          "subject": "b",
+          "effect": "deny",
+          "resource": "/",
+          "action": "*",
+          "start": 0,
+          "end": null,
+          "delegable": false
+        }
+      ],
+      "delegations": [
+        {
+          "from": "a",
+          "to": "b",
+          "resource": "/",
+          "action": "*",
+          "start": 0,
+          "end": null
+        },
+        {
+          "from": "b",
+          "to": "c",
+          "resource": "/",
+          "action": "*",
+          "start": 0,
+          "end": null
+        }
+      ],
+      "requests": [
+        {
+          "actor": "c",
+          "resource": "/docs",
+          "action": "read",
+          "time": 5
+        }
+      ]
+    },
+    "expected": [
+      {
+        "decision": "deny",
+        "sources": []
+      }
+    ]
+  },
+  {
+    "id": "v06",
+    "input": {
+      "policies": [
+        {
+          "id": "p",
+          "subject": "a",
+          "effect": "allow",
+          "resource": "/x",
+          "action": "read",
+          "start": 0,
+          "end": null,
+          "delegable": true
+        }
+      ],
+      "delegations": [
+        {
+          "from": "a",
+          "to": "b",
+          "resource": "/x",
+          "action": "*",
+          "start": 0,
+          "end": null
+        },
+        {
+          "from": "b",
+          "to": "c",
+          "resource": "/x",
+          "action": "*",
+          "start": 0,
+          "end": 10
+        },
+        {
+          "from": "c",
+          "to": "d",
+          "resource": "/x",
+          "action": "*",
+          "start": 0,
+          "end": null
+        }
+      ],
+      "requests": [
+        {
+          "actor": "d",
+          "resource": "/x",
+          "action": "read",
+          "time": 9
+        },
+        {
+          "actor": "d",
+          "resource": "/x",
+          "action": "read",
+          "time": 10
+        }
+      ]
+    },
+    "expected": [
+      {
+        "decision": "allow",
+        "sources": [
+          "p"
+        ]
+      },
+      {
+        "decision": "deny",
+        "sources": []
+      }
+    ]
+  }
+]

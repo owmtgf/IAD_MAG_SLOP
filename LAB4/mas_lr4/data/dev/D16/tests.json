@@ -1,0 +1,156 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "stock": {
+        "a": 5
+      },
+      "item": "a",
+      "quantity": 3
+    },
+    "expected": {
+      "ok": true,
+      "stock": {
+        "a": 2
+      }
+    }
+  },
+  {
+    "id": "C02",
+    "input": {
+      "stock": {
+        "a": 5
+      },
+      "item": "a",
+      "quantity": 5
+    },
+    "expected": {
+      "ok": true,
+      "stock": {
+        "a": 0
+      }
+    }
+  },
+  {
+    "id": "C03",
+    "input": {
+      "stock": {
+        "a": 5
+      },
+      "item": "a",
+      "quantity": 6
+    },
+    "expected": {
+      "ok": false,
+      "stock": {
+        "a": 5
+      }
+    }
+  },
+  {
+    "id": "C04",
+    "input": {
+      "stock": {},
+      "item": "a",
+      "quantity": 1
+    },
+    "expected": {
+      "ok": false,
+      "stock": {}
+    }
+  },
+  {
+    "id": "C05",
+    "input": {
+      "stock": {},
+      "item": "a",
+      "quantity": 0
+    },
+    "expected": {
+      "ok": true,
+      "stock": {}
+    }
+  },
+  {
+    "id": "C06",
+    "input": {
+      "stock": {
+        "a": 0
+      },
+      "item": "a",
+      "quantity": 0
+    },
+    "expected": {
+      "ok": true,
+      "stock": {
+        "a": 0
+      }
+    }
+  },
+  {
+    "id": "C07",
+    "input": {
+      "stock": {
+        "a": 5,
+        "b": 2
+      },
+      "item": "a",
+      "quantity": 1
+    },
+    "expected": {
+      "ok": true,
+      "stock": {
+        "a": 4,
+        "b": 2
+      }
+    }
+  },
+  {
+    "id": "C08",
+    "input": {
+      "stock": {
+        "a": 5
+      },
+      "item": "a",
+      "quantity": 0
+    },
+    "expected": {
+      "ok": true,
+      "stock": {
+        "a": 5
+      }
+    }
+  },
+  {
+    "id": "C09",
+    "input": {
+      "stock": {
+        "a": 1
+      },
+      "item": "b",
+      "quantity": 1
+    },
+    "expected": {
+      "ok": false,
+      "stock": {
+        "a": 1
+      }
+    }
+  },
+  {
+    "id": "C10",
+    "input": {
+      "stock": {
+        "": 2
+      },
+      "item": "",
+      "quantity": 1
+    },
+    "expected": {
+      "ok": true,
+      "stock": {
+        "": 1
+      }
+    }
+  }
+]

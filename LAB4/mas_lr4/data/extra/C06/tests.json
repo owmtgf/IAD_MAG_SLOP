@@ -1,0 +1,422 @@
+[
+  {
+    "id": "V01_threshold_and_shipping",
+    "input": {
+      "lines": [
+        {
+          "id": "a",
+          "price": 100,
+          "qty": 2,
+          "eligible": true
+        }
+      ],
+      "coupon": {
+        "amount": 30,
+        "minimum": 200
+      },
+      "shipping": {
+        "fee": 25,
+        "free_at": 190
+      },
+      "returns": []
+    },
+    "expected": {
+      "gross": 200,
+      "discount": 30,
+      "shipping": 25,
+      "charged": 195,
+      "refunds": [],
+      "refunded": 0,
+      "balance": 195,
+      "lines": [
+        {
+          "id": "a",
+          "discount": 30,
+          "returned_qty": 0,
+          "refunded": 0,
+          "remaining": 170
+        }
+      ]
+    }
+  },
+  {
+    "id": "V02_largest_remainders",
+    "input": {
+      "lines": [
+        {
+          "id": "c",
+          "price": 100,
+          "qty": 1,
+          "eligible": true
+        },
+        {
+          "id": "b",
+          "price": 100,
+          "qty": 1,
+          "eligible": true
+        },
+        {
+          "id": "a",
+          "price": 100,
+          "qty": 1,
+          "eligible": true
+        }
+      ],
+      "coupon": {
+        "amount": 2,
+        "minimum": 0
+      },
+      "shipping": {
+        "fee": 0,
+        "free_at": 0
+      },
+      "returns": []
+    },
+    "expected": {
+      "gross": 300,
+      "discount": 2,
+      "shipping": 0,
+      "charged": 298,
+      "refunds": [],
+      "refunded": 0,
+      "balance": 298,
+      "lines": [
+        {
+          "id": "a",
+          "discount": 1,
+          "returned_qty": 0,
+          "refunded": 0,
+          "remaining": 99
+        },
+        {
+          "id": "b",
+          "discount": 1,
+          "returned_qty": 0,
+          "refunded": 0,
+          "remaining": 99
+        },
+        {
+          "id": "c",
+          "discount": 0,
+          "returned_qty": 0,
+          "refunded": 0,
+          "remaining": 100
+        }
+      ]
+    }
+  },
+  {
+    "id": "V03_eligible_cap",
+    "input": {
+      "lines": [
+        {
+          "id": "a",
+          "price": 10,
+          "qty": 1,
+          "eligible": true
+        },
+        {
+          "id": "b",
+          "price": 100,
+          "qty": 1,
+          "eligible": false
+        }
+      ],
+      "coupon": {
+        "amount": 90,
+        "minimum": 0
+      },
+      "shipping": {
+        "fee": 0,
+        "free_at": 0
+      },
+      "returns": []
+    },
+    "expected": {
+      "gross": 110,
+      "discount": 10,
+      "shipping": 0,
+      "charged": 100,
+      "refunds": [],
+      "refunded": 0,
+      "balance": 100,
+      "lines": [
+        {
+          "id": "a",
+          "discount": 10,
+          "returned_qty": 0,
+          "refunded": 0,
+          "remaining": 0
+        },
+        {
+          "id": "b",
+          "discount": 0,
+          "returned_qty": 0,
+          "refunded": 0,
+          "remaining": 100
+        }
+      ]
+    }
+  },
+  {
+    "id": "V04_unit_refunds",
+    "input": {
+      "lines": [
+        {
+          "id": "a",
+          "price": 10,
+          "qty": 3,
+          "eligible": true
+        }
+      ],
+      "coupon": {
+        "amount": 2,
+        "minimum": 0
+      },
+      "shipping": {
+        "fee": 0,
+        "free_at": 0
+      },
+      "returns": [
+        {
+          "id": "a",
+          "qty": 1
+        },
+        {
+          "id": "a",
+          "qty": 1
+        },
+        {
+          "id": "a",
+          "qty": 1
+        }
+      ]
+    },
+    "expected": {
+      "gross": 30,
+      "discount": 2,
+      "shipping": 0,
+      "charged": 28,
+      "refunds": [
+        {
+          "accepted": true,
+          "amount": 9
+        },
+        {
+          "accepted": true,
+          "amount": 9
+        },
+        {
+          "accepted": true,
+          "amount": 10
+        }
+      ],
+      "refunded": 28,
+      "balance": 0,
+      "lines": [
+        {
+          "id": "a",
+          "discount": 2,
+          "returned_qty": 3,
+          "refunded": 28,
+          "remaining": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "V05_atomic_over_return",
+    "input": {
+      "lines": [
+        {
+          "id": "a",
+          "price": 10,
+          "qty": 2,
+          "eligible": true
+        }
+      ],
+      "coupon": {
+        "amount": 1,
+        "minimum": 0
+      },
+      "shipping": {
+        "fee": 0,
+        "free_at": 0
+      },
+      "returns": [
+        {
+          "id": "a",
+          "qty": 3
+        },
+        {
+          "id": "a",
+          "qty": 1
+        },
+        {
+          "id": "a",
+          "qty": 1
+        }
+      ]
+    },
+    "expected": {
+      "gross": 20,
+      "discount": 1,
+      "shipping": 0,
+      "charged": 19,
+      "refunds": [
+        {
+          "accepted": false,
+          "amount": 0
+        },
+        {
+          "accepted": true,
+          "amount": 9
+        },
+        {
+          "accepted": true,
+          "amount": 10
+        }
+      ],
+      "refunded": 19,
+      "balance": 0,
+      "lines": [
+        {
+          "id": "a",
+          "discount": 1,
+          "returned_qty": 2,
+          "refunded": 19,
+          "remaining": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "V06_combined",
+    "input": {
+      "lines": [
+        {
+          "id": "z",
+          "price": 15,
+          "qty": 3,
+          "eligible": false
+        },
+        {
+          "id": "b",
+          "price": 7,
+          "qty": 3,
+          "eligible": true
+        },
+        {
+          "id": "a",
+          "price": 11,
+          "qty": 2,
+          "eligible": true
+        },
+        {
+          "id": "n",
+          "price": 0,
+          "qty": 2,
+          "eligible": true
+        }
+      ],
+      "coupon": {
+        "amount": 9,
+        "minimum": 88
+      },
+      "shipping": {
+        "fee": 20,
+        "free_at": 85
+      },
+      "returns": [
+        {
+          "id": "b",
+          "qty": 1
+        },
+        {
+          "id": "a",
+          "qty": 3
+        },
+        {
+          "id": "a",
+          "qty": 1
+        },
+        {
+          "id": "b",
+          "qty": 2
+        },
+        {
+          "id": "n",
+          "qty": 2
+        },
+        {
+          "id": "a",
+          "qty": 1
+        }
+      ]
+    },
+    "expected": {
+      "gross": 88,
+      "discount": 9,
+      "shipping": 20,
+      "charged": 99,
+      "refunds": [
+        {
+          "accepted": true,
+          "amount": 5
+        },
+        {
+          "accepted": false,
+          "amount": 0
+        },
+        {
+          "accepted": true,
+          "amount": 8
+        },
+        {
+          "accepted": true,
+          "amount": 12
+        },
+        {
+          "accepted": true,
+          "amount": 0
+        },
+        {
+          "accepted": true,
+          "amount": 9
+        }
+      ],
+      "refunded": 34,
+      "balance": 65,
+      "lines": [
+        {
+          "id": "a",
+          "discount": 5,
+          "returned_qty": 2,
+          "refunded": 17,
+          "remaining": 0
+        },
+        {
+          "id": "b",
+          "discount": 4,
+          "returned_qty": 3,
+          "refunded": 17,
+          "remaining": 0
+        },
+        {
+          "id": "n",
+          "discount": 0,
+          "returned_qty": 2,
+          "refunded": 0,
+          "remaining": 0
+        },
+        {
+          "id": "z",
+          "discount": 0,
+          "returned_qty": 0,
+          "refunded": 0,
+          "remaining": 45
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,205 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "rows": [],
+      "minimum": 0,
+      "offset": 0,
+      "limit": 2
+    },
+    "expected": []
+  },
+  {
+    "id": "C02",
+    "input": {
+      "rows": [
+        [
+          "a",
+          1
+        ],
+        [
+          "b",
+          3
+        ],
+        [
+          "c",
+          2
+        ]
+      ],
+      "minimum": 2,
+      "offset": 0,
+      "limit": 2
+    },
+    "expected": [
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "C03",
+    "input": {
+      "rows": [
+        [
+          "a",
+          1
+        ],
+        [
+          "b",
+          3
+        ],
+        [
+          "c",
+          2
+        ]
+      ],
+      "minimum": 0,
+      "offset": 1,
+      "limit": 1
+    },
+    "expected": [
+      "c"
+    ]
+  },
+  {
+    "id": "C04",
+    "input": {
+      "rows": [
+        [
+          "a",
+          2
+        ]
+      ],
+      "minimum": 2,
+      "offset": 0,
+      "limit": 1
+    },
+    "expected": [
+      "a"
+    ]
+  },
+  {
+    "id": "C05",
+    "input": {
+      "rows": [
+        [
+          "a",
+          2
+        ]
+      ],
+      "minimum": 0,
+      "offset": 0,
+      "limit": 0
+    },
+    "expected": []
+  },
+  {
+    "id": "C06",
+    "input": {
+      "rows": [
+        [
+          "a",
+          2
+        ]
+      ],
+      "minimum": 0,
+      "offset": 2,
+      "limit": 2
+    },
+    "expected": []
+  },
+  {
+    "id": "C07",
+    "input": {
+      "rows": [
+        [
+          "b",
+          2
+        ],
+        [
+          "a",
+          2
+        ]
+      ],
+      "minimum": 0,
+      "offset": 0,
+      "limit": 2
+    },
+    "expected": [
+      "b",
+      "a"
+    ]
+  },
+  {
+    "id": "C08",
+    "input": {
+      "rows": [
+        [
+          "a",
+          -2
+        ],
+        [
+          "b",
+          -1
+        ]
+      ],
+      "minimum": -2,
+      "offset": 0,
+      "limit": 10
+    },
+    "expected": [
+      "b",
+      "a"
+    ]
+  },
+  {
+    "id": "C09",
+    "input": {
+      "rows": [
+        [
+          "a",
+          1
+        ],
+        [
+          "b",
+          3
+        ],
+        [
+          "c",
+          2
+        ]
+      ],
+      "minimum": 2,
+      "offset": 1,
+      "limit": 2
+    },
+    "expected": [
+      "c"
+    ]
+  },
+  {
+    "id": "C10",
+    "input": {
+      "rows": [
+        [
+          "a",
+          3
+        ],
+        [
+          "b",
+          2
+        ],
+        [
+          "c",
+          1
+        ]
+      ],
+      "minimum": 0,
+      "offset": 1,
+      "limit": 5
+    },
+    "expected": [
+      "b",
+      "c"
+    ]
+  }
+]

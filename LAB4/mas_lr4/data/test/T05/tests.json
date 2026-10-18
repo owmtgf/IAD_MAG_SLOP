@@ -1,0 +1,132 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "amount": 1000,
+      "points": 100,
+      "value": 10,
+      "cap_percent": 30
+    },
+    "expected": {
+      "used": 30,
+      "due": 700
+    }
+  },
+  {
+    "id": "C02",
+    "input": {
+      "amount": 1000,
+      "points": 2,
+      "value": 10,
+      "cap_percent": 30
+    },
+    "expected": {
+      "used": 2,
+      "due": 980
+    }
+  },
+  {
+    "id": "C03",
+    "input": {
+      "amount": 99,
+      "points": 100,
+      "value": 10,
+      "cap_percent": 50
+    },
+    "expected": {
+      "used": 4,
+      "due": 59
+    }
+  },
+  {
+    "id": "C04",
+    "input": {
+      "amount": 0,
+      "points": 100,
+      "value": 1,
+      "cap_percent": 100
+    },
+    "expected": {
+      "used": 0,
+      "due": 0
+    }
+  },
+  {
+    "id": "C05",
+    "input": {
+      "amount": 100,
+      "points": 0,
+      "value": 5,
+      "cap_percent": 100
+    },
+    "expected": {
+      "used": 0,
+      "due": 100
+    }
+  },
+  {
+    "id": "C06",
+    "input": {
+      "amount": 100,
+      "points": 10,
+      "value": 7,
+      "cap_percent": 0
+    },
+    "expected": {
+      "used": 0,
+      "due": 100
+    }
+  },
+  {
+    "id": "C07",
+    "input": {
+      "amount": 100,
+      "points": 100,
+      "value": 7,
+      "cap_percent": 100
+    },
+    "expected": {
+      "used": 14,
+      "due": 2
+    }
+  },
+  {
+    "id": "C08",
+    "input": {
+      "amount": 5,
+      "points": 1,
+      "value": 10,
+      "cap_percent": 100
+    },
+    "expected": {
+      "used": 0,
+      "due": 5
+    }
+  },
+  {
+    "id": "C09",
+    "input": {
+      "amount": 200,
+      "points": 20,
+      "value": 5,
+      "cap_percent": 25
+    },
+    "expected": {
+      "used": 10,
+      "due": 150
+    }
+  },
+  {
+    "id": "C10",
+    "input": {
+      "amount": 1,
+      "points": 1,
+      "value": 1,
+      "cap_percent": 100
+    },
+    "expected": {
+      "used": 1,
+      "due": 0
+    }
+  }
+]

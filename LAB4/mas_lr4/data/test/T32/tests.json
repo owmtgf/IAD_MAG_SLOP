@@ -1,0 +1,167 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "stock": {
+        "a": 5,
+        "b": 2
+      },
+      "source": "a",
+      "target": "b",
+      "quantity": 3
+    },
+    "expected": {
+      "ok": true,
+      "stock": {
+        "a": 2,
+        "b": 5
+      }
+    }
+  },
+  {
+    "id": "C02",
+    "input": {
+      "stock": {
+        "a": 5
+      },
+      "source": "a",
+      "target": "b",
+      "quantity": 5
+    },
+    "expected": {
+      "ok": true,
+      "stock": {
+        "a": 0,
+        "b": 5
+      }
+    }
+  },
+  {
+    "id": "C03",
+    "input": {
+      "stock": {
+        "a": 5
+      },
+      "source": "a",
+      "target": "b",
+      "quantity": 6
+    },
+    "expected": {
+      "ok": false,
+      "stock": {
+        "a": 5
+      }
+    }
+  },
+  {
+    "id": "C04",
+    "input": {
+      "stock": {},
+      "source": "a",
+      "target": "b",
+      "quantity": 0
+    },
+    "expected": {
+      "ok": true,
+      "stock": {}
+    }
+  },
+  {
+    "id": "C05",
+    "input": {
+      "stock": {},
+      "source": "a",
+      "target": "a",
+      "quantity": 5
+    },
+    "expected": {
+      "ok": true,
+      "stock": {}
+    }
+  },
+  {
+    "id": "C06",
+    "input": {
+      "stock": {
+        "a": 5
+      },
+      "source": "a",
+      "target": "a",
+      "quantity": 7
+    },
+    "expected": {
+      "ok": true,
+      "stock": {
+        "a": 5
+      }
+    }
+  },
+  {
+    "id": "C07",
+    "input": {
+      "stock": {},
+      "source": "a",
+      "target": "b",
+      "quantity": 1
+    },
+    "expected": {
+      "ok": false,
+      "stock": {}
+    }
+  },
+  {
+    "id": "C08",
+    "input": {
+      "stock": {
+        "a": 1,
+        "b": 0
+      },
+      "source": "a",
+      "target": "b",
+      "quantity": 1
+    },
+    "expected": {
+      "ok": true,
+      "stock": {
+        "a": 0,
+        "b": 1
+      }
+    }
+  },
+  {
+    "id": "C09",
+    "input": {
+      "stock": {
+        "a": 5,
+        "b": 10
+      },
+      "source": "a",
+      "target": "b",
+      "quantity": 2
+    },
+    "expected": {
+      "ok": true,
+      "stock": {
+        "a": 3,
+        "b": 12
+      }
+    }
+  },
+  {
+    "id": "C10",
+    "input": {
+      "stock": {
+        "a": 0
+      },
+      "source": "a",
+      "target": "b",
+      "quantity": 0
+    },
+    "expected": {
+      "ok": true,
+      "stock": {
+        "a": 0
+      }
+    }
+  }
+]

@@ -1,0 +1,168 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "deps": {
+        "a": []
+      },
+      "target": "a"
+    },
+    "expected": []
+  },
+  {
+    "id": "C02",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ]
+      },
+      "target": "b"
+    },
+    "expected": [
+      "a"
+    ]
+  },
+  {
+    "id": "C03",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ],
+        "c": [
+          "b"
+        ]
+      },
+      "target": "c"
+    },
+    "expected": [
+      "a",
+      "b"
+    ]
+  },
+  {
+    "id": "C04",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [],
+        "c": [
+          "b",
+          "a"
+        ]
+      },
+      "target": "c"
+    },
+    "expected": [
+      "a",
+      "b"
+    ]
+  },
+  {
+    "id": "C05",
+    "input": {
+      "deps": {
+        "a": [
+          "b"
+        ],
+        "b": [
+          "a"
+        ]
+      },
+      "target": "a"
+    },
+    "expected": [
+      "b"
+    ]
+  },
+  {
+    "id": "C06",
+    "input": {
+      "deps": {
+        "a": [
+          "a"
+        ]
+      },
+      "target": "a"
+    },
+    "expected": []
+  },
+  {
+    "id": "C07",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a",
+          "a"
+        ]
+      },
+      "target": "b"
+    },
+    "expected": [
+      "a"
+    ]
+  },
+  {
+    "id": "C08",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ],
+        "c": [
+          "a"
+        ],
+        "d": [
+          "b",
+          "c"
+        ]
+      },
+      "target": "d"
+    },
+    "expected": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "C09",
+    "input": {
+      "deps": {
+        "a": [],
+        "x": [],
+        "b": [
+          "a"
+        ]
+      },
+      "target": "b"
+    },
+    "expected": [
+      "a"
+    ]
+  },
+  {
+    "id": "C10",
+    "input": {
+      "deps": {
+        "z": [],
+        "a": [
+          "z"
+        ],
+        "b": [
+          "a"
+        ]
+      },
+      "target": "b"
+    },
+    "expected": [
+      "a",
+      "z"
+    ]
+  }
+]

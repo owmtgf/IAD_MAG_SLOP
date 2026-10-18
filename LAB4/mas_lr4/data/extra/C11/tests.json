@@ -1,0 +1,519 @@
+[
+  {
+    "id": "v01",
+    "input": {
+      "rows": [
+        {
+          "id": "a",
+          "parent": null,
+          "slot": "A",
+          "amount": 6
+        },
+        {
+          "id": "b",
+          "parent": "a",
+          "slot": "B",
+          "amount": 4
+        }
+      ],
+      "total": 10,
+      "commands": [
+        {
+          "op": "begin"
+        },
+        {
+          "op": "savepoint",
+          "name": "s"
+        },
+        {
+          "op": "put",
+          "row": {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 8
+          }
+        },
+        {
+          "op": "put",
+          "row": {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 2
+          }
+        },
+        {
+          "op": "rollback_to",
+          "name": "s"
+        },
+        {
+          "op": "release",
+          "name": "s"
+        },
+        {
+          "op": "commit"
+        }
+      ]
+    },
+    "expected": {
+      "rows": [
+        {
+          "id": "a",
+          "parent": null,
+          "slot": "A",
+          "amount": 6
+        },
+        {
+          "id": "b",
+          "parent": "a",
+          "slot": "B",
+          "amount": 4
+        }
+      ],
+      "pending": null,
+      "savepoints": [],
+      "log": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
+      ]
+    }
+  },
+  {
+    "id": "v02",
+    "input": {
+      "rows": [
+        {
+          "id": "a",
+          "parent": null,
+          "slot": "A",
+          "amount": 6
+        },
+        {
+          "id": "b",
+          "parent": "a",
+          "slot": "B",
+          "amount": 4
+        }
+      ],
+      "total": 10,
+      "commands": [
+        {
+          "op": "begin"
+        },
+        {
+          "op": "put",
+          "row": {
+            "id": "a",
+            "parent": "ghost",
+            "slot": "A",
+            "amount": 6
+          }
+        },
+        {
+          "op": "savepoint",
+          "name": "bad"
+        },
+        {
+          "op": "commit"
+        },
+        {
+          "op": "put",
+          "row": {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 6
+          }
+        },
+        {
+          "op": "commit"
+        }
+      ]
+    },
+    "expected": {
+      "rows": [
+        {
+          "id": "a",
+          "parent": null,
+          "slot": "A",
+          "amount": 6
+        },
+        {
+          "id": "b",
+          "parent": "a",
+          "slot": "B",
+          "amount": 4
+        }
+      ],
+      "pending": null,
+      "savepoints": [],
+      "log": [
+        "ok",
+        "ok",
+        "ok",
+        "constraint",
+        "ok",
+        "ok"
+      ]
+    }
+  },
+  {
+    "id": "v03",
+    "input": {
+      "rows": [
+        {
+          "id": "a",
+          "parent": null,
+          "slot": "A",
+          "amount": 6
+        },
+        {
+          "id": "b",
+          "parent": "a",
+          "slot": "B",
+          "amount": 4
+        }
+      ],
+      "total": 10,
+      "commands": [
+        {
+          "op": "begin"
+        },
+        {
+          "op": "savepoint",
+          "name": "s"
+        },
+        {
+          "op": "put",
+          "row": {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 7
+          }
+        },
+        {
+          "op": "savepoint",
+          "name": "s"
+        },
+        {
+          "op": "put",
+          "row": {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 3
+          }
+        },
+        {
+          "op": "rollback_to",
+          "name": "s"
+        },
+        {
+          "op": "release",
+          "name": "s"
+        },
+        {
+          "op": "rollback_to",
+          "name": "s"
+        },
+        {
+          "op": "commit"
+        }
+      ]
+    },
+    "expected": {
+      "rows": [
+        {
+          "id": "a",
+          "parent": null,
+          "slot": "A",
+          "amount": 6
+        },
+        {
+          "id": "b",
+          "parent": "a",
+          "slot": "B",
+          "amount": 4
+        }
+      ],
+      "pending": null,
+      "savepoints": [],
+      "log": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
+      ]
+    }
+  },
+  {
+    "id": "v04",
+    "input": {
+      "rows": [
+        {
+          "id": "a",
+          "parent": null,
+          "slot": "A",
+          "amount": 6
+        },
+        {
+          "id": "b",
+          "parent": "a",
+          "slot": "B",
+          "amount": 4
+        }
+      ],
+      "total": 10,
+      "commands": [
+        {
+          "op": "begin"
+        },
+        {
+          "op": "put",
+          "row": {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": -2
+          }
+        },
+        {
+          "op": "put",
+          "row": {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 12
+          }
+        },
+        {
+          "op": "commit"
+        },
+        {
+          "op": "put",
+          "row": {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 2
+          }
+        },
+        {
+          "op": "put",
+          "row": {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 8
+          }
+        },
+        {
+          "op": "commit"
+        }
+      ]
+    },
+    "expected": {
+      "rows": [
+        {
+          "id": "a",
+          "parent": null,
+          "slot": "A",
+          "amount": 2
+        },
+        {
+          "id": "b",
+          "parent": "a",
+          "slot": "B",
+          "amount": 8
+        }
+      ],
+      "pending": null,
+      "savepoints": [],
+      "log": [
+        "ok",
+        "ok",
+        "ok",
+        "constraint",
+        "ok",
+        "ok",
+        "ok"
+      ]
+    }
+  },
+  {
+    "id": "v05",
+    "input": {
+      "rows": [
+        {
+          "id": "a",
+          "parent": null,
+          "slot": "A",
+          "amount": 6
+        },
+        {
+          "id": "b",
+          "parent": "a",
+          "slot": "B",
+          "amount": 4
+        }
+      ],
+      "total": 10,
+      "commands": [
+        {
+          "op": "begin"
+        },
+        {
+          "op": "put",
+          "row": {
+            "id": "a",
+            "parent": "b",
+            "slot": "A",
+            "amount": 6
+          }
+        },
+        {
+          "op": "commit"
+        },
+        {
+          "op": "abort"
+        }
+      ]
+    },
+    "expected": {
+      "rows": [
+        {
+          "id": "a",
+          "parent": null,
+          "slot": "A",
+          "amount": 6
+        },
+        {
+          "id": "b",
+          "parent": "a",
+          "slot": "B",
+          "amount": 4
+        }
+      ],
+      "pending": null,
+      "savepoints": [],
+      "log": [
+        "ok",
+        "ok",
+        "constraint",
+        "ok"
+      ]
+    }
+  },
+  {
+    "id": "v06",
+    "input": {
+      "rows": [
+        {
+          "id": "a",
+          "parent": null,
+          "slot": "A",
+          "amount": 6
+        },
+        {
+          "id": "b",
+          "parent": "a",
+          "slot": "B",
+          "amount": 4
+        }
+      ],
+      "total": 10,
+      "commands": [
+        {
+          "op": "begin"
+        },
+        {
+          "op": "savepoint",
+          "name": "a"
+        },
+        {
+          "op": "put",
+          "row": {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 7
+          }
+        },
+        {
+          "op": "savepoint",
+          "name": "b"
+        },
+        {
+          "op": "put",
+          "row": {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 3
+          }
+        },
+        {
+          "op": "savepoint",
+          "name": "c"
+        },
+        {
+          "op": "release",
+          "name": "b"
+        },
+        {
+          "op": "rollback_to",
+          "name": "c"
+        },
+        {
+          "op": "rollback_to",
+          "name": "a"
+        },
+        {
+          "op": "commit"
+        }
+      ]
+    },
+    "expected": {
+      "rows": [
+        {
+          "id": "a",
+          "parent": null,
+          "slot": "A",
+          "amount": 6
+        },
+        {
+          "id": "b",
+          "parent": "a",
+          "slot": "B",
+          "amount": 4
+        }
+      ],
+      "pending": null,
+      "savepoints": [],
+      "log": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "rejected",
+        "ok",
+        "ok"
+      ]
+    }
+  }
+]

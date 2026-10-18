@@ -1,0 +1,196 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "skill": "p",
+      "budget": 10,
+      "resources": []
+    },
+    "expected": null
+  },
+  {
+    "id": "C02",
+    "input": {
+      "skill": "p",
+      "budget": 10,
+      "resources": [
+        {
+          "id": "a",
+          "skills": [
+            "p"
+          ],
+          "cost": 10,
+          "available": true
+        }
+      ]
+    },
+    "expected": "a"
+  },
+  {
+    "id": "C03",
+    "input": {
+      "skill": "p",
+      "budget": 9,
+      "resources": [
+        {
+          "id": "a",
+          "skills": [
+            "p"
+          ],
+          "cost": 10,
+          "available": true
+        }
+      ]
+    },
+    "expected": null
+  },
+  {
+    "id": "C04",
+    "input": {
+      "skill": "p",
+      "budget": 10,
+      "resources": [
+        {
+          "id": "a",
+          "skills": [
+            "p"
+          ],
+          "cost": 1,
+          "available": false
+        }
+      ]
+    },
+    "expected": null
+  },
+  {
+    "id": "C05",
+    "input": {
+      "skill": "p",
+      "budget": 10,
+      "resources": [
+        {
+          "id": "a",
+          "skills": [
+            "q"
+          ],
+          "cost": 1,
+          "available": true
+        }
+      ]
+    },
+    "expected": null
+  },
+  {
+    "id": "C06",
+    "input": {
+      "skill": "p",
+      "budget": 10,
+      "resources": [
+        {
+          "id": "a",
+          "skills": [
+            "p"
+          ],
+          "cost": 9,
+          "available": true
+        },
+        {
+          "id": "b",
+          "skills": [
+            "p"
+          ],
+          "cost": 1,
+          "available": true
+        }
+      ]
+    },
+    "expected": "a"
+  },
+  {
+    "id": "C07",
+    "input": {
+      "skill": "p",
+      "budget": 0,
+      "resources": [
+        {
+          "id": "a",
+          "skills": [
+            "q",
+            "p"
+          ],
+          "cost": 0,
+          "available": true
+        }
+      ]
+    },
+    "expected": "a"
+  },
+  {
+    "id": "C08",
+    "input": {
+      "skill": "p",
+      "budget": 5,
+      "resources": [
+        {
+          "id": "a",
+          "skills": [],
+          "cost": 0,
+          "available": true
+        },
+        {
+          "id": "b",
+          "skills": [
+            "p"
+          ],
+          "cost": 4,
+          "available": true
+        }
+      ]
+    },
+    "expected": "b"
+  },
+  {
+    "id": "C09",
+    "input": {
+      "skill": "P",
+      "budget": 5,
+      "resources": [
+        {
+          "id": "a",
+          "skills": [
+            "p"
+          ],
+          "cost": 1,
+          "available": true
+        }
+      ]
+    },
+    "expected": null
+  },
+  {
+    "id": "C10",
+    "input": {
+      "skill": "p",
+      "budget": 5,
+      "resources": [
+        {
+          "id": "a",
+          "skills": [
+            "p"
+          ],
+          "cost": 6,
+          "available": true
+        },
+        {
+          "id": "b",
+          "skills": [
+            "p"
+          ],
+          "cost": 5,
+          "available": true
+        }
+      ]
+    },
+    "expected": "b"
+  }
+]

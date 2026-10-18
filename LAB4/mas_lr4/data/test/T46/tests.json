@@ -1,0 +1,177 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "deps": {},
+      "changed": []
+    },
+    "expected": []
+  },
+  {
+    "id": "C02",
+    "input": {
+      "deps": {
+        "a": []
+      },
+      "changed": [
+        "a"
+      ]
+    },
+    "expected": [
+      "a"
+    ]
+  },
+  {
+    "id": "C03",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ]
+      },
+      "changed": [
+        "a"
+      ]
+    },
+    "expected": [
+      "a",
+      "b"
+    ]
+  },
+  {
+    "id": "C04",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ]
+      },
+      "changed": [
+        "b"
+      ]
+    },
+    "expected": [
+      "b"
+    ]
+  },
+  {
+    "id": "C05",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [],
+        "c": [
+          "a",
+          "b"
+        ]
+      },
+      "changed": [
+        "a"
+      ]
+    },
+    "expected": [
+      "a",
+      "c"
+    ]
+  },
+  {
+    "id": "C06",
+    "input": {
+      "deps": {
+        "c": [
+          "b"
+        ],
+        "b": [
+          "a"
+        ],
+        "a": []
+      },
+      "changed": [
+        "a"
+      ]
+    },
+    "expected": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "C07",
+    "input": {
+      "deps": {
+        "z": [],
+        "a": []
+      },
+      "changed": [
+        "z",
+        "a"
+      ]
+    },
+    "expected": [
+      "a",
+      "z"
+    ]
+  },
+  {
+    "id": "C08",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ]
+      },
+      "changed": []
+    },
+    "expected": []
+  },
+  {
+    "id": "C09",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ],
+        "c": [
+          "a"
+        ],
+        "d": [
+          "b",
+          "c"
+        ]
+      },
+      "changed": [
+        "b"
+      ]
+    },
+    "expected": [
+      "b",
+      "d"
+    ]
+  },
+  {
+    "id": "C10",
+    "input": {
+      "deps": {
+        "z": [],
+        "a": [
+          "z"
+        ],
+        "b": []
+      },
+      "changed": [
+        "z",
+        "b"
+      ]
+    },
+    "expected": [
+      "b",
+      "z",
+      "a"
+    ]
+  }
+]

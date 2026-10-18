@@ -1,0 +1,163 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "rows": [],
+      "minimum": 0
+    },
+    "expected": []
+  },
+  {
+    "id": "C02",
+    "input": {
+      "rows": [
+        {
+          "id": "a",
+          "active": true,
+          "score": 5
+        }
+      ],
+      "minimum": 5
+    },
+    "expected": [
+      "a"
+    ]
+  },
+  {
+    "id": "C03",
+    "input": {
+      "rows": [
+        {
+          "id": "a",
+          "active": false,
+          "score": 9
+        }
+      ],
+      "minimum": 0
+    },
+    "expected": []
+  },
+  {
+    "id": "C04",
+    "input": {
+      "rows": [
+        {
+          "id": "a",
+          "active": true,
+          "score": 4
+        }
+      ],
+      "minimum": 5
+    },
+    "expected": []
+  },
+  {
+    "id": "C05",
+    "input": {
+      "rows": [
+        {
+          "id": "b",
+          "active": true,
+          "score": 5
+        },
+        {
+          "id": "a",
+          "active": true,
+          "score": 6
+        }
+      ],
+      "minimum": 5
+    },
+    "expected": [
+      "b",
+      "a"
+    ]
+  },
+  {
+    "id": "C06",
+    "input": {
+      "rows": [
+        {
+          "id": "a",
+          "active": true,
+          "score": 5
+        },
+        {
+          "id": "a",
+          "active": true,
+          "score": 6
+        }
+      ],
+      "minimum": 0
+    },
+    "expected": [
+      "a",
+      "a"
+    ]
+  },
+  {
+    "id": "C07",
+    "input": {
+      "rows": [
+        {
+          "id": "z",
+          "active": true,
+          "score": -2
+        }
+      ],
+      "minimum": -2
+    },
+    "expected": [
+      "z"
+    ]
+  },
+  {
+    "id": "C08",
+    "input": {
+      "rows": [
+        {
+          "id": "z",
+          "active": true,
+          "score": -3
+        }
+      ],
+      "minimum": -2
+    },
+    "expected": []
+  },
+  {
+    "id": "C09",
+    "input": {
+      "rows": [
+        {
+          "id": "x",
+          "active": false,
+          "score": 0
+        },
+        {
+          "id": "y",
+          "active": true,
+          "score": 0
+        }
+      ],
+      "minimum": 0
+    },
+    "expected": [
+      "y"
+    ]
+  },
+  {
+    "id": "C10",
+    "input": {
+      "rows": [
+        {
+          "id": "x",
+          "active": true,
+          "score": 100
+        }
+      ],
+      "minimum": 101
+    },
+    "expected": []
+  }
+]

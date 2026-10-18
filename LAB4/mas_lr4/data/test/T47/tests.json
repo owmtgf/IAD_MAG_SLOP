@@ -1,0 +1,242 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "deps": {},
+      "costs": {},
+      "priority": {},
+      "budget": 1
+    },
+    "expected": {
+      "order": [],
+      "remaining": 1
+    }
+  },
+  {
+    "id": "C02",
+    "input": {
+      "deps": {
+        "a": []
+      },
+      "costs": {
+        "a": 2
+      },
+      "priority": {
+        "a": 1
+      },
+      "budget": 2
+    },
+    "expected": {
+      "order": [
+        "a"
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C03",
+    "input": {
+      "deps": {
+        "a": []
+      },
+      "costs": {
+        "a": 3
+      },
+      "priority": {
+        "a": 1
+      },
+      "budget": 2
+    },
+    "expected": {
+      "order": [],
+      "remaining": 2
+    }
+  },
+  {
+    "id": "C04",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ]
+      },
+      "costs": {
+        "a": 1,
+        "b": 1
+      },
+      "priority": {
+        "a": 0,
+        "b": 9
+      },
+      "budget": 2
+    },
+    "expected": {
+      "order": [
+        "a",
+        "b"
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C05",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": []
+      },
+      "costs": {
+        "a": 1,
+        "b": 1
+      },
+      "priority": {
+        "a": 0,
+        "b": 9
+      },
+      "budget": 1
+    },
+    "expected": {
+      "order": [
+        "b"
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C06",
+    "input": {
+      "deps": {
+        "b": [],
+        "a": []
+      },
+      "costs": {
+        "a": 1,
+        "b": 1
+      },
+      "priority": {
+        "a": 1,
+        "b": 1
+      },
+      "budget": 1
+    },
+    "expected": {
+      "order": [
+        "a"
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C07",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": []
+      },
+      "costs": {
+        "a": 9,
+        "b": 1
+      },
+      "priority": {
+        "a": 9,
+        "b": 1
+      },
+      "budget": 1
+    },
+    "expected": {
+      "order": [
+        "b"
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C08",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ]
+      },
+      "costs": {
+        "a": 0,
+        "b": 0
+      },
+      "priority": {
+        "a": 0,
+        "b": 0
+      },
+      "budget": 0
+    },
+    "expected": {
+      "order": [
+        "a",
+        "b"
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C09",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ],
+        "c": []
+      },
+      "costs": {
+        "a": 5,
+        "b": 0,
+        "c": 1
+      },
+      "priority": {
+        "a": 9,
+        "b": 8,
+        "c": 1
+      },
+      "budget": 1
+    },
+    "expected": {
+      "order": [
+        "c"
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C10",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [],
+        "c": [
+          "a",
+          "b"
+        ]
+      },
+      "costs": {
+        "a": 1,
+        "b": 1,
+        "c": 1
+      },
+      "priority": {
+        "a": 1,
+        "b": 2,
+        "c": 3
+      },
+      "budget": 3
+    },
+    "expected": {
+      "order": [
+        "b",
+        "a",
+        "c"
+      ],
+      "remaining": 0
+    }
+  }
+]

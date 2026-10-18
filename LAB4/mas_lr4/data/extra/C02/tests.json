@@ -1,0 +1,149 @@
+[
+  {
+    "id": "V01",
+    "input": {
+      "capacity": 5,
+      "bookings": []
+    },
+    "expected": {
+      "accepted": [],
+      "rejected": [],
+      "peak": 0
+    }
+  },
+  {
+    "id": "V02",
+    "input": {
+      "capacity": 2,
+      "bookings": [
+        {
+          "id": "a",
+          "start": 0,
+          "end": 3,
+          "units": 2
+        },
+        {
+          "id": "b",
+          "start": 3,
+          "end": 7,
+          "units": 2
+        }
+      ]
+    },
+    "expected": {
+      "accepted": [
+        "a",
+        "b"
+      ],
+      "rejected": [],
+      "peak": 2
+    }
+  },
+  {
+    "id": "V03",
+    "input": {
+      "capacity": 3,
+      "bookings": [
+        {
+          "id": "a",
+          "start": 0,
+          "end": 4,
+          "units": 2
+        },
+        {
+          "id": "b",
+          "start": 2,
+          "end": 5,
+          "units": 2
+        },
+        {
+          "id": "c",
+          "start": 4,
+          "end": 6,
+          "units": 1
+        }
+      ]
+    },
+    "expected": {
+      "accepted": [
+        "a",
+        "c"
+      ],
+      "rejected": [
+        "b"
+      ],
+      "peak": 2
+    }
+  },
+  {
+    "id": "V04",
+    "input": {
+      "capacity": 3,
+      "bookings": [
+        {
+          "id": "a",
+          "start": 0,
+          "end": 2,
+          "units": 1
+        },
+        {
+          "id": "b",
+          "start": 4,
+          "end": 6,
+          "units": 1
+        },
+        {
+          "id": "c",
+          "start": 1,
+          "end": 5,
+          "units": 2
+        }
+      ]
+    },
+    "expected": {
+      "accepted": [
+        "a",
+        "b",
+        "c"
+      ],
+      "rejected": [],
+      "peak": 3
+    }
+  },
+  {
+    "id": "V05",
+    "input": {
+      "capacity": 0,
+      "bookings": [
+        {
+          "id": "a",
+          "start": -2,
+          "end": 2,
+          "units": 1
+        }
+      ]
+    },
+    "expected": {
+      "accepted": [],
+      "rejected": [
+        "a"
+      ],
+      "peak": 0
+    }
+  },
+  {
+    "id": "V06",
+    "input": {
+      "capacity": 5,
+      "bookings": [
+        {
+          "id": "a",
+          "start": 2,
+          "end": 2,
+          "units": 1
+        }
+      ]
+    },
+    "raises": "ValueError"
+  }
+]

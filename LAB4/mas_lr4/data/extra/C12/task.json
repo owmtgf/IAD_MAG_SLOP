@@ -1,0 +1,363 @@
+{
+  "id": "C12",
+  "title": "Авторизация с ограниченной передачей полномочий",
+  "description": "Вычислите решения по политикам доступа с временными окнами, специфичностью и цепочками делегирования.",
+  "input_format": "{policies:[{id,subject,effect,resource,action,start,end,delegable}],delegations:[{from,to,resource,action,start,end}],requests:[{actor,resource,action,time}]}",
+  "output_format": "[{decision:\"allow\"|\"deny\",sources:[policy_id]}]",
+  "rules": [
+    "Вход: не более 10 policies, 8 delegations и 6 requests. Все идентификаторы, субъекты, действия и пути — строки; id политик уникальны; start/end/time — целые, end также может быть null, start <= end при конечном end.",
+    "Пути канонические: / либо /сегмент[/сегмент...], не более 4 непустых сегментов, без завершающего /. Область / покрывает все пути; /a покрывает /a и /a/..., но не /ab.",
+    "Политика содержит id,subject,effect,resource,action,start,end,delegable. effect — allow или deny; delegable — bool. subject=* подходит любому субъекту; иное значение — только точному имени.",
+    "action=* подходит любому действию; другое значение требует точного совпадения. В запросах actor и action не равны *.",
+    "Запись активна при start <= time и (end=null или time < end). Все политики и все ребра цепочки проверяются на время самого запроса.",
+    "Прямая политика применима при совпадении subject с субъектом, action с действием, покрытия resource пути запроса и активности по времени.",
+    "Кандидатами для actor сначала становятся все применимые к нему прямые политики, как allow, так и deny.",
+    "Делегация содержит from,to,resource,action,start,end. Она разрешает передавать запрос только from -> to и только если область, действие и время совпадают с запросом.",
+    "Для наследования разрешены цепочки от исходного субъекта к actor длиной 1, 2 или 3 ребра. Внутри цепочки имена субъектов не повторяются. Прямая политика не требует ребер.",
+    "Исходный кандидат цепочки — применимая к ее исходному субъекту политика allow с delegable=true. Политики deny и allow с delegable=false не передаются.",
+    "Любая применимая прямая deny у любого отправителя в цепочке запрещает эту цепочку целиком, независимо от специфичности deny. Это отдельная более строгая проверка права передачи; к конечному actor она не применяется.",
+    "У промежуточного отправителя не требуется собственной allow: он может передать наследуемую исходную политику далее. Однако его прямая deny блокирует передачу по предыдущему правилу.",
+    "Существования одной допустимой цепочки достаточно. Разные цепочки, ведущие к одной исходной политике, добавляют один и тот же id кандидата только один раз.",
+    "Специфичность кандидата всегда берется из исходной политики: тройка [число сегментов resource, action != *, subject != *], логические признаки сравниваются как 0/1; тройки сравниваются лексикографически.",
+    "Области делегаций лишь ограничивают допустимость цепочки и не повышают специфичность политики. Унаследованный точный subject считается точным именем исходного субъекта, даже если отличается от actor.",
+    "Из всех прямых и наследуемых кандидатов оставьте максимальную тройку специфичности. Если среди них есть deny, решение deny, иначе allow.",
+    "sources — отсортированный список id всех кандидатов максимальной специфичности, включая allow при победе deny. Если кандидатов нет, decision=deny и sources=[].",
+    "Запросы независимы; вернуть список {decision,sources} в порядке requests. Порядок policies и delegations не должен влиять на результат."
+  ],
+  "examples": [
+    {
+      "id": "v01",
+      "input": {
+        "policies": [
+          {
+            "id": "deep",
+            "subject": "a",
+            "effect": "allow",
+            "resource": "/reports",
+            "action": "*",
+            "start": 0,
+            "end": null,
+            "delegable": false
+          },
+          {
+            "id": "root",
+            "subject": "a",
+            "effect": "deny",
+            "resource": "/",
+            "action": "read",
+            "start": 0,
+            "end": null,
+            "delegable": false
+          }
+        ],
+        "delegations": [],
+        "requests": [
+          {
+            "actor": "a",
+            "resource": "/reports/x",
+            "action": "read",
+            "time": 5
+          }
+        ]
+      },
+      "expected": [
+        {
+          "decision": "allow",
+          "sources": [
+            "deep"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v02",
+      "input": {
+        "policies": [
+          {
+            "id": "p",
+            "subject": "a",
+            "effect": "allow",
+            "resource": "/reports",
+            "action": "*",
+            "start": 0,
+            "end": 10,
+            "delegable": false
+          }
+        ],
+        "delegations": [],
+        "requests": [
+          {
+            "actor": "a",
+            "resource": "/reports2",
+            "action": "read",
+            "time": 5
+          },
+          {
+            "actor": "a",
+            "resource": "/reports",
+            "action": "read",
+            "time": 10
+          },
+          {
+            "actor": "a",
+            "resource": "/reports",
+            "action": "read",
+            "time": 0
+          }
+        ]
+      },
+      "expected": [
+        {
+          "decision": "deny",
+          "sources": []
+        },
+        {
+          "decision": "deny",
+          "sources": []
+        },
+        {
+          "decision": "allow",
+          "sources": [
+            "p"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v03",
+      "input": {
+        "policies": [
+          {
+            "id": "z",
+            "subject": "a",
+            "effect": "allow",
+            "resource": "/a",
+            "action": "read",
+            "start": 0,
+            "end": null,
+            "delegable": false
+          },
+          {
+            "id": "a",
+            "subject": "a",
+            "effect": "deny",
+            "resource": "/a",
+            "action": "read",
+            "start": 0,
+            "end": null,
+            "delegable": false
+          }
+        ],
+        "delegations": [],
+        "requests": [
+          {
+            "actor": "a",
+            "resource": "/a/b",
+            "action": "read",
+            "time": 5
+          }
+        ]
+      },
+      "expected": [
+        {
+          "decision": "deny",
+          "sources": [
+            "a",
+            "z"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v04",
+      "input": {
+        "policies": [
+          {
+            "id": "source",
+            "subject": "a",
+            "effect": "allow",
+            "resource": "/",
+            "action": "*",
+            "start": 0,
+            "end": null,
+            "delegable": true
+          },
+          {
+            "id": "local",
+            "subject": "c",
+            "effect": "deny",
+            "resource": "/reports",
+            "action": "*",
+            "start": 0,
+            "end": null,
+            "delegable": false
+          }
+        ],
+        "delegations": [
+          {
+            "from": "a",
+            "to": "b",
+            "resource": "/reports/x",
+            "action": "*",
+            "start": 0,
+            "end": null
+          },
+          {
+            "from": "b",
+            "to": "c",
+            "resource": "/reports/x",
+            "action": "*",
+            "start": 0,
+            "end": null
+          }
+        ],
+        "requests": [
+          {
+            "actor": "c",
+            "resource": "/reports/x",
+            "action": "read",
+            "time": 5
+          }
+        ]
+      },
+      "expected": [
+        {
+          "decision": "deny",
+          "sources": [
+            "local"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v05",
+      "input": {
+        "policies": [
+          {
+            "id": "grant",
+            "subject": "a",
+            "effect": "allow",
+            "resource": "/docs",
+            "action": "read",
+            "start": 0,
+            "end": null,
+            "delegable": true
+          },
+          {
+            "id": "stop",
+            "subject": "b",
+            "effect": "deny",
+            "resource": "/",
+            "action": "*",
+            "start": 0,
+            "end": null,
+            "delegable": false
+          }
+        ],
+        "delegations": [
+          {
+            "from": "a",
+            "to": "b",
+            "resource": "/",
+            "action": "*",
+            "start": 0,
+            "end": null
+          },
+          {
+            "from": "b",
+            "to": "c",
+            "resource": "/",
+            "action": "*",
+            "start": 0,
+            "end": null
+          }
+        ],
+        "requests": [
+          {
+            "actor": "c",
+            "resource": "/docs",
+            "action": "read",
+            "time": 5
+          }
+        ]
+      },
+      "expected": [
+        {
+          "decision": "deny",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "v06",
+      "input": {
+        "policies": [
+          {
+            "id": "p",
+            "subject": "a",
+            "effect": "allow",
+            "resource": "/x",
+            "action": "read",
+            "start": 0,
+            "end": null,
+            "delegable": true
+          }
+        ],
+        "delegations": [
+          {
+            "from": "a",
+            "to": "b",
+            "resource": "/x",
+            "action": "*",
+            "start": 0,
+            "end": null
+          },
+          {
+            "from": "b",
+            "to": "c",
+            "resource": "/x",
+            "action": "*",
+            "start": 0,
+            "end": 10
+          },
+          {
+            "from": "c",
+            "to": "d",
+            "resource": "/x",
+            "action": "*",
+            "start": 0,
+            "end": null
+          }
+        ],
+        "requests": [
+          {
+            "actor": "d",
+            "resource": "/x",
+            "action": "read",
+            "time": 9
+          },
+          {
+            "actor": "d",
+            "resource": "/x",
+            "action": "read",
+            "time": 10
+          }
+        ]
+      },
+      "expected": [
+        {
+          "decision": "allow",
+          "sources": [
+            "p"
+          ]
+        },
+        {
+          "decision": "deny",
+          "sources": []
+        }
+      ]
+    }
+  ],
+  "entrypoint": "solve(data)",
+  "statement": "Вычислите решения по политикам доступа с временными окнами, специфичностью и цепочками делегирования.\n\nВход: {policies:[{id,subject,effect,resource,action,start,end,delegable}],delegations:[{from,to,resource,action,start,end}],requests:[{actor,resource,action,time}]}\nВыход: [{decision:\"allow\"|\"deny\",sources:[policy_id]}]\n\n1. Вход: не более 10 policies, 8 delegations и 6 requests. Все идентификаторы, субъекты, действия и пути — строки; id политик уникальны; start/end/time — целые, end также может быть null, start <= end при конечном end.\n2. Пути канонические: / либо /сегмент[/сегмент...], не более 4 непустых сегментов, без завершающего /. Область / покрывает все пути; /a покрывает /a и /a/..., но не /ab.\n3. Политика содержит id,subject,effect,resource,action,start,end,delegable. effect — allow или deny; delegable — bool. subject=* подходит любому субъекту; иное значение — только точному имени.\n4. action=* подходит любому действию; другое значение требует точного совпадения. В запросах actor и action не равны *.\n5. Запись активна при start <= time и (end=null или time < end). Все политики и все ребра цепочки проверяются на время самого запроса.\n6. Прямая политика применима при совпадении subject с субъектом, action с действием, покрытия resource пути запроса и активности по времени.\n7. Кандидатами для actor сначала становятся все применимые к нему прямые политики, как allow, так и deny.\n8. Делегация содержит from,to,resource,action,start,end. Она разрешает передавать запрос только from -> to и только если область, действие и время совпадают с запросом.\n9. Для наследования разрешены цепочки от исходного субъекта к actor длиной 1, 2 или 3 ребра. Внутри цепочки имена субъектов не повторяются. Прямая политика не требует ребер.\n10. Исходный кандидат цепочки — применимая к ее исходному субъекту политика allow с delegable=true. Политики deny и allow с delegable=false не передаются.\n11. Любая применимая прямая deny у любого отправителя в цепочке запрещает эту цепочку целиком, независимо от специфичности deny. Это отдельная более строгая проверка права передачи; к конечному actor она не применяется.\n12. У промежуточного отправителя не требуется собственной allow: он может передать наследуемую исходную политику далее. Однако его прямая deny блокирует передачу по предыдущему правилу.\n13. Существования одной допустимой цепочки достаточно. Разные цепочки, ведущие к одной исходной политике, добавляют один и тот же id кандидата только один раз.\n14. Специфичность кандидата всегда берется из исходной политики: тройка [число сегментов resource, action != *, subject != *], логические признаки сравниваются как 0/1; тройки сравниваются лексикографически.\n15. Области делегаций лишь ограничивают допустимость цепочки и не повышают специфичность политики. Унаследованный точный subject считается точным именем исходного субъекта, даже если отличается от actor.\n16. Из всех прямых и наследуемых кандидатов оставьте максимальную тройку специфичности. Если среди них есть deny, решение deny, иначе allow.\n17. sources — отсортированный список id всех кандидатов максимальной специфичности, включая allow при победе deny. Если кандидатов нет, decision=deny и sources=[].\n18. Запросы независимы; вернуть список {decision,sources} в порядке requests. Порядок policies и delegations не должен влиять на результат.\n\nРеализуйте solve(data) без изменения входа. Только функции верхнего уровня; импорты, классы и глобальные константы запрещены. Числа — int, не bool. Строки сравниваются лексикографически с учетом регистра. Верните детерминированное JSON-значение; порядок списков существенен. Вход структурно корректен; неописанные входы вне области задачи."
+}

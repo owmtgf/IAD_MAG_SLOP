@@ -1,0 +1,279 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "jobs": [],
+      "workers": []
+    },
+    "expected": []
+  },
+  {
+    "id": "C02",
+    "input": {
+      "jobs": [
+        [
+          "a",
+          "p"
+        ]
+      ],
+      "workers": []
+    },
+    "expected": [
+      [
+        "a",
+        null
+      ]
+    ]
+  },
+  {
+    "id": "C03",
+    "input": {
+      "jobs": [
+        [
+          "a",
+          "p"
+        ]
+      ],
+      "workers": [
+        {
+          "id": "w",
+          "skills": [
+            "p"
+          ]
+        }
+      ]
+    },
+    "expected": [
+      [
+        "a",
+        "w"
+      ]
+    ]
+  },
+  {
+    "id": "C04",
+    "input": {
+      "jobs": [
+        [
+          "a",
+          "p"
+        ],
+        [
+          "b",
+          "p"
+        ]
+      ],
+      "workers": [
+        {
+          "id": "w",
+          "skills": [
+            "p"
+          ]
+        }
+      ]
+    },
+    "expected": [
+      [
+        "a",
+        "w"
+      ],
+      [
+        "b",
+        null
+      ]
+    ]
+  },
+  {
+    "id": "C05",
+    "input": {
+      "jobs": [
+        [
+          "a",
+          "q"
+        ]
+      ],
+      "workers": [
+        {
+          "id": "w",
+          "skills": [
+            "p"
+          ]
+        }
+      ]
+    },
+    "expected": [
+      [
+        "a",
+        null
+      ]
+    ]
+  },
+  {
+    "id": "C06",
+    "input": {
+      "jobs": [
+        [
+          "a",
+          "p"
+        ]
+      ],
+      "workers": [
+        {
+          "id": "w2",
+          "skills": [
+            "p"
+          ]
+        },
+        {
+          "id": "w1",
+          "skills": [
+            "p"
+          ]
+        }
+      ]
+    },
+    "expected": [
+      [
+        "a",
+        "w2"
+      ]
+    ]
+  },
+  {
+    "id": "C07",
+    "input": {
+      "jobs": [
+        [
+          "a",
+          "p"
+        ],
+        [
+          "b",
+          "q"
+        ]
+      ],
+      "workers": [
+        {
+          "id": "w",
+          "skills": [
+            "p",
+            "q"
+          ]
+        },
+        {
+          "id": "z",
+          "skills": [
+            "p"
+          ]
+        }
+      ]
+    },
+    "expected": [
+      [
+        "a",
+        "w"
+      ],
+      [
+        "b",
+        null
+      ]
+    ]
+  },
+  {
+    "id": "C08",
+    "input": {
+      "jobs": [
+        [
+          "a",
+          "p"
+        ],
+        [
+          "b",
+          "p"
+        ]
+      ],
+      "workers": [
+        {
+          "id": "w",
+          "skills": [
+            "p"
+          ]
+        },
+        {
+          "id": "z",
+          "skills": [
+            "p"
+          ]
+        }
+      ]
+    },
+    "expected": [
+      [
+        "a",
+        "w"
+      ],
+      [
+        "b",
+        "z"
+      ]
+    ]
+  },
+  {
+    "id": "C09",
+    "input": {
+      "jobs": [
+        [
+          "a",
+          "q"
+        ],
+        [
+          "b",
+          "p"
+        ]
+      ],
+      "workers": [
+        {
+          "id": "w",
+          "skills": [
+            "p"
+          ]
+        }
+      ]
+    },
+    "expected": [
+      [
+        "a",
+        null
+      ],
+      [
+        "b",
+        "w"
+      ]
+    ]
+  },
+  {
+    "id": "C10",
+    "input": {
+      "jobs": [
+        [
+          "a",
+          "P"
+        ]
+      ],
+      "workers": [
+        {
+          "id": "w",
+          "skills": [
+            "p"
+          ]
+        }
+      ]
+    },
+    "expected": [
+      [
+        "a",
+        null
+      ]
+    ]
+  }
+]

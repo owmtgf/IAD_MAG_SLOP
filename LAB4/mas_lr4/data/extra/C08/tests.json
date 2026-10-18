@@ -1,0 +1,597 @@
+[
+  {
+    "id": "V01_completion_and_horizon",
+    "input": {
+      "jobs": [
+        {
+          "id": "a",
+          "tenant": "a",
+          "release": 0,
+          "priority": 0,
+          "duration": 2,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": []
+        },
+        {
+          "id": "b",
+          "tenant": "a",
+          "release": 0,
+          "priority": 0,
+          "duration": 1,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": [
+            "a"
+          ]
+        }
+      ],
+      "slots": 1,
+      "horizon": 2
+    },
+    "expected": {
+      "starts": [
+        {
+          "time": 0,
+          "slot": 0,
+          "id": "a",
+          "attempt": 1
+        },
+        {
+          "time": 2,
+          "slot": 0,
+          "id": "b",
+          "attempt": 1
+        }
+      ],
+      "jobs": [
+        {
+          "id": "a",
+          "status": "succeeded",
+          "attempts": 1
+        },
+        {
+          "id": "b",
+          "status": "running",
+          "attempts": 1
+        }
+      ],
+      "running": [
+        {
+          "slot": 0,
+          "id": "b",
+          "finish": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": "V02_round_robin_slots",
+    "input": {
+      "jobs": [
+        {
+          "id": "a1",
+          "tenant": "a",
+          "release": 0,
+          "priority": 0,
+          "duration": 3,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": []
+        },
+        {
+          "id": "a2",
+          "tenant": "a",
+          "release": 0,
+          "priority": 0,
+          "duration": 3,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": []
+        },
+        {
+          "id": "b1",
+          "tenant": "b",
+          "release": 0,
+          "priority": 0,
+          "duration": 3,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": []
+        }
+      ],
+      "slots": 2,
+      "horizon": 1
+    },
+    "expected": {
+      "starts": [
+        {
+          "time": 0,
+          "slot": 0,
+          "id": "a1",
+          "attempt": 1
+        },
+        {
+          "time": 0,
+          "slot": 1,
+          "id": "b1",
+          "attempt": 1
+        }
+      ],
+      "jobs": [
+        {
+          "id": "a1",
+          "status": "running",
+          "attempts": 1
+        },
+        {
+          "id": "a2",
+          "status": "pending",
+          "attempts": 0
+        },
+        {
+          "id": "b1",
+          "status": "running",
+          "attempts": 1
+        }
+      ],
+      "running": [
+        {
+          "slot": 0,
+          "id": "a1",
+          "finish": 3
+        },
+        {
+          "slot": 1,
+          "id": "b1",
+          "finish": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": "V03_retry_cooldown",
+    "input": {
+      "jobs": [
+        {
+          "id": "a",
+          "tenant": "a",
+          "release": 0,
+          "priority": 0,
+          "duration": 2,
+          "outcomes": [
+            false,
+            true
+          ],
+          "backoff": 2,
+          "deps": []
+        }
+      ],
+      "slots": 1,
+      "horizon": 4
+    },
+    "expected": {
+      "starts": [
+        {
+          "time": 0,
+          "slot": 0,
+          "id": "a",
+          "attempt": 1
+        },
+        {
+          "time": 4,
+          "slot": 0,
+          "id": "a",
+          "attempt": 2
+        }
+      ],
+      "jobs": [
+        {
+          "id": "a",
+          "status": "running",
+          "attempts": 2
+        }
+      ],
+      "running": [
+        {
+          "slot": 0,
+          "id": "a",
+          "finish": 6
+        }
+      ]
+    }
+  },
+  {
+    "id": "V04_failure_propagation",
+    "input": {
+      "jobs": [
+        {
+          "id": "z",
+          "tenant": "a",
+          "release": 0,
+          "priority": 0,
+          "duration": 1,
+          "outcomes": [
+            false
+          ],
+          "backoff": 0,
+          "deps": []
+        },
+        {
+          "id": "b",
+          "tenant": "a",
+          "release": 9,
+          "priority": 0,
+          "duration": 1,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": [
+            "z"
+          ]
+        },
+        {
+          "id": "a",
+          "tenant": "a",
+          "release": 0,
+          "priority": 0,
+          "duration": 1,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": [
+            "b"
+          ]
+        }
+      ],
+      "slots": 1,
+      "horizon": 2
+    },
+    "expected": {
+      "starts": [
+        {
+          "time": 0,
+          "slot": 0,
+          "id": "z",
+          "attempt": 1
+        }
+      ],
+      "jobs": [
+        {
+          "id": "a",
+          "status": "blocked",
+          "attempts": 0
+        },
+        {
+          "id": "b",
+          "status": "blocked",
+          "attempts": 0
+        },
+        {
+          "id": "z",
+          "status": "failed",
+          "attempts": 1
+        }
+      ],
+      "running": []
+    }
+  },
+  {
+    "id": "V05_priority_ready_and_id",
+    "input": {
+      "jobs": [
+        {
+          "id": "a",
+          "tenant": "a",
+          "release": 2,
+          "priority": 3,
+          "duration": 1,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": []
+        },
+        {
+          "id": "b",
+          "tenant": "a",
+          "release": 0,
+          "priority": 3,
+          "duration": 1,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": []
+        },
+        {
+          "id": "c",
+          "tenant": "a",
+          "release": 0,
+          "priority": 9,
+          "duration": 2,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": []
+        },
+        {
+          "id": "d",
+          "tenant": "a",
+          "release": 0,
+          "priority": 3,
+          "duration": 1,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": []
+        }
+      ],
+      "slots": 1,
+      "horizon": 3
+    },
+    "expected": {
+      "starts": [
+        {
+          "time": 0,
+          "slot": 0,
+          "id": "c",
+          "attempt": 1
+        },
+        {
+          "time": 2,
+          "slot": 0,
+          "id": "b",
+          "attempt": 1
+        },
+        {
+          "time": 3,
+          "slot": 0,
+          "id": "d",
+          "attempt": 1
+        }
+      ],
+      "jobs": [
+        {
+          "id": "a",
+          "status": "pending",
+          "attempts": 0
+        },
+        {
+          "id": "b",
+          "status": "succeeded",
+          "attempts": 1
+        },
+        {
+          "id": "c",
+          "status": "succeeded",
+          "attempts": 1
+        },
+        {
+          "id": "d",
+          "status": "running",
+          "attempts": 1
+        }
+      ],
+      "running": [
+        {
+          "slot": 0,
+          "id": "d",
+          "finish": 4
+        }
+      ]
+    }
+  },
+  {
+    "id": "V06_combined",
+    "input": {
+      "jobs": [
+        {
+          "id": "root",
+          "tenant": "b",
+          "release": 0,
+          "priority": 0,
+          "duration": 2,
+          "outcomes": [
+            false,
+            true
+          ],
+          "backoff": 1,
+          "deps": []
+        },
+        {
+          "id": "a1",
+          "tenant": "a",
+          "release": 0,
+          "priority": 3,
+          "duration": 1,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": []
+        },
+        {
+          "id": "a2",
+          "tenant": "a",
+          "release": 0,
+          "priority": 2,
+          "duration": 2,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": []
+        },
+        {
+          "id": "child",
+          "tenant": "c",
+          "release": 0,
+          "priority": 0,
+          "duration": 1,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": [
+            "root"
+          ]
+        },
+        {
+          "id": "bad",
+          "tenant": "b",
+          "release": 0,
+          "priority": 0,
+          "duration": 1,
+          "outcomes": [
+            false,
+            false
+          ],
+          "backoff": 0,
+          "deps": []
+        },
+        {
+          "id": "leaf",
+          "tenant": "a",
+          "release": 0,
+          "priority": 0,
+          "duration": 1,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": [
+            "bad"
+          ]
+        },
+        {
+          "id": "join",
+          "tenant": "c",
+          "release": 0,
+          "priority": 0,
+          "duration": 1,
+          "outcomes": [
+            true
+          ],
+          "backoff": 0,
+          "deps": [
+            "child",
+            "a2"
+          ]
+        }
+      ],
+      "slots": 2,
+      "horizon": 7
+    },
+    "expected": {
+      "starts": [
+        {
+          "time": 0,
+          "slot": 0,
+          "id": "a1",
+          "attempt": 1
+        },
+        {
+          "time": 0,
+          "slot": 1,
+          "id": "bad",
+          "attempt": 1
+        },
+        {
+          "time": 1,
+          "slot": 0,
+          "id": "a2",
+          "attempt": 1
+        },
+        {
+          "time": 1,
+          "slot": 1,
+          "id": "root",
+          "attempt": 1
+        },
+        {
+          "time": 3,
+          "slot": 0,
+          "id": "bad",
+          "attempt": 2
+        },
+        {
+          "time": 4,
+          "slot": 0,
+          "id": "root",
+          "attempt": 2
+        },
+        {
+          "time": 6,
+          "slot": 0,
+          "id": "child",
+          "attempt": 1
+        },
+        {
+          "time": 7,
+          "slot": 0,
+          "id": "join",
+          "attempt": 1
+        }
+      ],
+      "jobs": [
+        {
+          "id": "a1",
+          "status": "succeeded",
+          "attempts": 1
+        },
+        {
+          "id": "a2",
+          "status": "succeeded",
+          "attempts": 1
+        },
+        {
+          "id": "bad",
+          "status": "failed",
+          "attempts": 2
+        },
+        {
+          "id": "child",
+          "status": "succeeded",
+          "attempts": 1
+        },
+        {
+          "id": "join",
+          "status": "running",
+          "attempts": 1
+        },
+        {
+          "id": "leaf",
+          "status": "blocked",
+          "attempts": 0
+        },
+        {
+          "id": "root",
+          "status": "succeeded",
+          "attempts": 2
+        }
+      ],
+      "running": [
+        {
+          "slot": 0,
+          "id": "join",
+          "finish": 8
+        }
+      ]
+    }
+  }
+]

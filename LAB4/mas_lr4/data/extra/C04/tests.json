@@ -1,0 +1,141 @@
+[
+  {
+    "id": "V01",
+    "input": {
+      "dependencies": {},
+      "changed": [],
+      "cached": []
+    },
+    "expected": {
+      "invalidated": [],
+      "remaining": []
+    }
+  },
+  {
+    "id": "V02",
+    "input": {
+      "dependencies": {
+        "source": [],
+        "report": [
+          "source"
+        ]
+      },
+      "changed": [
+        "source"
+      ],
+      "cached": [
+        "source",
+        "report"
+      ]
+    },
+    "expected": {
+      "invalidated": [
+        "report",
+        "source"
+      ],
+      "remaining": []
+    }
+  },
+  {
+    "id": "V03",
+    "input": {
+      "dependencies": {
+        "source": [],
+        "report": [
+          "source"
+        ]
+      },
+      "changed": [
+        "report"
+      ],
+      "cached": [
+        "source",
+        "report"
+      ]
+    },
+    "expected": {
+      "invalidated": [
+        "report"
+      ],
+      "remaining": [
+        "source"
+      ]
+    }
+  },
+  {
+    "id": "V04",
+    "input": {
+      "dependencies": {
+        "a": [],
+        "b": [
+          "a"
+        ],
+        "c": [
+          "b"
+        ],
+        "z": []
+      },
+      "changed": [
+        "a"
+      ],
+      "cached": [
+        "c",
+        "z"
+      ]
+    },
+    "expected": {
+      "invalidated": [
+        "c"
+      ],
+      "remaining": [
+        "z"
+      ]
+    }
+  },
+  {
+    "id": "V05",
+    "input": {
+      "dependencies": {
+        "a": [
+          "b"
+        ],
+        "b": [
+          "a"
+        ],
+        "z": []
+      },
+      "changed": [
+        "a"
+      ],
+      "cached": [
+        "a",
+        "b",
+        "z"
+      ]
+    },
+    "expected": {
+      "invalidated": [
+        "a",
+        "b"
+      ],
+      "remaining": [
+        "z"
+      ]
+    }
+  },
+  {
+    "id": "V06",
+    "input": {
+      "dependencies": {
+        "a": [
+          "missing"
+        ]
+      },
+      "changed": [],
+      "cached": [
+        "a"
+      ]
+    },
+    "raises": "ValueError"
+  }
+]

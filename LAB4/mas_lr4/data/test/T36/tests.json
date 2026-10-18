@@ -1,0 +1,248 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "stock": 5,
+      "orders": []
+    },
+    "expected": {
+      "fulfilled": [],
+      "remaining": 5
+    }
+  },
+  {
+    "id": "C02",
+    "input": {
+      "stock": 5,
+      "orders": [
+        [
+          "a",
+          3
+        ],
+        [
+          "b",
+          4
+        ]
+      ]
+    },
+    "expected": {
+      "fulfilled": [
+        [
+          "a",
+          3
+        ],
+        [
+          "b",
+          2
+        ]
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C03",
+    "input": {
+      "stock": 0,
+      "orders": [
+        [
+          "a",
+          2
+        ]
+      ]
+    },
+    "expected": {
+      "fulfilled": [
+        [
+          "a",
+          0
+        ]
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C04",
+    "input": {
+      "stock": 5,
+      "orders": [
+        [
+          "a",
+          5
+        ]
+      ]
+    },
+    "expected": {
+      "fulfilled": [
+        [
+          "a",
+          5
+        ]
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C05",
+    "input": {
+      "stock": 5,
+      "orders": [
+        [
+          "a",
+          7
+        ],
+        [
+          "b",
+          1
+        ]
+      ]
+    },
+    "expected": {
+      "fulfilled": [
+        [
+          "a",
+          5
+        ],
+        [
+          "b",
+          0
+        ]
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C06",
+    "input": {
+      "stock": 3,
+      "orders": [
+        [
+          "a",
+          0
+        ],
+        [
+          "b",
+          2
+        ]
+      ]
+    },
+    "expected": {
+      "fulfilled": [
+        [
+          "a",
+          0
+        ],
+        [
+          "b",
+          2
+        ]
+      ],
+      "remaining": 1
+    }
+  },
+  {
+    "id": "C07",
+    "input": {
+      "stock": 10,
+      "orders": [
+        [
+          "a",
+          2
+        ],
+        [
+          "b",
+          3
+        ]
+      ]
+    },
+    "expected": {
+      "fulfilled": [
+        [
+          "a",
+          2
+        ],
+        [
+          "b",
+          3
+        ]
+      ],
+      "remaining": 5
+    }
+  },
+  {
+    "id": "C08",
+    "input": {
+      "stock": 1,
+      "orders": [
+        [
+          "a",
+          1
+        ],
+        [
+          "b",
+          1
+        ],
+        [
+          "c",
+          1
+        ]
+      ]
+    },
+    "expected": {
+      "fulfilled": [
+        [
+          "a",
+          1
+        ],
+        [
+          "b",
+          0
+        ],
+        [
+          "c",
+          0
+        ]
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C09",
+    "input": {
+      "stock": 4,
+      "orders": [
+        [
+          "b",
+          3
+        ],
+        [
+          "a",
+          3
+        ]
+      ]
+    },
+    "expected": {
+      "fulfilled": [
+        [
+          "b",
+          3
+        ],
+        [
+          "a",
+          1
+        ]
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C10",
+    "input": {
+      "stock": 0,
+      "orders": []
+    },
+    "expected": {
+      "fulfilled": [],
+      "remaining": 0
+    }
+  }
+]

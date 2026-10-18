@@ -1,0 +1,170 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "deps": {},
+      "failed": []
+    },
+    "expected": []
+  },
+  {
+    "id": "C02",
+    "input": {
+      "deps": {
+        "a": []
+      },
+      "failed": [
+        "a"
+      ]
+    },
+    "expected": []
+  },
+  {
+    "id": "C03",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ]
+      },
+      "failed": [
+        "a"
+      ]
+    },
+    "expected": [
+      "b"
+    ]
+  },
+  {
+    "id": "C04",
+    "input": {
+      "deps": {
+        "c": [
+          "b"
+        ],
+        "b": [
+          "a"
+        ],
+        "a": []
+      },
+      "failed": [
+        "a"
+      ]
+    },
+    "expected": [
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "C05",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [],
+        "c": [
+          "a",
+          "b"
+        ]
+      },
+      "failed": [
+        "a"
+      ]
+    },
+    "expected": [
+      "c"
+    ]
+  },
+  {
+    "id": "C06",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ],
+        "c": [
+          "b"
+        ]
+      },
+      "failed": [
+        "a",
+        "b"
+      ]
+    },
+    "expected": [
+      "c"
+    ]
+  },
+  {
+    "id": "C07",
+    "input": {
+      "deps": {
+        "a": [
+          "b"
+        ],
+        "b": [
+          "a"
+        ]
+      },
+      "failed": [
+        "a"
+      ]
+    },
+    "expected": [
+      "b"
+    ]
+  },
+  {
+    "id": "C08",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ],
+        "x": []
+      },
+      "failed": []
+    },
+    "expected": []
+  },
+  {
+    "id": "C09",
+    "input": {
+      "deps": {
+        "a": [],
+        "z": [
+          "a"
+        ],
+        "b": [
+          "a"
+        ]
+      },
+      "failed": [
+        "a"
+      ]
+    },
+    "expected": [
+      "b",
+      "z"
+    ]
+  },
+  {
+    "id": "C10",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ],
+        "c": []
+      },
+      "failed": [
+        "b"
+      ]
+    },
+    "expected": []
+  }
+]

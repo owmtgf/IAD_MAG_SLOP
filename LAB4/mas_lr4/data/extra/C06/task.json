@@ -1,0 +1,133 @@
+{
+  "id": "C06",
+  "key": "c06",
+  "title": "Купон и возврат отдельных единиц",
+  "theme": "Составные бизнес-правила",
+  "split": "calibration",
+  "description": "Исправьте расчёт купона в копейках и последующие частичные возвраты. Два уровня распределения остатков должны согласоваться.",
+  "input_format": "{lines:[{id,price,qty,eligible}],coupon:{amount,minimum},shipping:{fee,free_at},returns:[{id,qty}]}.",
+  "output_format": "{gross,discount,shipping,charged,refunds:[{accepted,amount}],refunded,balance,lines:[{id,discount,returned_qty,refunded,remaining}]}.",
+  "rules": [
+    "lines содержит 0..8 строк заказа с уникальными id; price>=0, qty=1..20, eligible — bool. Все суммы в целых копейках, вычисления без округления через float.",
+    "gross — сумма price*qty всех строк до скидки. Купон действует при gross >= coupon.minimum, иначе discount=0.",
+    "База купона — сумма price*qty только eligible-строк; discount=min(coupon.amount, база). При нулевой базе discount=0.",
+    "Сначала eligible-строка получает floor(discount*стоимость_строки/база). Остальные копейки раздать по одной строкам в порядке убывания остатка от этого деления; при равенстве — по возрастанию id.",
+    "Неeligible-строка получает скидку 0. Сумма скидок строк точно равна discount; скидка строки не превышает её стоимость.",
+    "Скидку строки D на qty единиц распределить: каждая получает D//qty, первые D%qty единиц дополнительно 1. Номера единиц 0..qty-1; оплаченная стоимость единицы равна price минус её скидка.",
+    "Доставка shipping=0, если gross-discount >= shipping.free_at, иначе shipping.fee. charged=gross-discount+shipping. Параметры купона и доставки >=0.",
+    "returns содержит 0..40 запросов {id,qty}, где id существует, qty>0. Обработать в порядке списка; возвраты каждой строки последовательно забирают ещё не возвращённые единицы от меньшего номера к большему.",
+    "Если запрос превышает оставшееся количество строки, целиком отклонить: accepted=false, amount=0, состояние не меняется. Иначе accepted=true и amount — сумма оплаченных стоимостей выбранных единиц.",
+    "Скидка и доставка фиксируются при покупке: после возвратов их не пересчитывать. Доставка никогда не возвращается; даже полный возврат товаров оставляет её в balance.",
+    "refunds содержит {accepted,amount} на каждый запрос. refunded — общая сумма успешных возвратов; balance=charged-refunded.",
+    "lines результата отсортирован по id и содержит {id,discount,returned_qty,refunded,remaining}; remaining — оплаченная стоимость ещё не возвращённых единиц строки, без доставки.",
+    "Сохранить строки с нулевой ценой/скидкой/остатком; возврат бесплатной единицы считается успешным и увеличивает returned_qty."
+  ],
+  "examples": [
+    {
+      "input": {
+        "lines": [
+          {
+            "id": "a",
+            "price": 100,
+            "qty": 2,
+            "eligible": true
+          }
+        ],
+        "coupon": {
+          "amount": 30,
+          "minimum": 200
+        },
+        "shipping": {
+          "fee": 25,
+          "free_at": 190
+        },
+        "returns": []
+      },
+      "output": {
+        "gross": 200,
+        "discount": 30,
+        "shipping": 25,
+        "charged": 195,
+        "refunds": [],
+        "refunded": 0,
+        "balance": 195,
+        "lines": [
+          {
+            "id": "a",
+            "discount": 30,
+            "returned_qty": 0,
+            "refunded": 0,
+            "remaining": 170
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "lines": [
+          {
+            "id": "c",
+            "price": 100,
+            "qty": 1,
+            "eligible": true
+          },
+          {
+            "id": "b",
+            "price": 100,
+            "qty": 1,
+            "eligible": true
+          },
+          {
+            "id": "a",
+            "price": 100,
+            "qty": 1,
+            "eligible": true
+          }
+        ],
+        "coupon": {
+          "amount": 2,
+          "minimum": 0
+        },
+        "shipping": {
+          "fee": 0,
+          "free_at": 0
+        },
+        "returns": []
+      },
+      "output": {
+        "gross": 300,
+        "discount": 2,
+        "shipping": 0,
+        "charged": 298,
+        "refunds": [],
+        "refunded": 0,
+        "balance": 298,
+        "lines": [
+          {
+            "id": "a",
+            "discount": 1,
+            "returned_qty": 0,
+            "refunded": 0,
+            "remaining": 99
+          },
+          {
+            "id": "b",
+            "discount": 1,
+            "returned_qty": 0,
+            "refunded": 0,
+            "remaining": 99
+          },
+          {
+            "id": "c",
+            "discount": 0,
+            "returned_qty": 0,
+            "refunded": 0,
+            "remaining": 100
+          }
+        ]
+      }
+    }
+  ],
+  "entrypoint": "solve(data)",
+  "statement": "Исправьте расчёт купона в копейках и последующие частичные возвраты. Два уровня распределения остатков должны согласоваться.\nВход: {lines:[{id,price,qty,eligible}],coupon:{amount,minimum},shipping:{fee,free_at},returns:[{id,qty}]}.\nВыход: {gross,discount,shipping,charged,refunds:[{accepted,amount}],refunded,balance,lines:[{id,discount,returned_qty,refunded,remaining}]}.\n1. lines содержит 0..8 строк заказа с уникальными id; price>=0, qty=1..20, eligible — bool. Все суммы в целых копейках, вычисления без округления через float.\n2. gross — сумма price*qty всех строк до скидки. Купон действует при gross >= coupon.minimum, иначе discount=0.\n3. База купона — сумма price*qty только eligible-строк; discount=min(coupon.amount, база). При нулевой базе discount=0.\n4. Сначала eligible-строка получает floor(discount*стоимость_строки/база). Остальные копейки раздать по одной строкам в порядке убывания остатка от этого деления; при равенстве — по возрастанию id.\n5. Неeligible-строка получает скидку 0. Сумма скидок строк точно равна discount; скидка строки не превышает её стоимость.\n6. Скидку строки D на qty единиц распределить: каждая получает D//qty, первые D%qty единиц дополнительно 1. Номера единиц 0..qty-1; оплаченная стоимость единицы равна price минус её скидка.\n7. Доставка shipping=0, если gross-discount >= shipping.free_at, иначе shipping.fee. charged=gross-discount+shipping. Параметры купона и доставки >=0.\n8. returns содержит 0..40 запросов {id,qty}, где id существует, qty>0. Обработать в порядке списка; возвраты каждой строки последовательно забирают ещё не возвращённые единицы от меньшего номера к большему.\n9. Если запрос превышает оставшееся количество строки, целиком отклонить: accepted=false, amount=0, состояние не меняется. Иначе accepted=true и amount — сумма оплаченных стоимостей выбранных единиц.\n10. Скидка и доставка фиксируются при покупке: после возвратов их не пересчитывать. Доставка никогда не возвращается; даже полный возврат товаров оставляет её в balance.\n11. refunds содержит {accepted,amount} на каждый запрос. refunded — общая сумма успешных возвратов; balance=charged-refunded.\n12. lines результата отсортирован по id и содержит {id,discount,returned_qty,refunded,remaining}; remaining — оплаченная стоимость ещё не возвращённых единиц строки, без доставки.\n13. Сохранить строки с нулевой ценой/скидкой/остатком; возврат бесплатной единицы считается успешным и увеличивает returned_qty.\nРеализуйте solve(data), не меняя вход. Числа — целые int, не bool; строки сравниваются лексикографически с учётом регистра. Результат — детерминированное JSON-значение; порядок списков и точные типы существенны. Неописанные входы не оцениваются. Модуль содержит только функции; запрещены import, классы, try/with, файлы/сеть, global/nonlocal и аннотации. Разрешены условия, циклы, функции, comprehensions, lambda для сортировки, списки/словари/множества и обычные встроенные функции."
+}

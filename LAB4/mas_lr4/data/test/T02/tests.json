@@ -1,0 +1,124 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "prices": [],
+      "every": 3
+    },
+    "expected": 0
+  },
+  {
+    "id": "C02",
+    "input": {
+      "prices": [
+        10,
+        20
+      ],
+      "every": 3
+    },
+    "expected": 30
+  },
+  {
+    "id": "C03",
+    "input": {
+      "prices": [
+        10,
+        20,
+        30
+      ],
+      "every": 3
+    },
+    "expected": 50
+  },
+  {
+    "id": "C04",
+    "input": {
+      "prices": [
+        30,
+        10,
+        20,
+        5,
+        40,
+        50
+      ],
+      "every": 3
+    },
+    "expected": 140
+  },
+  {
+    "id": "C05",
+    "input": {
+      "prices": [
+        5,
+        5,
+        5
+      ],
+      "every": 3
+    },
+    "expected": 10
+  },
+  {
+    "id": "C06",
+    "input": {
+      "prices": [
+        0,
+        5,
+        10
+      ],
+      "every": 3
+    },
+    "expected": 15
+  },
+  {
+    "id": "C07",
+    "input": {
+      "prices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "every": 2
+    },
+    "expected": 7
+  },
+  {
+    "id": "C08",
+    "input": {
+      "prices": [
+        9
+      ],
+      "every": 2
+    },
+    "expected": 9
+  },
+  {
+    "id": "C09",
+    "input": {
+      "prices": [
+        100,
+        1,
+        2,
+        3,
+        4
+      ],
+      "every": 4
+    },
+    "expected": 109
+  },
+  {
+    "id": "C10",
+    "input": {
+      "prices": [
+        9,
+        8,
+        7,
+        6,
+        5,
+        4
+      ],
+      "every": 2
+    },
+    "expected": 24
+  }
+]

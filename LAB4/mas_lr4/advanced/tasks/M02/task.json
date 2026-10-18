@@ -1,0 +1,26 @@
+{
+  "id": "M02",
+  "title": "Планировщик DAG: версии, повторы, ресурсы и восстановление",
+  "version": "1.0.0",
+  "entrypoint": "app.api:solve",
+  "language": "python",
+  "editable_files": [
+    "app/__init__.py",
+    "app/api.py",
+    "app/model.py",
+    "app/graph.py",
+    "app/ordering.py",
+    "app/locks.py",
+    "app/lifecycle.py",
+    "app/snapshots.py",
+    "app/scheduler.py",
+    "app/events.py",
+    "app/render.py"
+  ],
+  "constraints": {},
+  "spec": "SPEC.md",
+  "visible_tests": "visible.json",
+  "max_jobs": 12,
+  "max_events": 30,
+  "description": "Repair an existing stdlib-only implementation against the complete Russian behavior contract."
+}

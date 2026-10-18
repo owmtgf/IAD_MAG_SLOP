@@ -1,0 +1,334 @@
+[
+  {
+    "id": "boundary_versions_credit",
+    "records": [
+      {
+        "kind": "contract",
+        "id": "C0",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "case_id": "T",
+        "region": "NORTH",
+        "effective_on": "2026-01-01",
+        "ceiling_eur_cents": 9000,
+        "per_event_cap_eur_cents": 600,
+        "eligible_categories": [
+          "travel",
+          "consulting"
+        ]
+      },
+      {
+        "kind": "contract",
+        "id": "C1",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "case_id": "T",
+        "region": "NORTH",
+        "effective_on": "2026-03-01",
+        "ceiling_eur_cents": 3000,
+        "per_event_cap_eur_cents": 1500,
+        "eligible_categories": [
+          "travel",
+          "consulting"
+        ]
+      },
+      {
+        "kind": "contract",
+        "id": "C1",
+        "revision": 2,
+        "approved_on": "2026-04-01",
+        "case_id": "T",
+        "region": "NORTH",
+        "effective_on": "2026-03-01",
+        "ceiling_eur_cents": 1499,
+        "per_event_cap_eur_cents": 1500,
+        "eligible_categories": [
+          "travel",
+          "consulting"
+        ]
+      },
+      {
+        "kind": "contract",
+        "id": "C1",
+        "revision": 3,
+        "approved_on": "2026-07-01",
+        "case_id": "T",
+        "region": "NORTH",
+        "effective_on": "2026-03-01",
+        "ceiling_eur_cents": 0,
+        "per_event_cap_eur_cents": 1,
+        "eligible_categories": []
+      },
+      {
+        "kind": "policy",
+        "id": "P0-travel",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "region": "NORTH",
+        "category": "travel",
+        "effective_on": "2026-01-01",
+        "eligible": true,
+        "reimbursement_bp": 10000,
+        "cap_eur_cents": null,
+        "manual_review": false
+      },
+      {
+        "kind": "policy",
+        "id": "P1-travel",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "region": "NORTH",
+        "category": "travel",
+        "effective_on": "2026-04-01",
+        "eligible": true,
+        "reimbursement_bp": 8500,
+        "cap_eur_cents": 1000,
+        "manual_review": false
+      },
+      {
+        "kind": "policy",
+        "id": "P0-consulting",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "region": "NORTH",
+        "category": "consulting",
+        "effective_on": "2026-01-01",
+        "eligible": true,
+        "reimbursement_bp": 10000,
+        "cap_eur_cents": null,
+        "manual_review": false
+      },
+      {
+        "kind": "policy",
+        "id": "P1-consulting",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "region": "NORTH",
+        "category": "consulting",
+        "effective_on": "2026-04-01",
+        "eligible": false,
+        "reimbursement_bp": 8500,
+        "cap_eur_cents": 1000,
+        "manual_review": false
+      },
+      {
+        "kind": "fx",
+        "id": "F",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "currency": "EUR",
+        "effective_on": "2026-04-01",
+        "eur_bp": 9000
+      },
+      {
+        "kind": "fx",
+        "id": "F",
+        "revision": 2,
+        "approved_on": "2026-04-01",
+        "currency": "EUR",
+        "effective_on": "2026-04-01",
+        "eur_bp": 10000
+      },
+      {
+        "kind": "fx",
+        "id": "F",
+        "revision": 3,
+        "approved_on": "2026-07-01",
+        "currency": "EUR",
+        "effective_on": "2026-04-01",
+        "eur_bp": 5000
+      },
+      {
+        "kind": "event",
+        "id": "E1",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "case_id": "T",
+        "effective_on": "2026-04-01",
+        "category": "travel",
+        "currency": "EUR",
+        "amount_minor": 1001,
+        "state": "posted"
+      },
+      {
+        "kind": "event",
+        "id": "E2",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "case_id": "T",
+        "effective_on": "2026-04-01",
+        "category": "travel",
+        "currency": "EUR",
+        "amount_minor": 2000,
+        "state": "posted"
+      },
+      {
+        "kind": "event",
+        "id": "E3",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "case_id": "T",
+        "effective_on": "2026-04-01",
+        "category": "consulting",
+        "currency": "EUR",
+        "amount_minor": 600,
+        "state": "posted"
+      },
+      {
+        "kind": "event",
+        "id": "E4",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "case_id": "T",
+        "effective_on": "2026-04-01",
+        "category": "travel",
+        "currency": "EUR",
+        "amount_minor": 900,
+        "state": "posted"
+      },
+      {
+        "kind": "event",
+        "id": "E5",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "case_id": "T",
+        "effective_on": "2026-04-01",
+        "category": "travel",
+        "currency": "EUR",
+        "amount_minor": 900,
+        "state": "void"
+      },
+      {
+        "kind": "event",
+        "id": "E6",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "case_id": "T",
+        "effective_on": "2026-04-01",
+        "category": "travel",
+        "currency": "EUR",
+        "amount_minor": -1001,
+        "state": "posted"
+      },
+      {
+        "kind": "event",
+        "id": "E1",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "case_id": "T",
+        "effective_on": "2026-04-01",
+        "category": "travel",
+        "currency": "EUR",
+        "amount_minor": 1001,
+        "state": "posted"
+      },
+      {
+        "kind": "event",
+        "id": "E2",
+        "revision": 2,
+        "approved_on": "2026-04-01",
+        "case_id": "T",
+        "effective_on": "2026-04-01",
+        "category": "travel",
+        "currency": "EUR",
+        "amount_minor": 1500,
+        "state": "posted"
+      },
+      {
+        "kind": "event",
+        "id": "E2",
+        "revision": 3,
+        "approved_on": "2026-07-01",
+        "case_id": "T",
+        "effective_on": "2026-04-01",
+        "category": "travel",
+        "currency": "EUR",
+        "amount_minor": 1,
+        "state": "posted"
+      },
+      {
+        "kind": "event",
+        "id": "E7",
+        "revision": 1,
+        "approved_on": "2026-07-01",
+        "case_id": "T",
+        "effective_on": "2026-04-01",
+        "category": "travel",
+        "currency": "EUR",
+        "amount_minor": 9999,
+        "state": "posted"
+      },
+      {
+        "kind": "event",
+        "id": "E8",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "case_id": "T",
+        "effective_on": "2026-07-01",
+        "category": "travel",
+        "currency": "EUR",
+        "amount_minor": 9999,
+        "state": "posted"
+      },
+      {
+        "kind": "exception",
+        "id": "X-E3",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "event_id": "E3",
+        "case_id": "T",
+        "valid_from": "2026-04-01",
+        "valid_to": "2026-04-01",
+        "policy_override": "allow",
+        "cap_eur_cents": 500,
+        "manual_review": true
+      },
+      {
+        "kind": "exception",
+        "id": "X-E4",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "event_id": "E4",
+        "case_id": "T",
+        "valid_from": "2026-01-01",
+        "valid_to": "2026-06-30",
+        "policy_override": "deny",
+        "cap_eur_cents": null,
+        "manual_review": false
+      },
+      {
+        "kind": "exception",
+        "id": "X-E6",
+        "revision": 1,
+        "approved_on": "2026-04-01",
+        "event_id": "E6",
+        "case_id": "T",
+        "valid_from": "2026-04-02",
+        "valid_to": "2026-06-30",
+        "policy_override": "deny",
+        "cap_eur_cents": 1,
+        "manual_review": true
+      }
+    ],
+    "task": {
+      "audit_date": "2026-06-30",
+      "target_case_ids": [
+        "T"
+      ]
+    },
+    "expected": {
+      "audit_date": "2026-06-30",
+      "decisions": [
+        {
+          "case_id": "T",
+          "recognized_cents": 1500,
+          "accepted_count": 4,
+          "rejected_count": 2,
+          "flagged_count": 1,
+          "over_limit_cents": 1,
+          "status": "BREACH"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "grams": 0,
+      "base_grams": 100,
+      "base_fee": 50,
+      "step_grams": 100,
+      "step_fee": 20
+    },
+    "expected": 50
+  },
+  {
+    "id": "C02",
+    "input": {
+      "grams": 100,
+      "base_grams": 100,
+      "base_fee": 50,
+      "step_grams": 100,
+      "step_fee": 20
+    },
+    "expected": 50
+  },
+  {
+    "id": "C03",
+    "input": {
+      "grams": 101,
+      "base_grams": 100,
+      "base_fee": 50,
+      "step_grams": 100,
+      "step_fee": 20
+    },
+    "expected": 70
+  },
+  {
+    "id": "C04",
+    "input": {
+      "grams": 200,
+      "base_grams": 100,
+      "base_fee": 50,
+      "step_grams": 100,
+      "step_fee": 20
+    },
+    "expected": 70
+  },
+  {
+    "id": "C05",
+    "input": {
+      "grams": 201,
+      "base_grams": 100,
+      "base_fee": 50,
+      "step_grams": 100,
+      "step_fee": 20
+    },
+    "expected": 90
+  },
+  {
+    "id": "C06",
+    "input": {
+      "grams": 50,
+      "base_grams": 100,
+      "base_fee": 50,
+      "step_grams": 10,
+      "step_fee": 20
+    },
+    "expected": 50
+  },
+  {
+    "id": "C07",
+    "input": {
+      "grams": 1,
+      "base_grams": 0,
+      "base_fee": 0,
+      "step_grams": 1,
+      "step_fee": 3
+    },
+    "expected": 3
+  },
+  {
+    "id": "C08",
+    "input": {
+      "grams": 1000,
+      "base_grams": 200,
+      "base_fee": 70,
+      "step_grams": 300,
+      "step_fee": 15
+    },
+    "expected": 115
+  },
+  {
+    "id": "C09",
+    "input": {
+      "grams": 101,
+      "base_grams": 100,
+      "base_fee": 50,
+      "step_grams": 100,
+      "step_fee": 0
+    },
+    "expected": 50
+  },
+  {
+    "id": "C10",
+    "input": {
+      "grams": 1,
+      "base_grams": 0,
+      "base_fee": 4,
+      "step_grams": 10,
+      "step_fee": 7
+    },
+    "expected": 11
+  }
+]

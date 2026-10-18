@@ -1,0 +1,186 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "busy": [],
+      "request": [
+        1,
+        2
+      ],
+      "day": [
+        0,
+        10
+      ]
+    },
+    "expected": true
+  },
+  {
+    "id": "C02",
+    "input": {
+      "busy": [
+        [
+          2,
+          4
+        ]
+      ],
+      "request": [
+        0,
+        2
+      ],
+      "day": [
+        0,
+        10
+      ]
+    },
+    "expected": true
+  },
+  {
+    "id": "C03",
+    "input": {
+      "busy": [
+        [
+          2,
+          4
+        ]
+      ],
+      "request": [
+        4,
+        6
+      ],
+      "day": [
+        0,
+        10
+      ]
+    },
+    "expected": true
+  },
+  {
+    "id": "C04",
+    "input": {
+      "busy": [
+        [
+          2,
+          4
+        ]
+      ],
+      "request": [
+        3,
+        5
+      ],
+      "day": [
+        0,
+        10
+      ]
+    },
+    "expected": false
+  },
+  {
+    "id": "C05",
+    "input": {
+      "busy": [
+        [
+          5,
+          5
+        ]
+      ],
+      "request": [
+        0,
+        10
+      ],
+      "day": [
+        0,
+        10
+      ]
+    },
+    "expected": true
+  },
+  {
+    "id": "C06",
+    "input": {
+      "busy": [],
+      "request": [
+        -1,
+        2
+      ],
+      "day": [
+        0,
+        10
+      ]
+    },
+    "expected": false
+  },
+  {
+    "id": "C07",
+    "input": {
+      "busy": [],
+      "request": [
+        9,
+        11
+      ],
+      "day": [
+        0,
+        10
+      ]
+    },
+    "expected": false
+  },
+  {
+    "id": "C08",
+    "input": {
+      "busy": [],
+      "request": [
+        2,
+        2
+      ],
+      "day": [
+        0,
+        10
+      ]
+    },
+    "expected": false
+  },
+  {
+    "id": "C09",
+    "input": {
+      "busy": [
+        [
+          1,
+          8
+        ]
+      ],
+      "request": [
+        2,
+        3
+      ],
+      "day": [
+        0,
+        10
+      ]
+    },
+    "expected": false
+  },
+  {
+    "id": "C10",
+    "input": {
+      "busy": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "request": [
+        2,
+        5
+      ],
+      "day": [
+        0,
+        10
+      ]
+    },
+    "expected": true
+  }
+]

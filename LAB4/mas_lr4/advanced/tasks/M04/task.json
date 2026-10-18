@@ -1,0 +1,90 @@
+{
+  "id": "M04",
+  "kind": "corpus_audit",
+  "title": "Versioned grant ledger reconciliation",
+  "audit_date": "2026-06-30",
+  "target_case_ids": [
+    "GRANT-001",
+    "GRANT-002",
+    "GRANT-003",
+    "GRANT-004",
+    "GRANT-005",
+    "GRANT-006",
+    "GRANT-007",
+    "GRANT-008",
+    "GRANT-009",
+    "GRANT-010",
+    "GRANT-011",
+    "GRANT-012",
+    "GRANT-013",
+    "GRANT-014",
+    "GRANT-015",
+    "GRANT-016",
+    "GRANT-017",
+    "GRANT-018",
+    "GRANT-019",
+    "GRANT-020",
+    "GRANT-021",
+    "GRANT-022",
+    "GRANT-023",
+    "GRANT-024",
+    "GRANT-025",
+    "GRANT-026",
+    "GRANT-027",
+    "GRANT-028",
+    "GRANT-029",
+    "GRANT-030",
+    "GRANT-031",
+    "GRANT-032",
+    "GRANT-033",
+    "GRANT-034",
+    "GRANT-035",
+    "GRANT-036",
+    "GRANT-037",
+    "GRANT-038",
+    "GRANT-039",
+    "GRANT-040"
+  ],
+  "spec_path": "SPEC.md",
+  "corpus_manifest_path": "corpus/manifest.json",
+  "corpus_paths": [
+    "corpus/shard_01.jsonl",
+    "corpus/shard_02.jsonl",
+    "corpus/shard_03.jsonl",
+    "corpus/shard_04.jsonl"
+  ],
+  "answer_filename": "answer.json",
+  "evaluation": "exact_json_value",
+  "shards": [
+    {
+      "path": "corpus/shard_01.jsonl",
+      "records": 3023,
+      "bytes": 1123687,
+      "sha256": "825a24ccc1870d450a5959809f6ae77ce35a2916402488c3bc6b386a90122d26",
+      "o200k_base_tokens": 371607
+    },
+    {
+      "path": "corpus/shard_02.jsonl",
+      "records": 2934,
+      "bytes": 1088242,
+      "sha256": "4b518980f1dad49bfd88a9ea963a2697475c72c430841a6a5fffa96b6675aa3a",
+      "o200k_base_tokens": 359930
+    },
+    {
+      "path": "corpus/shard_03.jsonl",
+      "records": 2923,
+      "bytes": 1084842,
+      "sha256": "06a530fb4d4bdc991e03ba88ae5121b55b88bc94a5d4bf4209c9c9520b4c7979",
+      "o200k_base_tokens": 358687
+    },
+    {
+      "path": "corpus/shard_04.jsonl",
+      "records": 3045,
+      "bytes": 1130843,
+      "sha256": "63f675e8ffdf10117bad58c20770111f533403d42a1a82ff5d120bbf754ef6cb",
+      "o200k_base_tokens": 374103
+    }
+  ],
+  "complete_corpus_o200k_base_tokens": 1464327,
+  "provider_token_count_verified": false
+}

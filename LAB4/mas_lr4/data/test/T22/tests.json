@@ -1,0 +1,210 @@
+[
+  {
+    "id": "C01",
+    "input": [],
+    "expected": []
+  },
+  {
+    "id": "C02",
+    "input": [
+      {
+        "id": "a",
+        "time": 1,
+        "value": 2
+      }
+    ],
+    "expected": [
+      {
+        "id": "a",
+        "time": 1,
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "C03",
+    "input": [
+      {
+        "id": "a",
+        "time": 2,
+        "value": 3
+      },
+      {
+        "id": "a",
+        "time": 1,
+        "value": 4
+      }
+    ],
+    "expected": [
+      {
+        "id": "a",
+        "time": 2,
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "C04",
+    "input": [
+      {
+        "id": "a",
+        "time": 1,
+        "value": 2
+      },
+      {
+        "id": "a",
+        "time": 1,
+        "value": 9
+      }
+    ],
+    "expected": [
+      {
+        "id": "a",
+        "time": 1,
+        "value": 9
+      }
+    ]
+  },
+  {
+    "id": "C05",
+    "input": [
+      {
+        "id": "b",
+        "time": 0,
+        "value": 1
+      },
+      {
+        "id": "a",
+        "time": 3,
+        "value": 2
+      }
+    ],
+    "expected": [
+      {
+        "id": "a",
+        "time": 3,
+        "value": 2
+      },
+      {
+        "id": "b",
+        "time": 0,
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "C06",
+    "input": [
+      {
+        "id": "a",
+        "time": -2,
+        "value": 2
+      },
+      {
+        "id": "a",
+        "time": -1,
+        "value": 3
+      }
+    ],
+    "expected": [
+      {
+        "id": "a",
+        "time": -1,
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "C07",
+    "input": [
+      {
+        "id": "",
+        "time": 0,
+        "value": 0
+      }
+    ],
+    "expected": [
+      {
+        "id": "",
+        "time": 0,
+        "value": 0
+      }
+    ]
+  },
+  {
+    "id": "C08",
+    "input": [
+      {
+        "id": "a",
+        "time": 1,
+        "value": 2
+      },
+      {
+        "id": "b",
+        "time": 1,
+        "value": 3
+      },
+      {
+        "id": "a",
+        "time": 2,
+        "value": 4
+      }
+    ],
+    "expected": [
+      {
+        "id": "a",
+        "time": 2,
+        "value": 4
+      },
+      {
+        "id": "b",
+        "time": 1,
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "C09",
+    "input": [
+      {
+        "id": "a",
+        "time": 1,
+        "value": null
+      }
+    ],
+    "expected": [
+      {
+        "id": "a",
+        "time": 1,
+        "value": null
+      }
+    ]
+  },
+  {
+    "id": "C10",
+    "input": [
+      {
+        "id": "x",
+        "time": 2,
+        "value": 1
+      },
+      {
+        "id": "x",
+        "time": 3,
+        "value": 2
+      },
+      {
+        "id": "x",
+        "time": 2,
+        "value": 9
+      }
+    ],
+    "expected": [
+      {
+        "id": "x",
+        "time": 3,
+        "value": 2
+      }
+    ]
+  }
+]

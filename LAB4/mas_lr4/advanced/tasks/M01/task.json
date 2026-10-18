@@ -1,0 +1,33 @@
+{
+  "id": "M01",
+  "title": "Событийный сервис заказов: резерв, оплата, отмена и возврат",
+  "version": "1.0.0",
+  "entrypoint": "app.api:solve",
+  "language": "python",
+  "python_version": "3.11+",
+  "starter_dir": "starter",
+  "spec": "SPEC.md",
+  "visible_tests": "visible.json",
+  "editable_files": [
+    "app/__init__.py",
+    "app/api.py",
+    "app/model.py",
+    "app/events.py",
+    "app/inventory.py",
+    "app/payments.py",
+    "app/shipping.py",
+    "app/cancellation.py",
+    "app/refunds.py",
+    "app/transaction.py",
+    "app/idempotency.py"
+  ],
+  "constraints": {
+    "stdlib_only": true,
+    "max_events": 30,
+    "input_must_not_be_mutated": true,
+    "calls_are_isolated": true,
+    "no_external_io": true,
+    "keep_public_tests_unchanged": true
+  },
+  "notes": "Repair existing implementation. Hidden tests obey SPEC.md. Do not change the public entrypoint or fixtures."
+}

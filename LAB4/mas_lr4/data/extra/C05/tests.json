@@ -1,0 +1,421 @@
+[
+  {
+    "id": "V01_atomic_reservation",
+    "input": {
+      "stock": {
+        "a": 4,
+        "b": 1
+      },
+      "events": [
+        {
+          "t": 0,
+          "op": "reserve",
+          "id": "x",
+          "items": {
+            "a": 2,
+            "b": 2
+          },
+          "expires": 8
+        },
+        {
+          "t": 1,
+          "op": "reserve",
+          "id": "x",
+          "items": {
+            "a": 4
+          },
+          "expires": 8
+        }
+      ],
+      "now": 1
+    },
+    "expected": {
+      "log": [
+        "insufficient",
+        "reserved"
+      ],
+      "inventory": [
+        {
+          "sku": "a",
+          "available": 0,
+          "reserved": 4,
+          "shipped": 0
+        },
+        {
+          "sku": "b",
+          "available": 1,
+          "reserved": 0,
+          "shipped": 0
+        }
+      ],
+      "reservations": [
+        {
+          "id": "x",
+          "status": "active",
+          "remaining": {
+            "a": 4
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "V02_expiry_boundary",
+    "input": {
+      "stock": {
+        "a": 5
+      },
+      "events": [
+        {
+          "t": 0,
+          "op": "reserve",
+          "id": "x",
+          "items": {
+            "a": 4
+          },
+          "expires": 3
+        },
+        {
+          "t": 3,
+          "op": "fulfill",
+          "id": "x",
+          "items": {
+            "a": 1
+          }
+        },
+        {
+          "t": 3,
+          "op": "reserve",
+          "id": "y",
+          "items": {
+            "a": 5
+          },
+          "expires": 9
+        }
+      ],
+      "now": 3
+    },
+    "expected": {
+      "log": [
+        "reserved",
+        "inactive",
+        "reserved"
+      ],
+      "inventory": [
+        {
+          "sku": "a",
+          "available": 0,
+          "reserved": 5,
+          "shipped": 0
+        }
+      ],
+      "reservations": [
+        {
+          "id": "x",
+          "status": "expired",
+          "remaining": {
+            "a": 0
+          }
+        },
+        {
+          "id": "y",
+          "status": "active",
+          "remaining": {
+            "a": 5
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "V03_partial_fulfillment",
+    "input": {
+      "stock": {
+        "a": 5,
+        "b": 4
+      },
+      "events": [
+        {
+          "t": 0,
+          "op": "reserve",
+          "id": "x",
+          "items": {
+            "a": 3,
+            "b": 2
+          },
+          "expires": 9
+        },
+        {
+          "t": 1,
+          "op": "fulfill",
+          "id": "x",
+          "items": {
+            "a": 3
+          }
+        }
+      ],
+      "now": 1
+    },
+    "expected": {
+      "log": [
+        "reserved",
+        "fulfilled"
+      ],
+      "inventory": [
+        {
+          "sku": "a",
+          "available": 2,
+          "reserved": 0,
+          "shipped": 3
+        },
+        {
+          "sku": "b",
+          "available": 2,
+          "reserved": 2,
+          "shipped": 0
+        }
+      ],
+      "reservations": [
+        {
+          "id": "x",
+          "status": "active",
+          "remaining": {
+            "a": 0,
+            "b": 2
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "V04_cancel_and_identifier",
+    "input": {
+      "stock": {
+        "a": 4
+      },
+      "events": [
+        {
+          "t": 0,
+          "op": "reserve",
+          "id": "x",
+          "items": {
+            "a": 3
+          },
+          "expires": 9
+        },
+        {
+          "t": 1,
+          "op": "cancel",
+          "id": "x"
+        },
+        {
+          "t": 2,
+          "op": "reserve",
+          "id": "x",
+          "items": {
+            "a": 1
+          },
+          "expires": 8
+        }
+      ],
+      "now": 2
+    },
+    "expected": {
+      "log": [
+        "reserved",
+        "cancelled",
+        "duplicate"
+      ],
+      "inventory": [
+        {
+          "sku": "a",
+          "available": 4,
+          "reserved": 0,
+          "shipped": 0
+        }
+      ],
+      "reservations": [
+        {
+          "id": "x",
+          "status": "cancelled",
+          "remaining": {
+            "a": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "V05_final_expiry",
+    "input": {
+      "stock": {
+        "a": 5
+      },
+      "events": [
+        {
+          "t": 0,
+          "op": "reserve",
+          "id": "x",
+          "items": {
+            "a": 4
+          },
+          "expires": 3
+        }
+      ],
+      "now": 3
+    },
+    "expected": {
+      "log": [
+        "reserved"
+      ],
+      "inventory": [
+        {
+          "sku": "a",
+          "available": 5,
+          "reserved": 0,
+          "shipped": 0
+        }
+      ],
+      "reservations": [
+        {
+          "id": "x",
+          "status": "expired",
+          "remaining": {
+            "a": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "V06_combined",
+    "input": {
+      "stock": {
+        "a": 5,
+        "b": 2
+      },
+      "events": [
+        {
+          "t": 0,
+          "op": "reserve",
+          "id": "x",
+          "items": {
+            "a": 4,
+            "b": 2
+          },
+          "expires": 7
+        },
+        {
+          "t": 1,
+          "op": "fulfill",
+          "id": "x",
+          "items": {
+            "a": 2
+          }
+        },
+        {
+          "t": 2,
+          "op": "fulfill",
+          "id": "x",
+          "items": {
+            "a": 3,
+            "b": 1
+          }
+        },
+        {
+          "t": 3,
+          "op": "restock",
+          "items": {
+            "b": 3
+          }
+        },
+        {
+          "t": 4,
+          "op": "reserve",
+          "id": "y",
+          "items": {
+            "a": 1,
+            "b": 3
+          },
+          "expires": 5
+        },
+        {
+          "t": 5,
+          "op": "fulfill",
+          "id": "y",
+          "items": {
+            "b": 1
+          }
+        },
+        {
+          "t": 6,
+          "op": "cancel",
+          "id": "x"
+        },
+        {
+          "t": 6,
+          "op": "reserve",
+          "id": "z",
+          "items": {
+            "a": 3,
+            "b": 5
+          },
+          "expires": 10
+        }
+      ],
+      "now": 10
+    },
+    "expected": {
+      "log": [
+        "reserved",
+        "fulfilled",
+        "exceeds",
+        "restocked",
+        "reserved",
+        "inactive",
+        "cancelled",
+        "reserved"
+      ],
+      "inventory": [
+        {
+          "sku": "a",
+          "available": 3,
+          "reserved": 0,
+          "shipped": 2
+        },
+        {
+          "sku": "b",
+          "available": 5,
+          "reserved": 0,
+          "shipped": 0
+        }
+      ],
+      "reservations": [
+        {
+          "id": "x",
+          "status": "cancelled",
+          "remaining": {
+            "a": 0,
+            "b": 0
+          }
+        },
+        {
+          "id": "y",
+          "status": "expired",
+          "remaining": {
+            "a": 0,
+            "b": 0
+          }
+        },
+        {
+          "id": "z",
+          "status": "expired",
+          "remaining": {
+            "a": 0,
+            "b": 0
+          }
+        }
+      ]
+    }
+  }
+]

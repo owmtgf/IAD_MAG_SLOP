@@ -1,0 +1,198 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "stock": 5,
+      "orders": []
+    },
+    "expected": {
+      "accepted": [],
+      "remaining": 5
+    }
+  },
+  {
+    "id": "C02",
+    "input": {
+      "stock": 5,
+      "orders": [
+        [
+          "a",
+          3
+        ]
+      ]
+    },
+    "expected": {
+      "accepted": [
+        "a"
+      ],
+      "remaining": 2
+    }
+  },
+  {
+    "id": "C03",
+    "input": {
+      "stock": 5,
+      "orders": [
+        [
+          "a",
+          5
+        ]
+      ]
+    },
+    "expected": {
+      "accepted": [
+        "a"
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C04",
+    "input": {
+      "stock": 5,
+      "orders": [
+        [
+          "a",
+          6
+        ],
+        [
+          "b",
+          2
+        ]
+      ]
+    },
+    "expected": {
+      "accepted": [
+        "b"
+      ],
+      "remaining": 3
+    }
+  },
+  {
+    "id": "C05",
+    "input": {
+      "stock": 5,
+      "orders": [
+        [
+          "a",
+          3
+        ],
+        [
+          "b",
+          3
+        ]
+      ]
+    },
+    "expected": {
+      "accepted": [
+        "a"
+      ],
+      "remaining": 2
+    }
+  },
+  {
+    "id": "C06",
+    "input": {
+      "stock": 0,
+      "orders": [
+        [
+          "a",
+          0
+        ]
+      ]
+    },
+    "expected": {
+      "accepted": [
+        "a"
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C07",
+    "input": {
+      "stock": 0,
+      "orders": [
+        [
+          "a",
+          1
+        ]
+      ]
+    },
+    "expected": {
+      "accepted": [],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C08",
+    "input": {
+      "stock": 5,
+      "orders": [
+        [
+          "a",
+          2
+        ],
+        [
+          "b",
+          2
+        ],
+        [
+          "c",
+          1
+        ]
+      ]
+    },
+    "expected": {
+      "accepted": [
+        "a",
+        "b",
+        "c"
+      ],
+      "remaining": 0
+    }
+  },
+  {
+    "id": "C09",
+    "input": {
+      "stock": 2,
+      "orders": [
+        [
+          "a",
+          3
+        ],
+        [
+          "b",
+          4
+        ]
+      ]
+    },
+    "expected": {
+      "accepted": [],
+      "remaining": 2
+    }
+  },
+  {
+    "id": "C10",
+    "input": {
+      "stock": 3,
+      "orders": [
+        [
+          "b",
+          2
+        ],
+        [
+          "a",
+          1
+        ]
+      ]
+    },
+    "expected": {
+      "accepted": [
+        "b",
+        "a"
+      ],
+      "remaining": 0
+    }
+  }
+]

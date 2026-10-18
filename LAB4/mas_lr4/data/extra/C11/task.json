@@ -1,0 +1,548 @@
+{
+  "id": "C11",
+  "title": "Транзакции, повторные savepoint и отложенные ограничения",
+  "description": "Исполните журнал одной транзакционной сессии со снимками и исправляемым отказом commit.",
+  "input_format": "{rows:[{id,parent,slot,amount}],total,commands:[{op,row?|id?|name?}]}",
+  "output_format": "{rows:[row],pending:[row]|null,savepoints:[name],log:[\"ok\"|\"rejected\"|\"constraint\"]}",
+  "rules": [
+    "Входные rows имеют уникальные id; строка содержит id,parent,slot,amount. id и slot — строки, parent — строковый id или null, amount — целое. Имена savepoint также строки. Исходные rows удовлетворяют всем ограничениям.",
+    "total — фиксированное целое >= 0. Во входе не более 8 исходных строк, 50 команд и 10 различных id строк; строки и команды структурно корректны.",
+    "Изначально транзакции нет. begin открывает ее с копией зафиксированных rows и пустым стеком точек; вложенный begin отклоняется.",
+    "put заменяет целую строку с тем же id либо вставляет новую. Команда содержит поле row со всеми четырьмя полями.",
+    "delete содержит id; удаляет существующую рабочую строку, иначе rejected. Каскадного удаления нет.",
+    "Все ограничения отложены до commit: put/delete могут временно нарушать неотрицательность, уникальность slot, ссылки, отсутствие циклов и сумму.",
+    "При commit каждый amount должен быть >= 0, сумма всех amount должна точно равняться total, а все slot должны быть различны.",
+    "При commit каждый parent, отличный от null, должен существовать в рабочих rows; граф parent не должен содержать циклов, в том числе ссылок на себя.",
+    "savepoint с name добавляет наверх стека снимок текущих рабочих rows. Повтор name создает еще одну точку и не заменяет предыдущую.",
+    "rollback_to и release ищут самую позднюю точку с данным name. Если такой точки нет, команда получает rejected без изменений.",
+    "rollback_to восстанавливает рабочие rows из найденного снимка и удаляет более поздние точки; сама найденная точка остается.",
+    "release удаляет найденную точку и все более поздние точки, не меняя рабочие rows.",
+    "Успешный commit заменяет зафиксированные rows рабочими, закрывает транзакцию и очищает все точки.",
+    "Если commit нарушает хотя бы одно ограничение, его status=constraint; рабочие rows, точки и открытая транзакция сохраняются для исправления.",
+    "abort отбрасывает рабочие rows и точки и закрывает транзакцию. Зафиксированные rows не меняются.",
+    "Любая команда кроме begin без открытой транзакции имеет status=rejected. Отклоненная команда ничего не меняет; успешная команда получает ok.",
+    "Конец списка не вызывает неявного commit/abort. Результат rows — зафиксированные строки; pending — рабочие строки открытой транзакции или null.",
+    "rows и pending отсортированы по id, поля строк сохранены. savepoints — имена снизу вверх с повторами; log — статусы по порядку команд."
+  ],
+  "examples": [
+    {
+      "id": "v01",
+      "input": {
+        "rows": [
+          {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 6
+          },
+          {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 4
+          }
+        ],
+        "total": 10,
+        "commands": [
+          {
+            "op": "begin"
+          },
+          {
+            "op": "savepoint",
+            "name": "s"
+          },
+          {
+            "op": "put",
+            "row": {
+              "id": "a",
+              "parent": null,
+              "slot": "A",
+              "amount": 8
+            }
+          },
+          {
+            "op": "put",
+            "row": {
+              "id": "b",
+              "parent": "a",
+              "slot": "B",
+              "amount": 2
+            }
+          },
+          {
+            "op": "rollback_to",
+            "name": "s"
+          },
+          {
+            "op": "release",
+            "name": "s"
+          },
+          {
+            "op": "commit"
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 6
+          },
+          {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 4
+          }
+        ],
+        "pending": null,
+        "savepoints": [],
+        "log": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ]
+      }
+    },
+    {
+      "id": "v02",
+      "input": {
+        "rows": [
+          {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 6
+          },
+          {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 4
+          }
+        ],
+        "total": 10,
+        "commands": [
+          {
+            "op": "begin"
+          },
+          {
+            "op": "put",
+            "row": {
+              "id": "a",
+              "parent": "ghost",
+              "slot": "A",
+              "amount": 6
+            }
+          },
+          {
+            "op": "savepoint",
+            "name": "bad"
+          },
+          {
+            "op": "commit"
+          },
+          {
+            "op": "put",
+            "row": {
+              "id": "a",
+              "parent": null,
+              "slot": "A",
+              "amount": 6
+            }
+          },
+          {
+            "op": "commit"
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 6
+          },
+          {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 4
+          }
+        ],
+        "pending": null,
+        "savepoints": [],
+        "log": [
+          "ok",
+          "ok",
+          "ok",
+          "constraint",
+          "ok",
+          "ok"
+        ]
+      }
+    },
+    {
+      "id": "v03",
+      "input": {
+        "rows": [
+          {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 6
+          },
+          {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 4
+          }
+        ],
+        "total": 10,
+        "commands": [
+          {
+            "op": "begin"
+          },
+          {
+            "op": "savepoint",
+            "name": "s"
+          },
+          {
+            "op": "put",
+            "row": {
+              "id": "a",
+              "parent": null,
+              "slot": "A",
+              "amount": 7
+            }
+          },
+          {
+            "op": "savepoint",
+            "name": "s"
+          },
+          {
+            "op": "put",
+            "row": {
+              "id": "b",
+              "parent": "a",
+              "slot": "B",
+              "amount": 3
+            }
+          },
+          {
+            "op": "rollback_to",
+            "name": "s"
+          },
+          {
+            "op": "release",
+            "name": "s"
+          },
+          {
+            "op": "rollback_to",
+            "name": "s"
+          },
+          {
+            "op": "commit"
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 6
+          },
+          {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 4
+          }
+        ],
+        "pending": null,
+        "savepoints": [],
+        "log": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ]
+      }
+    },
+    {
+      "id": "v04",
+      "input": {
+        "rows": [
+          {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 6
+          },
+          {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 4
+          }
+        ],
+        "total": 10,
+        "commands": [
+          {
+            "op": "begin"
+          },
+          {
+            "op": "put",
+            "row": {
+              "id": "a",
+              "parent": null,
+              "slot": "A",
+              "amount": -2
+            }
+          },
+          {
+            "op": "put",
+            "row": {
+              "id": "b",
+              "parent": "a",
+              "slot": "B",
+              "amount": 12
+            }
+          },
+          {
+            "op": "commit"
+          },
+          {
+            "op": "put",
+            "row": {
+              "id": "a",
+              "parent": null,
+              "slot": "A",
+              "amount": 2
+            }
+          },
+          {
+            "op": "put",
+            "row": {
+              "id": "b",
+              "parent": "a",
+              "slot": "B",
+              "amount": 8
+            }
+          },
+          {
+            "op": "commit"
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 2
+          },
+          {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 8
+          }
+        ],
+        "pending": null,
+        "savepoints": [],
+        "log": [
+          "ok",
+          "ok",
+          "ok",
+          "constraint",
+          "ok",
+          "ok",
+          "ok"
+        ]
+      }
+    },
+    {
+      "id": "v05",
+      "input": {
+        "rows": [
+          {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 6
+          },
+          {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 4
+          }
+        ],
+        "total": 10,
+        "commands": [
+          {
+            "op": "begin"
+          },
+          {
+            "op": "put",
+            "row": {
+              "id": "a",
+              "parent": "b",
+              "slot": "A",
+              "amount": 6
+            }
+          },
+          {
+            "op": "commit"
+          },
+          {
+            "op": "abort"
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 6
+          },
+          {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 4
+          }
+        ],
+        "pending": null,
+        "savepoints": [],
+        "log": [
+          "ok",
+          "ok",
+          "constraint",
+          "ok"
+        ]
+      }
+    },
+    {
+      "id": "v06",
+      "input": {
+        "rows": [
+          {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 6
+          },
+          {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 4
+          }
+        ],
+        "total": 10,
+        "commands": [
+          {
+            "op": "begin"
+          },
+          {
+            "op": "savepoint",
+            "name": "a"
+          },
+          {
+            "op": "put",
+            "row": {
+              "id": "a",
+              "parent": null,
+              "slot": "A",
+              "amount": 7
+            }
+          },
+          {
+            "op": "savepoint",
+            "name": "b"
+          },
+          {
+            "op": "put",
+            "row": {
+              "id": "b",
+              "parent": "a",
+              "slot": "B",
+              "amount": 3
+            }
+          },
+          {
+            "op": "savepoint",
+            "name": "c"
+          },
+          {
+            "op": "release",
+            "name": "b"
+          },
+          {
+            "op": "rollback_to",
+            "name": "c"
+          },
+          {
+            "op": "rollback_to",
+            "name": "a"
+          },
+          {
+            "op": "commit"
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "a",
+            "parent": null,
+            "slot": "A",
+            "amount": 6
+          },
+          {
+            "id": "b",
+            "parent": "a",
+            "slot": "B",
+            "amount": 4
+          }
+        ],
+        "pending": null,
+        "savepoints": [],
+        "log": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "rejected",
+          "ok",
+          "ok"
+        ]
+      }
+    }
+  ],
+  "entrypoint": "solve(data)",
+  "statement": "Исполните журнал одной транзакционной сессии со снимками и исправляемым отказом commit.\n\nВход: {rows:[{id,parent,slot,amount}],total,commands:[{op,row?|id?|name?}]}\nВыход: {rows:[row],pending:[row]|null,savepoints:[name],log:[\"ok\"|\"rejected\"|\"constraint\"]}\n\n1. Входные rows имеют уникальные id; строка содержит id,parent,slot,amount. id и slot — строки, parent — строковый id или null, amount — целое. Имена savepoint также строки. Исходные rows удовлетворяют всем ограничениям.\n2. total — фиксированное целое >= 0. Во входе не более 8 исходных строк, 50 команд и 10 различных id строк; строки и команды структурно корректны.\n3. Изначально транзакции нет. begin открывает ее с копией зафиксированных rows и пустым стеком точек; вложенный begin отклоняется.\n4. put заменяет целую строку с тем же id либо вставляет новую. Команда содержит поле row со всеми четырьмя полями.\n5. delete содержит id; удаляет существующую рабочую строку, иначе rejected. Каскадного удаления нет.\n6. Все ограничения отложены до commit: put/delete могут временно нарушать неотрицательность, уникальность slot, ссылки, отсутствие циклов и сумму.\n7. При commit каждый amount должен быть >= 0, сумма всех amount должна точно равняться total, а все slot должны быть различны.\n8. При commit каждый parent, отличный от null, должен существовать в рабочих rows; граф parent не должен содержать циклов, в том числе ссылок на себя.\n9. savepoint с name добавляет наверх стека снимок текущих рабочих rows. Повтор name создает еще одну точку и не заменяет предыдущую.\n10. rollback_to и release ищут самую позднюю точку с данным name. Если такой точки нет, команда получает rejected без изменений.\n11. rollback_to восстанавливает рабочие rows из найденного снимка и удаляет более поздние точки; сама найденная точка остается.\n12. release удаляет найденную точку и все более поздние точки, не меняя рабочие rows.\n13. Успешный commit заменяет зафиксированные rows рабочими, закрывает транзакцию и очищает все точки.\n14. Если commit нарушает хотя бы одно ограничение, его status=constraint; рабочие rows, точки и открытая транзакция сохраняются для исправления.\n15. abort отбрасывает рабочие rows и точки и закрывает транзакцию. Зафиксированные rows не меняются.\n16. Любая команда кроме begin без открытой транзакции имеет status=rejected. Отклоненная команда ничего не меняет; успешная команда получает ok.\n17. Конец списка не вызывает неявного commit/abort. Результат rows — зафиксированные строки; pending — рабочие строки открытой транзакции или null.\n18. rows и pending отсортированы по id, поля строк сохранены. savepoints — имена снизу вверх с повторами; log — статусы по порядку команд.\n\nРеализуйте solve(data) без изменения входа. Только функции верхнего уровня; импорты, классы и глобальные константы запрещены. Числа — int, не bool. Строки сравниваются лексикографически с учетом регистра. Верните детерминированное JSON-значение; порядок списков существенен. Вход структурно корректен; неописанные входы вне области задачи."
+}

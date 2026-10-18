@@ -1,0 +1,208 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "capacity": 10,
+      "sizes": []
+    },
+    "expected": {
+      "bins": [],
+      "remaining": []
+    }
+  },
+  {
+    "id": "C02",
+    "input": {
+      "capacity": 10,
+      "sizes": [
+        6,
+        4
+      ]
+    },
+    "expected": {
+      "bins": [
+        0,
+        0
+      ],
+      "remaining": [
+        0
+      ]
+    }
+  },
+  {
+    "id": "C03",
+    "input": {
+      "capacity": 10,
+      "sizes": [
+        6,
+        6,
+        4
+      ]
+    },
+    "expected": {
+      "bins": [
+        0,
+        1,
+        0
+      ],
+      "remaining": [
+        0,
+        4
+      ]
+    }
+  },
+  {
+    "id": "C04",
+    "input": {
+      "capacity": 10,
+      "sizes": [
+        2,
+        8,
+        5
+      ]
+    },
+    "expected": {
+      "bins": [
+        0,
+        0,
+        1
+      ],
+      "remaining": [
+        0,
+        5
+      ]
+    }
+  },
+  {
+    "id": "C05",
+    "input": {
+      "capacity": 5,
+      "sizes": [
+        5,
+        5
+      ]
+    },
+    "expected": {
+      "bins": [
+        0,
+        1
+      ],
+      "remaining": [
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "id": "C06",
+    "input": {
+      "capacity": 4,
+      "sizes": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "expected": {
+      "bins": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "remaining": [
+        0
+      ]
+    }
+  },
+  {
+    "id": "C07",
+    "input": {
+      "capacity": 10,
+      "sizes": [
+        7,
+        3,
+        7,
+        3
+      ]
+    },
+    "expected": {
+      "bins": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "remaining": [
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "id": "C08",
+    "input": {
+      "capacity": 10,
+      "sizes": [
+        8,
+        5,
+        2,
+        5
+      ]
+    },
+    "expected": {
+      "bins": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "remaining": [
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "id": "C09",
+    "input": {
+      "capacity": 1,
+      "sizes": [
+        1
+      ]
+    },
+    "expected": {
+      "bins": [
+        0
+      ],
+      "remaining": [
+        0
+      ]
+    }
+  },
+  {
+    "id": "C10",
+    "input": {
+      "capacity": 6,
+      "sizes": [
+        4,
+        4,
+        2,
+        2
+      ]
+    },
+    "expected": {
+      "bins": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "remaining": [
+        0,
+        0
+      ]
+    }
+  }
+]

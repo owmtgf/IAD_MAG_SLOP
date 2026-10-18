@@ -1,0 +1,164 @@
+[
+  {
+    "id": "V01",
+    "input": {
+      "events": []
+    },
+    "expected": {
+      "balance": 0,
+      "payments": []
+    }
+  },
+  {
+    "id": "V02",
+    "input": {
+      "events": [
+        {
+          "id": "b",
+          "kind": "pay",
+          "amount": 300
+        },
+        {
+          "id": "A",
+          "kind": "pay",
+          "amount": 40
+        }
+      ]
+    },
+    "expected": {
+      "balance": 340,
+      "payments": [
+        {
+          "id": "A",
+          "paid": 40,
+          "refunded": 0,
+          "remaining": 40
+        },
+        {
+          "id": "b",
+          "paid": 300,
+          "refunded": 0,
+          "remaining": 300
+        }
+      ]
+    }
+  },
+  {
+    "id": "V03",
+    "input": {
+      "events": [
+        {
+          "id": "p",
+          "kind": "pay",
+          "amount": 100
+        },
+        {
+          "id": "r1",
+          "kind": "refund",
+          "payment": "p",
+          "amount": 30
+        },
+        {
+          "id": "r2",
+          "kind": "refund",
+          "payment": "p",
+          "amount": 20
+        }
+      ]
+    },
+    "expected": {
+      "balance": 50,
+      "payments": [
+        {
+          "id": "p",
+          "paid": 100,
+          "refunded": 50,
+          "remaining": 50
+        }
+      ]
+    }
+  },
+  {
+    "id": "V04",
+    "input": {
+      "events": [
+        {
+          "id": "p",
+          "kind": "pay",
+          "amount": 80
+        },
+        {
+          "id": "p",
+          "kind": "pay",
+          "amount": 80
+        },
+        {
+          "id": "r",
+          "kind": "refund",
+          "payment": "p",
+          "amount": 15
+        },
+        {
+          "id": "r",
+          "kind": "refund",
+          "payment": "p",
+          "amount": 15
+        }
+      ]
+    },
+    "expected": {
+      "balance": 65,
+      "payments": [
+        {
+          "id": "p",
+          "paid": 80,
+          "refunded": 15,
+          "remaining": 65
+        }
+      ]
+    }
+  },
+  {
+    "id": "V05",
+    "input": {
+      "events": [
+        {
+          "id": "p",
+          "kind": "pay",
+          "amount": 10
+        },
+        {
+          "id": "r1",
+          "kind": "refund",
+          "payment": "p",
+          "amount": 6
+        },
+        {
+          "id": "r2",
+          "kind": "refund",
+          "payment": "p",
+          "amount": 5
+        }
+      ]
+    },
+    "raises": "ValueError"
+  },
+  {
+    "id": "V06",
+    "input": {
+      "events": [
+        {
+          "id": "p",
+          "kind": "pay",
+          "amount": 10
+        },
+        {
+          "id": "p",
+          "kind": "pay",
+          "amount": 11
+        }
+      ]
+    },
+    "raises": "ValueError"
+  }
+]

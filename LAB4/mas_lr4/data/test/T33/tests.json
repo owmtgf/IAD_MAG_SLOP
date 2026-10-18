@@ -1,0 +1,149 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "capacities": [],
+      "jobs": 2
+    },
+    "expected": [
+      null,
+      null
+    ]
+  },
+  {
+    "id": "C02",
+    "input": {
+      "capacities": [
+        2,
+        2
+      ],
+      "jobs": 4
+    },
+    "expected": [
+      0,
+      1,
+      0,
+      1
+    ]
+  },
+  {
+    "id": "C03",
+    "input": {
+      "capacities": [
+        0,
+        2,
+        1
+      ],
+      "jobs": 4
+    },
+    "expected": [
+      1,
+      2,
+      1,
+      null
+    ]
+  },
+  {
+    "id": "C04",
+    "input": {
+      "capacities": [
+        1
+      ],
+      "jobs": 3
+    },
+    "expected": [
+      0,
+      null,
+      null
+    ]
+  },
+  {
+    "id": "C05",
+    "input": {
+      "capacities": [
+        5,
+        5
+      ],
+      "jobs": 0
+    },
+    "expected": []
+  },
+  {
+    "id": "C06",
+    "input": {
+      "capacities": [
+        0,
+        0
+      ],
+      "jobs": 1
+    },
+    "expected": [
+      null
+    ]
+  },
+  {
+    "id": "C07",
+    "input": {
+      "capacities": [
+        3,
+        1
+      ],
+      "jobs": 4
+    },
+    "expected": [
+      0,
+      1,
+      0,
+      0
+    ]
+  },
+  {
+    "id": "C08",
+    "input": {
+      "capacities": [
+        1,
+        1,
+        1
+      ],
+      "jobs": 4
+    },
+    "expected": [
+      0,
+      1,
+      2,
+      null
+    ]
+  },
+  {
+    "id": "C09",
+    "input": {
+      "capacities": [
+        0,
+        0,
+        2
+      ],
+      "jobs": 2
+    },
+    "expected": [
+      2,
+      2
+    ]
+  },
+  {
+    "id": "C10",
+    "input": {
+      "capacities": [
+        1,
+        2,
+        1
+      ],
+      "jobs": 4
+    },
+    "expected": [
+      0,
+      1,
+      2,
+      1
+    ]
+  }
+]

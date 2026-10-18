@@ -1,0 +1,196 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "budget": 5,
+      "jobs": []
+    },
+    "expected": []
+  },
+  {
+    "id": "C02",
+    "input": {
+      "budget": 5,
+      "jobs": [
+        {
+          "id": "a",
+          "priority": 1,
+          "cost": 5
+        }
+      ]
+    },
+    "expected": [
+      "a"
+    ]
+  },
+  {
+    "id": "C03",
+    "input": {
+      "budget": 5,
+      "jobs": [
+        {
+          "id": "a",
+          "priority": 1,
+          "cost": 6
+        }
+      ]
+    },
+    "expected": []
+  },
+  {
+    "id": "C04",
+    "input": {
+      "budget": 5,
+      "jobs": [
+        {
+          "id": "a",
+          "priority": 1,
+          "cost": 5
+        },
+        {
+          "id": "b",
+          "priority": 2,
+          "cost": 4
+        }
+      ]
+    },
+    "expected": [
+      "b"
+    ]
+  },
+  {
+    "id": "C05",
+    "input": {
+      "budget": 5,
+      "jobs": [
+        {
+          "id": "b",
+          "priority": 1,
+          "cost": 5
+        },
+        {
+          "id": "a",
+          "priority": 1,
+          "cost": 5
+        }
+      ]
+    },
+    "expected": [
+      "a"
+    ]
+  },
+  {
+    "id": "C06",
+    "input": {
+      "budget": 5,
+      "jobs": [
+        {
+          "id": "a",
+          "priority": 3,
+          "cost": 6
+        },
+        {
+          "id": "b",
+          "priority": 2,
+          "cost": 3
+        },
+        {
+          "id": "c",
+          "priority": 1,
+          "cost": 2
+        }
+      ]
+    },
+    "expected": [
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "C07",
+    "input": {
+      "budget": 0,
+      "jobs": [
+        {
+          "id": "a",
+          "priority": 0,
+          "cost": 0
+        }
+      ]
+    },
+    "expected": [
+      "a"
+    ]
+  },
+  {
+    "id": "C08",
+    "input": {
+      "budget": 2,
+      "jobs": [
+        {
+          "id": "a",
+          "priority": -1,
+          "cost": 1
+        },
+        {
+          "id": "b",
+          "priority": 0,
+          "cost": 1
+        }
+      ]
+    },
+    "expected": [
+      "b",
+      "a"
+    ]
+  },
+  {
+    "id": "C09",
+    "input": {
+      "budget": 10,
+      "jobs": [
+        {
+          "id": "a",
+          "priority": 1,
+          "cost": 3
+        },
+        {
+          "id": "b",
+          "priority": 2,
+          "cost": 3
+        }
+      ]
+    },
+    "expected": [
+      "b",
+      "a"
+    ]
+  },
+  {
+    "id": "C10",
+    "input": {
+      "budget": 5,
+      "jobs": [
+        {
+          "id": "a",
+          "priority": 3,
+          "cost": 3
+        },
+        {
+          "id": "b",
+          "priority": 2,
+          "cost": 3
+        },
+        {
+          "id": "c",
+          "priority": 1,
+          "cost": 2
+        }
+      ]
+    },
+    "expected": [
+      "a",
+      "c"
+    ]
+  }
+]

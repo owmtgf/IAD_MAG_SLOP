@@ -1,0 +1,421 @@
+[
+  {
+    "id": "v01",
+    "input": {
+      "orders": [
+        {
+          "id": "a",
+          "total": 10
+        }
+      ],
+      "events": [
+        {
+          "id": "p",
+          "order": "a",
+          "op": "pay",
+          "amount": 4
+        },
+        {
+          "id": "q",
+          "order": "a",
+          "op": "pay",
+          "amount": 6
+        },
+        {
+          "id": "s",
+          "order": "a",
+          "op": "ship"
+        }
+      ]
+    },
+    "expected": {
+      "orders": [
+        {
+          "id": "a",
+          "state": "shipped",
+          "paid": 10,
+          "refunded": 0,
+          "net": 10,
+          "due": 0
+        }
+      ],
+      "log": [
+        {
+          "id": "p",
+          "status": "applied",
+          "replay": false
+        },
+        {
+          "id": "q",
+          "status": "applied",
+          "replay": false
+        },
+        {
+          "id": "s",
+          "status": "applied",
+          "replay": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "v02",
+    "input": {
+      "orders": [
+        {
+          "id": "a",
+          "total": 10
+        }
+      ],
+      "events": [
+        {
+          "id": "s",
+          "order": "a",
+          "op": "ship"
+        },
+        {
+          "id": "p",
+          "order": "a",
+          "op": "pay",
+          "amount": 10
+        },
+        {
+          "id": "s",
+          "order": "a",
+          "op": "ship"
+        },
+        {
+          "id": "s",
+          "order": "a",
+          "op": "cancel"
+        }
+      ]
+    },
+    "expected": {
+      "orders": [
+        {
+          "id": "a",
+          "state": "open",
+          "paid": 10,
+          "refunded": 0,
+          "net": 10,
+          "due": 0
+        }
+      ],
+      "log": [
+        {
+          "id": "s",
+          "status": "rejected",
+          "replay": false
+        },
+        {
+          "id": "p",
+          "status": "applied",
+          "replay": false
+        },
+        {
+          "id": "s",
+          "status": "rejected",
+          "replay": true
+        },
+        {
+          "id": "s",
+          "status": "conflict",
+          "replay": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "v03",
+    "input": {
+      "orders": [
+        {
+          "id": "a",
+          "total": 10
+        }
+      ],
+      "events": [
+        {
+          "id": "p",
+          "order": "a",
+          "op": "pay",
+          "amount": 7
+        },
+        {
+          "id": "c",
+          "order": "a",
+          "op": "cancel"
+        },
+        {
+          "id": "r",
+          "order": "a",
+          "op": "refund",
+          "amount": 3
+        },
+        {
+          "id": "r2",
+          "order": "a",
+          "op": "refund",
+          "amount": 4
+        }
+      ]
+    },
+    "expected": {
+      "orders": [
+        {
+          "id": "a",
+          "state": "cancelled",
+          "paid": 7,
+          "refunded": 7,
+          "net": 0,
+          "due": 0
+        }
+      ],
+      "log": [
+        {
+          "id": "p",
+          "status": "applied",
+          "replay": false
+        },
+        {
+          "id": "c",
+          "status": "applied",
+          "replay": false
+        },
+        {
+          "id": "r",
+          "status": "applied",
+          "replay": false
+        },
+        {
+          "id": "r2",
+          "status": "applied",
+          "replay": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "v04",
+    "input": {
+      "orders": [
+        {
+          "id": "a",
+          "total": 10
+        }
+      ],
+      "events": [
+        {
+          "id": "p",
+          "order": "a",
+          "op": "pay",
+          "amount": 10
+        },
+        {
+          "id": "s",
+          "order": "a",
+          "op": "ship"
+        },
+        {
+          "id": "r",
+          "order": "a",
+          "op": "refund",
+          "amount": 6
+        },
+        {
+          "id": "x",
+          "order": "a",
+          "op": "refund",
+          "amount": 5
+        },
+        {
+          "id": "y",
+          "order": "a",
+          "op": "refund",
+          "amount": 4
+        }
+      ]
+    },
+    "expected": {
+      "orders": [
+        {
+          "id": "a",
+          "state": "shipped",
+          "paid": 10,
+          "refunded": 10,
+          "net": 0,
+          "due": 0
+        }
+      ],
+      "log": [
+        {
+          "id": "p",
+          "status": "applied",
+          "replay": false
+        },
+        {
+          "id": "s",
+          "status": "applied",
+          "replay": false
+        },
+        {
+          "id": "r",
+          "status": "applied",
+          "replay": false
+        },
+        {
+          "id": "x",
+          "status": "rejected",
+          "replay": false
+        },
+        {
+          "id": "y",
+          "status": "applied",
+          "replay": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "v05",
+    "input": {
+      "orders": [
+        {
+          "id": "a",
+          "total": 10
+        }
+      ],
+      "events": [
+        {
+          "id": "p",
+          "order": "a",
+          "op": "pay",
+          "amount": 11
+        },
+        {
+          "id": "q",
+          "order": "a",
+          "op": "pay",
+          "amount": -2
+        },
+        {
+          "id": "r",
+          "order": "a",
+          "op": "refund",
+          "amount": 1
+        },
+        {
+          "id": "s",
+          "order": "a",
+          "op": "ship"
+        }
+      ]
+    },
+    "expected": {
+      "orders": [
+        {
+          "id": "a",
+          "state": "open",
+          "paid": 0,
+          "refunded": 0,
+          "net": 0,
+          "due": 10
+        }
+      ],
+      "log": [
+        {
+          "id": "p",
+          "status": "rejected",
+          "replay": false
+        },
+        {
+          "id": "q",
+          "status": "rejected",
+          "replay": false
+        },
+        {
+          "id": "r",
+          "status": "rejected",
+          "replay": false
+        },
+        {
+          "id": "s",
+          "status": "rejected",
+          "replay": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "v06",
+    "input": {
+      "orders": [
+        {
+          "id": "a",
+          "total": 10
+        }
+      ],
+      "events": [
+        {
+          "id": "x",
+          "order": "missing",
+          "op": "pay",
+          "amount": 2
+        },
+        {
+          "id": "x",
+          "order": "a",
+          "op": "pay",
+          "amount": 2
+        },
+        {
+          "id": "x",
+          "order": "missing",
+          "op": "pay",
+          "amount": 2
+        },
+        {
+          "id": "z",
+          "order": "a",
+          "op": "pay",
+          "amount": 10
+        }
+      ]
+    },
+    "expected": {
+      "orders": [
+        {
+          "id": "a",
+          "state": "open",
+          "paid": 10,
+          "refunded": 0,
+          "net": 10,
+          "due": 0
+        }
+      ],
+      "log": [
+        {
+          "id": "x",
+          "status": "rejected",
+          "replay": false
+        },
+        {
+          "id": "x",
+          "status": "conflict",
+          "replay": false
+        },
+        {
+          "id": "x",
+          "status": "rejected",
+          "replay": true
+        },
+        {
+          "id": "z",
+          "status": "applied",
+          "replay": false
+        }
+      ]
+    }
+  }
+]

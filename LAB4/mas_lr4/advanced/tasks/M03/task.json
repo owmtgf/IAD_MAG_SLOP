@@ -1,0 +1,32 @@
+{
+  "id": "M03",
+  "title": "Архив документов: права, версии и откаты",
+  "version": "1.0.0",
+  "entrypoint": "app.api:solve",
+  "editable_files": [
+    "app/__init__.py",
+    "app/api.py",
+    "app/models.py",
+    "app/store.py",
+    "app/permissions.py",
+    "app/delegations.py",
+    "app/quota.py",
+    "app/versions.py",
+    "app/idempotency.py",
+    "app/transactions.py",
+    "app/operations.py"
+  ],
+  "constraints": {
+    "language": "python",
+    "standard_library_only": true,
+    "max_principals": 8,
+    "max_document_ids": 8,
+    "max_grant_ids": 8,
+    "max_tenants": 3,
+    "max_operations_including_children": 30,
+    "nested_atomic": false,
+    "isolated_calls": true
+  },
+  "spec": "SPEC.md",
+  "visible_tests": "visible.json"
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "C01",
+    "input": [
+      [
+        0,
+        3
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "id": "C02",
+    "input": [
+      [
+        0,
+        3
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "id": "C03",
+    "input": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "id": "C04",
+    "input": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "id": "C05",
+    "input": [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "id": "C06",
+    "input": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "expected": false
+  },
+  {
+    "id": "C07",
+    "input": [
+      [
+        -5,
+        -1
+      ],
+      [
+        -3,
+        2
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "id": "C08",
+    "input": [
+      [
+        2,
+        5
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "id": "C09",
+    "input": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "expected": true
+  },
+  {
+    "id": "C10",
+    "input": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "expected": false
+  }
+]

@@ -1,0 +1,180 @@
+[
+  {
+    "id": "C01",
+    "input": [],
+    "expected": []
+  },
+  {
+    "id": "C02",
+    "input": [
+      {
+        "id": "a",
+        "on_hand": 5,
+        "reserved": 2,
+        "minimum": 4,
+        "target": 10
+      }
+    ],
+    "expected": [
+      [
+        "a",
+        7
+      ]
+    ]
+  },
+  {
+    "id": "C03",
+    "input": [
+      {
+        "id": "a",
+        "on_hand": 5,
+        "reserved": 1,
+        "minimum": 4,
+        "target": 10
+      }
+    ],
+    "expected": [
+      [
+        "a",
+        0
+      ]
+    ]
+  },
+  {
+    "id": "C04",
+    "input": [
+      {
+        "id": "a",
+        "on_hand": 0,
+        "reserved": 0,
+        "minimum": 1,
+        "target": 3
+      }
+    ],
+    "expected": [
+      [
+        "a",
+        3
+      ]
+    ]
+  },
+  {
+    "id": "C05",
+    "input": [
+      {
+        "id": "a",
+        "on_hand": 0,
+        "reserved": 0,
+        "minimum": 0,
+        "target": 3
+      }
+    ],
+    "expected": [
+      [
+        "a",
+        0
+      ]
+    ]
+  },
+  {
+    "id": "C06",
+    "input": [
+      {
+        "id": "a",
+        "on_hand": 10,
+        "reserved": 0,
+        "minimum": 4,
+        "target": 8
+      }
+    ],
+    "expected": [
+      [
+        "a",
+        0
+      ]
+    ]
+  },
+  {
+    "id": "C07",
+    "input": [
+      {
+        "id": "a",
+        "on_hand": 5,
+        "reserved": 5,
+        "minimum": 1,
+        "target": 1
+      }
+    ],
+    "expected": [
+      [
+        "a",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "C08",
+    "input": [
+      {
+        "id": "b",
+        "on_hand": 2,
+        "reserved": 0,
+        "minimum": 3,
+        "target": 5
+      },
+      {
+        "id": "a",
+        "on_hand": 4,
+        "reserved": 0,
+        "minimum": 3,
+        "target": 5
+      }
+    ],
+    "expected": [
+      [
+        "b",
+        3
+      ],
+      [
+        "a",
+        0
+      ]
+    ]
+  },
+  {
+    "id": "C09",
+    "input": [
+      {
+        "id": "a",
+        "on_hand": 2,
+        "reserved": 1,
+        "minimum": 2,
+        "target": 2
+      }
+    ],
+    "expected": [
+      [
+        "a",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "C10",
+    "input": [
+      {
+        "id": "a",
+        "on_hand": 1,
+        "reserved": 0,
+        "minimum": 5,
+        "target": 10
+      }
+    ],
+    "expected": [
+      [
+        "a",
+        9
+      ]
+    ]
+  }
+]

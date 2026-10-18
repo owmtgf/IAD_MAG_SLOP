@@ -1,0 +1,450 @@
+{
+  "id": "C09",
+  "title": "Журнал платежей с идемпотентностью",
+  "description": "Восстановите состояние заказов по журналу команд с глобальными ключами идемпотентности.",
+  "input_format": "{orders:[{id,total}], events:[{id,order,op,amount?}]}",
+  "output_format": "{orders:[{id,state,paid,refunded,net,due}], log:[{id,status,replay}]}",
+  "rules": [
+    "orders: не более 8 заказов с уникальными id и total > 0; изначально state=open, paid=refunded=0.",
+    "events: не более 50 событий в данном порядке; op — pay, ship, cancel или refund; id события и order — строки.",
+    "У pay/refund есть amount (целое, может быть <= 0). У ship/cancel поля amount нет. Неизвестный order допустим.",
+    "id события глобален для всего входа, а не для одного заказа. Сигнатура — order, op и amount, если он предусмотрен операцией.",
+    "Первое событие с данным id запоминает сигнатуру и результат, даже если операция отклонена или заказ неизвестен.",
+    "Повтор той же сигнатуры возвращает первоначальный status с replay=true; состояние не меняется и операция не проверяется заново.",
+    "Повтор id с иной сигнатурой возвращает status=conflict, replay=false. Исходная запись этого id остается неизменной.",
+    "Новое событие для неизвестного заказа имеет status=rejected, replay=false.",
+    "pay применяется только в open, при amount > 0 и paid + amount <= total; увеличивает paid на amount.",
+    "ship применяется только в open при paid == total; меняет state на shipped.",
+    "cancel применяется только в open; меняет state на cancelled и сохраняет paid и refunded.",
+    "refund применяется только в shipped или cancelled, при 0 < amount <= paid - refunded; увеличивает refunded на amount.",
+    "paid — накопленная сумма успешных платежей; возвраты ее не уменьшают. Частичные платежи и возвраты разрешены.",
+    "Успешная новая операция получает status=applied, replay=false. Нарушение любого условия — rejected без изменения заказа.",
+    "shipped и cancelled — конечные состояния; повторные ship/cancel с новым id отклоняются.",
+    "В orders результата включить все исходные заказы по возрастанию id с полями id,state,paid,refunded,net,due.",
+    "net = paid - refunded; due = 0 для cancelled, иначе total - paid. Возврат не создает новую задолженность.",
+    "log содержит ровно одну запись {id,status,replay} на каждое входное событие, в исходном порядке."
+  ],
+  "examples": [
+    {
+      "id": "v01",
+      "input": {
+        "orders": [
+          {
+            "id": "a",
+            "total": 10
+          }
+        ],
+        "events": [
+          {
+            "id": "p",
+            "order": "a",
+            "op": "pay",
+            "amount": 4
+          },
+          {
+            "id": "q",
+            "order": "a",
+            "op": "pay",
+            "amount": 6
+          },
+          {
+            "id": "s",
+            "order": "a",
+            "op": "ship"
+          }
+        ]
+      },
+      "expected": {
+        "orders": [
+          {
+            "id": "a",
+            "state": "shipped",
+            "paid": 10,
+            "refunded": 0,
+            "net": 10,
+            "due": 0
+          }
+        ],
+        "log": [
+          {
+            "id": "p",
+            "status": "applied",
+            "replay": false
+          },
+          {
+            "id": "q",
+            "status": "applied",
+            "replay": false
+          },
+          {
+            "id": "s",
+            "status": "applied",
+            "replay": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "v02",
+      "input": {
+        "orders": [
+          {
+            "id": "a",
+            "total": 10
+          }
+        ],
+        "events": [
+          {
+            "id": "s",
+            "order": "a",
+            "op": "ship"
+          },
+          {
+            "id": "p",
+            "order": "a",
+            "op": "pay",
+            "amount": 10
+          },
+          {
+            "id": "s",
+            "order": "a",
+            "op": "ship"
+          },
+          {
+            "id": "s",
+            "order": "a",
+            "op": "cancel"
+          }
+        ]
+      },
+      "expected": {
+        "orders": [
+          {
+            "id": "a",
+            "state": "open",
+            "paid": 10,
+            "refunded": 0,
+            "net": 10,
+            "due": 0
+          }
+        ],
+        "log": [
+          {
+            "id": "s",
+            "status": "rejected",
+            "replay": false
+          },
+          {
+            "id": "p",
+            "status": "applied",
+            "replay": false
+          },
+          {
+            "id": "s",
+            "status": "rejected",
+            "replay": true
+          },
+          {
+            "id": "s",
+            "status": "conflict",
+            "replay": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "v03",
+      "input": {
+        "orders": [
+          {
+            "id": "a",
+            "total": 10
+          }
+        ],
+        "events": [
+          {
+            "id": "p",
+            "order": "a",
+            "op": "pay",
+            "amount": 7
+          },
+          {
+            "id": "c",
+            "order": "a",
+            "op": "cancel"
+          },
+          {
+            "id": "r",
+            "order": "a",
+            "op": "refund",
+            "amount": 3
+          },
+          {
+            "id": "r2",
+            "order": "a",
+            "op": "refund",
+            "amount": 4
+          }
+        ]
+      },
+      "expected": {
+        "orders": [
+          {
+            "id": "a",
+            "state": "cancelled",
+            "paid": 7,
+            "refunded": 7,
+            "net": 0,
+            "due": 0
+          }
+        ],
+        "log": [
+          {
+            "id": "p",
+            "status": "applied",
+            "replay": false
+          },
+          {
+            "id": "c",
+            "status": "applied",
+            "replay": false
+          },
+          {
+            "id": "r",
+            "status": "applied",
+            "replay": false
+          },
+          {
+            "id": "r2",
+            "status": "applied",
+            "replay": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "v04",
+      "input": {
+        "orders": [
+          {
+            "id": "a",
+            "total": 10
+          }
+        ],
+        "events": [
+          {
+            "id": "p",
+            "order": "a",
+            "op": "pay",
+            "amount": 10
+          },
+          {
+            "id": "s",
+            "order": "a",
+            "op": "ship"
+          },
+          {
+            "id": "r",
+            "order": "a",
+            "op": "refund",
+            "amount": 6
+          },
+          {
+            "id": "x",
+            "order": "a",
+            "op": "refund",
+            "amount": 5
+          },
+          {
+            "id": "y",
+            "order": "a",
+            "op": "refund",
+            "amount": 4
+          }
+        ]
+      },
+      "expected": {
+        "orders": [
+          {
+            "id": "a",
+            "state": "shipped",
+            "paid": 10,
+            "refunded": 10,
+            "net": 0,
+            "due": 0
+          }
+        ],
+        "log": [
+          {
+            "id": "p",
+            "status": "applied",
+            "replay": false
+          },
+          {
+            "id": "s",
+            "status": "applied",
+            "replay": false
+          },
+          {
+            "id": "r",
+            "status": "applied",
+            "replay": false
+          },
+          {
+            "id": "x",
+            "status": "rejected",
+            "replay": false
+          },
+          {
+            "id": "y",
+            "status": "applied",
+            "replay": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "v05",
+      "input": {
+        "orders": [
+          {
+            "id": "a",
+            "total": 10
+          }
+        ],
+        "events": [
+          {
+            "id": "p",
+            "order": "a",
+            "op": "pay",
+            "amount": 11
+          },
+          {
+            "id": "q",
+            "order": "a",
+            "op": "pay",
+            "amount": -2
+          },
+          {
+            "id": "r",
+            "order": "a",
+            "op": "refund",
+            "amount": 1
+          },
+          {
+            "id": "s",
+            "order": "a",
+            "op": "ship"
+          }
+        ]
+      },
+      "expected": {
+        "orders": [
+          {
+            "id": "a",
+            "state": "open",
+            "paid": 0,
+            "refunded": 0,
+            "net": 0,
+            "due": 10
+          }
+        ],
+        "log": [
+          {
+            "id": "p",
+            "status": "rejected",
+            "replay": false
+          },
+          {
+            "id": "q",
+            "status": "rejected",
+            "replay": false
+          },
+          {
+            "id": "r",
+            "status": "rejected",
+            "replay": false
+          },
+          {
+            "id": "s",
+            "status": "rejected",
+            "replay": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "v06",
+      "input": {
+        "orders": [
+          {
+            "id": "a",
+            "total": 10
+          }
+        ],
+        "events": [
+          {
+            "id": "x",
+            "order": "missing",
+            "op": "pay",
+            "amount": 2
+          },
+          {
+            "id": "x",
+            "order": "a",
+            "op": "pay",
+            "amount": 2
+          },
+          {
+            "id": "x",
+            "order": "missing",
+            "op": "pay",
+            "amount": 2
+          },
+          {
+            "id": "z",
+            "order": "a",
+            "op": "pay",
+            "amount": 10
+          }
+        ]
+      },
+      "expected": {
+        "orders": [
+          {
+            "id": "a",
+            "state": "open",
+            "paid": 10,
+            "refunded": 0,
+            "net": 10,
+            "due": 0
+          }
+        ],
+        "log": [
+          {
+            "id": "x",
+            "status": "rejected",
+            "replay": false
+          },
+          {
+            "id": "x",
+            "status": "conflict",
+            "replay": false
+          },
+          {
+            "id": "x",
+            "status": "rejected",
+            "replay": true
+          },
+          {
+            "id": "z",
+            "status": "applied",
+            "replay": false
+          }
+        ]
+      }
+    }
+  ],
+  "entrypoint": "solve(data)",
+  "statement": "Восстановите состояние заказов по журналу команд с глобальными ключами идемпотентности.\n\nВход: {orders:[{id,total}], events:[{id,order,op,amount?}]}\nВыход: {orders:[{id,state,paid,refunded,net,due}], log:[{id,status,replay}]}\n\n1. orders: не более 8 заказов с уникальными id и total > 0; изначально state=open, paid=refunded=0.\n2. events: не более 50 событий в данном порядке; op — pay, ship, cancel или refund; id события и order — строки.\n3. У pay/refund есть amount (целое, может быть <= 0). У ship/cancel поля amount нет. Неизвестный order допустим.\n4. id события глобален для всего входа, а не для одного заказа. Сигнатура — order, op и amount, если он предусмотрен операцией.\n5. Первое событие с данным id запоминает сигнатуру и результат, даже если операция отклонена или заказ неизвестен.\n6. Повтор той же сигнатуры возвращает первоначальный status с replay=true; состояние не меняется и операция не проверяется заново.\n7. Повтор id с иной сигнатурой возвращает status=conflict, replay=false. Исходная запись этого id остается неизменной.\n8. Новое событие для неизвестного заказа имеет status=rejected, replay=false.\n9. pay применяется только в open, при amount > 0 и paid + amount <= total; увеличивает paid на amount.\n10. ship применяется только в open при paid == total; меняет state на shipped.\n11. cancel применяется только в open; меняет state на cancelled и сохраняет paid и refunded.\n12. refund применяется только в shipped или cancelled, при 0 < amount <= paid - refunded; увеличивает refunded на amount.\n13. paid — накопленная сумма успешных платежей; возвраты ее не уменьшают. Частичные платежи и возвраты разрешены.\n14. Успешная новая операция получает status=applied, replay=false. Нарушение любого условия — rejected без изменения заказа.\n15. shipped и cancelled — конечные состояния; повторные ship/cancel с новым id отклоняются.\n16. В orders результата включить все исходные заказы по возрастанию id с полями id,state,paid,refunded,net,due.\n17. net = paid - refunded; due = 0 для cancelled, иначе total - paid. Возврат не создает новую задолженность.\n18. log содержит ровно одну запись {id,status,replay} на каждое входное событие, в исходном порядке.\n\nРеализуйте solve(data) без изменения входа. Только функции верхнего уровня; импорты, классы и глобальные константы запрещены. Числа — int, не bool. Строки сравниваются лексикографически с учетом регистра. Верните детерминированное JSON-значение; порядок списков существенен. Вход структурно корректен; неописанные входы вне области задачи."
+}

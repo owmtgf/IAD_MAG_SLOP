@@ -1,0 +1,179 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "old": {},
+      "new": {}
+    },
+    "expected": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    }
+  },
+  {
+    "id": "C02",
+    "input": {
+      "old": {},
+      "new": {
+        "a": 1
+      }
+    },
+    "expected": {
+      "added": [
+        "a"
+      ],
+      "removed": [],
+      "changed": []
+    }
+  },
+  {
+    "id": "C03",
+    "input": {
+      "old": {
+        "a": 1
+      },
+      "new": {}
+    },
+    "expected": {
+      "added": [],
+      "removed": [
+        "a"
+      ],
+      "changed": []
+    }
+  },
+  {
+    "id": "C04",
+    "input": {
+      "old": {
+        "a": 1
+      },
+      "new": {
+        "a": 2
+      }
+    },
+    "expected": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "a"
+      ]
+    }
+  },
+  {
+    "id": "C05",
+    "input": {
+      "old": {
+        "a": 0
+      },
+      "new": {
+        "a": 0
+      }
+    },
+    "expected": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    }
+  },
+  {
+    "id": "C06",
+    "input": {
+      "old": {
+        "a": 1,
+        "z": 2
+      },
+      "new": {
+        "a": 1,
+        "b": 3
+      }
+    },
+    "expected": {
+      "added": [
+        "b"
+      ],
+      "removed": [
+        "z"
+      ],
+      "changed": []
+    }
+  },
+  {
+    "id": "C07",
+    "input": {
+      "old": {
+        "b": 1,
+        "a": 2
+      },
+      "new": {
+        "b": 2,
+        "a": 3
+      }
+    },
+    "expected": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "a",
+        "b"
+      ]
+    }
+  },
+  {
+    "id": "C08",
+    "input": {
+      "old": {},
+      "new": {
+        "z": 0,
+        "a": 0
+      }
+    },
+    "expected": {
+      "added": [
+        "a",
+        "z"
+      ],
+      "removed": [],
+      "changed": []
+    }
+  },
+  {
+    "id": "C09",
+    "input": {
+      "old": {
+        "a": 1
+      },
+      "new": {
+        "a": 0
+      }
+    },
+    "expected": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "a"
+      ]
+    }
+  },
+  {
+    "id": "C10",
+    "input": {
+      "old": {
+        "a": 1
+      },
+      "new": {
+        "b": 1
+      }
+    },
+    "expected": {
+      "added": [
+        "b"
+      ],
+      "removed": [
+        "a"
+      ],
+      "changed": []
+    }
+  }
+]

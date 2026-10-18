@@ -1,0 +1,102 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "amount": 0,
+      "threshold": 100,
+      "low": 10,
+      "high": 20
+    },
+    "expected": 0
+  },
+  {
+    "id": "C02",
+    "input": {
+      "amount": 50,
+      "threshold": 100,
+      "low": 10,
+      "high": 20
+    },
+    "expected": 5
+  },
+  {
+    "id": "C03",
+    "input": {
+      "amount": 100,
+      "threshold": 100,
+      "low": 10,
+      "high": 20
+    },
+    "expected": 10
+  },
+  {
+    "id": "C04",
+    "input": {
+      "amount": 150,
+      "threshold": 100,
+      "low": 10,
+      "high": 20
+    },
+    "expected": 20
+  },
+  {
+    "id": "C05",
+    "input": {
+      "amount": 199,
+      "threshold": 100,
+      "low": 10,
+      "high": 20
+    },
+    "expected": 29
+  },
+  {
+    "id": "C06",
+    "input": {
+      "amount": 3,
+      "threshold": 1,
+      "low": 50,
+      "high": 25
+    },
+    "expected": 1
+  },
+  {
+    "id": "C07",
+    "input": {
+      "amount": 10,
+      "threshold": 0,
+      "low": 99,
+      "high": 20
+    },
+    "expected": 2
+  },
+  {
+    "id": "C08",
+    "input": {
+      "amount": 500,
+      "threshold": 100,
+      "low": 0,
+      "high": 25
+    },
+    "expected": 100
+  },
+  {
+    "id": "C09",
+    "input": {
+      "amount": 150,
+      "threshold": 100,
+      "low": 100,
+      "high": 0
+    },
+    "expected": 100
+  },
+  {
+    "id": "C10",
+    "input": {
+      "amount": 1000,
+      "threshold": 1000,
+      "low": 7,
+      "high": 99
+    },
+    "expected": 70
+  }
+]

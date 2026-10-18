@@ -1,0 +1,269 @@
+[
+  {
+    "id": "v01",
+    "input": {
+      "packages": [
+        {
+          "name": "app",
+          "cost": 2,
+          "requires": [
+            [
+              "lib"
+            ]
+          ],
+          "conflicts": []
+        },
+        {
+          "name": "lib",
+          "cost": 3,
+          "requires": [],
+          "conflicts": []
+        }
+      ],
+      "requested": [
+        "app"
+      ],
+      "installed": [],
+      "forbidden": []
+    },
+    "expected": {
+      "status": "ok",
+      "cost": 5,
+      "added": [
+        "app",
+        "lib"
+      ],
+      "selected": [
+        "app",
+        "lib"
+      ]
+    }
+  },
+  {
+    "id": "v02",
+    "input": {
+      "packages": [
+        {
+          "name": "app",
+          "cost": 1,
+          "requires": [
+            [
+              "b",
+              "c"
+            ]
+          ],
+          "conflicts": []
+        },
+        {
+          "name": "b",
+          "cost": 1,
+          "requires": [
+            [
+              "d"
+            ]
+          ],
+          "conflicts": []
+        },
+        {
+          "name": "c",
+          "cost": 3,
+          "requires": [],
+          "conflicts": []
+        },
+        {
+          "name": "d",
+          "cost": 9,
+          "requires": [],
+          "conflicts": []
+        }
+      ],
+      "requested": [
+        "app"
+      ],
+      "installed": [],
+      "forbidden": []
+    },
+    "expected": {
+      "status": "ok",
+      "cost": 4,
+      "added": [
+        "app",
+        "c"
+      ],
+      "selected": [
+        "app",
+        "c"
+      ]
+    }
+  },
+  {
+    "id": "v03",
+    "input": {
+      "packages": [
+        {
+          "name": "a",
+          "cost": 1,
+          "requires": [
+            [
+              "b"
+            ]
+          ],
+          "conflicts": []
+        },
+        {
+          "name": "b",
+          "cost": 2,
+          "requires": [
+            [
+              "a"
+            ]
+          ],
+          "conflicts": []
+        }
+      ],
+      "requested": [
+        "a"
+      ],
+      "installed": [],
+      "forbidden": []
+    },
+    "expected": {
+      "status": "ok",
+      "cost": 3,
+      "added": [
+        "a",
+        "b"
+      ],
+      "selected": [
+        "a",
+        "b"
+      ]
+    }
+  },
+  {
+    "id": "v04",
+    "input": {
+      "packages": [
+        {
+          "name": "old",
+          "cost": 20,
+          "requires": [
+            [
+              "fix"
+            ]
+          ],
+          "conflicts": []
+        },
+        {
+          "name": "fix",
+          "cost": 2,
+          "requires": [],
+          "conflicts": []
+        }
+      ],
+      "requested": [],
+      "installed": [
+        "old"
+      ],
+      "forbidden": []
+    },
+    "expected": {
+      "status": "ok",
+      "cost": 2,
+      "added": [
+        "fix"
+      ],
+      "selected": [
+        "fix",
+        "old"
+      ]
+    }
+  },
+  {
+    "id": "v05",
+    "input": {
+      "packages": [
+        {
+          "name": "a",
+          "cost": 1,
+          "requires": [],
+          "conflicts": [
+            "b"
+          ]
+        },
+        {
+          "name": "b",
+          "cost": 1,
+          "requires": [],
+          "conflicts": []
+        }
+      ],
+      "requested": [
+        "a",
+        "b"
+      ],
+      "installed": [],
+      "forbidden": []
+    },
+    "expected": {
+      "status": "impossible"
+    }
+  },
+  {
+    "id": "v06",
+    "input": {
+      "packages": [
+        {
+          "name": "app",
+          "cost": 1,
+          "requires": [
+            [
+              "x",
+              "a"
+            ],
+            [
+              "x",
+              "b"
+            ]
+          ],
+          "conflicts": []
+        },
+        {
+          "name": "x",
+          "cost": 2,
+          "requires": [],
+          "conflicts": []
+        },
+        {
+          "name": "a",
+          "cost": 1,
+          "requires": [],
+          "conflicts": []
+        },
+        {
+          "name": "b",
+          "cost": 1,
+          "requires": [],
+          "conflicts": []
+        }
+      ],
+      "requested": [
+        "app"
+      ],
+      "installed": [],
+      "forbidden": []
+    },
+    "expected": {
+      "status": "ok",
+      "cost": 3,
+      "added": [
+        "app",
+        "x"
+      ],
+      "selected": [
+        "app",
+        "x"
+      ]
+    }
+  }
+]

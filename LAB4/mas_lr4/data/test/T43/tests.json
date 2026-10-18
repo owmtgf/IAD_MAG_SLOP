@@ -1,0 +1,184 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "deps": {},
+      "durations": {}
+    },
+    "expected": {}
+  },
+  {
+    "id": "C02",
+    "input": {
+      "deps": {
+        "a": []
+      },
+      "durations": {
+        "a": 3
+      }
+    },
+    "expected": {
+      "a": 3
+    }
+  },
+  {
+    "id": "C03",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ]
+      },
+      "durations": {
+        "a": 2,
+        "b": 3
+      }
+    },
+    "expected": {
+      "a": 2,
+      "b": 5
+    }
+  },
+  {
+    "id": "C04",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [],
+        "c": [
+          "a",
+          "b"
+        ]
+      },
+      "durations": {
+        "a": 2,
+        "b": 5,
+        "c": 1
+      }
+    },
+    "expected": {
+      "a": 2,
+      "b": 5,
+      "c": 6
+    }
+  },
+  {
+    "id": "C05",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ],
+        "c": [
+          "a"
+        ],
+        "d": [
+          "b",
+          "c"
+        ]
+      },
+      "durations": {
+        "a": 1,
+        "b": 4,
+        "c": 2,
+        "d": 3
+      }
+    },
+    "expected": {
+      "a": 1,
+      "b": 5,
+      "c": 3,
+      "d": 8
+    }
+  },
+  {
+    "id": "C06",
+    "input": {
+      "deps": {
+        "a": [
+          "a"
+        ]
+      },
+      "durations": {
+        "a": 1
+      }
+    },
+    "expected": null
+  },
+  {
+    "id": "C07",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "b"
+        ]
+      },
+      "durations": {
+        "a": 1,
+        "b": 1
+      }
+    },
+    "expected": null
+  },
+  {
+    "id": "C08",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a",
+          "a"
+        ]
+      },
+      "durations": {
+        "a": 2,
+        "b": 1
+      }
+    },
+    "expected": {
+      "a": 2,
+      "b": 3
+    }
+  },
+  {
+    "id": "C09",
+    "input": {
+      "deps": {
+        "a": [],
+        "b": [
+          "a"
+        ]
+      },
+      "durations": {
+        "a": 0,
+        "b": 0
+      }
+    },
+    "expected": {
+      "a": 0,
+      "b": 0
+    }
+  },
+  {
+    "id": "C10",
+    "input": {
+      "deps": {
+        "b": [
+          "a"
+        ],
+        "a": []
+      },
+      "durations": {
+        "a": 7,
+        "b": 1
+      }
+    },
+    "expected": {
+      "a": 7,
+      "b": 8
+    }
+  }
+]

@@ -1,0 +1,168 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "budget": 5,
+      "costs": []
+    },
+    "expected": {
+      "indices": [],
+      "spent": 0
+    }
+  },
+  {
+    "id": "C02",
+    "input": {
+      "budget": 5,
+      "costs": [
+        2,
+        3
+      ]
+    },
+    "expected": {
+      "indices": [
+        0,
+        1
+      ],
+      "spent": 5
+    }
+  },
+  {
+    "id": "C03",
+    "input": {
+      "budget": 5,
+      "costs": [
+        6,
+        2
+      ]
+    },
+    "expected": {
+      "indices": [
+        1
+      ],
+      "spent": 2
+    }
+  },
+  {
+    "id": "C04",
+    "input": {
+      "budget": 5,
+      "costs": [
+        3,
+        3,
+        2
+      ]
+    },
+    "expected": {
+      "indices": [
+        0,
+        2
+      ],
+      "spent": 5
+    }
+  },
+  {
+    "id": "C05",
+    "input": {
+      "budget": 0,
+      "costs": [
+        0,
+        1,
+        0
+      ]
+    },
+    "expected": {
+      "indices": [
+        0,
+        2
+      ],
+      "spent": 0
+    }
+  },
+  {
+    "id": "C06",
+    "input": {
+      "budget": 4,
+      "costs": [
+        4
+      ]
+    },
+    "expected": {
+      "indices": [
+        0
+      ],
+      "spent": 4
+    }
+  },
+  {
+    "id": "C07",
+    "input": {
+      "budget": 10,
+      "costs": [
+        1,
+        2,
+        3
+      ]
+    },
+    "expected": {
+      "indices": [
+        0,
+        1,
+        2
+      ],
+      "spent": 6
+    }
+  },
+  {
+    "id": "C08",
+    "input": {
+      "budget": 1,
+      "costs": [
+        2,
+        2
+      ]
+    },
+    "expected": {
+      "indices": [],
+      "spent": 0
+    }
+  },
+  {
+    "id": "C09",
+    "input": {
+      "budget": 4,
+      "costs": [
+        0,
+        5,
+        4
+      ]
+    },
+    "expected": {
+      "indices": [
+        0,
+        2
+      ],
+      "spent": 4
+    }
+  },
+  {
+    "id": "C10",
+    "input": {
+      "budget": 3,
+      "costs": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "expected": {
+      "indices": [
+        0,
+        1,
+        2
+      ],
+      "spent": 3
+    }
+  }
+]

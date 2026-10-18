@@ -1,0 +1,235 @@
+[
+  {
+    "id": "C01",
+    "input": {
+      "budget": 10,
+      "debts": []
+    },
+    "expected": []
+  },
+  {
+    "id": "C02",
+    "input": {
+      "budget": 5,
+      "debts": [
+        {
+          "id": "a",
+          "due": 1,
+          "amount": 10
+        }
+      ]
+    },
+    "expected": [
+      [
+        "a",
+        5
+      ]
+    ]
+  },
+  {
+    "id": "C03",
+    "input": {
+      "budget": 15,
+      "debts": [
+        {
+          "id": "a",
+          "due": 2,
+          "amount": 10
+        },
+        {
+          "id": "b",
+          "due": 1,
+          "amount": 10
+        }
+      ]
+    },
+    "expected": [
+      [
+        "a",
+        5
+      ],
+      [
+        "b",
+        10
+      ]
+    ]
+  },
+  {
+    "id": "C04",
+    "input": {
+      "budget": 5,
+      "debts": [
+        {
+          "id": "b",
+          "due": 1,
+          "amount": 5
+        },
+        {
+          "id": "a",
+          "due": 1,
+          "amount": 5
+        }
+      ]
+    },
+    "expected": [
+      [
+        "b",
+        0
+      ],
+      [
+        "a",
+        5
+      ]
+    ]
+  },
+  {
+    "id": "C05",
+    "input": {
+      "budget": 0,
+      "debts": [
+        {
+          "id": "x",
+          "due": 0,
+          "amount": 4
+        }
+      ]
+    },
+    "expected": [
+      [
+        "x",
+        0
+      ]
+    ]
+  },
+  {
+    "id": "C06",
+    "input": {
+      "budget": 100,
+      "debts": [
+        {
+          "id": "a",
+          "due": 1,
+          "amount": 10
+        }
+      ]
+    },
+    "expected": [
+      [
+        "a",
+        10
+      ]
+    ]
+  },
+  {
+    "id": "C07",
+    "input": {
+      "budget": 3,
+      "debts": [
+        {
+          "id": "a",
+          "due": 1,
+          "amount": 0
+        },
+        {
+          "id": "b",
+          "due": 2,
+          "amount": 5
+        }
+      ]
+    },
+    "expected": [
+      [
+        "a",
+        0
+      ],
+      [
+        "b",
+        3
+      ]
+    ]
+  },
+  {
+    "id": "C08",
+    "input": {
+      "budget": 10,
+      "debts": [
+        {
+          "id": "z",
+          "due": -1,
+          "amount": 6
+        },
+        {
+          "id": "a",
+          "due": 0,
+          "amount": 6
+        }
+      ]
+    },
+    "expected": [
+      [
+        "z",
+        6
+      ],
+      [
+        "a",
+        4
+      ]
+    ]
+  },
+  {
+    "id": "C09",
+    "input": {
+      "budget": 10,
+      "debts": [
+        {
+          "id": "a",
+          "due": 1,
+          "amount": 5
+        },
+        {
+          "id": "b",
+          "due": 2,
+          "amount": 5
+        }
+      ]
+    },
+    "expected": [
+      [
+        "a",
+        5
+      ],
+      [
+        "b",
+        5
+      ]
+    ]
+  },
+  {
+    "id": "C10",
+    "input": {
+      "budget": 1,
+      "debts": [
+        {
+          "id": "a",
+          "due": 1,
+          "amount": 2
+        },
+        {
+          "id": "b",
+          "due": 2,
+          "amount": 2
+        }
+      ]
+    },
+    "expected": [
+      [
+        "a",
+        1
+      ],
+      [
+        "b",
+        0
+      ]
+    ]
+  }
+]

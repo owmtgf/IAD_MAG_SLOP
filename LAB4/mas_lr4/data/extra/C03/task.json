@@ -1,0 +1,94 @@
+{
+  "id": "C03",
+  "title": "Корзина: округление, купон и доставка",
+  "description": "Вычислите стоимость корзины в целых копейках: сначала скидка каждой строки, затем фиксированный купон, затем доставка.\nРеализуйте solve(data), не изменяя data и вложенные значения. Верните детерминированное JSON-значение; порядок списков и точные типы значений существенны. Все числовые поля во входе — целые int, не bool. Все идентификаторы — строки; сравнение строк и сортировка лексикографические, с учётом регистра. Типы, обязательные поля и структура входа гарантированы; неописанные входы вне области задачи. Указанные нарушения числовых ограничений и ссылочной целостности должны вызывать ValueError; сообщение исключения не проверяется. Если нарушений несколько, достаточно ValueError. Код должен содержать только определения функций, включая solve(data), без импортов и внешних зависимостей.",
+  "input_format": "{\"items\": [{\"unit_price\": int, \"quantity\": int, \"discount_pct\": int}, ...], \"coupon\": {\"threshold\": int, \"amount\": int}, \"shipping\": {\"free_threshold\": int, \"fee\": int}}. Не более 30 строк. unit_price и настройки coupon/shipping не превосходят 10^9, quantity не превосходит 1000. Значения ниже нуля и discount_pct вне 0..100 могут встречаться и являются ошибкой.",
+  "output_format": "{\"lines\": [int, ...], \"subtotal\": int, \"coupon_discount\": int, \"shipping\": int, \"total\": int}. lines — стоимости строк после скидок в исходном порядке; subtotal — их сумма; total = subtotal - coupon_discount + shipping.",
+  "rules": [
+    "Для строки base = unit_price * quantity. Сначала вычислить размер скидки base * discount_pct / 100 и округлить его до ближайшей целой копейки; ровно половину копейки округлять вверх. Эквивалентная целочисленная формула скидки: (base * discount_pct + 50) // 100. Стоимость строки = base - скидка. Округлять один раз для всей строки, а не для единицы товара и не для всей корзины.",
+    "Купон применяется, если subtotal >= coupon.threshold. Его скидка равна min(coupon.amount, subtotal); иначе 0. Он не может сделать стоимость товаров отрицательной.",
+    "Для непустого списка items доставка бесплатна, если стоимость товаров ПОСЛЕ купона >= shipping.free_threshold; иначе равна shipping.fee. Для items=[] доставка всегда 0. Непустой список строк с quantity=0 всё равно считается непустым.",
+    "Все unit_price, quantity и настройки coupon/shipping должны быть неотрицательны; discount_pct должен принадлежать 0..100 включительно. Любое нарушение вызывает ValueError, в том числе ошибочная настройка при пустой корзине."
+  ],
+  "examples": [
+    {
+      "id": "V01",
+      "input": {
+        "items": [],
+        "coupon": {
+          "threshold": 0,
+          "amount": 10
+        },
+        "shipping": {
+          "free_threshold": 100,
+          "fee": 25
+        }
+      },
+      "expected": {
+        "lines": [],
+        "subtotal": 0,
+        "coupon_discount": 0,
+        "shipping": 0,
+        "total": 0
+      }
+    },
+    {
+      "id": "V02",
+      "input": {
+        "items": [
+          {
+            "unit_price": 5,
+            "quantity": 3,
+            "discount_pct": 10
+          }
+        ],
+        "coupon": {
+          "threshold": 0,
+          "amount": 0
+        },
+        "shipping": {
+          "free_threshold": 0,
+          "fee": 0
+        }
+      },
+      "expected": {
+        "lines": [
+          13
+        ],
+        "subtotal": 13,
+        "coupon_discount": 0,
+        "shipping": 0,
+        "total": 13
+      }
+    },
+    {
+      "id": "V03",
+      "input": {
+        "items": [
+          {
+            "unit_price": 100,
+            "quantity": 1,
+            "discount_pct": 0
+          }
+        ],
+        "coupon": {
+          "threshold": 100,
+          "amount": 20
+        },
+        "shipping": {
+          "free_threshold": 0,
+          "fee": 0
+        }
+      },
+      "expected": {
+        "lines": [
+          100
+        ],
+        "subtotal": 100,
+        "coupon_discount": 20,
+        "shipping": 0,
+        "total": 80
+      }
+    }
+  ]
+}
