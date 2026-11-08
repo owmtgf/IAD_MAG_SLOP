@@ -1,0 +1,160 @@
+{
+  "task_id": "T14",
+  "status": "success",
+  "success": true,
+  "visible_passed": true,
+  "visible_passed_count": 10,
+  "visible_total": 10,
+  "code_sha256": "c92c1c92246b2e782f266c1a9ee65b030459005ea149b5ef34ea1f19d973981b",
+  "input_tokens_known": 22817,
+  "output_tokens_known": 316,
+  "total_tokens_known": 23133,
+  "usage_complete": true,
+  "budget": 24000,
+  "budget_overrun": 0,
+  "model_calls": 6,
+  "tool_calls": 5,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "single": {
+      "input": 22817,
+      "output": 316,
+      "total": 23133,
+      "calls": 6
+    }
+  },
+  "seconds": 17.438988,
+  "final_report": {
+    "passed": true,
+    "total": 10,
+    "passed_count": 10,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": true
+        },
+        "actual": {
+          "value": true
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": true
+        },
+        "actual": {
+          "value": true
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": true,
+        "expected": {
+          "value": false
+        },
+        "actual": {
+          "value": false
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": true,
+        "expected": {
+          "value": false
+        },
+        "actual": {
+          "value": false
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": true,
+        "expected": {
+          "value": true
+        },
+        "actual": {
+          "value": true
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": true,
+        "expected": {
+          "value": true
+        },
+        "actual": {
+          "value": true
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": true,
+        "expected": {
+          "value": true
+        },
+        "actual": {
+          "value": true
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": true,
+        "expected": {
+          "value": true
+        },
+        "actual": {
+          "value": true
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": true,
+        "expected": {
+          "value": false
+        },
+        "actual": {
+          "value": false
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": true,
+        "expected": {
+          "value": true
+        },
+        "actual": {
+          "value": true
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "c92c1c92246b2e782f266c1a9ee65b030459005ea149b5ef34ea1f19d973981b",
+    "seconds": 0.03098
+  },
+  "architecture": "single",
+  "repeat": 2,
+  "seed": 154689677,
+  "episode_id": "T14_single_b24000_r2"
+}

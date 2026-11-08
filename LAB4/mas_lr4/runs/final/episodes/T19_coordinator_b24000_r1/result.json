@@ -1,0 +1,240 @@
+{
+  "task_id": "T19",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 9,
+  "visible_total": 10,
+  "code_sha256": "c40b2c7c538dd1a0ee12ba6bc3aac34ce2e958113a3ab13bbb96f2448b72d4f0",
+  "input_tokens_known": 24616,
+  "output_tokens_known": 445,
+  "total_tokens_known": 25061,
+  "usage_complete": true,
+  "budget": 24000,
+  "budget_overrun": 1061,
+  "model_calls": 8,
+  "tool_calls": 4,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "coordinator": {
+      "input": 6657,
+      "output": 155,
+      "total": 6812,
+      "calls": 2
+    },
+    "tester": {
+      "input": 8262,
+      "output": 145,
+      "total": 8407,
+      "calls": 3
+    },
+    "developer": {
+      "input": 9697,
+      "output": 145,
+      "total": 9842,
+      "calls": 3
+    }
+  },
+  "seconds": 14.526108,
+  "final_report": {
+    "passed": false,
+    "total": 10,
+    "passed_count": 9,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": [
+            0
+          ]
+        },
+        "actual": {
+          "value": [
+            0
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": true,
+        "expected": {
+          "value": [
+            0,
+            0
+          ]
+        },
+        "actual": {
+          "value": [
+            0,
+            0
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": true,
+        "expected": {
+          "value": [
+            0,
+            1
+          ]
+        },
+        "actual": {
+          "value": [
+            0,
+            1
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": false,
+        "expected": {
+          "value": [
+            0,
+            0,
+            1
+          ]
+        },
+        "actual": {
+          "value": [
+            0,
+            0,
+            0
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": true,
+        "expected": {
+          "value": [
+            0,
+            1,
+            1
+          ]
+        },
+        "actual": {
+          "value": [
+            0,
+            1,
+            1
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": true,
+        "expected": {
+          "value": [
+            0,
+            1,
+            0
+          ]
+        },
+        "actual": {
+          "value": [
+            0,
+            1,
+            0
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": true,
+        "expected": {
+          "value": [
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        "actual": {
+          "value": [
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": true,
+        "expected": {
+          "value": [
+            1,
+            0,
+            1
+          ]
+        },
+        "actual": {
+          "value": [
+            1,
+            0,
+            1
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": true,
+        "expected": {
+          "value": [
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        "actual": {
+          "value": [
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "c40b2c7c538dd1a0ee12ba6bc3aac34ce2e958113a3ab13bbb96f2448b72d4f0",
+    "seconds": 0.028794
+  },
+  "architecture": "coordinator",
+  "repeat": 1,
+  "seed": 151011763,
+  "episode_id": "T19_coordinator_b24000_r1"
+}

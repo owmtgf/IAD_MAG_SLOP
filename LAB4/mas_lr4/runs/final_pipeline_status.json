@@ -1,0 +1,73 @@
+{
+  "pid": 2527,
+  "started_unix": 1792354773.7626474,
+  "status": "complete",
+  "planned_episodes": 696,
+  "blocks": [
+    {
+      "name": "core",
+      "planned": 600,
+      "started_unix": 1792354773.7629013,
+      "command": [
+        "/home/owmtgf/anaconda3/bin/python",
+        "-u",
+        "-m",
+        "maslab",
+        "run",
+        "--split",
+        "test",
+        "--out",
+        "runs/final",
+        "--resume"
+      ],
+      "status": "complete",
+      "returncode": 0,
+      "ended_unix": 1792365565.0929813
+    },
+    {
+      "name": "extra",
+      "planned": 72,
+      "started_unix": 1792365565.0939016,
+      "command": [
+        "/home/owmtgf/anaconda3/bin/python",
+        "-u",
+        "-m",
+        "maslab",
+        "run",
+        "--config",
+        "docs/extra_config.json",
+        "--freeze",
+        "extra_freeze.json",
+        "--split",
+        "extra",
+        "--out",
+        "runs/extra",
+        "--resume"
+      ],
+      "status": "complete",
+      "returncode": 0,
+      "ended_unix": 1792371846.2710528
+    },
+    {
+      "name": "advanced",
+      "planned": 24,
+      "started_unix": 1792371846.271557,
+      "command": [
+        "/home/owmtgf/anaconda3/bin/python",
+        "-u",
+        "-m",
+        "advanced",
+        "run",
+        "--freeze",
+        "advanced_freeze.json",
+        "--out",
+        "runs/advanced",
+        "--resume"
+      ],
+      "status": "complete",
+      "returncode": 0,
+      "ended_unix": 1792374245.4678288
+    }
+  ],
+  "ended_unix": 1792374245.4682775
+}

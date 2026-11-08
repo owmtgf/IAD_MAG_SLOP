@@ -1,0 +1,426 @@
+{
+  "task_id": "C11",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 0,
+  "visible_total": 6,
+  "code_sha256": "0906a72aa97bf9354bc23ad5c5d701b1810725907bd9d63abdfca1468ca508ce",
+  "input_tokens_known": 60494,
+  "output_tokens_known": 2057,
+  "total_tokens_known": 62551,
+  "usage_complete": true,
+  "budget": 60000,
+  "budget_overrun": 2551,
+  "model_calls": 5,
+  "tool_calls": 2,
+  "invalid_actions": 1,
+  "tokens_by_role": {
+    "single": {
+      "input": 60494,
+      "output": 2057,
+      "total": 62551,
+      "calls": 5
+    }
+  },
+  "seconds": 66.440042,
+  "final_report": {
+    "passed": false,
+    "total": 6,
+    "passed_count": 0,
+    "cases": [
+      {
+        "id": "v01",
+        "passed": false,
+        "expected": {
+          "value": {
+            "rows": [
+              {
+                "id": "a",
+                "parent": null,
+                "slot": "A",
+                "amount": 6
+              },
+              {
+                "id": "b",
+                "parent": "a",
+                "slot": "B",
+                "amount": 4
+              }
+            ],
+            "pending": null,
+            "savepoints": [],
+            "log": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "rows": [
+              {
+                "id": "a",
+                "parent": null,
+                "slot": "A",
+                "amount": 6
+              },
+              {
+                "id": "b",
+                "parent": "a",
+                "slot": "B",
+                "amount": 4
+              }
+            ],
+            "pending": null,
+            "savepoints": [],
+            "log": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "rejected",
+              "ok"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v02",
+        "passed": false,
+        "expected": {
+          "value": {
+            "rows": [
+              {
+                "id": "a",
+                "parent": null,
+                "slot": "A",
+                "amount": 6
+              },
+              {
+                "id": "b",
+                "parent": "a",
+                "slot": "B",
+                "amount": 4
+              }
+            ],
+            "pending": null,
+            "savepoints": [],
+            "log": [
+              "ok",
+              "ok",
+              "ok",
+              "constraint",
+              "ok",
+              "ok"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "rows": [
+              {
+                "id": "a",
+                "parent": null,
+                "slot": "A",
+                "amount": 6
+              },
+              {
+                "id": "b",
+                "parent": "a",
+                "slot": "B",
+                "amount": 4
+              }
+            ],
+            "pending": null,
+            "savepoints": [],
+            "log": [
+              "ok",
+              "ok",
+              "ok",
+              "constraint",
+              "rejected",
+              "rejected"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v03",
+        "passed": false,
+        "expected": {
+          "value": {
+            "rows": [
+              {
+                "id": "a",
+                "parent": null,
+                "slot": "A",
+                "amount": 6
+              },
+              {
+                "id": "b",
+                "parent": "a",
+                "slot": "B",
+                "amount": 4
+              }
+            ],
+            "pending": null,
+            "savepoints": [],
+            "log": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "rows": [
+              {
+                "id": "a",
+                "parent": null,
+                "slot": "A",
+                "amount": 6
+              },
+              {
+                "id": "b",
+                "parent": "a",
+                "slot": "B",
+                "amount": 4
+              }
+            ],
+            "pending": null,
+            "savepoints": [],
+            "log": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "rejected",
+              "rejected",
+              "constraint"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v04",
+        "passed": false,
+        "expected": {
+          "value": {
+            "rows": [
+              {
+                "id": "a",
+                "parent": null,
+                "slot": "A",
+                "amount": 2
+              },
+              {
+                "id": "b",
+                "parent": "a",
+                "slot": "B",
+                "amount": 8
+              }
+            ],
+            "pending": null,
+            "savepoints": [],
+            "log": [
+              "ok",
+              "ok",
+              "ok",
+              "constraint",
+              "ok",
+              "ok",
+              "ok"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "rows": [
+              {
+                "id": "a",
+                "parent": null,
+                "slot": "A",
+                "amount": 6
+              },
+              {
+                "id": "b",
+                "parent": "a",
+                "slot": "B",
+                "amount": 4
+              }
+            ],
+            "pending": null,
+            "savepoints": [],
+            "log": [
+              "ok",
+              "rejected",
+              "ok",
+              "constraint",
+              "rejected",
+              "rejected",
+              "rejected"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v05",
+        "passed": false,
+        "expected": {
+          "value": {
+            "rows": [
+              {
+                "id": "a",
+                "parent": null,
+                "slot": "A",
+                "amount": 6
+              },
+              {
+                "id": "b",
+                "parent": "a",
+                "slot": "B",
+                "amount": 4
+              }
+            ],
+            "pending": null,
+            "savepoints": [],
+            "log": [
+              "ok",
+              "ok",
+              "constraint",
+              "ok"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "rows": [
+              {
+                "id": "a",
+                "parent": "b",
+                "slot": "A",
+                "amount": 6
+              },
+              {
+                "id": "b",
+                "parent": "a",
+                "slot": "B",
+                "amount": 4
+              }
+            ],
+            "pending": null,
+            "savepoints": [],
+            "log": [
+              "ok",
+              "ok",
+              "ok",
+              "rejected"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v06",
+        "passed": false,
+        "expected": {
+          "value": {
+            "rows": [
+              {
+                "id": "a",
+                "parent": null,
+                "slot": "A",
+                "amount": 6
+              },
+              {
+                "id": "b",
+                "parent": "a",
+                "slot": "B",
+                "amount": 4
+              }
+            ],
+            "pending": null,
+            "savepoints": [],
+            "log": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "rejected",
+              "ok",
+              "ok"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "rows": [
+              {
+                "id": "a",
+                "parent": null,
+                "slot": "A",
+                "amount": 6
+              },
+              {
+                "id": "b",
+                "parent": "a",
+                "slot": "B",
+                "amount": 4
+              }
+            ],
+            "pending": null,
+            "savepoints": [],
+            "log": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "0906a72aa97bf9354bc23ad5c5d701b1810725907bd9d63abdfca1468ca508ce",
+    "seconds": 0.032174
+  },
+  "architecture": "single",
+  "repeat": 2,
+  "seed": 180280238,
+  "episode_id": "C11_single_b60000_r2"
+}

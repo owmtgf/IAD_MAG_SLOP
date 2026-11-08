@@ -1,0 +1,188 @@
+{
+  "task_id": "C03",
+  "status": "success",
+  "success": true,
+  "visible_passed": true,
+  "visible_passed_count": 6,
+  "visible_total": 6,
+  "code_sha256": "af9a79cfec08567e07ed189b1141a6d21a5de63a5fd720f922d86c6bb1d8ded8",
+  "input_tokens_known": 16059,
+  "output_tokens_known": 329,
+  "total_tokens_known": 16388,
+  "usage_complete": true,
+  "budget": 60000,
+  "budget_overrun": 0,
+  "model_calls": 4,
+  "tool_calls": 4,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "single": {
+      "input": 16059,
+      "output": 329,
+      "total": 16388,
+      "calls": 4
+    }
+  },
+  "seconds": 11.040142,
+  "final_report": {
+    "passed": true,
+    "total": 6,
+    "passed_count": 6,
+    "cases": [
+      {
+        "id": "V01",
+        "passed": true,
+        "expected": {
+          "value": {
+            "lines": [],
+            "subtotal": 0,
+            "coupon_discount": 0,
+            "shipping": 0,
+            "total": 0
+          }
+        },
+        "actual": {
+          "value": {
+            "lines": [],
+            "subtotal": 0,
+            "coupon_discount": 0,
+            "shipping": 0,
+            "total": 0
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V02",
+        "passed": true,
+        "expected": {
+          "value": {
+            "lines": [
+              13
+            ],
+            "subtotal": 13,
+            "coupon_discount": 0,
+            "shipping": 0,
+            "total": 13
+          }
+        },
+        "actual": {
+          "value": {
+            "lines": [
+              13
+            ],
+            "subtotal": 13,
+            "coupon_discount": 0,
+            "shipping": 0,
+            "total": 13
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V03",
+        "passed": true,
+        "expected": {
+          "value": {
+            "lines": [
+              100
+            ],
+            "subtotal": 100,
+            "coupon_discount": 20,
+            "shipping": 0,
+            "total": 80
+          }
+        },
+        "actual": {
+          "value": {
+            "lines": [
+              100
+            ],
+            "subtotal": 100,
+            "coupon_discount": 20,
+            "shipping": 0,
+            "total": 80
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V04",
+        "passed": true,
+        "expected": {
+          "value": {
+            "lines": [
+              110
+            ],
+            "subtotal": 110,
+            "coupon_discount": 20,
+            "shipping": 7,
+            "total": 97
+          }
+        },
+        "actual": {
+          "value": {
+            "lines": [
+              110
+            ],
+            "subtotal": 110,
+            "coupon_discount": 20,
+            "shipping": 7,
+            "total": 97
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V05",
+        "passed": true,
+        "expected": {
+          "value": {
+            "lines": [
+              10
+            ],
+            "subtotal": 10,
+            "coupon_discount": 10,
+            "shipping": 4,
+            "total": 4
+          }
+        },
+        "actual": {
+          "value": {
+            "lines": [
+              10
+            ],
+            "subtotal": 10,
+            "coupon_discount": 10,
+            "shipping": 4,
+            "total": 4
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V06",
+        "passed": true,
+        "expected": {
+          "raises": "ValueError"
+        },
+        "actual": {
+          "raises": "ValueError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "af9a79cfec08567e07ed189b1141a6d21a5de63a5fd720f922d86c6bb1d8ded8",
+    "seconds": 0.03316
+  },
+  "architecture": "single",
+  "repeat": 1,
+  "seed": 214486349,
+  "episode_id": "C03_single_b60000_r1"
+}

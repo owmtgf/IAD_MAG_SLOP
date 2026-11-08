@@ -62,6 +62,13 @@ def _landlock(libc, public_project, runtime_files):
     try:
         paths = [Path(public_project).resolve()]
         paths += [Path(p).resolve() for p in ("/usr", "/lib", "/lib64") if Path(p).exists()]
+        # Conda and other non-system runtimes keep stdlib outside /usr.
+        # Grant only the interpreter's library directories, never its home
+        # directory or prefix. All paths remain read-only under Landlock.
+        for key in ("stdlib", "platstdlib"):
+            library = sysconfig.get_path(key)
+            if library and Path(library).is_dir():
+                paths.append(Path(library).resolve())
         paths += [Path(p).resolve() for p in runtime_files]
         for path in dict.fromkeys(paths):
             descriptor = os.open(path, os.O_PATH | os.O_CLOEXEC)

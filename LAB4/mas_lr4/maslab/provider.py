@@ -25,7 +25,8 @@ class HTTPProvider:
             raise ProviderError('Set MAS_LLM_BASE_URL to an API base URL ending in /v1')
         if parsed.username or parsed.password or parsed.query or parsed.fragment:
             raise ProviderError('Credentials and query strings are forbidden in base URL')
-        if parsed.scheme == 'http' and parsed.hostname not in ('localhost','127.0.0.1','::1'):
+        # Local experiment endpoint on the user's LAN (shared by all roles).
+        if parsed.scheme == 'http' and parsed.hostname not in ('localhost','127.0.0.1','::1','192.168.3.42'):
             raise ProviderError('Remote API requires HTTPS')
         self.url = base+'/chat/completions'
         self.key = os.environ.get('MAS_LLM_API_KEY','')

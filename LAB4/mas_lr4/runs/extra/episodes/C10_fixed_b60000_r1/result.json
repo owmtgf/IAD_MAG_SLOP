@@ -1,0 +1,225 @@
+{
+  "task_id": "C10",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 1,
+  "visible_total": 6,
+  "code_sha256": "7e1f08a74b15ae01d80c798d15beda84951cab8aebdfdb287efaa71cc8613542",
+  "input_tokens_known": 62852,
+  "output_tokens_known": 2994,
+  "total_tokens_known": 65846,
+  "usage_complete": true,
+  "budget": 60000,
+  "budget_overrun": 5846,
+  "model_calls": 8,
+  "tool_calls": 4,
+  "invalid_actions": 3,
+  "tokens_by_role": {
+    "programmer": {
+      "input": 62852,
+      "output": 2994,
+      "total": 65846,
+      "calls": 8
+    }
+  },
+  "seconds": 92.730329,
+  "final_report": {
+    "passed": false,
+    "total": 6,
+    "passed_count": 1,
+    "cases": [
+      {
+        "id": "v01",
+        "passed": true,
+        "expected": {
+          "value": {
+            "status": "ok",
+            "cost": 5,
+            "added": [
+              "app",
+              "lib"
+            ],
+            "selected": [
+              "app",
+              "lib"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "status": "ok",
+            "cost": 5,
+            "added": [
+              "app",
+              "lib"
+            ],
+            "selected": [
+              "app",
+              "lib"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v02",
+        "passed": false,
+        "expected": {
+          "value": {
+            "status": "ok",
+            "cost": 4,
+            "added": [
+              "app",
+              "c"
+            ],
+            "selected": [
+              "app",
+              "c"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "status": "ok",
+            "cost": 11,
+            "added": [
+              "app",
+              "b",
+              "d"
+            ],
+            "selected": [
+              "app",
+              "b",
+              "d"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v03",
+        "passed": false,
+        "expected": {
+          "value": {
+            "status": "ok",
+            "cost": 3,
+            "added": [
+              "a",
+              "b"
+            ],
+            "selected": [
+              "a",
+              "b"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "status": "impossible"
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v04",
+        "passed": false,
+        "expected": {
+          "value": {
+            "status": "ok",
+            "cost": 2,
+            "added": [
+              "fix"
+            ],
+            "selected": [
+              "fix",
+              "old"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "status": "ok",
+            "cost": 20,
+            "added": [],
+            "selected": [
+              "old"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v05",
+        "passed": false,
+        "expected": {
+          "value": {
+            "status": "impossible"
+          }
+        },
+        "actual": {
+          "value": {
+            "status": "ok",
+            "cost": 2,
+            "added": [
+              "a",
+              "b"
+            ],
+            "selected": [
+              "a",
+              "b"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v06",
+        "passed": false,
+        "expected": {
+          "value": {
+            "status": "ok",
+            "cost": 3,
+            "added": [
+              "app",
+              "x"
+            ],
+            "selected": [
+              "app",
+              "x"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "status": "ok",
+            "cost": 3,
+            "added": [
+              "a",
+              "app",
+              "b"
+            ],
+            "selected": [
+              "a",
+              "app",
+              "b"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "7e1f08a74b15ae01d80c798d15beda84951cab8aebdfdb287efaa71cc8613542",
+    "seconds": 0.032865
+  },
+  "architecture": "fixed",
+  "repeat": 1,
+  "seed": 239952329,
+  "episode_id": "C10_fixed_b60000_r1"
+}

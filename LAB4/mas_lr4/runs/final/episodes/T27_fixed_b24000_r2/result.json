@@ -1,0 +1,202 @@
+{
+  "task_id": "T27",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 9,
+  "visible_total": 10,
+  "code_sha256": "98c5c370d51488429a84f72b98d918bc12a6ec04e9f74bba55928db6a986a282",
+  "input_tokens_known": 23681,
+  "output_tokens_known": 799,
+  "total_tokens_known": 24480,
+  "usage_complete": true,
+  "budget": 24000,
+  "budget_overrun": 480,
+  "model_calls": 7,
+  "tool_calls": 4,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "programmer": {
+      "input": 16923,
+      "output": 425,
+      "total": 17348,
+      "calls": 5
+    },
+    "reviewer": {
+      "input": 6758,
+      "output": 374,
+      "total": 7132,
+      "calls": 2
+    }
+  },
+  "seconds": 26.150276,
+  "final_report": {
+    "passed": false,
+    "total": 10,
+    "passed_count": 9,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": [
+            "b",
+            "c"
+          ]
+        },
+        "actual": {
+          "value": [
+            "b",
+            "c"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": true,
+        "expected": {
+          "value": [
+            "c"
+          ]
+        },
+        "actual": {
+          "value": [
+            "c"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": true,
+        "expected": {
+          "value": [
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": false,
+        "expected": {
+          "value": [
+            "b",
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a",
+            "b"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": true,
+        "expected": {
+          "value": [
+            "b",
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "b",
+            "a"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": true,
+        "expected": {
+          "value": [
+            "c"
+          ]
+        },
+        "actual": {
+          "value": [
+            "c"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": true,
+        "expected": {
+          "value": [
+            "b",
+            "c"
+          ]
+        },
+        "actual": {
+          "value": [
+            "b",
+            "c"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "98c5c370d51488429a84f72b98d918bc12a6ec04e9f74bba55928db6a986a282",
+    "seconds": 0.031255
+  },
+  "architecture": "fixed",
+  "repeat": 2,
+  "seed": 143573291,
+  "episode_id": "T27_fixed_b24000_r2"
+}

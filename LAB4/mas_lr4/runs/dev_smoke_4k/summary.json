@@ -1,0 +1,43 @@
+{
+  "source": "real_http_model",
+  "metrics": [
+    {
+      "architecture": "coordinator",
+      "budget": 6000,
+      "planned": 1,
+      "completed": 1,
+      "successes": 0,
+      "success_rate": 0.0,
+      "median_tokens_complete_usage": 6466,
+      "median_seconds": 5.963583,
+      "unknown_usage": 0,
+      "budget_exhausted": 1
+    },
+    {
+      "architecture": "fixed",
+      "budget": 6000,
+      "planned": 1,
+      "completed": 1,
+      "successes": 0,
+      "success_rate": 0.0,
+      "median_tokens_complete_usage": 6375,
+      "median_seconds": 2.959554,
+      "unknown_usage": 0,
+      "budget_exhausted": 1
+    },
+    {
+      "architecture": "single",
+      "budget": 6000,
+      "planned": 1,
+      "completed": 1,
+      "successes": 0,
+      "success_rate": 0.0,
+      "median_tokens_complete_usage": 6333,
+      "median_seconds": 2.90269,
+      "unknown_usage": 0,
+      "budget_exhausted": 1
+    }
+  ],
+  "complete": true,
+  "comparable_usage": true
+}

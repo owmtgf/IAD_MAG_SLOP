@@ -1,0 +1,999 @@
+{
+  "task_id": "M01",
+  "architecture": "coordinator",
+  "budget": 60000,
+  "repeat": 1,
+  "seed": 223701461,
+  "episode_id": "M01_coordinator_b60000_r1",
+  "status": "budget_exhausted",
+  "finished": false,
+  "success": null,
+  "artifact_sha256": "9161884b58bc6562763cbd88a463894e3e7dea75bc1735cf749ceea1a2279102",
+  "model_calls": 7,
+  "tool_calls": 3,
+  "invalid_actions": 0,
+  "input_tokens_known": 58280,
+  "output_tokens_known": 2054,
+  "total_tokens_known": 60334,
+  "usage_complete": true,
+  "budget_overrun": 334,
+  "tokens_by_role": {
+    "coordinator": {
+      "input": 33256,
+      "output": 116,
+      "total": 33372,
+      "calls": 4
+    },
+    "developer": {
+      "input": 25024,
+      "output": 1938,
+      "total": 26962,
+      "calls": 3
+    }
+  },
+  "seconds": 71.570128,
+  "visible_report": {
+    "passed": false,
+    "total": 12,
+    "passed_count": 0,
+    "cases": [
+      {
+        "id": "V01_exact_stock",
+        "passed": false,
+        "input": {
+          "stock": {
+            "book": 3
+          },
+          "events": [
+            {
+              "id": "1",
+              "type": "place",
+              "order_id": "a",
+              "sku": "book",
+              "qty": 3,
+              "unit_price": 5
+            }
+          ]
+        },
+        "expected": {
+          "stock": {
+            "book": 0
+          },
+          "orders": {
+            "a": {
+              "sku": "book",
+              "qty": 3,
+              "unit_price": 5,
+              "shipped": 0,
+              "cancelled": 0,
+              "paid": 0,
+              "refunded": 0,
+              "reserved": 3,
+              "net_paid": 0
+            }
+          },
+          "ledger": [],
+          "shipments": [],
+          "results": [
+            {
+              "event_id": "1",
+              "status": "applied"
+            }
+          ]
+        },
+        "actual": {
+          "ok": false,
+          "error": "ImportError",
+          "detail": "cannot import name 'release' from 'app.inventory' (/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB4/mas_lr4/runs/advanced/episodes/M01_coordinator_b60000_r1/project/app/inventory.py)"
+        }
+      },
+      {
+        "id": "V02_rejected_id_consumed",
+        "passed": false,
+        "input": {
+          "stock": {
+            "book": 5
+          },
+          "events": [
+            {
+              "id": "1",
+              "type": "pay",
+              "order_id": "a",
+              "amount": 5
+            },
+            {
+              "id": "2",
+              "type": "place",
+              "order_id": "a",
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5
+            },
+            {
+              "id": "1",
+              "type": "pay",
+              "order_id": "a",
+              "amount": 5
+            }
+          ]
+        },
+        "expected": {
+          "stock": {
+            "book": 3
+          },
+          "orders": {
+            "a": {
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5,
+              "shipped": 0,
+              "cancelled": 0,
+              "paid": 0,
+              "refunded": 0,
+              "reserved": 2,
+              "net_paid": 0
+            }
+          },
+          "ledger": [],
+          "shipments": [],
+          "results": [
+            {
+              "event_id": "1",
+              "status": "rejected",
+              "reason": "unknown_order"
+            },
+            {
+              "event_id": "2",
+              "status": "applied"
+            },
+            {
+              "event_id": "1",
+              "status": "duplicate"
+            }
+          ]
+        },
+        "actual": {
+          "ok": false,
+          "error": "ImportError",
+          "detail": "cannot import name 'release' from 'app.inventory' (/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB4/mas_lr4/runs/advanced/episodes/M01_coordinator_b60000_r1/project/app/inventory.py)"
+        }
+      },
+      {
+        "id": "V03_repay_after_refund",
+        "passed": false,
+        "input": {
+          "stock": {
+            "book": 5
+          },
+          "events": [
+            {
+              "id": "1",
+              "type": "place",
+              "order_id": "a",
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5
+            },
+            {
+              "id": "2",
+              "type": "pay",
+              "order_id": "a",
+              "amount": 10
+            },
+            {
+              "id": "3",
+              "type": "refund",
+              "order_id": "a",
+              "amount": 4
+            },
+            {
+              "id": "4",
+              "type": "pay",
+              "order_id": "a",
+              "amount": 4
+            }
+          ]
+        },
+        "expected": {
+          "stock": {
+            "book": 3
+          },
+          "orders": {
+            "a": {
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5,
+              "shipped": 0,
+              "cancelled": 0,
+              "paid": 14,
+              "refunded": 4,
+              "reserved": 2,
+              "net_paid": 10
+            }
+          },
+          "ledger": [
+            {
+              "event_id": "2",
+              "order_id": "a",
+              "kind": "payment",
+              "amount": 10,
+              "source": "pay"
+            },
+            {
+              "event_id": "3",
+              "order_id": "a",
+              "kind": "refund",
+              "amount": 4,
+              "source": "refund"
+            },
+            {
+              "event_id": "4",
+              "order_id": "a",
+              "kind": "payment",
+              "amount": 4,
+              "source": "pay"
+            }
+          ],
+          "shipments": [],
+          "results": [
+            {
+              "event_id": "1",
+              "status": "applied"
+            },
+            {
+              "event_id": "2",
+              "status": "applied"
+            },
+            {
+              "event_id": "3",
+              "status": "applied"
+            },
+            {
+              "event_id": "4",
+              "status": "applied"
+            }
+          ]
+        },
+        "actual": {
+          "ok": false,
+          "error": "ImportError",
+          "detail": "cannot import name 'release' from 'app.inventory' (/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB4/mas_lr4/runs/advanced/episodes/M01_coordinator_b60000_r1/project/app/inventory.py)"
+        }
+      },
+      {
+        "id": "V04_ship_uses_net",
+        "passed": false,
+        "input": {
+          "stock": {
+            "book": 5
+          },
+          "events": [
+            {
+              "id": "1",
+              "type": "place",
+              "order_id": "a",
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5
+            },
+            {
+              "id": "2",
+              "type": "pay",
+              "order_id": "a",
+              "amount": 10
+            },
+            {
+              "id": "3",
+              "type": "refund",
+              "order_id": "a",
+              "amount": 6
+            },
+            {
+              "id": "4",
+              "type": "ship",
+              "order_id": "a",
+              "qty": 1
+            }
+          ]
+        },
+        "expected": {
+          "stock": {
+            "book": 3
+          },
+          "orders": {
+            "a": {
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5,
+              "shipped": 0,
+              "cancelled": 0,
+              "paid": 10,
+              "refunded": 6,
+              "reserved": 2,
+              "net_paid": 4
+            }
+          },
+          "ledger": [
+            {
+              "event_id": "2",
+              "order_id": "a",
+              "kind": "payment",
+              "amount": 10,
+              "source": "pay"
+            },
+            {
+              "event_id": "3",
+              "order_id": "a",
+              "kind": "refund",
+              "amount": 6,
+              "source": "refund"
+            }
+          ],
+          "shipments": [],
+          "results": [
+            {
+              "event_id": "1",
+              "status": "applied"
+            },
+            {
+              "event_id": "2",
+              "status": "applied"
+            },
+            {
+              "event_id": "3",
+              "status": "applied"
+            },
+            {
+              "event_id": "4",
+              "status": "rejected",
+              "reason": "not_paid"
+            }
+          ]
+        },
+        "actual": {
+          "ok": false,
+          "error": "ImportError",
+          "detail": "cannot import name 'release' from 'app.inventory' (/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB4/mas_lr4/runs/advanced/episodes/M01_coordinator_b60000_r1/project/app/inventory.py)"
+        }
+      },
+      {
+        "id": "V05_ship_consumes_stock",
+        "passed": false,
+        "input": {
+          "stock": {
+            "book": 5
+          },
+          "events": [
+            {
+              "id": "1",
+              "type": "place",
+              "order_id": "a",
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5
+            },
+            {
+              "id": "2",
+              "type": "pay",
+              "order_id": "a",
+              "amount": 10
+            },
+            {
+              "id": "3",
+              "type": "ship",
+              "order_id": "a",
+              "qty": 1
+            }
+          ]
+        },
+        "expected": {
+          "stock": {
+            "book": 3
+          },
+          "orders": {
+            "a": {
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5,
+              "shipped": 1,
+              "cancelled": 0,
+              "paid": 10,
+              "refunded": 0,
+              "reserved": 1,
+              "net_paid": 10
+            }
+          },
+          "ledger": [
+            {
+              "event_id": "2",
+              "order_id": "a",
+              "kind": "payment",
+              "amount": 10,
+              "source": "pay"
+            }
+          ],
+          "shipments": [
+            {
+              "event_id": "3",
+              "order_id": "a",
+              "qty": 1
+            }
+          ],
+          "results": [
+            {
+              "event_id": "1",
+              "status": "applied"
+            },
+            {
+              "event_id": "2",
+              "status": "applied"
+            },
+            {
+              "event_id": "3",
+              "status": "applied"
+            }
+          ]
+        },
+        "actual": {
+          "ok": false,
+          "error": "ImportError",
+          "detail": "cannot import name 'release' from 'app.inventory' (/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB4/mas_lr4/runs/advanced/episodes/M01_coordinator_b60000_r1/project/app/inventory.py)"
+        }
+      },
+      {
+        "id": "V06_cancel_auto_refund",
+        "passed": false,
+        "input": {
+          "stock": {
+            "book": 5
+          },
+          "events": [
+            {
+              "id": "1",
+              "type": "place",
+              "order_id": "a",
+              "sku": "book",
+              "qty": 3,
+              "unit_price": 4
+            },
+            {
+              "id": "2",
+              "type": "pay",
+              "order_id": "a",
+              "amount": 12
+            },
+            {
+              "id": "3",
+              "type": "cancel",
+              "order_id": "a",
+              "qty": 1
+            }
+          ]
+        },
+        "expected": {
+          "stock": {
+            "book": 3
+          },
+          "orders": {
+            "a": {
+              "sku": "book",
+              "qty": 3,
+              "unit_price": 4,
+              "shipped": 0,
+              "cancelled": 1,
+              "paid": 12,
+              "refunded": 4,
+              "reserved": 2,
+              "net_paid": 8
+            }
+          },
+          "ledger": [
+            {
+              "event_id": "2",
+              "order_id": "a",
+              "kind": "payment",
+              "amount": 12,
+              "source": "pay"
+            },
+            {
+              "event_id": "3",
+              "order_id": "a",
+              "kind": "refund",
+              "amount": 4,
+              "source": "cancel"
+            }
+          ],
+          "shipments": [],
+          "results": [
+            {
+              "event_id": "1",
+              "status": "applied"
+            },
+            {
+              "event_id": "2",
+              "status": "applied"
+            },
+            {
+              "event_id": "3",
+              "status": "applied"
+            }
+          ]
+        },
+        "actual": {
+          "ok": false,
+          "error": "ImportError",
+          "detail": "cannot import name 'release' from 'app.inventory' (/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB4/mas_lr4/runs/advanced/episodes/M01_coordinator_b60000_r1/project/app/inventory.py)"
+        }
+      },
+      {
+        "id": "V07_refund_protects_shipped",
+        "passed": false,
+        "input": {
+          "stock": {
+            "book": 5
+          },
+          "events": [
+            {
+              "id": "1",
+              "type": "place",
+              "order_id": "a",
+              "sku": "book",
+              "qty": 3,
+              "unit_price": 4
+            },
+            {
+              "id": "2",
+              "type": "pay",
+              "order_id": "a",
+              "amount": 12
+            },
+            {
+              "id": "3",
+              "type": "ship",
+              "order_id": "a",
+              "qty": 2
+            },
+            {
+              "id": "4",
+              "type": "refund",
+              "order_id": "a",
+              "amount": 5
+            }
+          ]
+        },
+        "expected": {
+          "stock": {
+            "book": 2
+          },
+          "orders": {
+            "a": {
+              "sku": "book",
+              "qty": 3,
+              "unit_price": 4,
+              "shipped": 2,
+              "cancelled": 0,
+              "paid": 12,
+              "refunded": 0,
+              "reserved": 1,
+              "net_paid": 12
+            }
+          },
+          "ledger": [
+            {
+              "event_id": "2",
+              "order_id": "a",
+              "kind": "payment",
+              "amount": 12,
+              "source": "pay"
+            }
+          ],
+          "shipments": [
+            {
+              "event_id": "3",
+              "order_id": "a",
+              "qty": 2
+            }
+          ],
+          "results": [
+            {
+              "event_id": "1",
+              "status": "applied"
+            },
+            {
+              "event_id": "2",
+              "status": "applied"
+            },
+            {
+              "event_id": "3",
+              "status": "applied"
+            },
+            {
+              "event_id": "4",
+              "status": "rejected",
+              "reason": "refund_exceeded"
+            }
+          ]
+        },
+        "actual": {
+          "ok": false,
+          "error": "ImportError",
+          "detail": "cannot import name 'release' from 'app.inventory' (/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB4/mas_lr4/runs/advanced/episodes/M01_coordinator_b60000_r1/project/app/inventory.py)"
+        }
+      },
+      {
+        "id": "V08_pay_rollback",
+        "passed": false,
+        "input": {
+          "stock": {
+            "book": 5
+          },
+          "events": [
+            {
+              "id": "1",
+              "type": "place",
+              "order_id": "a",
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5
+            },
+            {
+              "id": "2",
+              "type": "pay",
+              "order_id": "a",
+              "amount": 5,
+              "fail_at": "after_ledger"
+            }
+          ]
+        },
+        "expected": {
+          "stock": {
+            "book": 3
+          },
+          "orders": {
+            "a": {
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5,
+              "shipped": 0,
+              "cancelled": 0,
+              "paid": 0,
+              "refunded": 0,
+              "reserved": 2,
+              "net_paid": 0
+            }
+          },
+          "ledger": [],
+          "shipments": [],
+          "results": [
+            {
+              "event_id": "1",
+              "status": "applied"
+            },
+            {
+              "event_id": "2",
+              "status": "failed",
+              "reason": "injected_failure"
+            }
+          ]
+        },
+        "actual": {
+          "ok": false,
+          "error": "ImportError",
+          "detail": "cannot import name 'release' from 'app.inventory' (/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB4/mas_lr4/runs/advanced/episodes/M01_coordinator_b60000_r1/project/app/inventory.py)"
+        }
+      },
+      {
+        "id": "V09_cancel_stock_rollback",
+        "passed": false,
+        "input": {
+          "stock": {
+            "book": 5
+          },
+          "events": [
+            {
+              "id": "1",
+              "type": "place",
+              "order_id": "a",
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5
+            },
+            {
+              "id": "2",
+              "type": "pay",
+              "order_id": "a",
+              "amount": 10
+            },
+            {
+              "id": "3",
+              "type": "cancel",
+              "order_id": "a",
+              "qty": 1,
+              "fail_at": "after_stock"
+            }
+          ]
+        },
+        "expected": {
+          "stock": {
+            "book": 3
+          },
+          "orders": {
+            "a": {
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5,
+              "shipped": 0,
+              "cancelled": 0,
+              "paid": 10,
+              "refunded": 0,
+              "reserved": 2,
+              "net_paid": 10
+            }
+          },
+          "ledger": [
+            {
+              "event_id": "2",
+              "order_id": "a",
+              "kind": "payment",
+              "amount": 10,
+              "source": "pay"
+            }
+          ],
+          "shipments": [],
+          "results": [
+            {
+              "event_id": "1",
+              "status": "applied"
+            },
+            {
+              "event_id": "2",
+              "status": "applied"
+            },
+            {
+              "event_id": "3",
+              "status": "failed",
+              "reason": "injected_failure"
+            }
+          ]
+        },
+        "actual": {
+          "ok": false,
+          "error": "ImportError",
+          "detail": "cannot import name 'release' from 'app.inventory' (/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB4/mas_lr4/runs/advanced/episodes/M01_coordinator_b60000_r1/project/app/inventory.py)"
+        }
+      },
+      {
+        "id": "V10_ship_rollback",
+        "passed": false,
+        "input": {
+          "stock": {
+            "book": 5
+          },
+          "events": [
+            {
+              "id": "1",
+              "type": "place",
+              "order_id": "a",
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5
+            },
+            {
+              "id": "2",
+              "type": "pay",
+              "order_id": "a",
+              "amount": 10
+            },
+            {
+              "id": "3",
+              "type": "ship",
+              "order_id": "a",
+              "qty": 1,
+              "fail_at": "after_shipping"
+            }
+          ]
+        },
+        "expected": {
+          "stock": {
+            "book": 3
+          },
+          "orders": {
+            "a": {
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5,
+              "shipped": 0,
+              "cancelled": 0,
+              "paid": 10,
+              "refunded": 0,
+              "reserved": 2,
+              "net_paid": 10
+            }
+          },
+          "ledger": [
+            {
+              "event_id": "2",
+              "order_id": "a",
+              "kind": "payment",
+              "amount": 10,
+              "source": "pay"
+            }
+          ],
+          "shipments": [],
+          "results": [
+            {
+              "event_id": "1",
+              "status": "applied"
+            },
+            {
+              "event_id": "2",
+              "status": "applied"
+            },
+            {
+              "event_id": "3",
+              "status": "failed",
+              "reason": "injected_failure"
+            }
+          ]
+        },
+        "actual": {
+          "ok": false,
+          "error": "ImportError",
+          "detail": "cannot import name 'release' from 'app.inventory' (/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB4/mas_lr4/runs/advanced/episodes/M01_coordinator_b60000_r1/project/app/inventory.py)"
+        }
+      },
+      {
+        "id": "V11_refund_rollback",
+        "passed": false,
+        "input": {
+          "stock": {
+            "book": 5
+          },
+          "events": [
+            {
+              "id": "1",
+              "type": "place",
+              "order_id": "a",
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5
+            },
+            {
+              "id": "2",
+              "type": "pay",
+              "order_id": "a",
+              "amount": 10
+            },
+            {
+              "id": "3",
+              "type": "refund",
+              "order_id": "a",
+              "amount": 3,
+              "fail_at": "after_ledger"
+            }
+          ]
+        },
+        "expected": {
+          "stock": {
+            "book": 3
+          },
+          "orders": {
+            "a": {
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5,
+              "shipped": 0,
+              "cancelled": 0,
+              "paid": 10,
+              "refunded": 0,
+              "reserved": 2,
+              "net_paid": 10
+            }
+          },
+          "ledger": [
+            {
+              "event_id": "2",
+              "order_id": "a",
+              "kind": "payment",
+              "amount": 10,
+              "source": "pay"
+            }
+          ],
+          "shipments": [],
+          "results": [
+            {
+              "event_id": "1",
+              "status": "applied"
+            },
+            {
+              "event_id": "2",
+              "status": "applied"
+            },
+            {
+              "event_id": "3",
+              "status": "failed",
+              "reason": "injected_failure"
+            }
+          ]
+        },
+        "actual": {
+          "ok": false,
+          "error": "ImportError",
+          "detail": "cannot import name 'release' from 'app.inventory' (/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB4/mas_lr4/runs/advanced/episodes/M01_coordinator_b60000_r1/project/app/inventory.py)"
+        }
+      },
+      {
+        "id": "V12_out_of_order",
+        "passed": false,
+        "input": {
+          "stock": {
+            "book": 5
+          },
+          "events": [
+            {
+              "id": "1",
+              "type": "ship",
+              "order_id": "a",
+              "qty": 1
+            },
+            {
+              "id": "2",
+              "type": "place",
+              "order_id": "a",
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5
+            },
+            {
+              "id": "1",
+              "type": "ship",
+              "order_id": "a",
+              "qty": 1
+            }
+          ]
+        },
+        "expected": {
+          "stock": {
+            "book": 3
+          },
+          "orders": {
+            "a": {
+              "sku": "book",
+              "qty": 2,
+              "unit_price": 5,
+              "shipped": 0,
+              "cancelled": 0,
+              "paid": 0,
+              "refunded": 0,
+              "reserved": 2,
+              "net_paid": 0
+            }
+          },
+          "ledger": [],
+          "shipments": [],
+          "results": [
+            {
+              "event_id": "1",
+              "status": "rejected",
+              "reason": "unknown_order"
+            },
+            {
+              "event_id": "2",
+              "status": "applied"
+            },
+            {
+              "event_id": "1",
+              "status": "duplicate"
+            }
+          ]
+        },
+        "actual": {
+          "ok": false,
+          "error": "ImportError",
+          "detail": "cannot import name 'release' from 'app.inventory' (/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB4/mas_lr4/runs/advanced/episodes/M01_coordinator_b60000_r1/project/app/inventory.py)"
+        }
+      }
+    ]
+  },
+  "interpretation": "Final task success requires teacher verification; never infer it from schema alone."
+}

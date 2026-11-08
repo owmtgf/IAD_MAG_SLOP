@@ -1,0 +1,194 @@
+{
+  "task_id": "T25",
+  "status": "success",
+  "success": true,
+  "visible_passed": true,
+  "visible_passed_count": 10,
+  "visible_total": 10,
+  "code_sha256": "51fc5b8a21a629266d8baec864ef38bd2f249ffbe1c90dda6070062d69f6314d",
+  "input_tokens_known": 13814,
+  "output_tokens_known": 272,
+  "total_tokens_known": 14086,
+  "usage_complete": true,
+  "budget": 48000,
+  "budget_overrun": 0,
+  "model_calls": 5,
+  "tool_calls": 4,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "coordinator": {
+      "input": 6264,
+      "output": 114,
+      "total": 6378,
+      "calls": 2
+    },
+    "developer": {
+      "input": 7550,
+      "output": 158,
+      "total": 7708,
+      "calls": 3
+    }
+  },
+  "seconds": 9.224207,
+  "final_report": {
+    "passed": true,
+    "total": 10,
+    "passed_count": 10,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": {}
+        },
+        "actual": {
+          "value": {}
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": {
+            "a": "b"
+          }
+        },
+        "actual": {
+          "value": {
+            "a": "b"
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": true,
+        "expected": {
+          "value": {
+            "a": "x=y"
+          }
+        },
+        "actual": {
+          "value": {
+            "a": "x=y"
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": true,
+        "expected": {
+          "value": {
+            "a": ""
+          }
+        },
+        "actual": {
+          "value": {
+            "a": ""
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": true,
+        "expected": {
+          "value": {
+            "b": "2"
+          }
+        },
+        "actual": {
+          "value": {
+            "b": "2"
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": true,
+        "expected": {
+          "raises": "ValueError"
+        },
+        "actual": {
+          "raises": "ValueError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": true,
+        "expected": {
+          "raises": "ValueError"
+        },
+        "actual": {
+          "raises": "ValueError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": true,
+        "expected": {
+          "raises": "ValueError"
+        },
+        "actual": {
+          "raises": "ValueError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": true,
+        "expected": {
+          "value": {
+            "A": "1",
+            "a": "2"
+          }
+        },
+        "actual": {
+          "value": {
+            "A": "1",
+            "a": "2"
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": true,
+        "expected": {
+          "value": {
+            "x": "#v",
+            "y": "z"
+          }
+        },
+        "actual": {
+          "value": {
+            "x": "#v",
+            "y": "z"
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "51fc5b8a21a629266d8baec864ef38bd2f249ffbe1c90dda6070062d69f6314d",
+    "seconds": 0.030381
+  },
+  "architecture": "coordinator",
+  "repeat": 2,
+  "seed": 113097891,
+  "episode_id": "T25_coordinator_b48000_r2"
+}

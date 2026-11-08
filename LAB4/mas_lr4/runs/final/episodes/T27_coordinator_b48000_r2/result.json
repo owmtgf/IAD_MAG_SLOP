@@ -1,0 +1,49 @@
+{
+  "task_id": "T27",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 0,
+  "visible_total": 10,
+  "code_sha256": "39f29c45bd131f1ab63463fcc20b0c49ce9afb1a1b77cf772abe9a3703447f9a",
+  "input_tokens_known": 49861,
+  "output_tokens_known": 608,
+  "total_tokens_known": 50469,
+  "usage_complete": true,
+  "budget": 48000,
+  "budget_overrun": 2469,
+  "model_calls": 13,
+  "tool_calls": 8,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "coordinator": {
+      "input": 18551,
+      "output": 224,
+      "total": 18775,
+      "calls": 4
+    },
+    "developer": {
+      "input": 23504,
+      "output": 268,
+      "total": 23772,
+      "calls": 6
+    },
+    "tester": {
+      "input": 7806,
+      "output": 116,
+      "total": 7922,
+      "calls": 3
+    }
+  },
+  "seconds": 23.066908,
+  "final_report": {
+    "passed": false,
+    "error": "SyntaxError: closing parenthesis '}' does not match opening parenthesis '[' (<unknown>, line 4)",
+    "code_sha256": "39f29c45bd131f1ab63463fcc20b0c49ce9afb1a1b77cf772abe9a3703447f9a",
+    "seconds": 0.027322
+  },
+  "architecture": "coordinator",
+  "repeat": 2,
+  "seed": 143573291,
+  "episode_id": "T27_coordinator_b48000_r2"
+}

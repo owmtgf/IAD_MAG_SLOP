@@ -1,0 +1,206 @@
+{
+  "task_id": "T35",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 5,
+  "visible_total": 10,
+  "code_sha256": "499cf1fd90d2ad175637e108681ee79f8237ab99d30e105a26834a639a5d58e1",
+  "input_tokens_known": 27258,
+  "output_tokens_known": 1127,
+  "total_tokens_known": 28385,
+  "usage_complete": true,
+  "budget": 24000,
+  "budget_overrun": 4385,
+  "model_calls": 8,
+  "tool_calls": 3,
+  "invalid_actions": 4,
+  "tokens_by_role": {
+    "programmer": {
+      "input": 20592,
+      "output": 904,
+      "total": 21496,
+      "calls": 6
+    },
+    "reviewer": {
+      "input": 6666,
+      "output": 223,
+      "total": 6889,
+      "calls": 2
+    }
+  },
+  "seconds": 35.335222,
+  "final_report": {
+    "passed": false,
+    "total": 10,
+    "passed_count": 5,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": [
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": false,
+        "expected": {
+          "value": [
+            "b"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": true,
+        "expected": {
+          "value": [
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": false,
+        "expected": {
+          "value": [
+            "b",
+            "c"
+          ]
+        },
+        "actual": {
+          "value": [
+            "c",
+            "b"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": true,
+        "expected": {
+          "value": [
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": false,
+        "expected": {
+          "value": [
+            "b",
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a",
+            "b"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": false,
+        "expected": {
+          "value": [
+            "b",
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a",
+            "b"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": false,
+        "expected": {
+          "value": [
+            "a",
+            "c"
+          ]
+        },
+        "actual": {
+          "value": [
+            "c",
+            "b"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "499cf1fd90d2ad175637e108681ee79f8237ab99d30e105a26834a639a5d58e1",
+    "seconds": 0.037695
+  },
+  "architecture": "fixed",
+  "repeat": 2,
+  "seed": 11763104,
+  "episode_id": "T35_fixed_b24000_r2"
+}

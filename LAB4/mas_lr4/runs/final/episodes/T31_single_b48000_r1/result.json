@@ -1,0 +1,252 @@
+{
+  "task_id": "T31",
+  "status": "success",
+  "success": true,
+  "visible_passed": true,
+  "visible_passed_count": 10,
+  "visible_total": 10,
+  "code_sha256": "1e2c6017a78bc20e48ddc337d628c351d4b22b2d17537e9cac1ff1433c55f29e",
+  "input_tokens_known": 26051,
+  "output_tokens_known": 255,
+  "total_tokens_known": 26306,
+  "usage_complete": true,
+  "budget": 48000,
+  "budget_overrun": 0,
+  "model_calls": 6,
+  "tool_calls": 5,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "single": {
+      "input": 26051,
+      "output": 255,
+      "total": 26306,
+      "calls": 6
+    }
+  },
+  "seconds": 9.470111,
+  "final_report": {
+    "passed": true,
+    "total": 10,
+    "passed_count": 10,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": {
+            "ok": false,
+            "stock": {
+              "a": 5
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "ok": false,
+            "stock": {
+              "a": 5
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": {
+            "ok": true,
+            "stock": {
+              "a": 0
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "ok": true,
+            "stock": {
+              "a": 0
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": true,
+        "expected": {
+          "value": {
+            "ok": false,
+            "stock": {
+              "a": 5,
+              "b": 1
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "ok": false,
+            "stock": {
+              "a": 5,
+              "b": 1
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": true,
+        "expected": {
+          "value": {
+            "ok": true,
+            "stock": {}
+          }
+        },
+        "actual": {
+          "value": {
+            "ok": true,
+            "stock": {}
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": true,
+        "expected": {
+          "value": {
+            "ok": true,
+            "stock": {}
+          }
+        },
+        "actual": {
+          "value": {
+            "ok": true,
+            "stock": {}
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": true,
+        "expected": {
+          "value": {
+            "ok": false,
+            "stock": {}
+          }
+        },
+        "actual": {
+          "value": {
+            "ok": false,
+            "stock": {}
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": true,
+        "expected": {
+          "value": {
+            "ok": true,
+            "stock": {
+              "a": 2,
+              "b": 2
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "ok": true,
+            "stock": {
+              "a": 2,
+              "b": 2
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": true,
+        "expected": {
+          "value": {
+            "ok": true,
+            "stock": {
+              "a": 1
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "ok": true,
+            "stock": {
+              "a": 1
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": true,
+        "expected": {
+          "value": {
+            "ok": true,
+            "stock": {
+              "a": 0
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "ok": true,
+            "stock": {
+              "a": 0
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": true,
+        "expected": {
+          "value": {
+            "ok": true,
+            "stock": {
+              "a": 4
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "ok": true,
+            "stock": {
+              "a": 4
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "1e2c6017a78bc20e48ddc337d628c351d4b22b2d17537e9cac1ff1433c55f29e",
+    "seconds": 0.028453
+  },
+  "architecture": "single",
+  "repeat": 1,
+  "seed": 186595184,
+  "episode_id": "T31_single_b48000_r1"
+}

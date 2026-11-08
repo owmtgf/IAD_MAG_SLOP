@@ -1,0 +1,7 @@
+﻿block,budget,team,pairs,comparable,same,different
+C,60000,coordinator,24,24,19,5
+C,60000,fixed,24,24,19,5
+T,24000,coordinator,100,97,66,31
+T,24000,fixed,100,100,62,38
+T,48000,coordinator,100,98,73,25
+T,48000,fixed,100,98,72,26

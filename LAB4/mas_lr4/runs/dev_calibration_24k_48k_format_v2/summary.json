@@ -1,0 +1,79 @@
+{
+  "source": "real_http_model",
+  "metrics": [
+    {
+      "architecture": "coordinator",
+      "budget": 24000,
+      "planned": 5,
+      "completed": 5,
+      "successes": 3,
+      "success_rate": 0.6,
+      "median_tokens_complete_usage": 15109,
+      "median_seconds": 7.22752,
+      "unknown_usage": 0,
+      "budget_exhausted": 2
+    },
+    {
+      "architecture": "coordinator",
+      "budget": 48000,
+      "planned": 5,
+      "completed": 5,
+      "successes": 4,
+      "success_rate": 0.8,
+      "median_tokens_complete_usage": 27433,
+      "median_seconds": 14.741735,
+      "unknown_usage": 0,
+      "budget_exhausted": 1
+    },
+    {
+      "architecture": "fixed",
+      "budget": 24000,
+      "planned": 5,
+      "completed": 5,
+      "successes": 2,
+      "success_rate": 0.4,
+      "median_tokens_complete_usage": 24024,
+      "median_seconds": 12.154708,
+      "unknown_usage": 0,
+      "budget_exhausted": 3
+    },
+    {
+      "architecture": "fixed",
+      "budget": 48000,
+      "planned": 5,
+      "completed": 5,
+      "successes": 5,
+      "success_rate": 1.0,
+      "median_tokens_complete_usage": 27665,
+      "median_seconds": 12.165069,
+      "unknown_usage": 0,
+      "budget_exhausted": 0
+    },
+    {
+      "architecture": "single",
+      "budget": 24000,
+      "planned": 5,
+      "completed": 5,
+      "successes": 4,
+      "success_rate": 0.8,
+      "median_tokens_complete_usage": 20805,
+      "median_seconds": 7.166047,
+      "unknown_usage": 0,
+      "budget_exhausted": 1
+    },
+    {
+      "architecture": "single",
+      "budget": 48000,
+      "planned": 5,
+      "completed": 5,
+      "successes": 5,
+      "success_rate": 1.0,
+      "median_tokens_complete_usage": 20946,
+      "median_seconds": 8.545616,
+      "unknown_usage": 0,
+      "budget_exhausted": 0
+    }
+  ],
+  "complete": true,
+  "comparable_usage": true
+}

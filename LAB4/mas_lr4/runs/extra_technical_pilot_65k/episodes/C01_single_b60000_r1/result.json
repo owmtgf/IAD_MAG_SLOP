@@ -1,0 +1,210 @@
+{
+  "task_id": "C01",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 3,
+  "visible_total": 6,
+  "code_sha256": "78102d6000f08f12fe4d31a60848151b61bd4d4f65fc96c4596be464c8265c6b",
+  "input_tokens_known": 69496,
+  "output_tokens_known": 1185,
+  "total_tokens_known": 70681,
+  "usage_complete": true,
+  "budget": 60000,
+  "budget_overrun": 10681,
+  "model_calls": 9,
+  "tool_calls": 5,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "single": {
+      "input": 69496,
+      "output": 1185,
+      "total": 70681,
+      "calls": 9
+    }
+  },
+  "seconds": 38.353628,
+  "final_report": {
+    "passed": false,
+    "total": 6,
+    "passed_count": 3,
+    "cases": [
+      {
+        "id": "V01",
+        "passed": true,
+        "expected": {
+          "value": {
+            "balance": 0,
+            "payments": []
+          }
+        },
+        "actual": {
+          "value": {
+            "balance": 0,
+            "payments": []
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V02",
+        "passed": true,
+        "expected": {
+          "value": {
+            "balance": 340,
+            "payments": [
+              {
+                "id": "A",
+                "paid": 40,
+                "refunded": 0,
+                "remaining": 40
+              },
+              {
+                "id": "b",
+                "paid": 300,
+                "refunded": 0,
+                "remaining": 300
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "balance": 340,
+            "payments": [
+              {
+                "id": "A",
+                "paid": 40,
+                "refunded": 0,
+                "remaining": 40
+              },
+              {
+                "id": "b",
+                "paid": 300,
+                "refunded": 0,
+                "remaining": 300
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V03",
+        "passed": false,
+        "expected": {
+          "value": {
+            "balance": 50,
+            "payments": [
+              {
+                "id": "p",
+                "paid": 100,
+                "refunded": 50,
+                "remaining": 50
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "balance": 80,
+            "payments": [
+              {
+                "id": "p",
+                "paid": 100,
+                "refunded": 20,
+                "remaining": 80
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V04",
+        "passed": true,
+        "expected": {
+          "value": {
+            "balance": 65,
+            "payments": [
+              {
+                "id": "p",
+                "paid": 80,
+                "refunded": 15,
+                "remaining": 65
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "balance": 65,
+            "payments": [
+              {
+                "id": "p",
+                "paid": 80,
+                "refunded": 15,
+                "remaining": 65
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V05",
+        "passed": false,
+        "expected": {
+          "raises": "ValueError"
+        },
+        "actual": {
+          "value": {
+            "balance": 5,
+            "payments": [
+              {
+                "id": "p",
+                "paid": 10,
+                "refunded": 5,
+                "remaining": 5
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V06",
+        "passed": false,
+        "expected": {
+          "raises": "ValueError"
+        },
+        "actual": {
+          "value": {
+            "balance": 10,
+            "payments": [
+              {
+                "id": "p",
+                "paid": 10,
+                "refunded": 0,
+                "remaining": 10
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "78102d6000f08f12fe4d31a60848151b61bd4d4f65fc96c4596be464c8265c6b",
+    "seconds": 0.029067
+  },
+  "architecture": "single",
+  "repeat": 1,
+  "seed": 144249828,
+  "episode_id": "C01_single_b60000_r1"
+}

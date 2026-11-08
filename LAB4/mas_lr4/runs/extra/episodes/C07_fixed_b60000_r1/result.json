@@ -1,0 +1,476 @@
+{
+  "task_id": "C07",
+  "status": "model_error",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 0,
+  "visible_total": 6,
+  "code_sha256": "bb0880215c737a340241bc5fdeb38921da89591ba43b0b1e92fa99cad608f9fe",
+  "input_tokens_known": 5324,
+  "output_tokens_known": 7,
+  "total_tokens_known": 5331,
+  "usage_complete": false,
+  "budget": 60000,
+  "budget_overrun": 0,
+  "model_calls": 2,
+  "tool_calls": 1,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "programmer": {
+      "input": 5324,
+      "output": 7,
+      "total": 5331,
+      "calls": 1
+    }
+  },
+  "seconds": 121.067735,
+  "final_report": {
+    "passed": false,
+    "total": 6,
+    "passed_count": 0,
+    "cases": [
+      {
+        "id": "V01_arrival_order_and_replacement",
+        "passed": false,
+        "expected": {
+          "value": {
+            "documents": [
+              {
+                "doc": "d",
+                "version": 3,
+                "deleted": false,
+                "fields": {
+                  "b": 3
+                },
+                "history": [
+                  {
+                    "eid": "p1",
+                    "version": 1,
+                    "effect": "put"
+                  },
+                  {
+                    "eid": "x2",
+                    "version": 2,
+                    "effect": "patched"
+                  },
+                  {
+                    "eid": "p3",
+                    "version": 3,
+                    "effect": "put"
+                  }
+                ]
+              }
+            ],
+            "losers": [],
+            "duplicates": 0
+          }
+        },
+        "actual": {
+          "value": {
+            "documents": [
+              {
+                "doc": "d",
+                "version": 3,
+                "deleted": false,
+                "fields": {
+                  "a": 2,
+                  "b": 3
+                },
+                "history": [
+                  {
+                    "eid": "p1",
+                    "version": 1,
+                    "effect": "put"
+                  },
+                  {
+                    "eid": "x2",
+                    "version": 2,
+                    "effect": "patched"
+                  },
+                  {
+                    "eid": "p3",
+                    "version": 3,
+                    "effect": "put"
+                  }
+                ]
+              }
+            ],
+            "losers": [],
+            "duplicates": 0
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V02_winner_priority",
+        "passed": false,
+        "expected": {
+          "value": {
+            "documents": [
+              {
+                "doc": "d",
+                "version": 1,
+                "deleted": true,
+                "fields": {},
+                "history": [
+                  {
+                    "eid": "m",
+                    "version": 1,
+                    "effect": "deleted"
+                  }
+                ]
+              }
+            ],
+            "losers": [
+              "a",
+              "z"
+            ],
+            "duplicates": 0
+          }
+        },
+        "actual": {
+          "value": {
+            "documents": [
+              {
+                "doc": "d",
+                "version": 1,
+                "deleted": false,
+                "fields": {
+                  "x": 1
+                },
+                "history": [
+                  {
+                    "eid": "a",
+                    "version": 1,
+                    "effect": "patched"
+                  }
+                ]
+              }
+            ],
+            "losers": [
+              "m",
+              "z"
+            ],
+            "duplicates": 0
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V03_tie_id_and_zero_version",
+        "passed": false,
+        "expected": {
+          "value": {
+            "documents": [
+              {
+                "doc": "d",
+                "version": 0,
+                "deleted": false,
+                "fields": {
+                  "x": 2
+                },
+                "history": [
+                  {
+                    "eid": "z",
+                    "version": 0,
+                    "effect": "put"
+                  }
+                ]
+              }
+            ],
+            "losers": [
+              "a"
+            ],
+            "duplicates": 0
+          }
+        },
+        "actual": {
+          "value": {
+            "documents": [
+              {
+                "doc": "d",
+                "version": 0,
+                "deleted": true,
+                "fields": {},
+                "history": []
+              }
+            ],
+            "losers": [
+              "a",
+              "z"
+            ],
+            "duplicates": 0
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V04_tombstone_patch",
+        "passed": false,
+        "expected": {
+          "value": {
+            "documents": [
+              {
+                "doc": "d",
+                "version": 3,
+                "deleted": true,
+                "fields": {},
+                "history": [
+                  {
+                    "eid": "a",
+                    "version": 1,
+                    "effect": "put"
+                  },
+                  {
+                    "eid": "b",
+                    "version": 2,
+                    "effect": "deleted"
+                  },
+                  {
+                    "eid": "c",
+                    "version": 3,
+                    "effect": "ignored"
+                  }
+                ]
+              }
+            ],
+            "losers": [],
+            "duplicates": 0
+          }
+        },
+        "actual": {
+          "value": {
+            "documents": [
+              {
+                "doc": "d",
+                "version": 3,
+                "deleted": false,
+                "fields": {
+                  "y": 2
+                },
+                "history": [
+                  {
+                    "eid": "a",
+                    "version": 1,
+                    "effect": "put"
+                  },
+                  {
+                    "eid": "b",
+                    "version": 2,
+                    "effect": "deleted"
+                  },
+                  {
+                    "eid": "c",
+                    "version": 3,
+                    "effect": "patched"
+                  }
+                ]
+              }
+            ],
+            "losers": [],
+            "duplicates": 0
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V05_unset_wins",
+        "passed": false,
+        "expected": {
+          "value": {
+            "documents": [
+              {
+                "doc": "d",
+                "version": 2,
+                "deleted": false,
+                "fields": {
+                  "y": 2,
+                  "z": null
+                },
+                "history": [
+                  {
+                    "eid": "a",
+                    "version": 1,
+                    "effect": "put"
+                  },
+                  {
+                    "eid": "b",
+                    "version": 2,
+                    "effect": "patched"
+                  }
+                ]
+              }
+            ],
+            "losers": [],
+            "duplicates": 0
+          }
+        },
+        "actual": {
+          "value": {
+            "documents": [
+              {
+                "doc": "d",
+                "version": 2,
+                "deleted": false,
+                "fields": {
+                  "y": 2,
+                  "x": 3,
+                  "z": null
+                },
+                "history": [
+                  {
+                    "eid": "a",
+                    "version": 1,
+                    "effect": "put"
+                  },
+                  {
+                    "eid": "b",
+                    "version": 2,
+                    "effect": "patched"
+                  }
+                ]
+              }
+            ],
+            "losers": [],
+            "duplicates": 0
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V06_combined",
+        "passed": false,
+        "expected": {
+          "value": {
+            "documents": [
+              {
+                "doc": "a",
+                "version": 5,
+                "deleted": false,
+                "fields": {},
+                "history": [
+                  {
+                    "eid": "b",
+                    "version": 1,
+                    "effect": "put"
+                  },
+                  {
+                    "eid": "c",
+                    "version": 2,
+                    "effect": "deleted"
+                  },
+                  {
+                    "eid": "d",
+                    "version": 3,
+                    "effect": "ignored"
+                  },
+                  {
+                    "eid": "e",
+                    "version": 4,
+                    "effect": "put"
+                  },
+                  {
+                    "eid": "f",
+                    "version": 5,
+                    "effect": "patched"
+                  }
+                ]
+              },
+              {
+                "doc": "z",
+                "version": 4,
+                "deleted": true,
+                "fields": {},
+                "history": [
+                  {
+                    "eid": "q",
+                    "version": 4,
+                    "effect": "ignored"
+                  }
+                ]
+              }
+            ],
+            "losers": [
+              "a"
+            ],
+            "duplicates": 1
+          }
+        },
+        "actual": {
+          "value": {
+            "documents": [
+              {
+                "doc": "a",
+                "version": 5,
+                "deleted": false,
+                "fields": {
+                  "x": 9,
+                  "y": 3
+                },
+                "history": [
+                  {
+                    "eid": "b",
+                    "version": 1,
+                    "effect": "put"
+                  },
+                  {
+                    "eid": "a",
+                    "version": 2,
+                    "effect": "put"
+                  },
+                  {
+                    "eid": "d",
+                    "version": 3,
+                    "effect": "patched"
+                  },
+                  {
+                    "eid": "e",
+                    "version": 4,
+                    "effect": "put"
+                  },
+                  {
+                    "eid": "f",
+                    "version": 5,
+                    "effect": "patched"
+                  }
+                ]
+              },
+              {
+                "doc": "z",
+                "version": 4,
+                "deleted": false,
+                "fields": {
+                  "x": 7
+                },
+                "history": [
+                  {
+                    "eid": "q",
+                    "version": 4,
+                    "effect": "patched"
+                  }
+                ]
+              }
+            ],
+            "losers": [
+              "c"
+            ],
+            "duplicates": 1
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "bb0880215c737a340241bc5fdeb38921da89591ba43b0b1e92fa99cad608f9fe",
+    "seconds": 0.032409
+  },
+  "architecture": "fixed",
+  "repeat": 1,
+  "seed": 187978365,
+  "episode_id": "C07_fixed_b60000_r1"
+}

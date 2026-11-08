@@ -1,0 +1,194 @@
+{
+  "task_id": "C03",
+  "status": "success",
+  "success": true,
+  "visible_passed": true,
+  "visible_passed_count": 6,
+  "visible_total": 6,
+  "code_sha256": "79f30fca9d4e1f7fb42bb366bc453b88114e27da710497edbfb53eeef7a2e72e",
+  "input_tokens_known": 57005,
+  "output_tokens_known": 1111,
+  "total_tokens_known": 58116,
+  "usage_complete": true,
+  "budget": 60000,
+  "budget_overrun": 0,
+  "model_calls": 9,
+  "tool_calls": 6,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "coordinator": {
+      "input": 19443,
+      "output": 449,
+      "total": 19892,
+      "calls": 3
+    },
+    "developer": {
+      "input": 37562,
+      "output": 662,
+      "total": 38224,
+      "calls": 6
+    }
+  },
+  "seconds": 36.28591,
+  "final_report": {
+    "passed": true,
+    "total": 6,
+    "passed_count": 6,
+    "cases": [
+      {
+        "id": "V01",
+        "passed": true,
+        "expected": {
+          "value": {
+            "lines": [],
+            "subtotal": 0,
+            "coupon_discount": 0,
+            "shipping": 0,
+            "total": 0
+          }
+        },
+        "actual": {
+          "value": {
+            "lines": [],
+            "subtotal": 0,
+            "coupon_discount": 0,
+            "shipping": 0,
+            "total": 0
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V02",
+        "passed": true,
+        "expected": {
+          "value": {
+            "lines": [
+              13
+            ],
+            "subtotal": 13,
+            "coupon_discount": 0,
+            "shipping": 0,
+            "total": 13
+          }
+        },
+        "actual": {
+          "value": {
+            "lines": [
+              13
+            ],
+            "subtotal": 13,
+            "coupon_discount": 0,
+            "shipping": 0,
+            "total": 13
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V03",
+        "passed": true,
+        "expected": {
+          "value": {
+            "lines": [
+              100
+            ],
+            "subtotal": 100,
+            "coupon_discount": 20,
+            "shipping": 0,
+            "total": 80
+          }
+        },
+        "actual": {
+          "value": {
+            "lines": [
+              100
+            ],
+            "subtotal": 100,
+            "coupon_discount": 20,
+            "shipping": 0,
+            "total": 80
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V04",
+        "passed": true,
+        "expected": {
+          "value": {
+            "lines": [
+              110
+            ],
+            "subtotal": 110,
+            "coupon_discount": 20,
+            "shipping": 7,
+            "total": 97
+          }
+        },
+        "actual": {
+          "value": {
+            "lines": [
+              110
+            ],
+            "subtotal": 110,
+            "coupon_discount": 20,
+            "shipping": 7,
+            "total": 97
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V05",
+        "passed": true,
+        "expected": {
+          "value": {
+            "lines": [
+              10
+            ],
+            "subtotal": 10,
+            "coupon_discount": 10,
+            "shipping": 4,
+            "total": 4
+          }
+        },
+        "actual": {
+          "value": {
+            "lines": [
+              10
+            ],
+            "subtotal": 10,
+            "coupon_discount": 10,
+            "shipping": 4,
+            "total": 4
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V06",
+        "passed": true,
+        "expected": {
+          "raises": "ValueError"
+        },
+        "actual": {
+          "raises": "ValueError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "79f30fca9d4e1f7fb42bb366bc453b88114e27da710497edbfb53eeef7a2e72e",
+    "seconds": 0.031038
+  },
+  "architecture": "coordinator",
+  "repeat": 2,
+  "seed": 252020471,
+  "episode_id": "C03_coordinator_b60000_r2"
+}

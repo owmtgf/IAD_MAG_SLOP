@@ -1,9 +1,9 @@
 {
-  "model": "SET_MODEL",
+  "model": "/home/maria/Projects/IAD_MAG_neuroslop/lab02_students/Qwen3.5-4B",
   "temperature": 0,
   "send_seed": false,
   "seed": 41729,
-  "budgets": [6000, 12000],
+  "budgets": [24000, 48000],
   "repeats": 2,
   "max_output_tokens": 1800,
   "max_model_calls": 48,

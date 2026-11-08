@@ -1,0 +1,194 @@
+{
+  "task_id": "T25",
+  "status": "success",
+  "success": true,
+  "visible_passed": true,
+  "visible_passed_count": 10,
+  "visible_total": 10,
+  "code_sha256": "83e4d0ad433df1a107e38d0e0ed1064a019729abfa6d5e71840e022a899d6d4b",
+  "input_tokens_known": 32528,
+  "output_tokens_known": 435,
+  "total_tokens_known": 32963,
+  "usage_complete": true,
+  "budget": 48000,
+  "budget_overrun": 0,
+  "model_calls": 9,
+  "tool_calls": 7,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "programmer": {
+      "input": 23001,
+      "output": 228,
+      "total": 23229,
+      "calls": 6
+    },
+    "reviewer": {
+      "input": 9527,
+      "output": 207,
+      "total": 9734,
+      "calls": 3
+    }
+  },
+  "seconds": 21.010879,
+  "final_report": {
+    "passed": true,
+    "total": 10,
+    "passed_count": 10,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": {}
+        },
+        "actual": {
+          "value": {}
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": {
+            "a": "b"
+          }
+        },
+        "actual": {
+          "value": {
+            "a": "b"
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": true,
+        "expected": {
+          "value": {
+            "a": "x=y"
+          }
+        },
+        "actual": {
+          "value": {
+            "a": "x=y"
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": true,
+        "expected": {
+          "value": {
+            "a": ""
+          }
+        },
+        "actual": {
+          "value": {
+            "a": ""
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": true,
+        "expected": {
+          "value": {
+            "b": "2"
+          }
+        },
+        "actual": {
+          "value": {
+            "b": "2"
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": true,
+        "expected": {
+          "raises": "ValueError"
+        },
+        "actual": {
+          "raises": "ValueError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": true,
+        "expected": {
+          "raises": "ValueError"
+        },
+        "actual": {
+          "raises": "ValueError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": true,
+        "expected": {
+          "raises": "ValueError"
+        },
+        "actual": {
+          "raises": "ValueError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": true,
+        "expected": {
+          "value": {
+            "A": "1",
+            "a": "2"
+          }
+        },
+        "actual": {
+          "value": {
+            "A": "1",
+            "a": "2"
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": true,
+        "expected": {
+          "value": {
+            "x": "#v",
+            "y": "z"
+          }
+        },
+        "actual": {
+          "value": {
+            "x": "#v",
+            "y": "z"
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "83e4d0ad433df1a107e38d0e0ed1064a019729abfa6d5e71840e022a899d6d4b",
+    "seconds": 0.027583
+  },
+  "architecture": "fixed",
+  "repeat": 1,
+  "seed": 222479348,
+  "episode_id": "T25_fixed_b48000_r1"
+}

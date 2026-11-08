@@ -1,0 +1,7 @@
+﻿block,budget,team,pairs,both_success,both_failure,team_only,single_only,single_successes,team_successes,net_team_wins,success_delta_percentage_points,complete_token_pairs,median_paired_token_delta,median_paired_token_ratio,complete_time_pairs,median_paired_seconds_delta,both_success_complete_token_pairs,both_success_median_paired_token_delta,identical_code_pairs
+C,60000,coordinator,24,2,20,2,0,2,4,2,8.333333333333334,16,-91.0,0.9985927775089352,24,25.9039365,2,41728.0,16
+C,60000,fixed,24,2,21,1,0,2,3,1,4.166666666666667,20,-2813.0,0.9609471970861831,24,-4.371712499999999,2,16879.0,19
+core,24000,coordinator,100,20,51,6,23,43,26,-17,-17.0,99,1344,1.0543020394544773,99,3.7422749999999994,20,3478.0,19
+core,24000,fixed,100,14,57,0,29,43,14,-29,-29.0,100,3135.5,1.1287070527795677,100,5.5868565,14,11346.5,32
+core,48000,coordinator,100,56,19,12,13,69,68,-1,-1.0,98,3559.0,1.2970269296946901,100,4.4738205,56,4391.0,18
+core,48000,fixed,100,54,24,7,15,69,61,-8,-8.0,98,7455.5,1.3125202698650573,100,5.512015,54,9057.0,36

@@ -1,0 +1,508 @@
+{
+  "task_id": "C06",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 0,
+  "visible_total": 6,
+  "code_sha256": "b7176c63195d2447138631d9c8144068d755b76b7f9931815ed34fad7e1a7bb3",
+  "input_tokens_known": 59183,
+  "output_tokens_known": 5258,
+  "total_tokens_known": 64441,
+  "usage_complete": true,
+  "budget": 60000,
+  "budget_overrun": 4441,
+  "model_calls": 7,
+  "tool_calls": 2,
+  "invalid_actions": 4,
+  "tokens_by_role": {
+    "coordinator": {
+      "input": 16274,
+      "output": 334,
+      "total": 16608,
+      "calls": 2
+    },
+    "developer": {
+      "input": 42909,
+      "output": 4924,
+      "total": 47833,
+      "calls": 5
+    }
+  },
+  "seconds": 162.85077,
+  "final_report": {
+    "passed": false,
+    "total": 6,
+    "passed_count": 0,
+    "cases": [
+      {
+        "id": "V01_threshold_and_shipping",
+        "passed": false,
+        "expected": {
+          "value": {
+            "gross": 200,
+            "discount": 30,
+            "shipping": 25,
+            "charged": 195,
+            "refunds": [],
+            "refunded": 0,
+            "balance": 195,
+            "lines": [
+              {
+                "id": "a",
+                "discount": 30,
+                "returned_qty": 0,
+                "refunded": 0,
+                "remaining": 170
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "gross": 200,
+            "discount": 0,
+            "shipping": 0,
+            "charged": 200,
+            "refunds": [],
+            "refunded": 0,
+            "balance": 200,
+            "lines": [
+              {
+                "id": "a",
+                "discount": 0,
+                "returned_qty": 0,
+                "refunded": 0,
+                "remaining": 200
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V02_largest_remainders",
+        "passed": false,
+        "expected": {
+          "value": {
+            "gross": 300,
+            "discount": 2,
+            "shipping": 0,
+            "charged": 298,
+            "refunds": [],
+            "refunded": 0,
+            "balance": 298,
+            "lines": [
+              {
+                "id": "a",
+                "discount": 1,
+                "returned_qty": 0,
+                "refunded": 0,
+                "remaining": 99
+              },
+              {
+                "id": "b",
+                "discount": 1,
+                "returned_qty": 0,
+                "refunded": 0,
+                "remaining": 99
+              },
+              {
+                "id": "c",
+                "discount": 0,
+                "returned_qty": 0,
+                "refunded": 0,
+                "remaining": 100
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "gross": 300,
+            "discount": 2,
+            "shipping": 0,
+            "charged": 298,
+            "refunds": [],
+            "refunded": 0,
+            "balance": 298,
+            "lines": [
+              {
+                "id": "c",
+                "discount": 1,
+                "returned_qty": 0,
+                "refunded": 0,
+                "remaining": 99
+              },
+              {
+                "id": "b",
+                "discount": 1,
+                "returned_qty": 0,
+                "refunded": 0,
+                "remaining": 99
+              },
+              {
+                "id": "a",
+                "discount": 0,
+                "returned_qty": 0,
+                "refunded": 0,
+                "remaining": 100
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V03_eligible_cap",
+        "passed": false,
+        "expected": {
+          "value": {
+            "gross": 110,
+            "discount": 10,
+            "shipping": 0,
+            "charged": 100,
+            "refunds": [],
+            "refunded": 0,
+            "balance": 100,
+            "lines": [
+              {
+                "id": "a",
+                "discount": 10,
+                "returned_qty": 0,
+                "refunded": 0,
+                "remaining": 0
+              },
+              {
+                "id": "b",
+                "discount": 0,
+                "returned_qty": 0,
+                "refunded": 0,
+                "remaining": 100
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "gross": 110,
+            "discount": 90,
+            "shipping": 0,
+            "charged": 20,
+            "refunds": [],
+            "refunded": 0,
+            "balance": 20,
+            "lines": [
+              {
+                "id": "a",
+                "discount": 90,
+                "returned_qty": 0,
+                "refunded": 0,
+                "remaining": -80
+              },
+              {
+                "id": "b",
+                "discount": 0,
+                "returned_qty": 0,
+                "refunded": 0,
+                "remaining": 100
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V04_unit_refunds",
+        "passed": false,
+        "expected": {
+          "value": {
+            "gross": 30,
+            "discount": 2,
+            "shipping": 0,
+            "charged": 28,
+            "refunds": [
+              {
+                "accepted": true,
+                "amount": 9
+              },
+              {
+                "accepted": true,
+                "amount": 9
+              },
+              {
+                "accepted": true,
+                "amount": 10
+              }
+            ],
+            "refunded": 28,
+            "balance": 0,
+            "lines": [
+              {
+                "id": "a",
+                "discount": 2,
+                "returned_qty": 3,
+                "refunded": 28,
+                "remaining": 0
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "gross": 30,
+            "discount": 2,
+            "shipping": 0,
+            "charged": 28,
+            "refunds": [
+              {
+                "accepted": true,
+                "amount": 10
+              },
+              {
+                "accepted": true,
+                "amount": 10
+              },
+              {
+                "accepted": true,
+                "amount": 10
+              }
+            ],
+            "refunded": 30,
+            "balance": -2,
+            "lines": [
+              {
+                "id": "a",
+                "discount": 2,
+                "returned_qty": 3,
+                "refunded": 30,
+                "remaining": 0
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V05_atomic_over_return",
+        "passed": false,
+        "expected": {
+          "value": {
+            "gross": 20,
+            "discount": 1,
+            "shipping": 0,
+            "charged": 19,
+            "refunds": [
+              {
+                "accepted": false,
+                "amount": 0
+              },
+              {
+                "accepted": true,
+                "amount": 9
+              },
+              {
+                "accepted": true,
+                "amount": 10
+              }
+            ],
+            "refunded": 19,
+            "balance": 0,
+            "lines": [
+              {
+                "id": "a",
+                "discount": 1,
+                "returned_qty": 2,
+                "refunded": 19,
+                "remaining": 0
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "gross": 20,
+            "discount": 1,
+            "shipping": 0,
+            "charged": 19,
+            "refunds": [
+              {
+                "accepted": true,
+                "amount": 20
+              },
+              {
+                "accepted": false,
+                "amount": 0
+              },
+              {
+                "accepted": false,
+                "amount": 0
+              }
+            ],
+            "refunded": 20,
+            "balance": -1,
+            "lines": [
+              {
+                "id": "a",
+                "discount": 1,
+                "returned_qty": 2,
+                "refunded": 20,
+                "remaining": 0
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V06_combined",
+        "passed": false,
+        "expected": {
+          "value": {
+            "gross": 88,
+            "discount": 9,
+            "shipping": 20,
+            "charged": 99,
+            "refunds": [
+              {
+                "accepted": true,
+                "amount": 5
+              },
+              {
+                "accepted": false,
+                "amount": 0
+              },
+              {
+                "accepted": true,
+                "amount": 8
+              },
+              {
+                "accepted": true,
+                "amount": 12
+              },
+              {
+                "accepted": true,
+                "amount": 0
+              },
+              {
+                "accepted": true,
+                "amount": 9
+              }
+            ],
+            "refunded": 34,
+            "balance": 65,
+            "lines": [
+              {
+                "id": "a",
+                "discount": 5,
+                "returned_qty": 2,
+                "refunded": 17,
+                "remaining": 0
+              },
+              {
+                "id": "b",
+                "discount": 4,
+                "returned_qty": 3,
+                "refunded": 17,
+                "remaining": 0
+              },
+              {
+                "id": "n",
+                "discount": 0,
+                "returned_qty": 2,
+                "refunded": 0,
+                "remaining": 0
+              },
+              {
+                "id": "z",
+                "discount": 0,
+                "returned_qty": 0,
+                "refunded": 0,
+                "remaining": 45
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "gross": 88,
+            "discount": 0,
+            "shipping": 0,
+            "charged": 88,
+            "refunds": [
+              {
+                "accepted": true,
+                "amount": 7
+              },
+              {
+                "accepted": true,
+                "amount": 22
+              },
+              {
+                "accepted": false,
+                "amount": 0
+              },
+              {
+                "accepted": true,
+                "amount": 14
+              },
+              {
+                "accepted": true,
+                "amount": 0
+              },
+              {
+                "accepted": false,
+                "amount": 0
+              }
+            ],
+            "refunded": 43,
+            "balance": 45,
+            "lines": [
+              {
+                "id": "z",
+                "discount": 0,
+                "returned_qty": 0,
+                "refunded": 0,
+                "remaining": 45
+              },
+              {
+                "id": "b",
+                "discount": 0,
+                "returned_qty": 3,
+                "refunded": 21,
+                "remaining": 0
+              },
+              {
+                "id": "a",
+                "discount": 0,
+                "returned_qty": 2,
+                "refunded": 22,
+                "remaining": 0
+              },
+              {
+                "id": "n",
+                "discount": 0,
+                "returned_qty": 2,
+                "refunded": 0,
+                "remaining": 0
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "b7176c63195d2447138631d9c8144068d755b76b7f9931815ed34fad7e1a7bb3",
+    "seconds": 0.033289
+  },
+  "architecture": "coordinator",
+  "repeat": 2,
+  "seed": 121496389,
+  "episode_id": "C06_coordinator_b60000_r2"
+}

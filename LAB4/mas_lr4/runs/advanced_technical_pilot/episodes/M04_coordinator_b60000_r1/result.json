@@ -1,0 +1,41 @@
+{
+  "task_id": "M04",
+  "architecture": "coordinator",
+  "budget": 60000,
+  "repeat": 1,
+  "seed": 114765970,
+  "episode_id": "M04_coordinator_b60000_r1",
+  "status": "model_error",
+  "finished": false,
+  "success": null,
+  "artifact_sha256": "873226d3ae7b227953df0a31dc140167589c7769c457c299599ef5073a5c8d8b",
+  "model_calls": 3,
+  "tool_calls": 1,
+  "invalid_actions": 0,
+  "input_tokens_known": 14862,
+  "output_tokens_known": 162,
+  "total_tokens_known": 15024,
+  "usage_complete": false,
+  "budget_overrun": 0,
+  "tokens_by_role": {
+    "coordinator": {
+      "input": 7394,
+      "output": 129,
+      "total": 7523,
+      "calls": 1
+    },
+    "developer": {
+      "input": 7468,
+      "output": 33,
+      "total": 7501,
+      "calls": 1
+    }
+  },
+  "seconds": 7.048444,
+  "visible_report": {
+    "schema_valid": false,
+    "correctness_checked": false,
+    "error": "Required top-level fields: audit_date, decisions"
+  },
+  "interpretation": "Final task success requires teacher verification; never infer it from schema alone."
+}

@@ -1,0 +1,318 @@
+{
+  "task_id": "T21",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": true,
+  "visible_passed_count": 10,
+  "visible_total": 10,
+  "code_sha256": "6d5305a6ed68b2b51f71d476adb5e4820b7dafdf0748b270f56687e37920bc7a",
+  "input_tokens_known": 24783,
+  "output_tokens_known": 214,
+  "total_tokens_known": 24997,
+  "usage_complete": true,
+  "budget": 24000,
+  "budget_overrun": 997,
+  "model_calls": 6,
+  "tool_calls": 4,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "single": {
+      "input": 24783,
+      "output": 214,
+      "total": 24997,
+      "calls": 6
+    }
+  },
+  "seconds": 8.335895,
+  "final_report": {
+    "passed": true,
+    "total": 10,
+    "passed_count": 10,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              "a",
+              "l",
+              null
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              "a",
+              "l",
+              null
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              "a",
+              "l",
+              "r"
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              "a",
+              "l",
+              "r"
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              "a",
+              "l",
+              "r1"
+            ],
+            [
+              "a",
+              "l",
+              "r2"
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              "a",
+              "l",
+              "r1"
+            ],
+            [
+              "a",
+              "l",
+              "r2"
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              "a",
+              "l1",
+              "r"
+            ],
+            [
+              "a",
+              "l2",
+              "r"
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              "a",
+              "l1",
+              "r"
+            ],
+            [
+              "a",
+              "l2",
+              "r"
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              "b",
+              "l",
+              null
+            ],
+            [
+              "a",
+              "z",
+              "r"
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              "b",
+              "l",
+              null
+            ],
+            [
+              "a",
+              "z",
+              "r"
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              "",
+              "",
+              ""
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              "",
+              "",
+              ""
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              "a",
+              "l",
+              null
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              "a",
+              "l",
+              null
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              "a",
+              "l",
+              "r"
+            ],
+            [
+              "a",
+              "l",
+              "r"
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              "a",
+              "l",
+              "r"
+            ],
+            [
+              "a",
+              "l",
+              "r"
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              "a",
+              "x",
+              "1"
+            ],
+            [
+              "b",
+              "y",
+              "2"
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              "a",
+              "x",
+              "1"
+            ],
+            [
+              "b",
+              "y",
+              "2"
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "6d5305a6ed68b2b51f71d476adb5e4820b7dafdf0748b270f56687e37920bc7a",
+    "seconds": 0.032358
+  },
+  "architecture": "single",
+  "repeat": 1,
+  "seed": 81490256,
+  "episode_id": "T21_single_b24000_r1"
+}

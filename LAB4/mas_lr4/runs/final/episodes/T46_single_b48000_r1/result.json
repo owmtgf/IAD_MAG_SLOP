@@ -1,0 +1,202 @@
+{
+  "task_id": "T46",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 6,
+  "visible_total": 10,
+  "code_sha256": "746a567ca681afa90263faf7e3c55aae4ac443660f96606e5b3112319e7c871a",
+  "input_tokens_known": 51546,
+  "output_tokens_known": 724,
+  "total_tokens_known": 52270,
+  "usage_complete": true,
+  "budget": 48000,
+  "budget_overrun": 4270,
+  "model_calls": 9,
+  "tool_calls": 5,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "single": {
+      "input": 51546,
+      "output": 724,
+      "total": 52270,
+      "calls": 9
+    }
+  },
+  "seconds": 25.666453,
+  "final_report": {
+    "passed": false,
+    "total": 10,
+    "passed_count": 6,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": [
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": true,
+        "expected": {
+          "value": [
+            "a",
+            "b"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a",
+            "b"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": false,
+        "expected": {
+          "value": [
+            "b"
+          ]
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": false,
+        "expected": {
+          "value": [
+            "a",
+            "c"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": true,
+        "expected": {
+          "value": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": true,
+        "expected": {
+          "value": [
+            "a",
+            "z"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a",
+            "z"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": false,
+        "expected": {
+          "value": [
+            "b",
+            "d"
+          ]
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": false,
+        "expected": {
+          "value": [
+            "b",
+            "z",
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a",
+            "b",
+            "z"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "746a567ca681afa90263faf7e3c55aae4ac443660f96606e5b3112319e7c871a",
+    "seconds": 0.031699
+  },
+  "architecture": "single",
+  "repeat": 1,
+  "seed": 40489770,
+  "episode_id": "T46_single_b48000_r1"
+}

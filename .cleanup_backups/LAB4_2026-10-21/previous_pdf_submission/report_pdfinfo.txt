@@ -1,0 +1,18 @@
+Title:           ЛР4. Один агент и две MAS
+Creator:         LaTeX with hyperref
+Producer:        xdvipdfmx (20210609)
+CreationDate:    Mon Oct 19 10:23:03 2026 MSK
+Custom Metadata: no
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           2
+Encrypted:       no
+Page size:       595.28 x 841.89 pts (A4)
+Page rot:        0
+File size:       78405 bytes
+Optimized:       no
+PDF version:     1.5

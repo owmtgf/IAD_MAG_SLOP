@@ -76,7 +76,15 @@ def probe():
         package = Path(tmp) / "app"
         package.mkdir()
         (package / "__init__.py").write_text("")
-        (package / "api.py").write_text("def solve(data):\n    return data\n")
+        # Exercise a lazy stdlib import after sandbox installation. A trivial
+        # identity function misses inaccessible non-system runtime libraries.
+        (package / "api.py").write_text(
+            "from dataclasses import dataclass, asdict\n"
+            "@dataclass\n"
+            "class Probe:\n"
+            "    probe: bool\n"
+            "def solve(data):\n"
+            "    return asdict(Probe(data['probe']))\n")
         report = execute(Path(tmp), [{"probe": True}], 10)
     if report != {"results": [{"ok": True, "value": {"probe": True}}]}:
         raise RuntimeError("Isolated executor unavailable: " + json.dumps(report, ensure_ascii=False))

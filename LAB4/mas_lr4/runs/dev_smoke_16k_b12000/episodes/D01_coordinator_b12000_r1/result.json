@@ -1,0 +1,166 @@
+{
+  "task_id": "D01",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": true,
+  "visible_passed_count": 10,
+  "visible_total": 10,
+  "code_sha256": "330055236e619d44e663f4d51b4bb153f6aedd31216ccedfb8e59ed834c1bec2",
+  "input_tokens_known": 13160,
+  "output_tokens_known": 157,
+  "total_tokens_known": 13317,
+  "usage_complete": true,
+  "budget": 12000,
+  "budget_overrun": 1317,
+  "model_calls": 5,
+  "tool_calls": 3,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "coordinator": {
+      "input": 6661,
+      "output": 77,
+      "total": 6738,
+      "calls": 2
+    },
+    "developer": {
+      "input": 6499,
+      "output": 80,
+      "total": 6579,
+      "calls": 3
+    }
+  },
+  "seconds": 6.238503,
+  "final_report": {
+    "passed": true,
+    "total": 10,
+    "passed_count": 10,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": 0
+        },
+        "actual": {
+          "value": 0
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": 200
+        },
+        "actual": {
+          "value": 200
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": true,
+        "expected": {
+          "value": 70
+        },
+        "actual": {
+          "value": 70
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": true,
+        "expected": {
+          "value": 0
+        },
+        "actual": {
+          "value": 0
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": true,
+        "expected": {
+          "value": 0
+        },
+        "actual": {
+          "value": 0
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": true,
+        "expected": {
+          "value": 2
+        },
+        "actual": {
+          "value": 2
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": true,
+        "expected": {
+          "value": 597
+        },
+        "actual": {
+          "value": 597
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": true,
+        "expected": {
+          "value": 1000000
+        },
+        "actual": {
+          "value": 1000000
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": true,
+        "expected": {
+          "raises": "ValueError"
+        },
+        "actual": {
+          "raises": "ValueError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": true,
+        "expected": {
+          "raises": "ValueError"
+        },
+        "actual": {
+          "raises": "ValueError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "330055236e619d44e663f4d51b4bb153f6aedd31216ccedfb8e59ed834c1bec2",
+    "seconds": 0.031788
+  },
+  "architecture": "coordinator",
+  "repeat": 1,
+  "seed": 253918980,
+  "episode_id": "D01_coordinator_b12000_r1"
+}

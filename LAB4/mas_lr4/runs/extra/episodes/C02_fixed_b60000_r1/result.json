@@ -1,0 +1,188 @@
+{
+  "task_id": "C02",
+  "status": "model_error",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 3,
+  "visible_total": 6,
+  "code_sha256": "b39d07a79cb486b9a95aa0ca1e57de863578fd05b8ae8c6ebfc247d89874c133",
+  "input_tokens_known": 32265,
+  "output_tokens_known": 699,
+  "total_tokens_known": 32964,
+  "usage_complete": false,
+  "budget": 60000,
+  "budget_overrun": 0,
+  "model_calls": 8,
+  "tool_calls": 5,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "programmer": {
+      "input": 24236,
+      "output": 508,
+      "total": 24744,
+      "calls": 5
+    },
+    "reviewer": {
+      "input": 8029,
+      "output": 191,
+      "total": 8220,
+      "calls": 2
+    }
+  },
+  "seconds": 143.591062,
+  "final_report": {
+    "passed": false,
+    "total": 6,
+    "passed_count": 3,
+    "cases": [
+      {
+        "id": "V01",
+        "passed": true,
+        "expected": {
+          "value": {
+            "accepted": [],
+            "rejected": [],
+            "peak": 0
+          }
+        },
+        "actual": {
+          "value": {
+            "accepted": [],
+            "rejected": [],
+            "peak": 0
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V02",
+        "passed": false,
+        "expected": {
+          "value": {
+            "accepted": [
+              "a",
+              "b"
+            ],
+            "rejected": [],
+            "peak": 2
+          }
+        },
+        "actual": {
+          "value": {
+            "accepted": [
+              "a"
+            ],
+            "rejected": [
+              "b"
+            ],
+            "peak": 2
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V03",
+        "passed": false,
+        "expected": {
+          "value": {
+            "accepted": [
+              "a",
+              "c"
+            ],
+            "rejected": [
+              "b"
+            ],
+            "peak": 2
+          }
+        },
+        "actual": {
+          "value": {
+            "accepted": [
+              "a",
+              "c"
+            ],
+            "rejected": [
+              "b"
+            ],
+            "peak": 3
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V04",
+        "passed": false,
+        "expected": {
+          "value": {
+            "accepted": [
+              "a",
+              "b",
+              "c"
+            ],
+            "rejected": [],
+            "peak": 3
+          }
+        },
+        "actual": {
+          "value": {
+            "accepted": [
+              "a",
+              "b"
+            ],
+            "rejected": [
+              "c"
+            ],
+            "peak": 1
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V05",
+        "passed": true,
+        "expected": {
+          "value": {
+            "accepted": [],
+            "rejected": [
+              "a"
+            ],
+            "peak": 0
+          }
+        },
+        "actual": {
+          "value": {
+            "accepted": [],
+            "rejected": [
+              "a"
+            ],
+            "peak": 0
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V06",
+        "passed": true,
+        "expected": {
+          "raises": "ValueError"
+        },
+        "actual": {
+          "raises": "ValueError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "b39d07a79cb486b9a95aa0ca1e57de863578fd05b8ae8c6ebfc247d89874c133",
+    "seconds": 0.030987
+  },
+  "architecture": "fixed",
+  "repeat": 1,
+  "seed": 50963186,
+  "episode_id": "C02_fixed_b60000_r1"
+}

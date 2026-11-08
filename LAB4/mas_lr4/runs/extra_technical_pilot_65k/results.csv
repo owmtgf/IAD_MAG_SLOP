@@ -1,0 +1,4 @@
+﻿task_id,architecture,budget,repeat,seed,episode_id,status,success,visible_passed,total_tokens_known,input_tokens_known,output_tokens_known,usage_complete,budget_overrun,model_calls,tool_calls,seconds,code_sha256,estimated_cost
+C01,coordinator,60000,1,144249828,C01_coordinator_b60000_r1,budget_exhausted,False,False,65639,63380,2259,True,5639,11,3,72.2703,4cc4e9c89bac299e35eb01b2cd4c12facb0c30bf872387deb12dec7b0e4c6715,
+C01,fixed,60000,1,144249828,C01_fixed_b60000_r1,unfinished,False,False,46781,45294,1487,True,0,8,6,45.477806,eddf787c999245592ca9a83ec0231301146c37cc43102fae196af80c7e397919,
+C01,single,60000,1,144249828,C01_single_b60000_r1,budget_exhausted,False,False,70681,69496,1185,True,10681,9,5,38.353628,78102d6000f08f12fe4d31a60848151b61bd4d4f65fc96c4596be464c8265c6b,

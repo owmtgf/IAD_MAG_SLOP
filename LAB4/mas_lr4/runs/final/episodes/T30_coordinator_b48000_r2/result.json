@@ -1,0 +1,202 @@
+{
+  "task_id": "T30",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 2,
+  "visible_total": 10,
+  "code_sha256": "7dd0df47f6c38346094b1730c29e74d56feb3646dfacd61ab84334491525ba46",
+  "input_tokens_known": 51460,
+  "output_tokens_known": 623,
+  "total_tokens_known": 52083,
+  "usage_complete": true,
+  "budget": 48000,
+  "budget_overrun": 4083,
+  "model_calls": 12,
+  "tool_calls": 5,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "coordinator": {
+      "input": 21738,
+      "output": 292,
+      "total": 22030,
+      "calls": 4
+    },
+    "tester": {
+      "input": 13916,
+      "output": 212,
+      "total": 14128,
+      "calls": 4
+    },
+    "developer": {
+      "input": 15806,
+      "output": 119,
+      "total": 15925,
+      "calls": 4
+    }
+  },
+  "seconds": 21.962463,
+  "final_report": {
+    "passed": false,
+    "total": 10,
+    "passed_count": 2,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": {}
+        },
+        "actual": {
+          "value": {}
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": false,
+        "expected": {
+          "value": {
+            "a": 1
+          }
+        },
+        "actual": {
+          "value": {
+            "a": 1
+          }
+        },
+        "input_changed": true,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": false,
+        "expected": {
+          "value": {}
+        },
+        "actual": {
+          "value": {}
+        },
+        "input_changed": true,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": true,
+        "expected": {
+          "value": {}
+        },
+        "actual": {
+          "value": {}
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": false,
+        "expected": {
+          "value": {
+            "a": 2
+          }
+        },
+        "actual": {
+          "value": {
+            "a": 2
+          }
+        },
+        "input_changed": true,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": false,
+        "expected": {
+          "value": {
+            "a": 3
+          }
+        },
+        "actual": {
+          "value": {
+            "a": 3
+          }
+        },
+        "input_changed": true,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": false,
+        "expected": {
+          "value": {
+            "a": 0
+          }
+        },
+        "actual": {
+          "value": {
+            "a": 0
+          }
+        },
+        "input_changed": true,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": false,
+        "expected": {
+          "value": {
+            "a": 1,
+            "b": 2
+          }
+        },
+        "actual": {
+          "value": {
+            "a": 1,
+            "b": 2
+          }
+        },
+        "input_changed": true,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": false,
+        "expected": {
+          "value": {
+            "": -1
+          }
+        },
+        "actual": {
+          "value": {
+            "": -1
+          }
+        },
+        "input_changed": true,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": false,
+        "expected": {
+          "value": {
+            "b": 2
+          }
+        },
+        "actual": {
+          "value": {
+            "b": 2
+          }
+        },
+        "input_changed": true,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "7dd0df47f6c38346094b1730c29e74d56feb3646dfacd61ab84334491525ba46",
+    "seconds": 0.03141
+  },
+  "architecture": "coordinator",
+  "repeat": 2,
+  "seed": 177875566,
+  "episode_id": "T30_coordinator_b48000_r2"
+}

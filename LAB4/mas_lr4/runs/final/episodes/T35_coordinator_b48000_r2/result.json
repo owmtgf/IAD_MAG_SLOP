@@ -1,0 +1,212 @@
+{
+  "task_id": "T35",
+  "status": "success",
+  "success": true,
+  "visible_passed": true,
+  "visible_passed_count": 10,
+  "visible_total": 10,
+  "code_sha256": "1a9708789bd6cd4ae0ddf144da373770f840fa5089c3aca1c74fc30c0f548464",
+  "input_tokens_known": 32179,
+  "output_tokens_known": 390,
+  "total_tokens_known": 32569,
+  "usage_complete": true,
+  "budget": 48000,
+  "budget_overrun": 0,
+  "model_calls": 9,
+  "tool_calls": 6,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "coordinator": {
+      "input": 13508,
+      "output": 162,
+      "total": 13670,
+      "calls": 3
+    },
+    "tester": {
+      "input": 8681,
+      "output": 125,
+      "total": 8806,
+      "calls": 3
+    },
+    "developer": {
+      "input": 9990,
+      "output": 103,
+      "total": 10093,
+      "calls": 3
+    }
+  },
+  "seconds": 15.015575,
+  "final_report": {
+    "passed": true,
+    "total": 10,
+    "passed_count": 10,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": [
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": true,
+        "expected": {
+          "value": [
+            "b"
+          ]
+        },
+        "actual": {
+          "value": [
+            "b"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": true,
+        "expected": {
+          "value": [
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": true,
+        "expected": {
+          "value": [
+            "b",
+            "c"
+          ]
+        },
+        "actual": {
+          "value": [
+            "b",
+            "c"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": true,
+        "expected": {
+          "value": [
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": true,
+        "expected": {
+          "value": [
+            "b",
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "b",
+            "a"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": true,
+        "expected": {
+          "value": [
+            "b",
+            "a"
+          ]
+        },
+        "actual": {
+          "value": [
+            "b",
+            "a"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": true,
+        "expected": {
+          "value": [
+            "a",
+            "c"
+          ]
+        },
+        "actual": {
+          "value": [
+            "a",
+            "c"
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "1a9708789bd6cd4ae0ddf144da373770f840fa5089c3aca1c74fc30c0f548464",
+    "seconds": 0.028019
+  },
+  "architecture": "coordinator",
+  "repeat": 2,
+  "seed": 11763104,
+  "episode_id": "T35_coordinator_b48000_r2"
+}

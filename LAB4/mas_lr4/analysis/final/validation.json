@@ -1,0 +1,39 @@
+{
+  "planned_total": 696,
+  "validated_total": 696,
+  "runs": [
+    {
+      "folder": "final",
+      "planned": 600,
+      "validated_results": 600
+    },
+    {
+      "folder": "extra",
+      "planned": 72,
+      "validated_results": 72
+    },
+    {
+      "folder": "advanced",
+      "planned": 24,
+      "validated_results": 24
+    }
+  ],
+  "freeze_matches": {
+    "core": true,
+    "C": true,
+    "M": true
+  },
+  "api_errors": [
+    {
+      "run": "extra",
+      "reason": "Provider transport/schema error: TimeoutError",
+      "count": 15
+    },
+    {
+      "run": "final",
+      "reason": "Provider transport/schema error: URLError",
+      "count": 2
+    }
+  ],
+  "note": "All failures retained. Unknown usage is not zero. M success remains null."
+}

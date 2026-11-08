@@ -1,5 +1,5 @@
 {
-  "model": "SET_MODEL",
+  "model": "/home/maria/Projects/IAD_MAG_neuroslop/lab02_students/Qwen3.5-4B",
   "temperature": 0,
   "send_seed": false,
   "seed": 41729,

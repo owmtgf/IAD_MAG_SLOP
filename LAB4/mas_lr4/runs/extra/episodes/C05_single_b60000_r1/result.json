@@ -1,0 +1,461 @@
+{
+  "task_id": "C05",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 0,
+  "visible_total": 6,
+  "code_sha256": "89d254bfa9c58166abeebf0427cf90ed86ef428e83d75c7c15219a2f700adf17",
+  "input_tokens_known": 61910,
+  "output_tokens_known": 2944,
+  "total_tokens_known": 64854,
+  "usage_complete": true,
+  "budget": 60000,
+  "budget_overrun": 4854,
+  "model_calls": 7,
+  "tool_calls": 3,
+  "invalid_actions": 3,
+  "tokens_by_role": {
+    "single": {
+      "input": 61910,
+      "output": 2944,
+      "total": 64854,
+      "calls": 7
+    }
+  },
+  "seconds": 91.157142,
+  "final_report": {
+    "passed": false,
+    "total": 6,
+    "passed_count": 0,
+    "cases": [
+      {
+        "id": "V01_atomic_reservation",
+        "passed": false,
+        "expected": {
+          "value": {
+            "log": [
+              "insufficient",
+              "reserved"
+            ],
+            "inventory": [
+              {
+                "sku": "a",
+                "available": 0,
+                "reserved": 4,
+                "shipped": 0
+              },
+              {
+                "sku": "b",
+                "available": 1,
+                "reserved": 0,
+                "shipped": 0
+              }
+            ],
+            "reservations": [
+              {
+                "id": "x",
+                "status": "active",
+                "remaining": {
+                  "a": 4
+                }
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "log": [
+              "insufficient",
+              "insufficient"
+            ],
+            "inventory": [
+              {
+                "sku": "a",
+                "available": 2,
+                "reserved": 0,
+                "shipped": 0
+              },
+              {
+                "sku": "b",
+                "available": 1,
+                "reserved": 0,
+                "shipped": 0
+              }
+            ],
+            "reservations": []
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V02_expiry_boundary",
+        "passed": false,
+        "expected": {
+          "value": {
+            "log": [
+              "reserved",
+              "inactive",
+              "reserved"
+            ],
+            "inventory": [
+              {
+                "sku": "a",
+                "available": 0,
+                "reserved": 5,
+                "shipped": 0
+              }
+            ],
+            "reservations": [
+              {
+                "id": "x",
+                "status": "expired",
+                "remaining": {
+                  "a": 0
+                }
+              },
+              {
+                "id": "y",
+                "status": "active",
+                "remaining": {
+                  "a": 5
+                }
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "log": [
+              "reserved",
+              "fulfilled",
+              "insufficient"
+            ],
+            "inventory": [
+              {
+                "sku": "a",
+                "available": 2,
+                "reserved": 3,
+                "shipped": 1
+              }
+            ],
+            "reservations": [
+              {
+                "id": "x",
+                "status": "active",
+                "remaining": {
+                  "a": 3
+                }
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V03_partial_fulfillment",
+        "passed": false,
+        "expected": {
+          "value": {
+            "log": [
+              "reserved",
+              "fulfilled"
+            ],
+            "inventory": [
+              {
+                "sku": "a",
+                "available": 2,
+                "reserved": 0,
+                "shipped": 3
+              },
+              {
+                "sku": "b",
+                "available": 2,
+                "reserved": 2,
+                "shipped": 0
+              }
+            ],
+            "reservations": [
+              {
+                "id": "x",
+                "status": "active",
+                "remaining": {
+                  "a": 0,
+                  "b": 2
+                }
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "log": [
+              "reserved",
+              "fulfilled"
+            ],
+            "inventory": [
+              {
+                "sku": "a",
+                "available": 5,
+                "reserved": 0,
+                "shipped": 3
+              },
+              {
+                "sku": "b",
+                "available": 2,
+                "reserved": 0,
+                "shipped": 0
+              }
+            ],
+            "reservations": [
+              {
+                "id": "x",
+                "status": "completed",
+                "remaining": {
+                  "a": 0,
+                  "b": 0
+                }
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V04_cancel_and_identifier",
+        "passed": false,
+        "expected": {
+          "value": {
+            "log": [
+              "reserved",
+              "cancelled",
+              "duplicate"
+            ],
+            "inventory": [
+              {
+                "sku": "a",
+                "available": 4,
+                "reserved": 0,
+                "shipped": 0
+              }
+            ],
+            "reservations": [
+              {
+                "id": "x",
+                "status": "cancelled",
+                "remaining": {
+                  "a": 0
+                }
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "log": [
+              "reserved",
+              "cancelled",
+              "reserved"
+            ],
+            "inventory": [
+              {
+                "sku": "a",
+                "available": 3,
+                "reserved": 1,
+                "shipped": 0
+              }
+            ],
+            "reservations": [
+              {
+                "id": "x",
+                "status": "active",
+                "remaining": {
+                  "a": 1
+                }
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V05_final_expiry",
+        "passed": false,
+        "expected": {
+          "value": {
+            "log": [
+              "reserved"
+            ],
+            "inventory": [
+              {
+                "sku": "a",
+                "available": 5,
+                "reserved": 0,
+                "shipped": 0
+              }
+            ],
+            "reservations": [
+              {
+                "id": "x",
+                "status": "expired",
+                "remaining": {
+                  "a": 0
+                }
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "log": [
+              "reserved"
+            ],
+            "inventory": [
+              {
+                "sku": "a",
+                "available": 1,
+                "reserved": 4,
+                "shipped": 0
+              }
+            ],
+            "reservations": [
+              {
+                "id": "x",
+                "status": "active",
+                "remaining": {
+                  "a": 4
+                }
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V06_combined",
+        "passed": false,
+        "expected": {
+          "value": {
+            "log": [
+              "reserved",
+              "fulfilled",
+              "exceeds",
+              "restocked",
+              "reserved",
+              "inactive",
+              "cancelled",
+              "reserved"
+            ],
+            "inventory": [
+              {
+                "sku": "a",
+                "available": 3,
+                "reserved": 0,
+                "shipped": 2
+              },
+              {
+                "sku": "b",
+                "available": 5,
+                "reserved": 0,
+                "shipped": 0
+              }
+            ],
+            "reservations": [
+              {
+                "id": "x",
+                "status": "cancelled",
+                "remaining": {
+                  "a": 0,
+                  "b": 0
+                }
+              },
+              {
+                "id": "y",
+                "status": "expired",
+                "remaining": {
+                  "a": 0,
+                  "b": 0
+                }
+              },
+              {
+                "id": "z",
+                "status": "expired",
+                "remaining": {
+                  "a": 0,
+                  "b": 0
+                }
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "log": [
+              "reserved",
+              "fulfilled",
+              "exceeds",
+              "restocked",
+              "reserved",
+              "fulfilled",
+              "cancelled",
+              "reserved"
+            ],
+            "inventory": [
+              {
+                "sku": "a",
+                "available": 2,
+                "reserved": 3,
+                "shipped": 2
+              },
+              {
+                "sku": "b",
+                "available": 0,
+                "reserved": 5,
+                "shipped": 1
+              }
+            ],
+            "reservations": [
+              {
+                "id": "x",
+                "status": "cancelled",
+                "remaining": {
+                  "a": 0,
+                  "b": 0
+                }
+              },
+              {
+                "id": "y",
+                "status": "expired",
+                "remaining": {
+                  "a": 0,
+                  "b": 0
+                }
+              },
+              {
+                "id": "z",
+                "status": "active",
+                "remaining": {
+                  "a": 3,
+                  "b": 5
+                }
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "89d254bfa9c58166abeebf0427cf90ed86ef428e83d75c7c15219a2f700adf17",
+    "seconds": 0.034018
+  },
+  "architecture": "single",
+  "repeat": 1,
+  "seed": 262456252,
+  "episode_id": "C05_single_b60000_r1"
+}

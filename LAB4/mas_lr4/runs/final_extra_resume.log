@@ -1,0 +1,110 @@
+[1/72] C05_single_b60000_r2: budget_exhausted (64854 known tokens)
+[2/72] C01_coordinator_b60000_r2: budget_exhausted (65563 known tokens)
+[3/72] C11_fixed_b60000_r2: budget_exhausted (63193 known tokens)
+[4/72] C12_single_b60000_r2: budget_exhausted (64233 known tokens)
+[5/72] C11_single_b60000_r1: budget_exhausted (61871 known tokens)
+[6/72] C05_fixed_b60000_r1: budget_exhausted (69074 known tokens)
+[7/72] C06_single_b60000_r1: budget_exhausted (64555 known tokens)
+[8/72] C04_coordinator_b60000_r2: success (48198 known tokens)
+[9/72] C08_coordinator_b60000_r2: model_error (0 known tokens)
+[10/72] C08_fixed_b60000_r1: budget_exhausted (66951 known tokens)
+[11/72] C11_fixed_b60000_r1: budget_exhausted (62422 known tokens)
+[12/72] C07_single_b60000_r1: model_error (48341 known tokens)
+[13/72] C09_single_b60000_r1: budget_exhausted (78387 known tokens)
+[14/72] C11_coordinator_b60000_r2: budget_exhausted (65110 known tokens)
+[15/72] C11_coordinator_b60000_r1: budget_exhausted (65110 known tokens)
+[16/72] C08_fixed_b60000_r2: budget_exhausted (66951 known tokens)
+[17/72] C07_fixed_b60000_r1: model_error (5331 known tokens)
+[18/72] C05_single_b60000_r1: budget_exhausted (64854 known tokens)
+[19/72] C07_coordinator_b60000_r1: model_error (34417 known tokens)
+[20/72] C12_coordinator_b60000_r1: budget_exhausted (74172 known tokens)
+[21/72] C01_coordinator_b60000_r1: budget_exhausted (65635 known tokens)
+[22/72] C02_fixed_b60000_r2: unfinished (40837 known tokens)
+[23/72] C10_single_b60000_r1: budget_exhausted (72400 known tokens)
+[24/72] C01_single_b60000_r1: budget_exhausted (68426 known tokens)
+[25/72] C02_single_b60000_r2: model_error (6458 known tokens)
+[26/72] C02_coordinator_b60000_r1: model_error (47859 known tokens)
+[27/72] C01_single_b60000_r2: budget_exhausted (73102 known tokens)
+[28/72] C10_fixed_b60000_r2: budget_exhausted (65846 known tokens)
+[29/72] C08_coordinator_b60000_r1: model_error (0 known tokens)
+[30/72] C04_single_b60000_r1: budget_exhausted (66254 known tokens)
+[31/72] C03_coordinator_b60000_r2: success (58116 known tokens)
+[32/72] C01_fixed_b60000_r1: unfinished (58447 known tokens)
+[33/72] C12_fixed_b60000_r1: budget_exhausted (68512 known tokens)
+[34/72] C03_fixed_b60000_r2: success (33306 known tokens)
+[35/72] C10_coordinator_b60000_r1: model_error (0 known tokens)
+[36/72] C06_fixed_b60000_r2: budget_exhausted (63923 known tokens)
+[37/72] C02_fixed_b60000_r1: model_error (32964 known tokens)
+[38/72] C09_coordinator_b60000_r1: budget_exhausted (75767 known tokens)
+[39/72] C02_single_b60000_r1: model_error (52460 known tokens)
+[40/72] C09_single_b60000_r2: budget_exhausted (78387 known tokens)
+[41/72] C01_fixed_b60000_r2: budget_exhausted (68108 known tokens)
+[42/72] C07_fixed_b60000_r2: model_error (5331 known tokens)
+[43/72] C03_single_b60000_r2: success (16388 known tokens)
+[44/72] C05_fixed_b60000_r2: budget_exhausted (74515 known tokens)
+[45/72] C08_single_b60000_r1: budget_exhausted (73459 known tokens)
+[46/72] C10_coordinator_b60000_r2: model_error (0 known tokens)
+[47/72] C06_fixed_b60000_r1: budget_exhausted (63923 known tokens)
+[48/72] C02_coordinator_b60000_r2: model_error (34658 known tokens)
+[49/72] C03_single_b60000_r1: success (16388 known tokens)
+[50/72] C04_fixed_b60000_r1: unfinished (36556 known tokens)
+[51/72] C12_coordinator_b60000_r2: budget_exhausted (74172 known tokens)
+[52/72] C03_fixed_b60000_r1: success (33228 known tokens)
+[53/72] C03_coordinator_b60000_r1: success (58116 known tokens)
+[54/72] C04_coordinator_b60000_r1: success (48198 known tokens)
+[55/72] C06_coordinator_b60000_r2: budget_exhausted (64441 known tokens)
+[56/72] C05_coordinator_b60000_r2: budget_exhausted (64786 known tokens)
+[57/72] C10_single_b60000_r2: budget_exhausted (72400 known tokens)
+[58/72] C07_single_b60000_r2: model_error (18935 known tokens)
+[59/72] C09_coordinator_b60000_r2: budget_exhausted (75767 known tokens)
+[60/72] C06_coordinator_b60000_r1: budget_exhausted (64441 known tokens)
+[61/72] C09_fixed_b60000_r1: budget_exhausted (63906 known tokens)
+[62/72] C09_fixed_b60000_r2: budget_exhausted (63970 known tokens)
+[63/72] C11_single_b60000_r2: budget_exhausted (62551 known tokens)
+[64/72] C12_fixed_b60000_r2: budget_exhausted (68512 known tokens)
+[65/72] C12_single_b60000_r1: budget_exhausted (64233 known tokens)
+[66/72] C04_single_b60000_r2: budget_exhausted (66644 known tokens)
+[67/72] C10_fixed_b60000_r1: budget_exhausted (65846 known tokens)
+[68/72] C04_fixed_b60000_r2: success (37864 known tokens)
+[69/72] C05_coordinator_b60000_r1: budget_exhausted (64786 known tokens)
+[70/72] C08_single_b60000_r2: budget_exhausted (73459 known tokens)
+[71/72] C07_coordinator_b60000_r2: model_error (34417 known tokens)
+[72/72] C06_single_b60000_r2: budget_exhausted (64555 known tokens)
+[
+  {
+    "architecture": "coordinator",
+    "budget": 60000,
+    "planned": 24,
+    "completed": 24,
+    "successes": 4,
+    "success_rate": 0.16666666666666666,
+    "median_tokens_complete_usage": 64948.0,
+    "median_seconds": 96.50927999999999,
+    "unknown_usage": 8,
+    "budget_exhausted": 12
+  },
+  {
+    "architecture": "fixed",
+    "budget": 60000,
+    "planned": 24,
+    "completed": 24,
+    "successes": 3,
+    "success_rate": 0.125,
+    "median_tokens_complete_usage": 63923,
+    "median_seconds": 85.243472,
+    "unknown_usage": 3,
+    "budget_exhausted": 15
+  },
+  {
+    "architecture": "single",
+    "budget": 60000,
+    "planned": 24,
+    "completed": 24,
+    "successes": 2,
+    "success_rate": 0.08333333333333333,
+    "median_tokens_complete_usage": 65554.0,
+    "median_seconds": 83.398529,
+    "unknown_usage": 4,
+    "budget_exhausted": 18
+  }
+]

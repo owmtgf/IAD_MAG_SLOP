@@ -1,0 +1,278 @@
+{
+  "task_id": "T16",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": true,
+  "visible_passed_count": 10,
+  "visible_total": 10,
+  "code_sha256": "99ecbdd252f4d8e31dd85522e50663293487615793652a497831a455e8567ade",
+  "input_tokens_known": 27610,
+  "output_tokens_known": 1055,
+  "total_tokens_known": 28665,
+  "usage_complete": true,
+  "budget": 24000,
+  "budget_overrun": 4665,
+  "model_calls": 8,
+  "tool_calls": 3,
+  "invalid_actions": 4,
+  "tokens_by_role": {
+    "coordinator": {
+      "input": 6192,
+      "output": 367,
+      "total": 6559,
+      "calls": 2
+    },
+    "developer": {
+      "input": 21418,
+      "output": 688,
+      "total": 22106,
+      "calls": 6
+    }
+  },
+  "seconds": 32.658781,
+  "final_report": {
+    "passed": true,
+    "total": 10,
+    "passed_count": 10,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              0,
+              10
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              0,
+              10
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              0,
+              3
+            ],
+            [
+              7,
+              10
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              0,
+              3
+            ],
+            [
+              7,
+              10
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              2,
+              10
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              2,
+              10
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              0,
+              8
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              0,
+              8
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              0,
+              2
+            ],
+            [
+              8,
+              10
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              0,
+              2
+            ],
+            [
+              8,
+              10
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              0,
+              10
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              0,
+              10
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              0,
+              10
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              0,
+              10
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": true,
+        "expected": {
+          "value": [
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              8,
+              10
+            ]
+          ]
+        },
+        "actual": {
+          "value": [
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              8,
+              10
+            ]
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "99ecbdd252f4d8e31dd85522e50663293487615793652a497831a455e8567ade",
+    "seconds": 0.031388
+  },
+  "architecture": "coordinator",
+  "repeat": 2,
+  "seed": 104961354,
+  "episode_id": "T16_coordinator_b24000_r2"
+}

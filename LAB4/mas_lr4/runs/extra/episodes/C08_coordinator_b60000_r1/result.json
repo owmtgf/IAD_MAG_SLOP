@@ -1,0 +1,645 @@
+{
+  "task_id": "C08",
+  "status": "model_error",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 0,
+  "visible_total": 6,
+  "code_sha256": "8b4b5b67600f19c54dfcc3529f26d0380d0da2a4f294ddb00eeb9281dbdb420b",
+  "input_tokens_known": 0,
+  "output_tokens_known": 0,
+  "total_tokens_known": 0,
+  "usage_complete": false,
+  "budget": 60000,
+  "budget_overrun": 0,
+  "model_calls": 1,
+  "tool_calls": 0,
+  "invalid_actions": 0,
+  "tokens_by_role": {},
+  "seconds": 120.14163,
+  "final_report": {
+    "passed": false,
+    "total": 6,
+    "passed_count": 0,
+    "cases": [
+      {
+        "id": "V01_completion_and_horizon",
+        "passed": false,
+        "expected": {
+          "value": {
+            "starts": [
+              {
+                "time": 0,
+                "slot": 0,
+                "id": "a",
+                "attempt": 1
+              },
+              {
+                "time": 2,
+                "slot": 0,
+                "id": "b",
+                "attempt": 1
+              }
+            ],
+            "jobs": [
+              {
+                "id": "a",
+                "status": "succeeded",
+                "attempts": 1
+              },
+              {
+                "id": "b",
+                "status": "running",
+                "attempts": 1
+              }
+            ],
+            "running": [
+              {
+                "slot": 0,
+                "id": "b",
+                "finish": 3
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "starts": [
+              {
+                "time": 0,
+                "slot": 0,
+                "id": "a",
+                "attempt": 1
+              }
+            ],
+            "jobs": [
+              {
+                "id": "a",
+                "status": "running",
+                "attempts": 1
+              },
+              {
+                "id": "b",
+                "status": "pending",
+                "attempts": 0
+              }
+            ],
+            "running": [
+              {
+                "slot": 0,
+                "id": "a",
+                "finish": 2
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V02_round_robin_slots",
+        "passed": false,
+        "expected": {
+          "value": {
+            "starts": [
+              {
+                "time": 0,
+                "slot": 0,
+                "id": "a1",
+                "attempt": 1
+              },
+              {
+                "time": 0,
+                "slot": 1,
+                "id": "b1",
+                "attempt": 1
+              }
+            ],
+            "jobs": [
+              {
+                "id": "a1",
+                "status": "running",
+                "attempts": 1
+              },
+              {
+                "id": "a2",
+                "status": "pending",
+                "attempts": 0
+              },
+              {
+                "id": "b1",
+                "status": "running",
+                "attempts": 1
+              }
+            ],
+            "running": [
+              {
+                "slot": 0,
+                "id": "a1",
+                "finish": 3
+              },
+              {
+                "slot": 1,
+                "id": "b1",
+                "finish": 3
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "starts": [
+              {
+                "time": 0,
+                "slot": 0,
+                "id": "a1",
+                "attempt": 1
+              },
+              {
+                "time": 0,
+                "slot": 1,
+                "id": "a2",
+                "attempt": 1
+              }
+            ],
+            "jobs": [
+              {
+                "id": "a1",
+                "status": "running",
+                "attempts": 1
+              },
+              {
+                "id": "a2",
+                "status": "running",
+                "attempts": 1
+              },
+              {
+                "id": "b1",
+                "status": "pending",
+                "attempts": 0
+              }
+            ],
+            "running": [
+              {
+                "slot": 0,
+                "id": "a1",
+                "finish": 3
+              },
+              {
+                "slot": 1,
+                "id": "a2",
+                "finish": 3
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V03_retry_cooldown",
+        "passed": false,
+        "expected": {
+          "value": {
+            "starts": [
+              {
+                "time": 0,
+                "slot": 0,
+                "id": "a",
+                "attempt": 1
+              },
+              {
+                "time": 4,
+                "slot": 0,
+                "id": "a",
+                "attempt": 2
+              }
+            ],
+            "jobs": [
+              {
+                "id": "a",
+                "status": "running",
+                "attempts": 2
+              }
+            ],
+            "running": [
+              {
+                "slot": 0,
+                "id": "a",
+                "finish": 6
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "starts": [
+              {
+                "time": 0,
+                "slot": 0,
+                "id": "a",
+                "attempt": 1
+              },
+              {
+                "time": 2,
+                "slot": 0,
+                "id": "a",
+                "attempt": 2
+              }
+            ],
+            "jobs": [
+              {
+                "id": "a",
+                "status": "running",
+                "attempts": 2
+              }
+            ],
+            "running": [
+              {
+                "slot": 0,
+                "id": "a",
+                "finish": 4
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V04_failure_propagation",
+        "passed": false,
+        "expected": {
+          "value": {
+            "starts": [
+              {
+                "time": 0,
+                "slot": 0,
+                "id": "z",
+                "attempt": 1
+              }
+            ],
+            "jobs": [
+              {
+                "id": "a",
+                "status": "blocked",
+                "attempts": 0
+              },
+              {
+                "id": "b",
+                "status": "blocked",
+                "attempts": 0
+              },
+              {
+                "id": "z",
+                "status": "failed",
+                "attempts": 1
+              }
+            ],
+            "running": []
+          }
+        },
+        "actual": {
+          "value": {
+            "starts": [
+              {
+                "time": 0,
+                "slot": 0,
+                "id": "z",
+                "attempt": 1
+              }
+            ],
+            "jobs": [
+              {
+                "id": "a",
+                "status": "pending",
+                "attempts": 0
+              },
+              {
+                "id": "b",
+                "status": "pending",
+                "attempts": 0
+              },
+              {
+                "id": "z",
+                "status": "failed",
+                "attempts": 1
+              }
+            ],
+            "running": []
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V05_priority_ready_and_id",
+        "passed": false,
+        "expected": {
+          "value": {
+            "starts": [
+              {
+                "time": 0,
+                "slot": 0,
+                "id": "c",
+                "attempt": 1
+              },
+              {
+                "time": 2,
+                "slot": 0,
+                "id": "b",
+                "attempt": 1
+              },
+              {
+                "time": 3,
+                "slot": 0,
+                "id": "d",
+                "attempt": 1
+              }
+            ],
+            "jobs": [
+              {
+                "id": "a",
+                "status": "pending",
+                "attempts": 0
+              },
+              {
+                "id": "b",
+                "status": "succeeded",
+                "attempts": 1
+              },
+              {
+                "id": "c",
+                "status": "succeeded",
+                "attempts": 1
+              },
+              {
+                "id": "d",
+                "status": "running",
+                "attempts": 1
+              }
+            ],
+            "running": [
+              {
+                "slot": 0,
+                "id": "d",
+                "finish": 4
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "starts": [
+              {
+                "time": 0,
+                "slot": 0,
+                "id": "c",
+                "attempt": 1
+              },
+              {
+                "time": 2,
+                "slot": 0,
+                "id": "a",
+                "attempt": 1
+              }
+            ],
+            "jobs": [
+              {
+                "id": "a",
+                "status": "running",
+                "attempts": 1
+              },
+              {
+                "id": "b",
+                "status": "pending",
+                "attempts": 0
+              },
+              {
+                "id": "c",
+                "status": "succeeded",
+                "attempts": 1
+              },
+              {
+                "id": "d",
+                "status": "pending",
+                "attempts": 0
+              }
+            ],
+            "running": [
+              {
+                "slot": 0,
+                "id": "a",
+                "finish": 3
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V06_combined",
+        "passed": false,
+        "expected": {
+          "value": {
+            "starts": [
+              {
+                "time": 0,
+                "slot": 0,
+                "id": "a1",
+                "attempt": 1
+              },
+              {
+                "time": 0,
+                "slot": 1,
+                "id": "bad",
+                "attempt": 1
+              },
+              {
+                "time": 1,
+                "slot": 0,
+                "id": "a2",
+                "attempt": 1
+              },
+              {
+                "time": 1,
+                "slot": 1,
+                "id": "root",
+                "attempt": 1
+              },
+              {
+                "time": 3,
+                "slot": 0,
+                "id": "bad",
+                "attempt": 2
+              },
+              {
+                "time": 4,
+                "slot": 0,
+                "id": "root",
+                "attempt": 2
+              },
+              {
+                "time": 6,
+                "slot": 0,
+                "id": "child",
+                "attempt": 1
+              },
+              {
+                "time": 7,
+                "slot": 0,
+                "id": "join",
+                "attempt": 1
+              }
+            ],
+            "jobs": [
+              {
+                "id": "a1",
+                "status": "succeeded",
+                "attempts": 1
+              },
+              {
+                "id": "a2",
+                "status": "succeeded",
+                "attempts": 1
+              },
+              {
+                "id": "bad",
+                "status": "failed",
+                "attempts": 2
+              },
+              {
+                "id": "child",
+                "status": "succeeded",
+                "attempts": 1
+              },
+              {
+                "id": "join",
+                "status": "running",
+                "attempts": 1
+              },
+              {
+                "id": "leaf",
+                "status": "blocked",
+                "attempts": 0
+              },
+              {
+                "id": "root",
+                "status": "succeeded",
+                "attempts": 2
+              }
+            ],
+            "running": [
+              {
+                "slot": 0,
+                "id": "join",
+                "finish": 8
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "starts": [
+              {
+                "time": 0,
+                "slot": 0,
+                "id": "a1",
+                "attempt": 1
+              },
+              {
+                "time": 0,
+                "slot": 1,
+                "id": "a2",
+                "attempt": 1
+              },
+              {
+                "time": 1,
+                "slot": 0,
+                "id": "bad",
+                "attempt": 1
+              },
+              {
+                "time": 2,
+                "slot": 0,
+                "id": "bad",
+                "attempt": 2
+              },
+              {
+                "time": 2,
+                "slot": 1,
+                "id": "root",
+                "attempt": 1
+              },
+              {
+                "time": 4,
+                "slot": 0,
+                "id": "root",
+                "attempt": 2
+              },
+              {
+                "time": 6,
+                "slot": 0,
+                "id": "child",
+                "attempt": 1
+              }
+            ],
+            "jobs": [
+              {
+                "id": "a1",
+                "status": "succeeded",
+                "attempts": 1
+              },
+              {
+                "id": "a2",
+                "status": "succeeded",
+                "attempts": 1
+              },
+              {
+                "id": "bad",
+                "status": "failed",
+                "attempts": 2
+              },
+              {
+                "id": "child",
+                "status": "running",
+                "attempts": 1
+              },
+              {
+                "id": "join",
+                "status": "pending",
+                "attempts": 0
+              },
+              {
+                "id": "leaf",
+                "status": "blocked",
+                "attempts": 0
+              },
+              {
+                "id": "root",
+                "status": "succeeded",
+                "attempts": 2
+              }
+            ],
+            "running": [
+              {
+                "slot": 0,
+                "id": "child",
+                "finish": 7
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "8b4b5b67600f19c54dfcc3529f26d0380d0da2a4f294ddb00eeb9281dbdb420b",
+    "seconds": 0.037027
+  },
+  "architecture": "coordinator",
+  "repeat": 1,
+  "seed": 83521023,
+  "episode_id": "C08_coordinator_b60000_r1"
+}

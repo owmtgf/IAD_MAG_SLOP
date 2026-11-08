@@ -1,0 +1,2322 @@
+{
+  "task_id": "M02",
+  "architecture": "fixed",
+  "budget": 60000,
+  "repeat": 2,
+  "seed": 52062792,
+  "episode_id": "M02_fixed_b60000_r2",
+  "status": "budget_exhausted",
+  "finished": false,
+  "success": null,
+  "artifact_sha256": "191d5affa94c0dcb251d4aed964672cc767a26a7cc9854868ca183fb073d0a71",
+  "model_calls": 5,
+  "tool_calls": 4,
+  "invalid_actions": 8,
+  "input_tokens_known": 63531,
+  "output_tokens_known": 8496,
+  "total_tokens_known": 72027,
+  "usage_complete": true,
+  "budget_overrun": 12027,
+  "tokens_by_role": {
+    "programmer": {
+      "input": 63531,
+      "output": 8496,
+      "total": 72027,
+      "calls": 5
+    }
+  },
+  "seconds": 269.567219,
+  "visible_report": {
+    "passed": false,
+    "total": 18,
+    "passed_count": 5,
+    "cases": [
+      {
+        "id": "hand_single_tick",
+        "passed": true
+      },
+      {
+        "id": "hand_dependency_start",
+        "passed": true
+      },
+      {
+        "id": "hand_one_retry",
+        "passed": false,
+        "input": {
+          "jobs": [
+            {
+              "id": "a",
+              "failures": 1,
+              "max_retries": 1
+            }
+          ],
+          "events": [
+            {
+              "op": "tick"
+            }
+          ]
+        },
+        "expected": {
+          "time": 1,
+          "next_ticket": 2,
+          "jobs": [
+            {
+              "id": "a",
+              "version": 1,
+              "state": "running",
+              "attempts": 2,
+              "remaining": 1,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            }
+          ],
+          "queue": [],
+          "locks": {},
+          "checkpoints": [],
+          "history": [
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 1,
+              "kind": "retry",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 1,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 2
+            }
+          ],
+          "errors": []
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "time": 1,
+            "next_ticket": 1,
+            "jobs": [
+              {
+                "id": "a",
+                "version": 1,
+                "state": "failed",
+                "attempts": 1,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              }
+            ],
+            "queue": [],
+            "locks": {},
+            "checkpoints": [],
+            "history": [
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 1,
+                "kind": "failed",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              }
+            ],
+            "errors": []
+          }
+        }
+      },
+      {
+        "id": "hand_priority",
+        "passed": false,
+        "input": {
+          "jobs": [
+            {
+              "id": "a",
+              "resources": [
+                "r"
+              ]
+            },
+            {
+              "id": "b",
+              "priority": 2,
+              "resources": [
+                "r"
+              ]
+            }
+          ]
+        },
+        "expected": {
+          "time": 0,
+          "next_ticket": 2,
+          "jobs": [
+            {
+              "id": "a",
+              "version": 1,
+              "state": "ready",
+              "attempts": 0,
+              "remaining": 0,
+              "ticket": 0,
+              "completed_at": null,
+              "dep_versions": {}
+            },
+            {
+              "id": "b",
+              "version": 1,
+              "state": "running",
+              "attempts": 1,
+              "remaining": 1,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            }
+          ],
+          "queue": [
+            "a"
+          ],
+          "locks": {
+            "r": "b"
+          },
+          "checkpoints": [],
+          "history": [
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "b",
+              "version": 1,
+              "attempt": 1
+            }
+          ],
+          "errors": []
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "time": 0,
+            "next_ticket": 2,
+            "jobs": [
+              {
+                "id": "a",
+                "version": 1,
+                "state": "running",
+                "attempts": 1,
+                "remaining": 1,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "b",
+                "version": 1,
+                "state": "ready",
+                "attempts": 0,
+                "remaining": 0,
+                "ticket": 1,
+                "completed_at": null,
+                "dep_versions": {}
+              }
+            ],
+            "queue": [
+              "b"
+            ],
+            "locks": {
+              "r": "a"
+            },
+            "checkpoints": [],
+            "history": [
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              }
+            ],
+            "errors": []
+          }
+        }
+      },
+      {
+        "id": "hand_atomic_locks",
+        "passed": false,
+        "input": {
+          "jobs": [
+            {
+              "id": "a",
+              "resources": [
+                "r"
+              ],
+              "duration": 3,
+              "priority": 3
+            },
+            {
+              "id": "b",
+              "resources": [
+                "r",
+                "s"
+              ],
+              "priority": 2
+            },
+            {
+              "id": "c",
+              "resources": [
+                "t"
+              ],
+              "priority": 1
+            }
+          ]
+        },
+        "expected": {
+          "time": 0,
+          "next_ticket": 3,
+          "jobs": [
+            {
+              "id": "a",
+              "version": 1,
+              "state": "running",
+              "attempts": 1,
+              "remaining": 3,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            },
+            {
+              "id": "b",
+              "version": 1,
+              "state": "ready",
+              "attempts": 0,
+              "remaining": 0,
+              "ticket": 1,
+              "completed_at": null,
+              "dep_versions": {}
+            },
+            {
+              "id": "c",
+              "version": 1,
+              "state": "running",
+              "attempts": 1,
+              "remaining": 1,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            }
+          ],
+          "queue": [
+            "b"
+          ],
+          "locks": {
+            "r": "a",
+            "t": "c"
+          },
+          "checkpoints": [],
+          "history": [
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "c",
+              "version": 1,
+              "attempt": 1
+            }
+          ],
+          "errors": []
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "time": 0,
+            "next_ticket": 3,
+            "jobs": [
+              {
+                "id": "a",
+                "version": 1,
+                "state": "running",
+                "attempts": 1,
+                "remaining": 3,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "b",
+                "version": 1,
+                "state": "ready",
+                "attempts": 0,
+                "remaining": 0,
+                "ticket": 1,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "c",
+                "version": 1,
+                "state": "running",
+                "attempts": 1,
+                "remaining": 1,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              }
+            ],
+            "queue": [
+              "b"
+            ],
+            "locks": {
+              "r": "a",
+              "s": "b",
+              "t": "c"
+            },
+            "checkpoints": [],
+            "history": [
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "c",
+                "version": 1,
+                "attempt": 1
+              }
+            ],
+            "errors": []
+          }
+        }
+      },
+      {
+        "id": "hand_fair_reservation",
+        "passed": false,
+        "input": {
+          "jobs": [
+            {
+              "id": "a",
+              "resources": [
+                "r"
+              ],
+              "duration": 3,
+              "priority": 3
+            },
+            {
+              "id": "b",
+              "resources": [
+                "r",
+                "s"
+              ],
+              "priority": 2
+            },
+            {
+              "id": "c",
+              "resources": [
+                "s"
+              ],
+              "priority": 1
+            },
+            {
+              "id": "d",
+              "resources": [
+                "t"
+              ]
+            }
+          ]
+        },
+        "expected": {
+          "time": 0,
+          "next_ticket": 4,
+          "jobs": [
+            {
+              "id": "a",
+              "version": 1,
+              "state": "running",
+              "attempts": 1,
+              "remaining": 3,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            },
+            {
+              "id": "b",
+              "version": 1,
+              "state": "ready",
+              "attempts": 0,
+              "remaining": 0,
+              "ticket": 1,
+              "completed_at": null,
+              "dep_versions": {}
+            },
+            {
+              "id": "c",
+              "version": 1,
+              "state": "ready",
+              "attempts": 0,
+              "remaining": 0,
+              "ticket": 2,
+              "completed_at": null,
+              "dep_versions": {}
+            },
+            {
+              "id": "d",
+              "version": 1,
+              "state": "running",
+              "attempts": 1,
+              "remaining": 1,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            }
+          ],
+          "queue": [
+            "b",
+            "c"
+          ],
+          "locks": {
+            "r": "a",
+            "t": "d"
+          },
+          "checkpoints": [],
+          "history": [
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "d",
+              "version": 1,
+              "attempt": 1
+            }
+          ],
+          "errors": []
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "time": 0,
+            "next_ticket": 4,
+            "jobs": [
+              {
+                "id": "a",
+                "version": 1,
+                "state": "running",
+                "attempts": 1,
+                "remaining": 3,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "b",
+                "version": 1,
+                "state": "ready",
+                "attempts": 0,
+                "remaining": 0,
+                "ticket": 1,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "c",
+                "version": 1,
+                "state": "ready",
+                "attempts": 0,
+                "remaining": 0,
+                "ticket": 2,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "d",
+                "version": 1,
+                "state": "running",
+                "attempts": 1,
+                "remaining": 1,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              }
+            ],
+            "queue": [
+              "b",
+              "c"
+            ],
+            "locks": {
+              "r": "a",
+              "s": "b",
+              "t": "d"
+            },
+            "checkpoints": [],
+            "history": [
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "d",
+                "version": 1,
+                "attempt": 1
+              }
+            ],
+            "errors": []
+          }
+        }
+      },
+      {
+        "id": "hand_cancel_running_unlocks",
+        "passed": false,
+        "input": {
+          "jobs": [
+            {
+              "id": "a",
+              "duration": 2,
+              "resources": [
+                "r"
+              ]
+            },
+            {
+              "id": "b",
+              "resources": [
+                "r"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "op": "cancel",
+              "id": "a"
+            }
+          ]
+        },
+        "expected": {
+          "time": 0,
+          "next_ticket": 2,
+          "jobs": [
+            {
+              "id": "a",
+              "version": 1,
+              "state": "cancelled",
+              "attempts": 1,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            },
+            {
+              "id": "b",
+              "version": 1,
+              "state": "running",
+              "attempts": 1,
+              "remaining": 1,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            }
+          ],
+          "queue": [],
+          "locks": {
+            "r": "b"
+          },
+          "checkpoints": [],
+          "history": [
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 0,
+              "kind": "cancel",
+              "id": "a",
+              "version": 1
+            },
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "b",
+              "version": 1,
+              "attempt": 1
+            }
+          ],
+          "errors": []
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "time": 0,
+            "next_ticket": 2,
+            "jobs": [
+              {
+                "id": "a",
+                "version": 1,
+                "state": "cancelled",
+                "attempts": 1,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "b",
+                "version": 1,
+                "state": "ready",
+                "attempts": 0,
+                "remaining": 0,
+                "ticket": 1,
+                "completed_at": null,
+                "dep_versions": {}
+              }
+            ],
+            "queue": [
+              "b"
+            ],
+            "locks": {
+              "r": "a"
+            },
+            "checkpoints": [],
+            "history": [
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 0,
+                "kind": "cancel",
+                "id": "a",
+                "version": 1
+              }
+            ],
+            "errors": []
+          }
+        }
+      },
+      {
+        "id": "hand_transitive_versions",
+        "passed": false,
+        "input": {
+          "jobs": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b",
+              "deps": [
+                "a"
+              ]
+            },
+            {
+              "id": "c",
+              "deps": [
+                "b"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "op": "tick",
+              "steps": 3
+            },
+            {
+              "op": "revise",
+              "id": "a"
+            }
+          ]
+        },
+        "expected": {
+          "time": 3,
+          "next_ticket": 4,
+          "jobs": [
+            {
+              "id": "a",
+              "version": 2,
+              "state": "running",
+              "attempts": 1,
+              "remaining": 1,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            },
+            {
+              "id": "b",
+              "version": 2,
+              "state": "blocked",
+              "attempts": 0,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            },
+            {
+              "id": "c",
+              "version": 2,
+              "state": "blocked",
+              "attempts": 0,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            }
+          ],
+          "queue": [],
+          "locks": {},
+          "checkpoints": [],
+          "history": [
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 1,
+              "kind": "succeeded",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 1,
+              "kind": "start",
+              "id": "b",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 2,
+              "kind": "succeeded",
+              "id": "b",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 2,
+              "kind": "start",
+              "id": "c",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 3,
+              "kind": "succeeded",
+              "id": "c",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 3,
+              "kind": "revise",
+              "id": "a",
+              "version": 2
+            },
+            {
+              "t": 3,
+              "kind": "revise",
+              "id": "b",
+              "version": 2
+            },
+            {
+              "t": 3,
+              "kind": "revise",
+              "id": "c",
+              "version": 2
+            },
+            {
+              "t": 3,
+              "kind": "start",
+              "id": "a",
+              "version": 2,
+              "attempt": 1
+            }
+          ],
+          "errors": []
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "time": 3,
+            "next_ticket": 4,
+            "jobs": [
+              {
+                "id": "a",
+                "version": 2,
+                "state": "running",
+                "attempts": 1,
+                "remaining": 1,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "b",
+                "version": 2,
+                "state": "blocked",
+                "attempts": 0,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "c",
+                "version": 1,
+                "state": "succeeded",
+                "attempts": 1,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": 3,
+                "dep_versions": {
+                  "b": 1
+                }
+              }
+            ],
+            "queue": [],
+            "locks": {},
+            "checkpoints": [],
+            "history": [
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 1,
+                "kind": "succeeded",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 1,
+                "kind": "start",
+                "id": "b",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 2,
+                "kind": "succeeded",
+                "id": "b",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 2,
+                "kind": "start",
+                "id": "c",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 3,
+                "kind": "succeeded",
+                "id": "c",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 3,
+                "kind": "revise",
+                "id": "a",
+                "version": 2
+              },
+              {
+                "t": 3,
+                "kind": "revise",
+                "id": "b",
+                "version": 2
+              },
+              {
+                "t": 3,
+                "kind": "start",
+                "id": "a",
+                "version": 2,
+                "attempt": 1
+              }
+            ],
+            "errors": []
+          }
+        }
+      },
+      {
+        "id": "hand_snapshot_isolation",
+        "passed": false,
+        "input": {
+          "jobs": [
+            {
+              "id": "a",
+              "duration": 2
+            }
+          ],
+          "events": [
+            {
+              "op": "tick"
+            },
+            {
+              "op": "checkpoint",
+              "name": "x"
+            },
+            {
+              "op": "tick"
+            },
+            {
+              "op": "restore",
+              "name": "x"
+            }
+          ]
+        },
+        "expected": {
+          "time": 1,
+          "next_ticket": 1,
+          "jobs": [
+            {
+              "id": "a",
+              "version": 1,
+              "state": "running",
+              "attempts": 1,
+              "remaining": 1,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            }
+          ],
+          "queue": [],
+          "locks": {},
+          "checkpoints": [
+            "x"
+          ],
+          "history": [
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 1,
+              "kind": "restore",
+              "name": "x"
+            }
+          ],
+          "errors": []
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "time": 1,
+            "next_ticket": 1,
+            "jobs": [
+              {
+                "id": "a",
+                "version": 1,
+                "state": "succeeded",
+                "attempts": 1,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": 2,
+                "dep_versions": {}
+              }
+            ],
+            "queue": [],
+            "locks": {},
+            "checkpoints": [
+              "x"
+            ],
+            "history": [
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 1,
+                "kind": "restore",
+                "name": "x"
+              }
+            ],
+            "errors": []
+          }
+        }
+      },
+      {
+        "id": "hand_revise_error_atomicity",
+        "passed": false,
+        "input": {
+          "jobs": [
+            {
+              "id": "a"
+            }
+          ],
+          "events": [
+            {
+              "op": "revise",
+              "id": "a",
+              "duration": 4,
+              "resources": [
+                "r",
+                "r"
+              ]
+            },
+            {
+              "op": "revise",
+              "id": "a"
+            },
+            {
+              "op": "tick"
+            }
+          ]
+        },
+        "expected": {
+          "time": 1,
+          "next_ticket": 2,
+          "jobs": [
+            {
+              "id": "a",
+              "version": 2,
+              "state": "succeeded",
+              "attempts": 1,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": 1,
+              "dep_versions": {}
+            }
+          ],
+          "queue": [],
+          "locks": {},
+          "checkpoints": [],
+          "history": [
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 0,
+              "kind": "revise",
+              "id": "a",
+              "version": 2
+            },
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "a",
+              "version": 2,
+              "attempt": 1
+            },
+            {
+              "t": 1,
+              "kind": "succeeded",
+              "id": "a",
+              "version": 2,
+              "attempt": 1
+            }
+          ],
+          "errors": [
+            {
+              "index": 0,
+              "code": "BAD_EVENT"
+            }
+          ]
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "time": 1,
+            "next_ticket": 2,
+            "jobs": [
+              {
+                "id": "a",
+                "version": 2,
+                "state": "running",
+                "attempts": 1,
+                "remaining": 3,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              }
+            ],
+            "queue": [],
+            "locks": {},
+            "checkpoints": [],
+            "history": [
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 0,
+                "kind": "revise",
+                "id": "a",
+                "version": 2
+              },
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 2,
+                "attempt": 1
+              }
+            ],
+            "errors": [
+              {
+                "index": 0,
+                "code": "BAD_EVENT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "hand_cancel_idempotent_cascade",
+        "passed": false,
+        "input": {
+          "jobs": [
+            {
+              "id": "a"
+            },
+            {
+              "id": "b",
+              "deps": [
+                "a"
+              ]
+            },
+            {
+              "id": "c",
+              "deps": [
+                "b"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "op": "cancel",
+              "id": "a"
+            },
+            {
+              "op": "cancel",
+              "id": "a"
+            }
+          ]
+        },
+        "expected": {
+          "time": 0,
+          "next_ticket": 1,
+          "jobs": [
+            {
+              "id": "a",
+              "version": 1,
+              "state": "cancelled",
+              "attempts": 1,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            },
+            {
+              "id": "b",
+              "version": 1,
+              "state": "cancelled",
+              "attempts": 0,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            },
+            {
+              "id": "c",
+              "version": 1,
+              "state": "cancelled",
+              "attempts": 0,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            }
+          ],
+          "queue": [],
+          "locks": {},
+          "checkpoints": [],
+          "history": [
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 0,
+              "kind": "cancel",
+              "id": "a",
+              "version": 1
+            },
+            {
+              "t": 0,
+              "kind": "cancel",
+              "id": "b",
+              "version": 1
+            },
+            {
+              "t": 0,
+              "kind": "cancel",
+              "id": "c",
+              "version": 1
+            }
+          ],
+          "errors": []
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "time": 0,
+            "next_ticket": 1,
+            "jobs": [
+              {
+                "id": "a",
+                "version": 1,
+                "state": "cancelled",
+                "attempts": 1,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "b",
+                "version": 1,
+                "state": "cancelled",
+                "attempts": 0,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "c",
+                "version": 1,
+                "state": "blocked",
+                "attempts": 0,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              }
+            ],
+            "queue": [],
+            "locks": {},
+            "checkpoints": [],
+            "history": [
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 0,
+                "kind": "cancel",
+                "id": "a",
+                "version": 1
+              },
+              {
+                "t": 0,
+                "kind": "cancel",
+                "id": "b",
+                "version": 1
+              }
+            ],
+            "errors": []
+          }
+        }
+      },
+      {
+        "id": "hand_checkpoint_not_overwritten",
+        "passed": false,
+        "input": {
+          "jobs": [
+            {
+              "id": "a",
+              "duration": 2
+            }
+          ],
+          "events": [
+            {
+              "op": "checkpoint",
+              "name": "x"
+            },
+            {
+              "op": "tick"
+            },
+            {
+              "op": "checkpoint",
+              "name": "x"
+            },
+            {
+              "op": "restore",
+              "name": "x"
+            }
+          ]
+        },
+        "expected": {
+          "time": 0,
+          "next_ticket": 1,
+          "jobs": [
+            {
+              "id": "a",
+              "version": 1,
+              "state": "running",
+              "attempts": 1,
+              "remaining": 2,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            }
+          ],
+          "queue": [],
+          "locks": {},
+          "checkpoints": [
+            "x"
+          ],
+          "history": [
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 0,
+              "kind": "restore",
+              "name": "x"
+            }
+          ],
+          "errors": []
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "time": 0,
+            "next_ticket": 1,
+            "jobs": [
+              {
+                "id": "a",
+                "version": 1,
+                "state": "running",
+                "attempts": 1,
+                "remaining": 1,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              }
+            ],
+            "queue": [],
+            "locks": {},
+            "checkpoints": [
+              "x"
+            ],
+            "history": [
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 0,
+                "kind": "restore",
+                "name": "x"
+              }
+            ],
+            "errors": []
+          }
+        }
+      },
+      {
+        "id": "hand_empty_errors",
+        "passed": true
+      },
+      {
+        "id": "hand_simultaneous_finish_order",
+        "passed": true
+      },
+      {
+        "id": "visible_deep_cancel_restore",
+        "passed": false,
+        "input": {
+          "jobs": [
+            {
+              "id": "a",
+              "resources": [
+                "r"
+              ]
+            },
+            {
+              "id": "b",
+              "deps": [
+                "a"
+              ],
+              "resources": [
+                "s"
+              ]
+            },
+            {
+              "id": "c",
+              "deps": [
+                "b"
+              ],
+              "resources": [
+                "r"
+              ]
+            },
+            {
+              "id": "d",
+              "deps": [
+                "c"
+              ],
+              "failures": 1,
+              "max_retries": 2
+            }
+          ],
+          "events": [
+            {
+              "op": "checkpoint",
+              "name": "zero"
+            },
+            {
+              "op": "tick",
+              "steps": 3
+            },
+            {
+              "op": "cancel",
+              "id": "a"
+            },
+            {
+              "op": "restore",
+              "name": "zero"
+            },
+            {
+              "op": "tick",
+              "steps": 5
+            }
+          ]
+        },
+        "expected": {
+          "time": 5,
+          "next_ticket": 5,
+          "jobs": [
+            {
+              "id": "a",
+              "version": 1,
+              "state": "succeeded",
+              "attempts": 1,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": 1,
+              "dep_versions": {}
+            },
+            {
+              "id": "b",
+              "version": 1,
+              "state": "succeeded",
+              "attempts": 1,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": 2,
+              "dep_versions": {
+                "a": 1
+              }
+            },
+            {
+              "id": "c",
+              "version": 1,
+              "state": "succeeded",
+              "attempts": 1,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": 3,
+              "dep_versions": {
+                "b": 1
+              }
+            },
+            {
+              "id": "d",
+              "version": 1,
+              "state": "succeeded",
+              "attempts": 2,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": 5,
+              "dep_versions": {
+                "c": 1
+              }
+            }
+          ],
+          "queue": [],
+          "locks": {},
+          "checkpoints": [
+            "zero"
+          ],
+          "history": [
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 0,
+              "kind": "restore",
+              "name": "zero"
+            },
+            {
+              "t": 1,
+              "kind": "succeeded",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 1,
+              "kind": "start",
+              "id": "b",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 2,
+              "kind": "succeeded",
+              "id": "b",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 2,
+              "kind": "start",
+              "id": "c",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 3,
+              "kind": "succeeded",
+              "id": "c",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 3,
+              "kind": "start",
+              "id": "d",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 4,
+              "kind": "retry",
+              "id": "d",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 4,
+              "kind": "start",
+              "id": "d",
+              "version": 1,
+              "attempt": 2
+            },
+            {
+              "t": 5,
+              "kind": "succeeded",
+              "id": "d",
+              "version": 1,
+              "attempt": 2
+            }
+          ],
+          "errors": []
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "time": 5,
+            "next_ticket": 2,
+            "jobs": [
+              {
+                "id": "a",
+                "version": 1,
+                "state": "cancelled",
+                "attempts": 1,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "b",
+                "version": 1,
+                "state": "cancelled",
+                "attempts": 1,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "c",
+                "version": 1,
+                "state": "succeeded",
+                "attempts": 1,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": 3,
+                "dep_versions": {
+                  "b": 1
+                }
+              },
+              {
+                "id": "d",
+                "version": 1,
+                "state": "succeeded",
+                "attempts": 2,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": 2,
+                "dep_versions": {
+                  "c": 1
+                }
+              }
+            ],
+            "queue": [],
+            "locks": {
+              "r": "a"
+            },
+            "checkpoints": [
+              "zero"
+            ],
+            "history": [
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 0,
+                "kind": "restore",
+                "name": "zero"
+              },
+              {
+                "t": 1,
+                "kind": "retry",
+                "id": "d",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 1,
+                "kind": "start",
+                "id": "d",
+                "version": 1,
+                "attempt": 2
+              },
+              {
+                "t": 2,
+                "kind": "succeeded",
+                "id": "d",
+                "version": 1,
+                "attempt": 2
+              }
+            ],
+            "errors": []
+          }
+        }
+      },
+      {
+        "id": "visible_revise_after_terminal_failure",
+        "passed": false,
+        "input": {
+          "jobs": [
+            {
+              "id": "a",
+              "failures": 3,
+              "max_retries": 2
+            },
+            {
+              "id": "b",
+              "deps": [
+                "a"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "op": "tick",
+              "steps": 4
+            },
+            {
+              "op": "revise",
+              "id": "a",
+              "failures": 0
+            },
+            {
+              "op": "tick",
+              "steps": 2
+            }
+          ]
+        },
+        "expected": {
+          "time": 6,
+          "next_ticket": 5,
+          "jobs": [
+            {
+              "id": "a",
+              "version": 2,
+              "state": "succeeded",
+              "attempts": 1,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": 5,
+              "dep_versions": {}
+            },
+            {
+              "id": "b",
+              "version": 2,
+              "state": "succeeded",
+              "attempts": 1,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": 6,
+              "dep_versions": {
+                "a": 2
+              }
+            }
+          ],
+          "queue": [],
+          "locks": {},
+          "checkpoints": [],
+          "history": [
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 1,
+              "kind": "retry",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 1,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 2
+            },
+            {
+              "t": 2,
+              "kind": "retry",
+              "id": "a",
+              "version": 1,
+              "attempt": 2
+            },
+            {
+              "t": 2,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 3
+            },
+            {
+              "t": 3,
+              "kind": "failed",
+              "id": "a",
+              "version": 1,
+              "attempt": 3
+            },
+            {
+              "t": 4,
+              "kind": "revise",
+              "id": "a",
+              "version": 2
+            },
+            {
+              "t": 4,
+              "kind": "revise",
+              "id": "b",
+              "version": 2
+            },
+            {
+              "t": 4,
+              "kind": "start",
+              "id": "a",
+              "version": 2,
+              "attempt": 1
+            },
+            {
+              "t": 5,
+              "kind": "succeeded",
+              "id": "a",
+              "version": 2,
+              "attempt": 1
+            },
+            {
+              "t": 5,
+              "kind": "start",
+              "id": "b",
+              "version": 2,
+              "attempt": 1
+            },
+            {
+              "t": 6,
+              "kind": "succeeded",
+              "id": "b",
+              "version": 2,
+              "attempt": 1
+            }
+          ],
+          "errors": []
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "time": 6,
+            "next_ticket": 4,
+            "jobs": [
+              {
+                "id": "a",
+                "version": 2,
+                "state": "succeeded",
+                "attempts": 1,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": 5,
+                "dep_versions": {}
+              },
+              {
+                "id": "b",
+                "version": 2,
+                "state": "succeeded",
+                "attempts": 1,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": 6,
+                "dep_versions": {
+                  "a": 2
+                }
+              }
+            ],
+            "queue": [],
+            "locks": {},
+            "checkpoints": [],
+            "history": [
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 1,
+                "kind": "retry",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 1,
+                "kind": "start",
+                "id": "a",
+                "version": 1,
+                "attempt": 2
+              },
+              {
+                "t": 2,
+                "kind": "failed",
+                "id": "a",
+                "version": 1,
+                "attempt": 2
+              },
+              {
+                "t": 4,
+                "kind": "revise",
+                "id": "a",
+                "version": 2
+              },
+              {
+                "t": 4,
+                "kind": "revise",
+                "id": "b",
+                "version": 2
+              },
+              {
+                "t": 4,
+                "kind": "start",
+                "id": "a",
+                "version": 2,
+                "attempt": 1
+              },
+              {
+                "t": 5,
+                "kind": "succeeded",
+                "id": "a",
+                "version": 2,
+                "attempt": 1
+              },
+              {
+                "t": 5,
+                "kind": "start",
+                "id": "b",
+                "version": 2,
+                "attempt": 1
+              },
+              {
+                "t": 6,
+                "kind": "succeeded",
+                "id": "b",
+                "version": 2,
+                "attempt": 1
+              }
+            ],
+            "errors": []
+          }
+        }
+      },
+      {
+        "id": "visible_snapshot_parameters_and_errors",
+        "passed": false,
+        "input": {
+          "jobs": [
+            {
+              "id": "a",
+              "resources": [
+                "r"
+              ]
+            },
+            {
+              "id": "b",
+              "deps": [
+                "a"
+              ],
+              "resources": [
+                "s"
+              ]
+            },
+            {
+              "id": "c",
+              "deps": [
+                "b"
+              ],
+              "resources": [
+                "r"
+              ]
+            },
+            {
+              "id": "d",
+              "deps": [
+                "c"
+              ],
+              "failures": 1,
+              "max_retries": 2
+            }
+          ],
+          "events": [
+            {
+              "op": "checkpoint",
+              "name": "p"
+            },
+            {
+              "op": "revise",
+              "id": "a",
+              "duration": 5,
+              "resources": [
+                "s"
+              ]
+            },
+            {
+              "op": "tick"
+            },
+            {
+              "op": "tick",
+              "steps": true
+            },
+            {
+              "op": "checkpoint",
+              "name": "q"
+            },
+            {
+              "op": "restore",
+              "name": "p"
+            },
+            {
+              "op": "tick",
+              "steps": 4
+            },
+            {
+              "op": "restore",
+              "name": "q"
+            }
+          ]
+        },
+        "expected": {
+          "time": 1,
+          "next_ticket": 2,
+          "jobs": [
+            {
+              "id": "a",
+              "version": 2,
+              "state": "running",
+              "attempts": 1,
+              "remaining": 4,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            },
+            {
+              "id": "b",
+              "version": 2,
+              "state": "blocked",
+              "attempts": 0,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            },
+            {
+              "id": "c",
+              "version": 2,
+              "state": "blocked",
+              "attempts": 0,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            },
+            {
+              "id": "d",
+              "version": 2,
+              "state": "blocked",
+              "attempts": 0,
+              "remaining": 0,
+              "ticket": null,
+              "completed_at": null,
+              "dep_versions": {}
+            }
+          ],
+          "queue": [],
+          "locks": {
+            "s": "a"
+          },
+          "checkpoints": [
+            "p",
+            "q"
+          ],
+          "history": [
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "a",
+              "version": 1,
+              "attempt": 1
+            },
+            {
+              "t": 0,
+              "kind": "revise",
+              "id": "a",
+              "version": 2
+            },
+            {
+              "t": 0,
+              "kind": "revise",
+              "id": "b",
+              "version": 2
+            },
+            {
+              "t": 0,
+              "kind": "revise",
+              "id": "c",
+              "version": 2
+            },
+            {
+              "t": 0,
+              "kind": "revise",
+              "id": "d",
+              "version": 2
+            },
+            {
+              "t": 0,
+              "kind": "start",
+              "id": "a",
+              "version": 2,
+              "attempt": 1
+            },
+            {
+              "t": 1,
+              "kind": "restore",
+              "name": "q"
+            }
+          ],
+          "errors": [
+            {
+              "index": 3,
+              "code": "BAD_EVENT"
+            }
+          ]
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "time": 1,
+            "next_ticket": 2,
+            "jobs": [
+              {
+                "id": "a",
+                "version": 2,
+                "state": "running",
+                "attempts": 1,
+                "remaining": 4,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "b",
+                "version": 2,
+                "state": "blocked",
+                "attempts": 0,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "c",
+                "version": 1,
+                "state": "blocked",
+                "attempts": 0,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              },
+              {
+                "id": "d",
+                "version": 1,
+                "state": "blocked",
+                "attempts": 0,
+                "remaining": 0,
+                "ticket": null,
+                "completed_at": null,
+                "dep_versions": {}
+              }
+            ],
+            "queue": [],
+            "locks": {
+              "s": "a"
+            },
+            "checkpoints": [
+              "p",
+              "q"
+            ],
+            "history": [
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 1,
+                "attempt": 1
+              },
+              {
+                "t": 0,
+                "kind": "revise",
+                "id": "a",
+                "version": 2
+              },
+              {
+                "t": 0,
+                "kind": "revise",
+                "id": "b",
+                "version": 2
+              },
+              {
+                "t": 0,
+                "kind": "start",
+                "id": "a",
+                "version": 2,
+                "attempt": 1
+              },
+              {
+                "t": 1,
+                "kind": "restore",
+                "name": "q"
+              }
+            ],
+            "errors": [
+              {
+                "index": 3,
+                "code": "BAD_EVENT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "visible_retry_fair_ticket",
+        "passed": true
+      }
+    ]
+  },
+  "interpretation": "Final task success requires teacher verification; never infer it from schema alone."
+}

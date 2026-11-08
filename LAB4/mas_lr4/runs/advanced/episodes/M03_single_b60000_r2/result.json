@@ -1,0 +1,2765 @@
+{
+  "task_id": "M03",
+  "architecture": "single",
+  "budget": 60000,
+  "repeat": 2,
+  "seed": 249509949,
+  "episode_id": "M03_single_b60000_r2",
+  "status": "budget_exhausted",
+  "finished": false,
+  "success": null,
+  "artifact_sha256": "a199561b9ba727905dd9f8ee00289acf45a50b327866f069ec4fbc7584d2fbdc",
+  "model_calls": 3,
+  "tool_calls": 2,
+  "invalid_actions": 0,
+  "input_tokens_known": 73486,
+  "output_tokens_known": 3289,
+  "total_tokens_known": 76775,
+  "usage_complete": true,
+  "budget_overrun": 16775,
+  "tokens_by_role": {
+    "single": {
+      "input": 73486,
+      "output": 3289,
+      "total": 76775,
+      "calls": 3
+    }
+  },
+  "seconds": 115.31654,
+  "visible_report": {
+    "passed": false,
+    "total": 16,
+    "passed_count": 5,
+    "cases": [
+      {
+        "id": "V01-noop-revisions",
+        "passed": false,
+        "input": {
+          "tenants": [
+            {
+              "id": "t",
+              "quota": 12
+            },
+            {
+              "id": "u",
+              "quota": 12
+            }
+          ],
+          "principals": [
+            {
+              "id": "a",
+              "tenant": "t"
+            },
+            {
+              "id": "b",
+              "tenant": "t"
+            },
+            {
+              "id": "c",
+              "tenant": "t"
+            },
+            {
+              "id": "z",
+              "tenant": "u"
+            }
+          ],
+          "documents": [
+            {
+              "id": "d",
+              "tenant": "t",
+              "owner": "a",
+              "text": "abc",
+              "acl": []
+            },
+            {
+              "id": "e",
+              "tenant": "u",
+              "owner": "z",
+              "text": "Z"
+            }
+          ],
+          "operations": [
+            {
+              "op": "write",
+              "actor": "a",
+              "id": "d",
+              "text": "abc",
+              "expected": 1
+            },
+            {
+              "op": "read",
+              "actor": "a",
+              "id": "d",
+              "version": 1
+            },
+            {
+              "op": "write",
+              "actor": "a",
+              "id": "d",
+              "text": "x",
+              "expected": 1
+            }
+          ]
+        },
+        "expected": {
+          "results": [
+            {
+              "id": "d",
+              "owner": "a",
+              "text": "abc",
+              "version": 2
+            },
+            {
+              "id": "d",
+              "owner": "a",
+              "text": "abc",
+              "version": 1
+            },
+            {
+              "error": "version_conflict",
+              "actual": 2
+            }
+          ],
+          "state": {
+            "documents": [
+              {
+                "id": "d",
+                "tenant": "t",
+                "owner": "a",
+                "text": "abc",
+                "version": 2,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "abc"
+                  },
+                  {
+                    "version": 2,
+                    "text": "abc"
+                  }
+                ],
+                "acl": []
+              },
+              {
+                "id": "e",
+                "tenant": "u",
+                "owner": "z",
+                "text": "Z",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "Z"
+                  }
+                ],
+                "acl": []
+              }
+            ],
+            "grants": [],
+            "usage": {
+              "t": 3,
+              "u": 1
+            }
+          }
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "results": [
+              {
+                "id": "d",
+                "owner": "a",
+                "text": "abc",
+                "version": 1
+              },
+              {
+                "id": "d",
+                "owner": "a",
+                "text": "abc",
+                "version": 1
+              },
+              {
+                "id": "d",
+                "owner": "a",
+                "text": "x",
+                "version": 2
+              }
+            ],
+            "state": {
+              "documents": [
+                {
+                  "id": "d",
+                  "tenant": "t",
+                  "owner": "a",
+                  "text": "x",
+                  "version": 2,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "abc"
+                    },
+                    {
+                      "version": 2,
+                      "text": "x"
+                    }
+                  ],
+                  "acl": []
+                },
+                {
+                  "id": "e",
+                  "tenant": "u",
+                  "owner": "z",
+                  "text": "Z",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "Z"
+                    }
+                  ],
+                  "acl": []
+                }
+              ],
+              "grants": [],
+              "usage": {
+                "t": 1,
+                "u": 1
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "V02-unicode-quota",
+        "passed": false,
+        "input": {
+          "tenants": [
+            {
+              "id": "t",
+              "quota": 6
+            },
+            {
+              "id": "u",
+              "quota": 12
+            }
+          ],
+          "principals": [
+            {
+              "id": "a",
+              "tenant": "t"
+            },
+            {
+              "id": "b",
+              "tenant": "t"
+            },
+            {
+              "id": "c",
+              "tenant": "t"
+            },
+            {
+              "id": "z",
+              "tenant": "u"
+            }
+          ],
+          "documents": [
+            {
+              "id": "d",
+              "tenant": "t",
+              "owner": "a",
+              "text": "abc",
+              "acl": []
+            },
+            {
+              "id": "e",
+              "tenant": "u",
+              "owner": "z",
+              "text": "Z"
+            }
+          ],
+          "operations": [
+            {
+              "op": "create",
+              "actor": "a",
+              "id": "f",
+              "text": "жж"
+            },
+            {
+              "op": "write",
+              "actor": "a",
+              "id": "d",
+              "text": "жж",
+              "expected": 1
+            },
+            {
+              "op": "write",
+              "actor": "a",
+              "id": "d",
+              "text": "😀😀",
+              "expected": 2
+            }
+          ]
+        },
+        "expected": {
+          "results": [
+            {
+              "error": "quota_exceeded"
+            },
+            {
+              "id": "d",
+              "owner": "a",
+              "text": "жж",
+              "version": 2
+            },
+            {
+              "error": "quota_exceeded"
+            }
+          ],
+          "state": {
+            "documents": [
+              {
+                "id": "d",
+                "tenant": "t",
+                "owner": "a",
+                "text": "жж",
+                "version": 2,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "abc"
+                  },
+                  {
+                    "version": 2,
+                    "text": "жж"
+                  }
+                ],
+                "acl": []
+              },
+              {
+                "id": "e",
+                "tenant": "u",
+                "owner": "z",
+                "text": "Z",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "Z"
+                  }
+                ],
+                "acl": []
+              }
+            ],
+            "grants": [],
+            "usage": {
+              "t": 4,
+              "u": 1
+            }
+          }
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "results": [
+              {
+                "id": "f",
+                "owner": "a",
+                "text": "жж",
+                "version": 1
+              },
+              {
+                "id": "d",
+                "owner": "a",
+                "text": "жж",
+                "version": 2
+              },
+              {
+                "id": "d",
+                "owner": "a",
+                "text": "😀😀",
+                "version": 3
+              }
+            ],
+            "state": {
+              "documents": [
+                {
+                  "id": "d",
+                  "tenant": "t",
+                  "owner": "a",
+                  "text": "😀😀",
+                  "version": 3,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "abc"
+                    },
+                    {
+                      "version": 2,
+                      "text": "жж"
+                    },
+                    {
+                      "version": 3,
+                      "text": "😀😀"
+                    }
+                  ],
+                  "acl": []
+                },
+                {
+                  "id": "e",
+                  "tenant": "u",
+                  "owner": "z",
+                  "text": "Z",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "Z"
+                    }
+                  ],
+                  "acl": []
+                },
+                {
+                  "id": "f",
+                  "tenant": "t",
+                  "owner": "a",
+                  "text": "жж",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "жж"
+                    }
+                  ],
+                  "acl": []
+                }
+              ],
+              "grants": [],
+              "usage": {
+                "t": 4,
+                "u": 1
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "V03-owner-deny",
+        "passed": false,
+        "input": {
+          "tenants": [
+            {
+              "id": "t",
+              "quota": 12
+            },
+            {
+              "id": "u",
+              "quota": 12
+            }
+          ],
+          "principals": [
+            {
+              "id": "a",
+              "tenant": "t"
+            },
+            {
+              "id": "b",
+              "tenant": "t"
+            },
+            {
+              "id": "c",
+              "tenant": "t"
+            },
+            {
+              "id": "z",
+              "tenant": "u"
+            }
+          ],
+          "documents": [
+            {
+              "id": "d",
+              "tenant": "t",
+              "owner": "a",
+              "text": "abc",
+              "acl": [
+                {
+                  "principal": "a",
+                  "deny": [
+                    "write"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "e",
+              "tenant": "u",
+              "owner": "z",
+              "text": "Z"
+            }
+          ],
+          "operations": [
+            {
+              "op": "write",
+              "actor": "a",
+              "id": "d",
+              "text": "x",
+              "expected": 99
+            },
+            {
+              "op": "read",
+              "actor": "a",
+              "id": "d"
+            },
+            {
+              "op": "acl",
+              "actor": "a",
+              "id": "d",
+              "principal": "a",
+              "deny": [
+                "read"
+              ]
+            },
+            {
+              "op": "read",
+              "actor": "a",
+              "id": "d"
+            }
+          ]
+        },
+        "expected": {
+          "results": [
+            {
+              "error": "permission_denied"
+            },
+            {
+              "id": "d",
+              "owner": "a",
+              "text": "abc",
+              "version": 1
+            },
+            {
+              "id": "d",
+              "principal": "a",
+              "allow": [],
+              "deny": [
+                "read"
+              ]
+            },
+            {
+              "error": "permission_denied"
+            }
+          ],
+          "state": {
+            "documents": [
+              {
+                "id": "d",
+                "tenant": "t",
+                "owner": "a",
+                "text": "abc",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "abc"
+                  }
+                ],
+                "acl": [
+                  {
+                    "principal": "a",
+                    "allow": [],
+                    "deny": [
+                      "read"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "e",
+                "tenant": "u",
+                "owner": "z",
+                "text": "Z",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "Z"
+                  }
+                ],
+                "acl": []
+              }
+            ],
+            "grants": [],
+            "usage": {
+              "t": 3,
+              "u": 1
+            }
+          }
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "results": [
+              {
+                "error": "version_conflict",
+                "actual": 1
+              },
+              {
+                "id": "d",
+                "owner": "a",
+                "text": "abc",
+                "version": 1
+              },
+              {
+                "id": "d",
+                "principal": "a",
+                "allow": [],
+                "deny": [
+                  "read"
+                ]
+              },
+              {
+                "id": "d",
+                "owner": "a",
+                "text": "abc",
+                "version": 1
+              }
+            ],
+            "state": {
+              "documents": [
+                {
+                  "id": "d",
+                  "tenant": "t",
+                  "owner": "a",
+                  "text": "abc",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "abc"
+                    }
+                  ],
+                  "acl": [
+                    {
+                      "principal": "a",
+                      "allow": [],
+                      "deny": [
+                        "read"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "e",
+                  "tenant": "u",
+                  "owner": "z",
+                  "text": "Z",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "Z"
+                    }
+                  ],
+                  "acl": []
+                }
+              ],
+              "grants": [],
+              "usage": {
+                "t": 3,
+                "u": 1
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "V04-delegated-deny",
+        "passed": false,
+        "input": {
+          "tenants": [
+            {
+              "id": "t",
+              "quota": 12
+            },
+            {
+              "id": "u",
+              "quota": 12
+            }
+          ],
+          "principals": [
+            {
+              "id": "a",
+              "tenant": "t"
+            },
+            {
+              "id": "b",
+              "tenant": "t"
+            },
+            {
+              "id": "c",
+              "tenant": "t"
+            },
+            {
+              "id": "z",
+              "tenant": "u"
+            }
+          ],
+          "documents": [
+            {
+              "id": "d",
+              "tenant": "t",
+              "owner": "a",
+              "text": "abc",
+              "acl": [
+                {
+                  "principal": "b",
+                  "deny": [
+                    "read"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "e",
+              "tenant": "u",
+              "owner": "z",
+              "text": "Z"
+            }
+          ],
+          "operations": [
+            {
+              "op": "delegate",
+              "actor": "a",
+              "id": "d",
+              "grant": "g1",
+              "recipient": "b",
+              "rights": [
+                "read"
+              ]
+            },
+            {
+              "op": "read",
+              "actor": "b",
+              "id": "d"
+            }
+          ]
+        },
+        "expected": {
+          "results": [
+            {
+              "grant": "g1",
+              "revoked": false
+            },
+            {
+              "error": "permission_denied"
+            }
+          ],
+          "state": {
+            "documents": [
+              {
+                "id": "d",
+                "tenant": "t",
+                "owner": "a",
+                "text": "abc",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "abc"
+                  }
+                ],
+                "acl": [
+                  {
+                    "principal": "b",
+                    "allow": [],
+                    "deny": [
+                      "read"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "e",
+                "tenant": "u",
+                "owner": "z",
+                "text": "Z",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "Z"
+                  }
+                ],
+                "acl": []
+              }
+            ],
+            "grants": [
+              {
+                "id": "g1",
+                "doc": "d",
+                "issuer": "a",
+                "recipient": "b",
+                "rights": [
+                  "read"
+                ],
+                "parent": null,
+                "revoked": false
+              }
+            ],
+            "usage": {
+              "t": 3,
+              "u": 1
+            }
+          }
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "results": [
+              {
+                "grant": "g1",
+                "revoked": false
+              },
+              {
+                "id": "d",
+                "owner": "a",
+                "text": "abc",
+                "version": 1
+              }
+            ],
+            "state": {
+              "documents": [
+                {
+                  "id": "d",
+                  "tenant": "t",
+                  "owner": "a",
+                  "text": "abc",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "abc"
+                    }
+                  ],
+                  "acl": [
+                    {
+                      "principal": "b",
+                      "allow": [],
+                      "deny": [
+                        "read"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "e",
+                  "tenant": "u",
+                  "owner": "z",
+                  "text": "Z",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "Z"
+                    }
+                  ],
+                  "acl": []
+                }
+              ],
+              "grants": [
+                {
+                  "id": "g1",
+                  "doc": "d",
+                  "issuer": "a",
+                  "recipient": "b",
+                  "rights": [
+                    "read"
+                  ],
+                  "parent": null,
+                  "revoked": false
+                }
+              ],
+              "usage": {
+                "t": 3,
+                "u": 1
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "V05-acl-cache",
+        "passed": false,
+        "input": {
+          "tenants": [
+            {
+              "id": "t",
+              "quota": 12
+            },
+            {
+              "id": "u",
+              "quota": 12
+            }
+          ],
+          "principals": [
+            {
+              "id": "a",
+              "tenant": "t"
+            },
+            {
+              "id": "b",
+              "tenant": "t"
+            },
+            {
+              "id": "c",
+              "tenant": "t"
+            },
+            {
+              "id": "z",
+              "tenant": "u"
+            }
+          ],
+          "documents": [
+            {
+              "id": "d",
+              "tenant": "t",
+              "owner": "a",
+              "text": "abc",
+              "acl": [
+                {
+                  "principal": "b",
+                  "allow": [
+                    "read"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "e",
+              "tenant": "u",
+              "owner": "z",
+              "text": "Z"
+            }
+          ],
+          "operations": [
+            {
+              "op": "read",
+              "actor": "b",
+              "id": "d"
+            },
+            {
+              "op": "acl",
+              "actor": "a",
+              "id": "d",
+              "principal": "b",
+              "deny": [
+                "read"
+              ]
+            },
+            {
+              "op": "read",
+              "actor": "b",
+              "id": "d"
+            },
+            {
+              "op": "acl",
+              "actor": "a",
+              "id": "d",
+              "principal": "b",
+              "allow": [
+                "write"
+              ]
+            },
+            {
+              "op": "write",
+              "actor": "b",
+              "id": "d",
+              "text": "xy",
+              "expected": 1
+            }
+          ]
+        },
+        "expected": {
+          "results": [
+            {
+              "id": "d",
+              "owner": "a",
+              "text": "abc",
+              "version": 1
+            },
+            {
+              "id": "d",
+              "principal": "b",
+              "allow": [],
+              "deny": [
+                "read"
+              ]
+            },
+            {
+              "error": "permission_denied"
+            },
+            {
+              "id": "d",
+              "principal": "b",
+              "allow": [
+                "write"
+              ],
+              "deny": []
+            },
+            {
+              "id": "d",
+              "owner": "a",
+              "text": "xy",
+              "version": 2
+            }
+          ],
+          "state": {
+            "documents": [
+              {
+                "id": "d",
+                "tenant": "t",
+                "owner": "a",
+                "text": "xy",
+                "version": 2,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "abc"
+                  },
+                  {
+                    "version": 2,
+                    "text": "xy"
+                  }
+                ],
+                "acl": [
+                  {
+                    "principal": "b",
+                    "allow": [
+                      "write"
+                    ],
+                    "deny": []
+                  }
+                ]
+              },
+              {
+                "id": "e",
+                "tenant": "u",
+                "owner": "z",
+                "text": "Z",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "Z"
+                  }
+                ],
+                "acl": []
+              }
+            ],
+            "grants": [],
+            "usage": {
+              "t": 2,
+              "u": 1
+            }
+          }
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "results": [
+              {
+                "id": "d",
+                "owner": "a",
+                "text": "abc",
+                "version": 1
+              },
+              {
+                "id": "d",
+                "principal": "b",
+                "allow": [],
+                "deny": [
+                  "read"
+                ]
+              },
+              {
+                "id": "d",
+                "owner": "a",
+                "text": "abc",
+                "version": 1
+              },
+              {
+                "id": "d",
+                "principal": "b",
+                "allow": [
+                  "write"
+                ],
+                "deny": []
+              },
+              {
+                "error": "permission_denied"
+              }
+            ],
+            "state": {
+              "documents": [
+                {
+                  "id": "d",
+                  "tenant": "t",
+                  "owner": "a",
+                  "text": "abc",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "abc"
+                    }
+                  ],
+                  "acl": [
+                    {
+                      "principal": "b",
+                      "allow": [
+                        "write"
+                      ],
+                      "deny": []
+                    }
+                  ]
+                },
+                {
+                  "id": "e",
+                  "tenant": "u",
+                  "owner": "z",
+                  "text": "Z",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "Z"
+                    }
+                  ],
+                  "acl": []
+                }
+              ],
+              "grants": [],
+              "usage": {
+                "t": 3,
+                "u": 1
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "V06-ancestor-revocation",
+        "passed": false,
+        "input": {
+          "tenants": [
+            {
+              "id": "t",
+              "quota": 12
+            },
+            {
+              "id": "u",
+              "quota": 12
+            }
+          ],
+          "principals": [
+            {
+              "id": "a",
+              "tenant": "t"
+            },
+            {
+              "id": "b",
+              "tenant": "t"
+            },
+            {
+              "id": "c",
+              "tenant": "t"
+            },
+            {
+              "id": "z",
+              "tenant": "u"
+            }
+          ],
+          "documents": [
+            {
+              "id": "d",
+              "tenant": "t",
+              "owner": "a",
+              "text": "abc",
+              "acl": []
+            },
+            {
+              "id": "e",
+              "tenant": "u",
+              "owner": "z",
+              "text": "Z"
+            }
+          ],
+          "operations": [
+            {
+              "op": "delegate",
+              "actor": "a",
+              "id": "d",
+              "grant": "g1",
+              "recipient": "b",
+              "rights": [
+                "read",
+                "write",
+                "share"
+              ]
+            },
+            {
+              "op": "delegate",
+              "actor": "b",
+              "id": "d",
+              "grant": "g2",
+              "recipient": "c",
+              "rights": [
+                "read",
+                "write"
+              ],
+              "via": "g1"
+            },
+            {
+              "op": "read",
+              "actor": "c",
+              "id": "d"
+            },
+            {
+              "op": "revoke",
+              "actor": "a",
+              "id": "d",
+              "grant": "g1"
+            },
+            {
+              "op": "read",
+              "actor": "c",
+              "id": "d"
+            },
+            {
+              "op": "write",
+              "actor": "b",
+              "id": "d",
+              "text": "x",
+              "expected": 1
+            }
+          ]
+        },
+        "expected": {
+          "results": [
+            {
+              "grant": "g1",
+              "revoked": false
+            },
+            {
+              "grant": "g2",
+              "revoked": false
+            },
+            {
+              "id": "d",
+              "owner": "a",
+              "text": "abc",
+              "version": 1
+            },
+            {
+              "grant": "g1",
+              "revoked": true
+            },
+            {
+              "error": "permission_denied"
+            },
+            {
+              "error": "permission_denied"
+            }
+          ],
+          "state": {
+            "documents": [
+              {
+                "id": "d",
+                "tenant": "t",
+                "owner": "a",
+                "text": "abc",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "abc"
+                  }
+                ],
+                "acl": []
+              },
+              {
+                "id": "e",
+                "tenant": "u",
+                "owner": "z",
+                "text": "Z",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "Z"
+                  }
+                ],
+                "acl": []
+              }
+            ],
+            "grants": [
+              {
+                "id": "g1",
+                "doc": "d",
+                "issuer": "a",
+                "recipient": "b",
+                "rights": [
+                  "read",
+                  "share",
+                  "write"
+                ],
+                "parent": null,
+                "revoked": true
+              },
+              {
+                "id": "g2",
+                "doc": "d",
+                "issuer": "b",
+                "recipient": "c",
+                "rights": [
+                  "read",
+                  "write"
+                ],
+                "parent": "g1",
+                "revoked": false
+              }
+            ],
+            "usage": {
+              "t": 3,
+              "u": 1
+            }
+          }
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "results": [
+              {
+                "grant": "g1",
+                "revoked": false
+              },
+              {
+                "grant": "g2",
+                "revoked": false
+              },
+              {
+                "id": "d",
+                "owner": "a",
+                "text": "abc",
+                "version": 1
+              },
+              {
+                "grant": "g1",
+                "revoked": true
+              },
+              {
+                "id": "d",
+                "owner": "a",
+                "text": "abc",
+                "version": 1
+              },
+              {
+                "error": "permission_denied"
+              }
+            ],
+            "state": {
+              "documents": [
+                {
+                  "id": "d",
+                  "tenant": "t",
+                  "owner": "a",
+                  "text": "abc",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "abc"
+                    }
+                  ],
+                  "acl": []
+                },
+                {
+                  "id": "e",
+                  "tenant": "u",
+                  "owner": "z",
+                  "text": "Z",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "Z"
+                    }
+                  ],
+                  "acl": []
+                }
+              ],
+              "grants": [
+                {
+                  "id": "g1",
+                  "doc": "d",
+                  "issuer": "a",
+                  "recipient": "b",
+                  "rights": [
+                    "read",
+                    "share",
+                    "write"
+                  ],
+                  "parent": null,
+                  "revoked": true
+                },
+                {
+                  "id": "g2",
+                  "doc": "d",
+                  "issuer": "b",
+                  "recipient": "c",
+                  "rights": [
+                    "read",
+                    "write"
+                  ],
+                  "parent": "g1",
+                  "revoked": false
+                }
+              ],
+              "usage": {
+                "t": 3,
+                "u": 1
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "V07-actor-key-scope",
+        "passed": false,
+        "input": {
+          "tenants": [
+            {
+              "id": "t",
+              "quota": 12
+            },
+            {
+              "id": "u",
+              "quota": 12
+            }
+          ],
+          "principals": [
+            {
+              "id": "a",
+              "tenant": "t"
+            },
+            {
+              "id": "b",
+              "tenant": "t"
+            },
+            {
+              "id": "c",
+              "tenant": "t"
+            },
+            {
+              "id": "z",
+              "tenant": "u"
+            }
+          ],
+          "documents": [
+            {
+              "id": "d",
+              "tenant": "t",
+              "owner": "a",
+              "text": "abc",
+              "acl": []
+            },
+            {
+              "id": "e",
+              "tenant": "u",
+              "owner": "z",
+              "text": "Z"
+            }
+          ],
+          "operations": [
+            {
+              "op": "create",
+              "actor": "a",
+              "id": "f",
+              "text": "x",
+              "key": "k"
+            },
+            {
+              "op": "create",
+              "actor": "b",
+              "id": "h",
+              "text": "y",
+              "key": "k"
+            },
+            {
+              "op": "create",
+              "actor": "a",
+              "id": "f",
+              "text": "x",
+              "key": "k"
+            },
+            {
+              "op": "delete",
+              "actor": "a",
+              "id": "f",
+              "expected": 1
+            },
+            {
+              "op": "create",
+              "actor": "a",
+              "id": "f",
+              "text": "x",
+              "key": "k"
+            }
+          ]
+        },
+        "expected": {
+          "results": [
+            {
+              "id": "f",
+              "owner": "a",
+              "text": "x",
+              "version": 1
+            },
+            {
+              "id": "h",
+              "owner": "b",
+              "text": "y",
+              "version": 1
+            },
+            {
+              "id": "f",
+              "owner": "a",
+              "text": "x",
+              "version": 1
+            },
+            {
+              "id": "f",
+              "deleted": true,
+              "version": 2
+            },
+            {
+              "id": "f",
+              "owner": "a",
+              "text": "x",
+              "version": 1
+            }
+          ],
+          "state": {
+            "documents": [
+              {
+                "id": "d",
+                "tenant": "t",
+                "owner": "a",
+                "text": "abc",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "abc"
+                  }
+                ],
+                "acl": []
+              },
+              {
+                "id": "e",
+                "tenant": "u",
+                "owner": "z",
+                "text": "Z",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "Z"
+                  }
+                ],
+                "acl": []
+              },
+              {
+                "id": "f",
+                "tenant": "t",
+                "owner": "a",
+                "text": null,
+                "version": 2,
+                "deleted": true,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "x"
+                  },
+                  {
+                    "version": 2,
+                    "text": null
+                  }
+                ],
+                "acl": []
+              },
+              {
+                "id": "h",
+                "tenant": "t",
+                "owner": "b",
+                "text": "y",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "y"
+                  }
+                ],
+                "acl": []
+              }
+            ],
+            "grants": [],
+            "usage": {
+              "t": 4,
+              "u": 1
+            }
+          }
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "results": [
+              {
+                "id": "f",
+                "owner": "a",
+                "text": "x",
+                "version": 1
+              },
+              {
+                "error": "idempotency_conflict"
+              },
+              {
+                "id": "f",
+                "owner": "a",
+                "text": "x",
+                "version": 1
+              },
+              {
+                "id": "f",
+                "deleted": true,
+                "version": 2
+              },
+              {
+                "id": "f",
+                "owner": "a",
+                "text": "x",
+                "version": 1
+              }
+            ],
+            "state": {
+              "documents": [
+                {
+                  "id": "d",
+                  "tenant": "t",
+                  "owner": "a",
+                  "text": "abc",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "abc"
+                    }
+                  ],
+                  "acl": []
+                },
+                {
+                  "id": "e",
+                  "tenant": "u",
+                  "owner": "z",
+                  "text": "Z",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "Z"
+                    }
+                  ],
+                  "acl": []
+                },
+                {
+                  "id": "f",
+                  "tenant": "t",
+                  "owner": "a",
+                  "text": null,
+                  "version": 2,
+                  "deleted": true,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "x"
+                    },
+                    {
+                      "version": 2,
+                      "text": null
+                    }
+                  ],
+                  "acl": []
+                }
+              ],
+              "grants": [],
+              "usage": {
+                "t": 3,
+                "u": 1
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "V08-savepoint-state-and-memo",
+        "passed": false,
+        "input": {
+          "tenants": [
+            {
+              "id": "t",
+              "quota": 12
+            },
+            {
+              "id": "u",
+              "quota": 12
+            }
+          ],
+          "principals": [
+            {
+              "id": "a",
+              "tenant": "t"
+            },
+            {
+              "id": "b",
+              "tenant": "t"
+            },
+            {
+              "id": "c",
+              "tenant": "t"
+            },
+            {
+              "id": "z",
+              "tenant": "u"
+            }
+          ],
+          "documents": [
+            {
+              "id": "d",
+              "tenant": "t",
+              "owner": "a",
+              "text": "abc",
+              "acl": []
+            },
+            {
+              "id": "e",
+              "tenant": "u",
+              "owner": "z",
+              "text": "Z"
+            }
+          ],
+          "operations": [
+            {
+              "op": "atomic",
+              "operations": [
+                {
+                  "op": "savepoint",
+                  "name": "s"
+                },
+                {
+                  "op": "write",
+                  "actor": "a",
+                  "id": "d",
+                  "text": "x",
+                  "expected": 1,
+                  "key": "w"
+                },
+                {
+                  "op": "acl",
+                  "actor": "a",
+                  "id": "d",
+                  "principal": "b",
+                  "allow": [
+                    "read"
+                  ]
+                },
+                {
+                  "op": "rollback",
+                  "name": "s"
+                },
+                {
+                  "op": "read",
+                  "actor": "a",
+                  "id": "d"
+                },
+                {
+                  "op": "write",
+                  "actor": "a",
+                  "id": "d",
+                  "text": "y",
+                  "expected": 1,
+                  "key": "w"
+                }
+              ]
+            },
+            {
+              "op": "read",
+              "actor": "b",
+              "id": "d"
+            }
+          ]
+        },
+        "expected": {
+          "results": [
+            {
+              "ok": true,
+              "results": [
+                {
+                  "savepoint": "s"
+                },
+                {
+                  "id": "d",
+                  "owner": "a",
+                  "text": "x",
+                  "version": 2
+                },
+                {
+                  "id": "d",
+                  "principal": "b",
+                  "allow": [
+                    "read"
+                  ],
+                  "deny": []
+                },
+                {
+                  "rolled_back": "s"
+                },
+                {
+                  "id": "d",
+                  "owner": "a",
+                  "text": "abc",
+                  "version": 1
+                },
+                {
+                  "id": "d",
+                  "owner": "a",
+                  "text": "y",
+                  "version": 2
+                }
+              ]
+            },
+            {
+              "error": "permission_denied"
+            }
+          ],
+          "state": {
+            "documents": [
+              {
+                "id": "d",
+                "tenant": "t",
+                "owner": "a",
+                "text": "y",
+                "version": 2,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "abc"
+                  },
+                  {
+                    "version": 2,
+                    "text": "y"
+                  }
+                ],
+                "acl": []
+              },
+              {
+                "id": "e",
+                "tenant": "u",
+                "owner": "z",
+                "text": "Z",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "Z"
+                  }
+                ],
+                "acl": []
+              }
+            ],
+            "grants": [],
+            "usage": {
+              "t": 1,
+              "u": 1
+            }
+          }
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "results": [
+              {
+                "error": "transaction_failed",
+                "index": 5,
+                "cause": {
+                  "error": "idempotency_conflict"
+                },
+                "results": [
+                  {
+                    "savepoint": "s"
+                  },
+                  {
+                    "id": "d",
+                    "owner": "a",
+                    "text": "x",
+                    "version": 2
+                  },
+                  {
+                    "id": "d",
+                    "principal": "b",
+                    "allow": [
+                      "read"
+                    ],
+                    "deny": []
+                  },
+                  {
+                    "rolled_back": "s"
+                  },
+                  {
+                    "id": "d",
+                    "owner": "a",
+                    "text": "x",
+                    "version": 2
+                  }
+                ]
+              },
+              {
+                "error": "permission_denied"
+              }
+            ],
+            "state": {
+              "documents": [
+                {
+                  "id": "d",
+                  "tenant": "t",
+                  "owner": "a",
+                  "text": "abc",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "abc"
+                    }
+                  ],
+                  "acl": []
+                },
+                {
+                  "id": "e",
+                  "tenant": "u",
+                  "owner": "z",
+                  "text": "Z",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "Z"
+                    }
+                  ],
+                  "acl": []
+                }
+              ],
+              "grants": [],
+              "usage": {
+                "t": 3,
+                "u": 1
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "V09-atomic-failure-memo",
+        "passed": true
+      },
+      {
+        "id": "V10-error-precedence-isolation",
+        "passed": false,
+        "input": {
+          "tenants": [
+            {
+              "id": "t",
+              "quota": 12
+            },
+            {
+              "id": "u",
+              "quota": 12
+            }
+          ],
+          "principals": [
+            {
+              "id": "a",
+              "tenant": "t"
+            },
+            {
+              "id": "b",
+              "tenant": "t"
+            },
+            {
+              "id": "c",
+              "tenant": "t"
+            },
+            {
+              "id": "z",
+              "tenant": "u"
+            }
+          ],
+          "documents": [
+            {
+              "id": "d",
+              "tenant": "t",
+              "owner": "a",
+              "text": "abc",
+              "acl": []
+            },
+            {
+              "id": "e",
+              "tenant": "u",
+              "owner": "z",
+              "text": "Z"
+            }
+          ],
+          "operations": [
+            {
+              "op": "write",
+              "actor": "b",
+              "id": "d",
+              "text": "xxxxxxxxxxxxxxxxxxxx",
+              "expected": 99
+            },
+            {
+              "op": "write",
+              "actor": "a",
+              "id": "d",
+              "text": "xxxxxxxxxxxxxxxxxxxx",
+              "expected": 99
+            },
+            {
+              "op": "write",
+              "actor": "a",
+              "id": "d",
+              "text": "xxxxxxxxxxxxxxxxxxxx",
+              "expected": 1
+            },
+            {
+              "op": "read",
+              "actor": "z",
+              "id": "d"
+            },
+            {
+              "op": "read",
+              "actor": "a",
+              "id": "d",
+              "version": 99
+            }
+          ]
+        },
+        "expected": {
+          "results": [
+            {
+              "error": "permission_denied"
+            },
+            {
+              "error": "version_conflict",
+              "actual": 1
+            },
+            {
+              "error": "quota_exceeded"
+            },
+            {
+              "error": "document_not_found"
+            },
+            {
+              "error": "version_not_found"
+            }
+          ],
+          "state": {
+            "documents": [
+              {
+                "id": "d",
+                "tenant": "t",
+                "owner": "a",
+                "text": "abc",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "abc"
+                  }
+                ],
+                "acl": []
+              },
+              {
+                "id": "e",
+                "tenant": "u",
+                "owner": "z",
+                "text": "Z",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "Z"
+                  }
+                ],
+                "acl": []
+              }
+            ],
+            "grants": [],
+            "usage": {
+              "t": 3,
+              "u": 1
+            }
+          }
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "results": [
+              {
+                "error": "permission_denied"
+              },
+              {
+                "error": "version_conflict",
+                "actual": 1
+              },
+              {
+                "error": "quota_exceeded"
+              },
+              {
+                "error": "permission_denied"
+              },
+              {
+                "error": "version_not_found"
+              }
+            ],
+            "state": {
+              "documents": [
+                {
+                  "id": "d",
+                  "tenant": "t",
+                  "owner": "a",
+                  "text": "abc",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "abc"
+                    }
+                  ],
+                  "acl": []
+                },
+                {
+                  "id": "e",
+                  "tenant": "u",
+                  "owner": "z",
+                  "text": "Z",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "Z"
+                    }
+                  ],
+                  "acl": []
+                }
+              ],
+              "grants": [],
+              "usage": {
+                "t": 3,
+                "u": 1
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "V11-delegate-source",
+        "passed": true
+      },
+      {
+        "id": "V12-delete-quota-history",
+        "passed": true
+      },
+      {
+        "id": "V13-younger-savepoint",
+        "passed": true
+      },
+      {
+        "id": "V14-grant-snapshot-and-current-deny",
+        "passed": false,
+        "input": {
+          "tenants": [
+            {
+              "id": "t",
+              "quota": 12
+            },
+            {
+              "id": "u",
+              "quota": 12
+            }
+          ],
+          "principals": [
+            {
+              "id": "a",
+              "tenant": "t"
+            },
+            {
+              "id": "b",
+              "tenant": "t"
+            },
+            {
+              "id": "c",
+              "tenant": "t"
+            },
+            {
+              "id": "z",
+              "tenant": "u"
+            }
+          ],
+          "documents": [
+            {
+              "id": "d",
+              "tenant": "t",
+              "owner": "a",
+              "text": "abc",
+              "acl": []
+            },
+            {
+              "id": "e",
+              "tenant": "u",
+              "owner": "z",
+              "text": "Z"
+            }
+          ],
+          "operations": [
+            {
+              "op": "delegate",
+              "actor": "a",
+              "id": "d",
+              "grant": "g1",
+              "recipient": "b",
+              "rights": [
+                "read",
+                "share"
+              ]
+            },
+            {
+              "op": "acl",
+              "actor": "a",
+              "id": "d",
+              "principal": "b",
+              "deny": [
+                "share"
+              ]
+            },
+            {
+              "op": "delegate",
+              "actor": "b",
+              "id": "d",
+              "grant": "g2",
+              "recipient": "c",
+              "rights": [
+                "read"
+              ],
+              "via": "g1"
+            },
+            {
+              "op": "read",
+              "actor": "b",
+              "id": "d"
+            },
+            {
+              "op": "revoke",
+              "actor": "a",
+              "id": "d",
+              "grant": "g1"
+            },
+            {
+              "op": "read",
+              "actor": "b",
+              "id": "d"
+            }
+          ]
+        },
+        "expected": {
+          "results": [
+            {
+              "grant": "g1",
+              "revoked": false
+            },
+            {
+              "id": "d",
+              "principal": "b",
+              "allow": [],
+              "deny": [
+                "share"
+              ]
+            },
+            {
+              "error": "permission_denied"
+            },
+            {
+              "id": "d",
+              "owner": "a",
+              "text": "abc",
+              "version": 1
+            },
+            {
+              "grant": "g1",
+              "revoked": true
+            },
+            {
+              "error": "permission_denied"
+            }
+          ],
+          "state": {
+            "documents": [
+              {
+                "id": "d",
+                "tenant": "t",
+                "owner": "a",
+                "text": "abc",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "abc"
+                  }
+                ],
+                "acl": [
+                  {
+                    "principal": "b",
+                    "allow": [],
+                    "deny": [
+                      "share"
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "e",
+                "tenant": "u",
+                "owner": "z",
+                "text": "Z",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "Z"
+                  }
+                ],
+                "acl": []
+              }
+            ],
+            "grants": [
+              {
+                "id": "g1",
+                "doc": "d",
+                "issuer": "a",
+                "recipient": "b",
+                "rights": [
+                  "read",
+                  "share"
+                ],
+                "parent": null,
+                "revoked": true
+              }
+            ],
+            "usage": {
+              "t": 3,
+              "u": 1
+            }
+          }
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "results": [
+              {
+                "grant": "g1",
+                "revoked": false
+              },
+              {
+                "id": "d",
+                "principal": "b",
+                "allow": [],
+                "deny": [
+                  "share"
+                ]
+              },
+              {
+                "grant": "g2",
+                "revoked": false
+              },
+              {
+                "id": "d",
+                "owner": "a",
+                "text": "abc",
+                "version": 1
+              },
+              {
+                "grant": "g1",
+                "revoked": true
+              },
+              {
+                "error": "permission_denied"
+              }
+            ],
+            "state": {
+              "documents": [
+                {
+                  "id": "d",
+                  "tenant": "t",
+                  "owner": "a",
+                  "text": "abc",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "abc"
+                    }
+                  ],
+                  "acl": [
+                    {
+                      "principal": "b",
+                      "allow": [],
+                      "deny": [
+                        "share"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "e",
+                  "tenant": "u",
+                  "owner": "z",
+                  "text": "Z",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "Z"
+                    }
+                  ],
+                  "acl": []
+                }
+              ],
+              "grants": [
+                {
+                  "id": "g1",
+                  "doc": "d",
+                  "issuer": "a",
+                  "recipient": "b",
+                  "rights": [
+                    "read",
+                    "share"
+                  ],
+                  "parent": null,
+                  "revoked": true
+                },
+                {
+                  "id": "g2",
+                  "doc": "d",
+                  "issuer": "b",
+                  "recipient": "c",
+                  "rights": [
+                    "read"
+                  ],
+                  "parent": "g1",
+                  "revoked": false
+                }
+              ],
+              "usage": {
+                "t": 3,
+                "u": 1
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "V15-failed-request-not-memoized",
+        "passed": false,
+        "input": {
+          "tenants": [
+            {
+              "id": "t",
+              "quota": 12
+            },
+            {
+              "id": "u",
+              "quota": 12
+            }
+          ],
+          "principals": [
+            {
+              "id": "a",
+              "tenant": "t"
+            },
+            {
+              "id": "b",
+              "tenant": "t"
+            },
+            {
+              "id": "c",
+              "tenant": "t"
+            },
+            {
+              "id": "z",
+              "tenant": "u"
+            }
+          ],
+          "documents": [
+            {
+              "id": "d",
+              "tenant": "t",
+              "owner": "a",
+              "text": "abc",
+              "acl": []
+            },
+            {
+              "id": "e",
+              "tenant": "u",
+              "owner": "z",
+              "text": "Z"
+            }
+          ],
+          "operations": [
+            {
+              "op": "write",
+              "actor": "b",
+              "id": "d",
+              "text": "x",
+              "expected": 1,
+              "key": "k"
+            },
+            {
+              "op": "acl",
+              "actor": "a",
+              "id": "d",
+              "principal": "b",
+              "allow": [
+                "write"
+              ]
+            },
+            {
+              "op": "write",
+              "actor": "b",
+              "id": "d",
+              "text": "x",
+              "expected": 1,
+              "key": "k"
+            },
+            {
+              "op": "write",
+              "actor": "b",
+              "id": "d",
+              "text": "y",
+              "expected": 2,
+              "key": "k"
+            }
+          ]
+        },
+        "expected": {
+          "results": [
+            {
+              "error": "permission_denied"
+            },
+            {
+              "id": "d",
+              "principal": "b",
+              "allow": [
+                "write"
+              ],
+              "deny": []
+            },
+            {
+              "id": "d",
+              "owner": "a",
+              "text": "x",
+              "version": 2
+            },
+            {
+              "error": "idempotency_conflict"
+            }
+          ],
+          "state": {
+            "documents": [
+              {
+                "id": "d",
+                "tenant": "t",
+                "owner": "a",
+                "text": "x",
+                "version": 2,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "abc"
+                  },
+                  {
+                    "version": 2,
+                    "text": "x"
+                  }
+                ],
+                "acl": [
+                  {
+                    "principal": "b",
+                    "allow": [
+                      "write"
+                    ],
+                    "deny": []
+                  }
+                ]
+              },
+              {
+                "id": "e",
+                "tenant": "u",
+                "owner": "z",
+                "text": "Z",
+                "version": 1,
+                "deleted": false,
+                "history": [
+                  {
+                    "version": 1,
+                    "text": "Z"
+                  }
+                ],
+                "acl": []
+              }
+            ],
+            "grants": [],
+            "usage": {
+              "t": 1,
+              "u": 1
+            }
+          }
+        },
+        "actual": {
+          "ok": true,
+          "value": {
+            "results": [
+              {
+                "error": "permission_denied"
+              },
+              {
+                "id": "d",
+                "principal": "b",
+                "allow": [
+                  "write"
+                ],
+                "deny": []
+              },
+              {
+                "error": "permission_denied"
+              },
+              {
+                "error": "permission_denied"
+              }
+            ],
+            "state": {
+              "documents": [
+                {
+                  "id": "d",
+                  "tenant": "t",
+                  "owner": "a",
+                  "text": "abc",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "abc"
+                    }
+                  ],
+                  "acl": [
+                    {
+                      "principal": "b",
+                      "allow": [
+                        "write"
+                      ],
+                      "deny": []
+                    }
+                  ]
+                },
+                {
+                  "id": "e",
+                  "tenant": "u",
+                  "owner": "z",
+                  "text": "Z",
+                  "version": 1,
+                  "deleted": false,
+                  "history": [
+                    {
+                      "version": 1,
+                      "text": "Z"
+                    }
+                  ],
+                  "acl": []
+                }
+              ],
+              "grants": [],
+              "usage": {
+                "t": 3,
+                "u": 1
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "V16-recipient-errors-and-context",
+        "passed": true
+      }
+    ]
+  },
+  "interpretation": "Final task success requires teacher verification; never infer it from schema alone."
+}

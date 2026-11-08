@@ -1,0 +1,264 @@
+{
+  "task_id": "T23",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 7,
+  "visible_total": 10,
+  "code_sha256": "c89892224f1e889d72d4969b89043c22f4986d8fe1658de6e8e19d2718b80f82",
+  "input_tokens_known": 24993,
+  "output_tokens_known": 464,
+  "total_tokens_known": 25457,
+  "usage_complete": true,
+  "budget": 24000,
+  "budget_overrun": 1457,
+  "model_calls": 8,
+  "tool_calls": 3,
+  "invalid_actions": 1,
+  "tokens_by_role": {
+    "coordinator": {
+      "input": 10638,
+      "output": 286,
+      "total": 10924,
+      "calls": 3
+    },
+    "tester": {
+      "input": 8098,
+      "output": 82,
+      "total": 8180,
+      "calls": 3
+    },
+    "developer": {
+      "input": 6257,
+      "output": 96,
+      "total": 6353,
+      "calls": 2
+    }
+  },
+  "seconds": 23.059303,
+  "final_report": {
+    "passed": false,
+    "total": 10,
+    "passed_count": 7,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": {}
+        },
+        "actual": {
+          "value": {}
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": {
+            "a": {
+              "x": 2
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "a": {
+              "x": 2
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": false,
+        "expected": {
+          "value": {
+            "a": {
+              "x": 5
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "a": {
+              "x": 3
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": true,
+        "expected": {
+          "value": {
+            "a": {
+              "x": 2
+            },
+            "b": {
+              "x": 3
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "a": {
+              "x": 2
+            },
+            "b": {
+              "x": 3
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": true,
+        "expected": {
+          "value": {
+            "a": {
+              "x": 2,
+              "y": 3
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "a": {
+              "x": 2,
+              "y": 3
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": false,
+        "expected": {
+          "value": {
+            "a": {
+              "x": 0
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "a": {
+              "x": -2
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": true,
+        "expected": {
+          "value": {
+            "": {
+              "": 1
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "": {
+              "": 1
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": true,
+        "expected": {
+          "value": {
+            "a": {
+              "x": 0
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "a": {
+              "x": 0
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": true,
+        "expected": {
+          "value": {
+            "b": {
+              "z": -3
+            },
+            "a": {
+              "y": 4
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "b": {
+              "z": -3
+            },
+            "a": {
+              "y": 4
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": false,
+        "expected": {
+          "value": {
+            "a": {
+              "x": 4
+            },
+            "b": {
+              "y": 2
+            }
+          }
+        },
+        "actual": {
+          "value": {
+            "a": {
+              "x": 3
+            },
+            "b": {
+              "y": 2
+            }
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "c89892224f1e889d72d4969b89043c22f4986d8fe1658de6e8e19d2718b80f82",
+    "seconds": 0.030164
+  },
+  "architecture": "coordinator",
+  "repeat": 2,
+  "seed": 246867389,
+  "episode_id": "T23_coordinator_b24000_r2"
+}

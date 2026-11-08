@@ -1,0 +1,7 @@
+﻿budget,architecture,episodes,complete_usage_episodes,input_token_share_percent,open_passed_but_workflow_failed,fixed_before_reviewer,coordinator_delegation_limit_episodes,finish_response_over_budget
+24000,coordinator,100,99,97.14723229759589,39,,56,9
+24000,fixed,100,100,97.21465527076069,40,11,,12
+24000,single,100,100,97.10434080749552,19,,,15
+48000,coordinator,100,100,97.31513959077438,6,,100,5
+48000,fixed,100,100,97.19507248567093,4,0,,0
+48000,single,100,98,97.5080119186057,8,,,6

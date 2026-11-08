@@ -1,0 +1,16 @@
+{
+  "task_id": "T17",
+  "architecture": "coordinator",
+  "budget": 24000,
+  "repeat": 1,
+  "seed": 13695594,
+  "episode_id": "T17_coordinator_b24000_r1",
+  "status": "interrupted",
+  "success": false,
+  "usage_complete": false,
+  "total_tokens_known": null,
+  "input_tokens_known": null,
+  "output_tokens_known": null,
+  "seconds": null,
+  "visible_passed": false
+}

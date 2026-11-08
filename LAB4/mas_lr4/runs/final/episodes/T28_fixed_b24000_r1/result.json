@@ -1,0 +1,290 @@
+{
+  "task_id": "T28",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": true,
+  "visible_passed_count": 10,
+  "visible_total": 10,
+  "code_sha256": "f48cad5d01dce635e0a6cfacf1cbbf29df1f84f61b32d0ade61096be113fab52",
+  "input_tokens_known": 24076,
+  "output_tokens_known": 579,
+  "total_tokens_known": 24655,
+  "usage_complete": true,
+  "budget": 24000,
+  "budget_overrun": 655,
+  "model_calls": 7,
+  "tool_calls": 4,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "programmer": {
+      "input": 17108,
+      "output": 387,
+      "total": 17495,
+      "calls": 5
+    },
+    "reviewer": {
+      "input": 6968,
+      "output": 192,
+      "total": 7160,
+      "calls": 2
+    }
+  },
+  "seconds": 18.776036,
+  "final_report": {
+    "passed": true,
+    "total": 10,
+    "passed_count": 10,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": {
+            "added": [],
+            "removed": [],
+            "changed": []
+          }
+        },
+        "actual": {
+          "value": {
+            "added": [],
+            "removed": [],
+            "changed": []
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": {
+            "added": [
+              "a"
+            ],
+            "removed": [],
+            "changed": []
+          }
+        },
+        "actual": {
+          "value": {
+            "added": [
+              "a"
+            ],
+            "removed": [],
+            "changed": []
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": true,
+        "expected": {
+          "value": {
+            "added": [],
+            "removed": [
+              "a"
+            ],
+            "changed": []
+          }
+        },
+        "actual": {
+          "value": {
+            "added": [],
+            "removed": [
+              "a"
+            ],
+            "changed": []
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": true,
+        "expected": {
+          "value": {
+            "added": [],
+            "removed": [],
+            "changed": [
+              "a"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "added": [],
+            "removed": [],
+            "changed": [
+              "a"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": true,
+        "expected": {
+          "value": {
+            "added": [],
+            "removed": [],
+            "changed": []
+          }
+        },
+        "actual": {
+          "value": {
+            "added": [],
+            "removed": [],
+            "changed": []
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": true,
+        "expected": {
+          "value": {
+            "added": [
+              "b"
+            ],
+            "removed": [
+              "z"
+            ],
+            "changed": []
+          }
+        },
+        "actual": {
+          "value": {
+            "added": [
+              "b"
+            ],
+            "removed": [
+              "z"
+            ],
+            "changed": []
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": true,
+        "expected": {
+          "value": {
+            "added": [],
+            "removed": [],
+            "changed": [
+              "a",
+              "b"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "added": [],
+            "removed": [],
+            "changed": [
+              "a",
+              "b"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": true,
+        "expected": {
+          "value": {
+            "added": [
+              "a",
+              "z"
+            ],
+            "removed": [],
+            "changed": []
+          }
+        },
+        "actual": {
+          "value": {
+            "added": [
+              "a",
+              "z"
+            ],
+            "removed": [],
+            "changed": []
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": true,
+        "expected": {
+          "value": {
+            "added": [],
+            "removed": [],
+            "changed": [
+              "a"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "added": [],
+            "removed": [],
+            "changed": [
+              "a"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": true,
+        "expected": {
+          "value": {
+            "added": [
+              "b"
+            ],
+            "removed": [
+              "a"
+            ],
+            "changed": []
+          }
+        },
+        "actual": {
+          "value": {
+            "added": [
+              "b"
+            ],
+            "removed": [
+              "a"
+            ],
+            "changed": []
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "f48cad5d01dce635e0a6cfacf1cbbf29df1f84f61b32d0ade61096be113fab52",
+    "seconds": 0.029163
+  },
+  "architecture": "fixed",
+  "repeat": 1,
+  "seed": 152307026,
+  "episode_id": "T28_fixed_b24000_r1"
+}

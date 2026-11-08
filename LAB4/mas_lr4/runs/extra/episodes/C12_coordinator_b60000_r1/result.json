@@ -1,0 +1,232 @@
+{
+  "task_id": "C12",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 1,
+  "visible_total": 6,
+  "code_sha256": "c5eb0dec7e2258ab0b4c1ac723d24c43435b7d8330567f79850728754c083ffb",
+  "input_tokens_known": 72075,
+  "output_tokens_known": 2097,
+  "total_tokens_known": 74172,
+  "usage_complete": true,
+  "budget": 60000,
+  "budget_overrun": 14172,
+  "model_calls": 7,
+  "tool_calls": 2,
+  "invalid_actions": 2,
+  "tokens_by_role": {
+    "coordinator": {
+      "input": 18833,
+      "output": 207,
+      "total": 19040,
+      "calls": 2
+    },
+    "developer": {
+      "input": 53242,
+      "output": 1890,
+      "total": 55132,
+      "calls": 5
+    }
+  },
+  "seconds": 67.256122,
+  "final_report": {
+    "passed": false,
+    "total": 6,
+    "passed_count": 1,
+    "cases": [
+      {
+        "id": "v01",
+        "passed": false,
+        "expected": {
+          "value": [
+            {
+              "decision": "allow",
+              "sources": [
+                "deep"
+              ]
+            }
+          ]
+        },
+        "actual": {
+          "value": [
+            {
+              "decision": "deny",
+              "sources": [
+                "root"
+              ]
+            }
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v02",
+        "passed": false,
+        "expected": {
+          "value": [
+            {
+              "decision": "deny",
+              "sources": []
+            },
+            {
+              "decision": "deny",
+              "sources": []
+            },
+            {
+              "decision": "allow",
+              "sources": [
+                "p"
+              ]
+            }
+          ]
+        },
+        "actual": {
+          "value": [
+            {
+              "decision": "allow",
+              "sources": [
+                "p"
+              ]
+            },
+            {
+              "decision": "allow",
+              "sources": [
+                "p"
+              ]
+            },
+            {
+              "decision": "allow",
+              "sources": [
+                "p"
+              ]
+            }
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v03",
+        "passed": true,
+        "expected": {
+          "value": [
+            {
+              "decision": "deny",
+              "sources": [
+                "a",
+                "z"
+              ]
+            }
+          ]
+        },
+        "actual": {
+          "value": [
+            {
+              "decision": "deny",
+              "sources": [
+                "a",
+                "z"
+              ]
+            }
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v04",
+        "passed": false,
+        "expected": {
+          "value": [
+            {
+              "decision": "deny",
+              "sources": [
+                "local"
+              ]
+            }
+          ]
+        },
+        "actual": {
+          "value": [
+            {
+              "decision": "allow",
+              "sources": [
+                "source"
+              ]
+            }
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v05",
+        "passed": false,
+        "expected": {
+          "value": [
+            {
+              "decision": "deny",
+              "sources": []
+            }
+          ]
+        },
+        "actual": {
+          "value": [
+            {
+              "decision": "allow",
+              "sources": [
+                "grant"
+              ]
+            }
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v06",
+        "passed": false,
+        "expected": {
+          "value": [
+            {
+              "decision": "allow",
+              "sources": [
+                "p"
+              ]
+            },
+            {
+              "decision": "deny",
+              "sources": []
+            }
+          ]
+        },
+        "actual": {
+          "value": [
+            {
+              "decision": "allow",
+              "sources": [
+                "p"
+              ]
+            },
+            {
+              "decision": "allow",
+              "sources": [
+                "p"
+              ]
+            }
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "c5eb0dec7e2258ab0b4c1ac723d24c43435b7d8330567f79850728754c083ffb",
+    "seconds": 0.033655
+  },
+  "architecture": "coordinator",
+  "repeat": 1,
+  "seed": 28043073,
+  "episode_id": "C12_coordinator_b60000_r1"
+}

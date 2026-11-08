@@ -1,0 +1,229 @@
+{
+  "task_id": "T10",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 1,
+  "visible_total": 10,
+  "code_sha256": "a86a8cae2962d21b66b62a2920bc3a8d5daa4d8766e0cb81752f4a6d5c3f518e",
+  "input_tokens_known": 50391,
+  "output_tokens_known": 1457,
+  "total_tokens_known": 51848,
+  "usage_complete": true,
+  "budget": 48000,
+  "budget_overrun": 3848,
+  "model_calls": 12,
+  "tool_calls": 7,
+  "invalid_actions": 6,
+  "tokens_by_role": {
+    "single": {
+      "input": 50391,
+      "output": 1457,
+      "total": 51848,
+      "calls": 12
+    }
+  },
+  "seconds": 46.573539,
+  "final_report": {
+    "passed": false,
+    "total": 10,
+    "passed_count": 1,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": false,
+        "expected": {
+          "value": [
+            [
+              "a",
+              5
+            ]
+          ]
+        },
+        "actual": {
+          "raises": "NameError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": false,
+        "expected": {
+          "value": [
+            [
+              "a",
+              5
+            ],
+            [
+              "b",
+              10
+            ]
+          ]
+        },
+        "actual": {
+          "raises": "NameError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": false,
+        "expected": {
+          "value": [
+            [
+              "b",
+              0
+            ],
+            [
+              "a",
+              5
+            ]
+          ]
+        },
+        "actual": {
+          "raises": "NameError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": false,
+        "expected": {
+          "value": [
+            [
+              "x",
+              0
+            ]
+          ]
+        },
+        "actual": {
+          "raises": "NameError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": false,
+        "expected": {
+          "value": [
+            [
+              "a",
+              10
+            ]
+          ]
+        },
+        "actual": {
+          "raises": "NameError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": false,
+        "expected": {
+          "value": [
+            [
+              "a",
+              0
+            ],
+            [
+              "b",
+              3
+            ]
+          ]
+        },
+        "actual": {
+          "raises": "NameError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": false,
+        "expected": {
+          "value": [
+            [
+              "z",
+              6
+            ],
+            [
+              "a",
+              4
+            ]
+          ]
+        },
+        "actual": {
+          "raises": "NameError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": false,
+        "expected": {
+          "value": [
+            [
+              "a",
+              5
+            ],
+            [
+              "b",
+              5
+            ]
+          ]
+        },
+        "actual": {
+          "raises": "NameError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": false,
+        "expected": {
+          "value": [
+            [
+              "a",
+              1
+            ],
+            [
+              "b",
+              0
+            ]
+          ]
+        },
+        "actual": {
+          "raises": "NameError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "a86a8cae2962d21b66b62a2920bc3a8d5daa4d8766e0cb81752f4a6d5c3f518e",
+    "seconds": 0.031284
+  },
+  "architecture": "single",
+  "repeat": 1,
+  "seed": 86229865,
+  "episode_id": "T10_single_b48000_r1"
+}

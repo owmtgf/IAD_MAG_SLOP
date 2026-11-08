@@ -1,0 +1,7 @@
+﻿task_id,architecture,budget,repeat,seed,episode_id,status,finished,model_calls,tool_calls,tokens,input_tokens_known,output_tokens_known,usage_complete,seconds,cost,budget_overrun,visible_passed,visible_passed_count,visible_total,schema_valid,open_program_examples_passed,open_program_examples_total,final_success
+M04,single,60000,1,114765970,M04_single_b60000_r1,budget_exhausted,False,4,3,105077,104811,266,True,24.211122,,45077,,,,False,,,
+M01,single,60000,1,223701461,M01_single_b60000_r1,budget_exhausted,False,5,4,73415,69355,4060,True,130.343539,,13415,False,0,12,,,,
+M04,coordinator,60000,1,114765970,M04_coordinator_b60000_r1,budget_exhausted,False,4,2,67778,67546,232,True,18.520274,,7778,,,,False,,,
+M01,coordinator,60000,1,223701461,M01_coordinator_b60000_r1,budget_exhausted,False,7,3,60334,58280,2054,True,70.222423,,334,False,0,12,,,,
+M04,fixed,60000,1,114765970,M04_fixed_b60000_r1,budget_exhausted,False,4,3,105100,104903,197,True,21.956942,,45100,,,,False,,,
+M01,fixed,60000,1,223701461,M01_fixed_b60000_r1,budget_exhausted,False,6,5,61217,51222,9995,True,289.685528,,1217,False,0,12,,,,

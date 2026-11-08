@@ -1,0 +1,508 @@
+{
+  "task_id": "C09",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 2,
+  "visible_total": 6,
+  "code_sha256": "9598ad63210650d5c1a16e79bd5c5f7094ae413abc0dde1f20d3fbe562e342b5",
+  "input_tokens_known": 75790,
+  "output_tokens_known": 2597,
+  "total_tokens_known": 78387,
+  "usage_complete": true,
+  "budget": 60000,
+  "budget_overrun": 18387,
+  "model_calls": 6,
+  "tool_calls": 2,
+  "invalid_actions": 2,
+  "tokens_by_role": {
+    "single": {
+      "input": 75790,
+      "output": 2597,
+      "total": 78387,
+      "calls": 6
+    }
+  },
+  "seconds": 83.336257,
+  "final_report": {
+    "passed": false,
+    "total": 6,
+    "passed_count": 2,
+    "cases": [
+      {
+        "id": "v01",
+        "passed": true,
+        "expected": {
+          "value": {
+            "orders": [
+              {
+                "id": "a",
+                "state": "shipped",
+                "paid": 10,
+                "refunded": 0,
+                "net": 10,
+                "due": 0
+              }
+            ],
+            "log": [
+              {
+                "id": "p",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "q",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "s",
+                "status": "applied",
+                "replay": false
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "orders": [
+              {
+                "id": "a",
+                "state": "shipped",
+                "paid": 10,
+                "refunded": 0,
+                "net": 10,
+                "due": 0
+              }
+            ],
+            "log": [
+              {
+                "id": "p",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "q",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "s",
+                "status": "applied",
+                "replay": false
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v02",
+        "passed": false,
+        "expected": {
+          "value": {
+            "orders": [
+              {
+                "id": "a",
+                "state": "open",
+                "paid": 10,
+                "refunded": 0,
+                "net": 10,
+                "due": 0
+              }
+            ],
+            "log": [
+              {
+                "id": "s",
+                "status": "rejected",
+                "replay": false
+              },
+              {
+                "id": "p",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "s",
+                "status": "rejected",
+                "replay": true
+              },
+              {
+                "id": "s",
+                "status": "conflict",
+                "replay": false
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "orders": [
+              {
+                "id": "a",
+                "state": "shipped",
+                "paid": 10,
+                "refunded": 0,
+                "net": 10,
+                "due": 0
+              }
+            ],
+            "log": [
+              {
+                "id": "s",
+                "status": "rejected",
+                "replay": false
+              },
+              {
+                "id": "p",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "s",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "s",
+                "status": "conflict",
+                "replay": false
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v03",
+        "passed": false,
+        "expected": {
+          "value": {
+            "orders": [
+              {
+                "id": "a",
+                "state": "cancelled",
+                "paid": 7,
+                "refunded": 7,
+                "net": 0,
+                "due": 0
+              }
+            ],
+            "log": [
+              {
+                "id": "p",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "c",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "r",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "r2",
+                "status": "applied",
+                "replay": false
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "orders": [
+              {
+                "id": "a",
+                "state": "cancelled",
+                "paid": 0,
+                "refunded": 0,
+                "net": 0,
+                "due": 0
+              }
+            ],
+            "log": [
+              {
+                "id": "p",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "c",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "r",
+                "status": "rejected",
+                "replay": false
+              },
+              {
+                "id": "r2",
+                "status": "rejected",
+                "replay": false
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v04",
+        "passed": false,
+        "expected": {
+          "value": {
+            "orders": [
+              {
+                "id": "a",
+                "state": "shipped",
+                "paid": 10,
+                "refunded": 10,
+                "net": 0,
+                "due": 0
+              }
+            ],
+            "log": [
+              {
+                "id": "p",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "s",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "r",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "x",
+                "status": "rejected",
+                "replay": false
+              },
+              {
+                "id": "y",
+                "status": "applied",
+                "replay": false
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "orders": [
+              {
+                "id": "a",
+                "state": "shipped",
+                "paid": 10,
+                "refunded": 15,
+                "net": -5,
+                "due": 0
+              }
+            ],
+            "log": [
+              {
+                "id": "p",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "s",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "r",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "x",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "y",
+                "status": "applied",
+                "replay": false
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v05",
+        "passed": true,
+        "expected": {
+          "value": {
+            "orders": [
+              {
+                "id": "a",
+                "state": "open",
+                "paid": 0,
+                "refunded": 0,
+                "net": 0,
+                "due": 10
+              }
+            ],
+            "log": [
+              {
+                "id": "p",
+                "status": "rejected",
+                "replay": false
+              },
+              {
+                "id": "q",
+                "status": "rejected",
+                "replay": false
+              },
+              {
+                "id": "r",
+                "status": "rejected",
+                "replay": false
+              },
+              {
+                "id": "s",
+                "status": "rejected",
+                "replay": false
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "orders": [
+              {
+                "id": "a",
+                "state": "open",
+                "paid": 0,
+                "refunded": 0,
+                "net": 0,
+                "due": 10
+              }
+            ],
+            "log": [
+              {
+                "id": "p",
+                "status": "rejected",
+                "replay": false
+              },
+              {
+                "id": "q",
+                "status": "rejected",
+                "replay": false
+              },
+              {
+                "id": "r",
+                "status": "rejected",
+                "replay": false
+              },
+              {
+                "id": "s",
+                "status": "rejected",
+                "replay": false
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "v06",
+        "passed": false,
+        "expected": {
+          "value": {
+            "orders": [
+              {
+                "id": "a",
+                "state": "open",
+                "paid": 10,
+                "refunded": 0,
+                "net": 10,
+                "due": 0
+              }
+            ],
+            "log": [
+              {
+                "id": "x",
+                "status": "rejected",
+                "replay": false
+              },
+              {
+                "id": "x",
+                "status": "conflict",
+                "replay": false
+              },
+              {
+                "id": "x",
+                "status": "rejected",
+                "replay": true
+              },
+              {
+                "id": "z",
+                "status": "applied",
+                "replay": false
+              }
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "orders": [
+              {
+                "id": "a",
+                "state": "open",
+                "paid": 2,
+                "refunded": 0,
+                "net": 2,
+                "due": 8
+              }
+            ],
+            "log": [
+              {
+                "id": "x",
+                "status": "rejected",
+                "replay": false
+              },
+              {
+                "id": "x",
+                "status": "applied",
+                "replay": false
+              },
+              {
+                "id": "x",
+                "status": "rejected",
+                "replay": false
+              },
+              {
+                "id": "z",
+                "status": "rejected",
+                "replay": false
+              }
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "9598ad63210650d5c1a16e79bd5c5f7094ae413abc0dde1f20d3fbe562e342b5",
+    "seconds": 0.030673
+  },
+  "architecture": "single",
+  "repeat": 2,
+  "seed": 135847709,
+  "episode_id": "C09_single_b60000_r2"
+}

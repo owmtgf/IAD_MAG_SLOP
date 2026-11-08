@@ -1,0 +1,214 @@
+{
+  "task_id": "T38",
+  "status": "budget_exhausted",
+  "success": false,
+  "visible_passed": false,
+  "visible_passed_count": 8,
+  "visible_total": 10,
+  "code_sha256": "7c2e237572000d4e568878fe6e9929ee1f412c28efdc4b94a5391a2f1020358f",
+  "input_tokens_known": 30777,
+  "output_tokens_known": 598,
+  "total_tokens_known": 31375,
+  "usage_complete": true,
+  "budget": 24000,
+  "budget_overrun": 7375,
+  "model_calls": 7,
+  "tool_calls": 4,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "single": {
+      "input": 30777,
+      "output": 598,
+      "total": 31375,
+      "calls": 7
+    }
+  },
+  "seconds": 19.79034,
+  "final_report": {
+    "passed": false,
+    "total": 10,
+    "passed_count": 8,
+    "cases": [
+      {
+        "id": "C01",
+        "passed": true,
+        "expected": {
+          "value": []
+        },
+        "actual": {
+          "value": []
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C02",
+        "passed": true,
+        "expected": {
+          "value": [
+            3,
+            2
+          ]
+        },
+        "actual": {
+          "value": [
+            3,
+            2
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C03",
+        "passed": false,
+        "expected": {
+          "value": [
+            1,
+            5
+          ]
+        },
+        "actual": {
+          "raises": "ContractError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C04",
+        "passed": true,
+        "expected": {
+          "value": [
+            0,
+            2,
+            1
+          ]
+        },
+        "actual": {
+          "value": [
+            0,
+            2,
+            1
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C05",
+        "passed": true,
+        "expected": {
+          "value": [
+            0,
+            0
+          ]
+        },
+        "actual": {
+          "value": [
+            0,
+            0
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C06",
+        "passed": false,
+        "expected": {
+          "value": [
+            0,
+            0
+          ]
+        },
+        "actual": {
+          "raises": "ContractError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C07",
+        "passed": true,
+        "expected": {
+          "value": [
+            2,
+            2,
+            3
+          ]
+        },
+        "actual": {
+          "value": [
+            2,
+            2,
+            3
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C08",
+        "passed": true,
+        "expected": {
+          "value": [
+            1,
+            0,
+            0
+          ]
+        },
+        "actual": {
+          "value": [
+            1,
+            0,
+            0
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C09",
+        "passed": true,
+        "expected": {
+          "value": [
+            2,
+            2,
+            2
+          ]
+        },
+        "actual": {
+          "value": [
+            2,
+            2,
+            2
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "C10",
+        "passed": true,
+        "expected": {
+          "value": [
+            4
+          ]
+        },
+        "actual": {
+          "value": [
+            4
+          ]
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "7c2e237572000d4e568878fe6e9929ee1f412c28efdc4b94a5391a2f1020358f",
+    "seconds": 0.100736
+  },
+  "architecture": "single",
+  "repeat": 2,
+  "seed": 111576576,
+  "episode_id": "T38_single_b24000_r2"
+}

@@ -1,0 +1,180 @@
+{
+  "task_id": "C04",
+  "status": "success",
+  "success": true,
+  "visible_passed": true,
+  "visible_passed_count": 6,
+  "visible_total": 6,
+  "code_sha256": "2382ba1637fcb04034fc1e884f5cf639bc8ce4f390d5a7df14f511388c9068c1",
+  "input_tokens_known": 36929,
+  "output_tokens_known": 935,
+  "total_tokens_known": 37864,
+  "usage_complete": true,
+  "budget": 60000,
+  "budget_overrun": 0,
+  "model_calls": 8,
+  "tool_calls": 6,
+  "invalid_actions": 0,
+  "tokens_by_role": {
+    "programmer": {
+      "input": 29644,
+      "output": 358,
+      "total": 30002,
+      "calls": 6
+    },
+    "reviewer": {
+      "input": 7285,
+      "output": 577,
+      "total": 7862,
+      "calls": 2
+    }
+  },
+  "seconds": 34.242256,
+  "final_report": {
+    "passed": true,
+    "total": 6,
+    "passed_count": 6,
+    "cases": [
+      {
+        "id": "V01",
+        "passed": true,
+        "expected": {
+          "value": {
+            "invalidated": [],
+            "remaining": []
+          }
+        },
+        "actual": {
+          "value": {
+            "invalidated": [],
+            "remaining": []
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V02",
+        "passed": true,
+        "expected": {
+          "value": {
+            "invalidated": [
+              "report",
+              "source"
+            ],
+            "remaining": []
+          }
+        },
+        "actual": {
+          "value": {
+            "invalidated": [
+              "report",
+              "source"
+            ],
+            "remaining": []
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V03",
+        "passed": true,
+        "expected": {
+          "value": {
+            "invalidated": [
+              "report"
+            ],
+            "remaining": [
+              "source"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "invalidated": [
+              "report"
+            ],
+            "remaining": [
+              "source"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V04",
+        "passed": true,
+        "expected": {
+          "value": {
+            "invalidated": [
+              "c"
+            ],
+            "remaining": [
+              "z"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "invalidated": [
+              "c"
+            ],
+            "remaining": [
+              "z"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V05",
+        "passed": true,
+        "expected": {
+          "value": {
+            "invalidated": [
+              "a",
+              "b"
+            ],
+            "remaining": [
+              "z"
+            ]
+          }
+        },
+        "actual": {
+          "value": {
+            "invalidated": [
+              "a",
+              "b"
+            ],
+            "remaining": [
+              "z"
+            ]
+          }
+        },
+        "input_changed": false,
+        "deterministic": true
+      },
+      {
+        "id": "V06",
+        "passed": true,
+        "expected": {
+          "raises": "ValueError"
+        },
+        "actual": {
+          "raises": "ValueError"
+        },
+        "input_changed": false,
+        "deterministic": true
+      }
+    ],
+    "code_sha256": "2382ba1637fcb04034fc1e884f5cf639bc8ce4f390d5a7df14f511388c9068c1",
+    "seconds": 0.029632
+  },
+  "architecture": "fixed",
+  "repeat": 2,
+  "seed": 191685953,
+  "episode_id": "C04_fixed_b60000_r2"
+}
