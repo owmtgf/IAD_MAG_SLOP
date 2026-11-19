@@ -1,0 +1,5 @@
+[
+  {"id": "P-HDMI", "kind": "projector", "video_in": "hdmi", "video_out": null, "note": "Один вход HDMI. Прямое подключение к ноутбуку с HDMI.", "quantity": 1},
+  {"id": "A-USBC-HDMI", "kind": "adapter", "video_in": "usbc_dp", "video_out": "hdmi", "note": "Переходник с USB-C на HDMI. Для видеовыхода ноутбука через DisplayPort Alt Mode; USB-C только для зарядки не поддерживается.", "quantity": 1},
+  {"id": "A-CHARGE", "kind": "adapter", "video_in": null, "video_out": null, "note": "USB-C переходник для зарядки. Не передаёт видео.", "quantity": 1}
+]

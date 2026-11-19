@@ -1,0 +1,920 @@
+{
+  "quality": {
+    "passed": 8,
+    "total": 8,
+    "cases": [
+      {
+        "name": "HDMI напрямую",
+        "turns": [
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "1",
+              "text": "Нужен проектор для ноутбука с HDMI."
+            },
+            "expected_status": "offer",
+            "expected_items": [
+              "P-HDMI"
+            ],
+            "reservations": {},
+            "response": {
+              "status": "offer",
+              "reply": "Могу предложить P-HDMI. Подтвердите бронь этого комплекта.",
+              "items": [
+                "P-HDMI"
+              ],
+              "reservation_id": null
+            }
+          }
+        ],
+        "passed": true,
+        "critical": false,
+        "model_events": [
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "A",
+            "allowed": [
+              "A",
+              "E"
+            ],
+            "final": "hdmi",
+            "corrected_by_rule": false
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "offer"
+          }
+        ]
+      },
+      {
+        "name": "Комплект с переходником",
+        "turns": [
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "1",
+              "text": "Нужен комплект для ноутбука с USB-C и DisplayPort Alt Mode. HDMI на ноутбуке нет."
+            },
+            "expected_status": "offer",
+            "expected_items": [
+              "P-HDMI",
+              "A-USBC-HDMI"
+            ],
+            "reservations": {},
+            "response": {
+              "status": "offer",
+              "reply": "Могу предложить P-HDMI, A-USBC-HDMI. Подтвердите бронь этого комплекта.",
+              "items": [
+                "P-HDMI",
+                "A-USBC-HDMI"
+              ],
+              "reservation_id": null
+            }
+          }
+        ],
+        "passed": true,
+        "critical": false,
+        "model_events": [
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "E",
+            "allowed": [
+              "B",
+              "E"
+            ],
+            "final": "usbc_dp",
+            "corrected_by_rule": true
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "offer"
+          }
+        ]
+      },
+      {
+        "name": "Уточнение",
+        "turns": [
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "1",
+              "text": "Мне нужен проектор для ноутбука."
+            },
+            "expected_status": "clarify",
+            "expected_items": [],
+            "reservations": {},
+            "response": {
+              "status": "clarify",
+              "reply": "Уточните, пожалуйста, через какой разъём ноутбук выводит видео.",
+              "items": [],
+              "reservation_id": null
+            }
+          },
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "2",
+              "text": "На ноутбуке есть HDMI."
+            },
+            "expected_status": "offer",
+            "expected_items": [
+              "P-HDMI"
+            ],
+            "reservations": {},
+            "response": {
+              "status": "offer",
+              "reply": "Могу предложить P-HDMI. Подтвердите бронь этого комплекта.",
+              "items": [
+                "P-HDMI"
+              ],
+              "reservation_id": null
+            }
+          }
+        ],
+        "passed": true,
+        "critical": false,
+        "model_events": [
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "E",
+            "allowed": [
+              "E"
+            ],
+            "final": "unknown",
+            "corrected_by_rule": false
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "clarify"
+          },
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "A",
+            "allowed": [
+              "A",
+              "E"
+            ],
+            "final": "hdmi",
+            "corrected_by_rule": false
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "offer"
+          }
+        ]
+      },
+      {
+        "name": "Несовместимое оборудование",
+        "turns": [
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "1",
+              "text": "Нужен проектор, у ноутбука только mini DisplayPort."
+            },
+            "expected_status": "unavailable",
+            "expected_items": [],
+            "reservations": {},
+            "response": {
+              "status": "unavailable",
+              "reply": "Не нашёл доступного оборудования, которое можно подключить к этому видеовыходу.",
+              "items": [],
+              "reservation_id": null
+            }
+          }
+        ],
+        "passed": true,
+        "critical": false,
+        "model_events": [
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "C",
+            "allowed": [
+              "C",
+              "E"
+            ],
+            "final": "mini_dp",
+            "corrected_by_rule": false
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "unavailable"
+          }
+        ]
+      },
+      {
+        "name": "Изменение заявки",
+        "turns": [
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "1",
+              "text": "Нужен проектор для ноутбука с HDMI."
+            },
+            "expected_status": "offer",
+            "expected_items": [
+              "P-HDMI"
+            ],
+            "reservations": {},
+            "response": {
+              "status": "offer",
+              "reply": "Могу предложить P-HDMI. Подтвердите бронь этого комплекта.",
+              "items": [
+                "P-HDMI"
+              ],
+              "reservation_id": null
+            }
+          },
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "2",
+              "text": "Изменение: HDMI на ноутбуке нет. Есть только USB-C с DisplayPort Alt Mode."
+            },
+            "expected_status": "offer",
+            "expected_items": [
+              "P-HDMI",
+              "A-USBC-HDMI"
+            ],
+            "reservations": {},
+            "response": {
+              "status": "offer",
+              "reply": "Могу предложить P-HDMI, A-USBC-HDMI. Подтвердите бронь этого комплекта.",
+              "items": [
+                "P-HDMI",
+                "A-USBC-HDMI"
+              ],
+              "reservation_id": null
+            }
+          }
+        ],
+        "passed": true,
+        "critical": false,
+        "model_events": [
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "A",
+            "allowed": [
+              "A",
+              "E"
+            ],
+            "final": "hdmi",
+            "corrected_by_rule": false
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "offer"
+          },
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "B",
+            "allowed": [
+              "B",
+              "E"
+            ],
+            "final": "usbc_dp",
+            "corrected_by_rule": false
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "offer"
+          }
+        ]
+      },
+      {
+        "name": "Подтверждение брони",
+        "turns": [
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "1",
+              "text": "Нужен проектор для ноутбука с HDMI."
+            },
+            "expected_status": "offer",
+            "expected_items": [
+              "P-HDMI"
+            ],
+            "reservations": {},
+            "response": {
+              "status": "offer",
+              "reply": "Могу предложить P-HDMI. Подтвердите бронь этого комплекта.",
+              "items": [
+                "P-HDMI"
+              ],
+              "reservation_id": null
+            }
+          },
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "2",
+              "text": "Да, подтверждаю бронирование предложенного комплекта."
+            },
+            "expected_status": "reserved",
+            "expected_items": [
+              "P-HDMI"
+            ],
+            "reservations": {
+              "public-case": [
+                "R-7b496b1717ef",
+                [
+                  "P-HDMI"
+                ]
+              ]
+            },
+            "response": {
+              "status": "reserved",
+              "reply": "Комплект P-HDMI забронирован. Номер брони: R-7b496b1717ef.",
+              "items": [
+                "P-HDMI"
+              ],
+              "reservation_id": "R-7b496b1717ef"
+            }
+          }
+        ],
+        "passed": true,
+        "critical": false,
+        "model_events": [
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "A",
+            "allowed": [
+              "A",
+              "E"
+            ],
+            "final": "hdmi",
+            "corrected_by_rule": false
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "offer"
+          },
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "E",
+            "allowed": [
+              "A",
+              "E"
+            ],
+            "final": "hdmi",
+            "corrected_by_rule": true
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "reserved"
+          }
+        ]
+      },
+      {
+        "name": "Отмена до подтверждения",
+        "turns": [
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "1",
+              "text": "Нужен проектор для ноутбука с HDMI."
+            },
+            "expected_status": "offer",
+            "expected_items": [
+              "P-HDMI"
+            ],
+            "reservations": {},
+            "response": {
+              "status": "offer",
+              "reply": "Могу предложить P-HDMI. Подтвердите бронь этого комплекта.",
+              "items": [
+                "P-HDMI"
+              ],
+              "reservation_id": null
+            }
+          },
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "2",
+              "text": "Отмените заявку, комплект больше не нужен."
+            },
+            "expected_status": "cancelled",
+            "expected_items": [],
+            "reservations": {},
+            "response": {
+              "status": "cancelled",
+              "reply": "Заявка отменена.",
+              "items": [],
+              "reservation_id": null
+            }
+          }
+        ],
+        "passed": true,
+        "critical": false,
+        "model_events": [
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "A",
+            "allowed": [
+              "A",
+              "E"
+            ],
+            "final": "hdmi",
+            "corrected_by_rule": false
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "offer"
+          },
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "E",
+            "allowed": [
+              "A",
+              "E"
+            ],
+            "final": "hdmi",
+            "corrected_by_rule": true
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "A",
+            "status": "cancelled"
+          }
+        ]
+      },
+      {
+        "name": "Наличие изменилось",
+        "turns": [
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "1",
+              "text": "Нужен проектор для ноутбука с HDMI."
+            },
+            "expected_status": "offer",
+            "expected_items": [
+              "P-HDMI"
+            ],
+            "reservations": {},
+            "response": {
+              "status": "offer",
+              "reply": "Могу предложить P-HDMI. Подтвердите бронь этого комплекта.",
+              "items": [
+                "P-HDMI"
+              ],
+              "reservation_id": null
+            }
+          },
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "2",
+              "text": "Да, подтверждаю бронирование предложенного комплекта."
+            },
+            "expected_status": "unavailable",
+            "expected_items": [],
+            "reservations": {
+              "other-request": [
+                "R-179fa93428d0",
+                [
+                  "P-HDMI"
+                ]
+              ]
+            },
+            "response": {
+              "status": "unavailable",
+              "reply": "Не нашёл доступного оборудования, которое можно подключить к этому видеовыходу.",
+              "items": [],
+              "reservation_id": null
+            }
+          }
+        ],
+        "passed": true,
+        "critical": false,
+        "model_events": [
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "A",
+            "allowed": [
+              "A",
+              "E"
+            ],
+            "final": "hdmi",
+            "corrected_by_rule": false
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "offer"
+          },
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "E",
+            "allowed": [
+              "A",
+              "E"
+            ],
+            "final": "hdmi",
+            "corrected_by_rule": true
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "recovery": {
+    "passed": 3,
+    "total": 3,
+    "cases": [
+      {
+        "name": "Перезапуск до подтверждения",
+        "turns": [
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "1",
+              "text": "Нужен проектор для ноутбука с HDMI."
+            },
+            "expected_status": "offer",
+            "expected_items": [
+              "P-HDMI"
+            ],
+            "reservations": {},
+            "response": {
+              "status": "offer",
+              "reply": "Могу предложить P-HDMI. Подтвердите бронь этого комплекта.",
+              "items": [
+                "P-HDMI"
+              ],
+              "reservation_id": null
+            }
+          },
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "2",
+              "text": "Да, подтверждаю бронирование предложенного комплекта."
+            },
+            "expected_status": "reserved",
+            "expected_items": [
+              "P-HDMI"
+            ],
+            "reservations": {
+              "public-case": [
+                "R-d962b37d6312",
+                [
+                  "P-HDMI"
+                ]
+              ]
+            },
+            "response": {
+              "status": "reserved",
+              "reply": "Комплект P-HDMI забронирован. Номер брони: R-d962b37d6312.",
+              "items": [
+                "P-HDMI"
+              ],
+              "reservation_id": "R-d962b37d6312"
+            }
+          }
+        ],
+        "passed": true,
+        "critical": false,
+        "model_events": [
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "A",
+            "allowed": [
+              "A",
+              "E"
+            ],
+            "final": "hdmi",
+            "corrected_by_rule": false
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "offer"
+          },
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "E",
+            "allowed": [
+              "A",
+              "E"
+            ],
+            "final": "hdmi",
+            "corrected_by_rule": true
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "reserved"
+          }
+        ]
+      },
+      {
+        "name": "Повтор чтения каталога",
+        "turns": [
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "1",
+              "text": "Нужен проектор для ноутбука с HDMI."
+            },
+            "expected_status": "offer",
+            "expected_items": [
+              "P-HDMI"
+            ],
+            "reservations": {},
+            "response": {
+              "status": "offer",
+              "reply": "Могу предложить P-HDMI. Подтвердите бронь этого комплекта.",
+              "items": [
+                "P-HDMI"
+              ],
+              "reservation_id": null
+            }
+          }
+        ],
+        "passed": true,
+        "critical": false,
+        "model_events": [
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "A",
+            "allowed": [
+              "A",
+              "E"
+            ],
+            "final": "hdmi",
+            "corrected_by_rule": false
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "offer"
+          }
+        ]
+      },
+      {
+        "name": "Перезапуск после записи брони",
+        "turns": [
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "1",
+              "text": "Нужен проектор для ноутбука с HDMI."
+            },
+            "expected_status": "offer",
+            "expected_items": [
+              "P-HDMI"
+            ],
+            "reservations": {},
+            "response": {
+              "status": "offer",
+              "reply": "Могу предложить P-HDMI. Подтвердите бронь этого комплекта.",
+              "items": [
+                "P-HDMI"
+              ],
+              "reservation_id": null
+            }
+          },
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "2",
+              "text": "Да, подтверждаю бронирование предложенного комплекта."
+            },
+            "expected": "process_exit_after_commit",
+            "raw_response": null,
+            "reservations": {
+              "public-case": [
+                "R-6e6d5ff30b6b",
+                [
+                  "P-HDMI"
+                ]
+              ]
+            }
+          },
+          {
+            "request": {
+              "request_id": "public-case",
+              "message_id": "2",
+              "text": "Да, подтверждаю бронирование предложенного комплекта."
+            },
+            "expected_status": "reserved",
+            "expected_items": [
+              "P-HDMI"
+            ],
+            "reservations": {
+              "public-case": [
+                "R-6e6d5ff30b6b",
+                [
+                  "P-HDMI"
+                ]
+              ]
+            },
+            "response": {
+              "status": "reserved",
+              "reply": "Комплект P-HDMI забронирован. Номер брони: R-6e6d5ff30b6b.",
+              "items": [
+                "P-HDMI"
+              ],
+              "reservation_id": "R-6e6d5ff30b6b"
+            }
+          }
+        ],
+        "passed": true,
+        "critical": false,
+        "model_events": [
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "A",
+            "allowed": [
+              "A",
+              "E"
+            ],
+            "final": "hdmi",
+            "corrected_by_rule": false
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "offer"
+          },
+          {
+            "event": "llm_call",
+            "agent": "port"
+          },
+          {
+            "event": "port_decision",
+            "model_code": "E",
+            "allowed": [
+              "A",
+              "E"
+            ],
+            "final": "hdmi",
+            "corrected_by_rule": true
+          },
+          {
+            "event": "llm_call",
+            "agent": "reply"
+          },
+          {
+            "event": "reply_choice",
+            "model_code": "B",
+            "status": "reserved"
+          }
+        ]
+      }
+    ]
+  },
+  "open_tests_passed": true
+}

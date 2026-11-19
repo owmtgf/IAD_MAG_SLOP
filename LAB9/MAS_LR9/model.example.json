@@ -1,0 +1,14 @@
+{
+  "model": "Qwen2.5-1.5B-Instruct",
+  "weights_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+  "revision": "sha256:6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+  "quantization": "Q4_K_M",
+  "weights_filename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+  "runner": "llama.cpp",
+  "runner_version": "Укажите использованную версию",
+  "model_url": "http://127.0.0.1:8080/v1",
+  "model_id": "local-model",
+  "model_timeout_seconds": 60,
+  "temperature": 0
+}
+
