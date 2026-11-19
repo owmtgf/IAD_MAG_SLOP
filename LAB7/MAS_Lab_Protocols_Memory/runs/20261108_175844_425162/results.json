@@ -1,0 +1,342 @@
+{
+  "passed": 6,
+  "total": 6,
+  "results": [
+    {
+      "scenario": 1,
+      "name": "Не хватает данных",
+      "passed": true,
+      "trace": "/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB7/MAS_Lab_Protocols_Memory/runs/20261108_175844_425162/scenario_1/trace.jsonl",
+      "message": "Уточнение продолжает Task; бронь появляется только после подтверждения.",
+      "protocols": {
+        "mcp": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "search_rooms",
+            "reserve_room",
+            "save_preference"
+          ],
+          "resources": [
+            "rules://booking"
+          ],
+          "resource_templates": [
+            "profile://{user_id}"
+          ]
+        },
+        "a2a": {
+          "name": "Seminar room booking agent",
+          "description": "Находит и бронирует учебные аудитории.",
+          "supportedInterfaces": [
+            {
+              "url": "http://127.0.0.1:36469/a2a",
+              "protocolBinding": "JSONRPC",
+              "protocolVersion": "1.0"
+            }
+          ],
+          "version": "1.0",
+          "capabilities": {
+            "streaming": false
+          },
+          "defaultInputModes": [
+            "application/json"
+          ],
+          "defaultOutputModes": [
+            "application/json"
+          ],
+          "skills": [
+            {
+              "id": "book-room",
+              "name": "Бронирование аудитории",
+              "description": "Заявка → уточнение → предложение → подтверждение → бронь.",
+              "tags": [
+                "booking",
+                "state",
+                "memory"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scenario": 2,
+      "name": "Перезапуск на паузе",
+      "passed": true,
+      "trace": "/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB7/MAS_Lab_Protocols_Memory/runs/20261108_175844_425162/scenario_2/trace.jsonl",
+      "message": "Новый процесс восстановил прикладной снимок и завершил исходную Task.",
+      "protocols": {
+        "mcp": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "search_rooms",
+            "reserve_room",
+            "save_preference"
+          ],
+          "resources": [
+            "rules://booking"
+          ],
+          "resource_templates": [
+            "profile://{user_id}"
+          ]
+        },
+        "a2a": {
+          "name": "Seminar room booking agent",
+          "description": "Находит и бронирует учебные аудитории.",
+          "supportedInterfaces": [
+            {
+              "url": "http://127.0.0.1:38907/a2a",
+              "protocolBinding": "JSONRPC",
+              "protocolVersion": "1.0"
+            }
+          ],
+          "version": "1.0",
+          "capabilities": {
+            "streaming": false
+          },
+          "defaultInputModes": [
+            "application/json"
+          ],
+          "defaultOutputModes": [
+            "application/json"
+          ],
+          "skills": [
+            {
+              "id": "book-room",
+              "name": "Бронирование аудитории",
+              "description": "Заявка → уточнение → предложение → подтверждение → бронь.",
+              "tags": [
+                "booking",
+                "state",
+                "memory"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scenario": 3,
+      "name": "Новый диалог",
+      "passed": true,
+      "trace": "/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB7/MAS_Lab_Protocols_Memory/runs/20261108_175844_425162/scenario_3/trace.jsonl",
+      "message": "Предпочтение сохранилось между задачами и процессами без старой истории.",
+      "protocols": {
+        "mcp": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "search_rooms",
+            "reserve_room",
+            "save_preference"
+          ],
+          "resources": [
+            "rules://booking"
+          ],
+          "resource_templates": [
+            "profile://{user_id}"
+          ]
+        },
+        "a2a": {
+          "name": "Seminar room booking agent",
+          "description": "Находит и бронирует учебные аудитории.",
+          "supportedInterfaces": [
+            {
+              "url": "http://127.0.0.1:34203/a2a",
+              "protocolBinding": "JSONRPC",
+              "protocolVersion": "1.0"
+            }
+          ],
+          "version": "1.0",
+          "capabilities": {
+            "streaming": false
+          },
+          "defaultInputModes": [
+            "application/json"
+          ],
+          "defaultOutputModes": [
+            "application/json"
+          ],
+          "skills": [
+            {
+              "id": "book-room",
+              "name": "Бронирование аудитории",
+              "description": "Заявка → уточнение → предложение → подтверждение → бронь.",
+              "tags": [
+                "booking",
+                "state",
+                "memory"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scenario": 4,
+      "name": "Разовое исключение",
+      "passed": true,
+      "trace": "/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB7/MAS_Lab_Protocols_Memory/runs/20261108_175844_425162/scenario_4/trace.jsonl",
+      "message": "Разовое исключение переопределило память для задачи и не переписало профиль.",
+      "protocols": {
+        "mcp": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "search_rooms",
+            "reserve_room",
+            "save_preference"
+          ],
+          "resources": [
+            "rules://booking"
+          ],
+          "resource_templates": [
+            "profile://{user_id}"
+          ]
+        },
+        "a2a": {
+          "name": "Seminar room booking agent",
+          "description": "Находит и бронирует учебные аудитории.",
+          "supportedInterfaces": [
+            {
+              "url": "http://127.0.0.1:37709/a2a",
+              "protocolBinding": "JSONRPC",
+              "protocolVersion": "1.0"
+            }
+          ],
+          "version": "1.0",
+          "capabilities": {
+            "streaming": false
+          },
+          "defaultInputModes": [
+            "application/json"
+          ],
+          "defaultOutputModes": [
+            "application/json"
+          ],
+          "skills": [
+            {
+              "id": "book-room",
+              "name": "Бронирование аудитории",
+              "description": "Заявка → уточнение → предложение → подтверждение → бронь.",
+              "tags": [
+                "booking",
+                "state",
+                "memory"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scenario": 5,
+      "name": "Перемешанные обращения",
+      "passed": true,
+      "trace": "/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB7/MAS_Lab_Protocols_Memory/runs/20261108_175844_425162/scenario_5/trace.jsonl",
+      "message": "Два пользователя и две задачи одного пользователя сохранили независимые состояния.",
+      "protocols": {
+        "mcp": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "search_rooms",
+            "reserve_room",
+            "save_preference"
+          ],
+          "resources": [
+            "rules://booking"
+          ],
+          "resource_templates": [
+            "profile://{user_id}"
+          ]
+        },
+        "a2a": {
+          "name": "Seminar room booking agent",
+          "description": "Находит и бронирует учебные аудитории.",
+          "supportedInterfaces": [
+            {
+              "url": "http://127.0.0.1:38159/a2a",
+              "protocolBinding": "JSONRPC",
+              "protocolVersion": "1.0"
+            }
+          ],
+          "version": "1.0",
+          "capabilities": {
+            "streaming": false
+          },
+          "defaultInputModes": [
+            "application/json"
+          ],
+          "defaultOutputModes": [
+            "application/json"
+          ],
+          "skills": [
+            {
+              "id": "book-room",
+              "name": "Бронирование аудитории",
+              "description": "Заявка → уточнение → предложение → подтверждение → бронь.",
+              "tags": [
+                "booking",
+                "state",
+                "memory"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scenario": 6,
+      "name": "Сведения устарели",
+      "passed": true,
+      "trace": "/home/owmtgf/vscode/vscode_projects/IAD_MAG_SLOP/LAB7/MAS_Lab_Protocols_Memory/runs/20261108_175844_425162/scenario_6/trace.jsonl",
+      "message": "Фактический отказ инструмента вызвал новое предложение и новое подтверждение.",
+      "protocols": {
+        "mcp": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "search_rooms",
+            "reserve_room",
+            "save_preference"
+          ],
+          "resources": [
+            "rules://booking"
+          ],
+          "resource_templates": [
+            "profile://{user_id}"
+          ]
+        },
+        "a2a": {
+          "name": "Seminar room booking agent",
+          "description": "Находит и бронирует учебные аудитории.",
+          "supportedInterfaces": [
+            {
+              "url": "http://127.0.0.1:59277/a2a",
+              "protocolBinding": "JSONRPC",
+              "protocolVersion": "1.0"
+            }
+          ],
+          "version": "1.0",
+          "capabilities": {
+            "streaming": false
+          },
+          "defaultInputModes": [
+            "application/json"
+          ],
+          "defaultOutputModes": [
+            "application/json"
+          ],
+          "skills": [
+            {
+              "id": "book-room",
+              "name": "Бронирование аудитории",
+              "description": "Заявка → уточнение → предложение → подтверждение → бронь.",
+              "tags": [
+                "booking",
+                "state",
+                "memory"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

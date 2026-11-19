@@ -1,0 +1,32 @@
+\documentclass[9pt,a4paper]{article}
+\usepackage[margin=1.25cm]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setmainfont[Script=Default]{DejaVu Serif}
+\newfontfamily\russianfont[Script=Default]{DejaVu Serif}
+\newfontfamily\cyrillicfont[Script=Default]{DejaVu Serif}
+\usepackage{array,tabularx,booktabs}
+\usepackage{ragged2e}
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{4pt}
+\pagestyle{empty}
+\begin{document}
+\begin{center}\large\textbf{Бюро бронирования: протоколы и память}\end{center}
+\noindent Полный запуск: \textbf{6/6}.
+
+\small
+\begin{tabularx}{\textwidth}{>{\RaggedRight\bfseries}p{0.18\textwidth} >{\RaggedRight\arraybackslash}X}
+\toprule
+Сценарий & Правило, альтернатива и контрпример \\\midrule
+1. Уточнение & Условия задачи дополняются сохранёнными полями, а новые явные значения имеют приоритет; уточнение продолжает ту же A2A Task, а \texttt{search\_rooms} вызывается как MCP-операция. Если строить требования только из очередной реплики, \texttt{\{time: "10:00"\}} потеряет дату и число участников и вместо предложения вызовет новое уточнение. \\
+2. Перезапуск & Checkpoint содержит владельца, task/context ID, требования, фазу, предложение и бронь; A2A Task не заменяет прикладной снимок. Если сохранить только требования, после перезапуска подтверждение не знает предложенную \texttt{A-101}. \textbf{Трасса:} taskId \texttt{bfa6933e-aba8-4abf-a003-476fe79d0042}; строки 13 (\texttt{agent.restart}) и 17 (\texttt{mcp.tool.call}). \\
+3. Новый диалог & Профиль меняется только валидной инструкцией \texttt{remember}; сохраняются корпус, ID сообщения и ревизия. Если запоминать корпус из любой заявки, разовый выбор B станет скрытой установкой профиля и исказит следующую независимую заявку. \\
+4. Разовое исключение & Явный корпус в текущем \texttt{patch} важнее профиля, но без \texttt{remember} профиль не переписывается. Если всегда накладывать профиль после заявки, при памяти B и просьбе A будет предложен B; запись A в профиль также испортит будущие заявки. \\
+5. Перемешанные обращения & Снимок адресуется парой \texttt{(user\_id, task\_id)}, а не \texttt{contextId}. При ключе по пользователю или контексту две Task Alice в \texttt{shared-conversation} смешаются: заявка на A 6 ноября будет заменена заявкой на B 8 ноября. \\
+6. Устаревший вариант & Только успешный \texttt{reserve\_room} завершает Task; \texttt{occupied} очищает вариант, запускает поиск и требует нового подтверждения. Если завершать после любого ответа, отказ для \texttt{A-101} выдаётся как бронь либо \texttt{A-102} бронируется без согласия. \textbf{Трасса:} taskId \texttt{c7bf0bc7-5924-474f-9042-673612149ae0}; строки 12 (\texttt{occupied}) и 13 (новый поиск). \\
+\bottomrule
+\end{tabularx}
+
+\vspace{0.35em}\noindent\textbf{Вывод.} A2A связывает сообщения с Task, MCP предоставляет ресурсы и операции над внешним состоянием. Корректность обеспечивают самостоятельные снимки, явное происхождение памяти и переходы автомата по фактическому ответу операции.
+\end{document}
